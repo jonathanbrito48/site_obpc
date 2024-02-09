@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+:root {
+    --cor_1: #FAE7F3;
+    --cor_2: #4942E4;
+    --cor_3: #E6B9DE;
+    --cor_hover: #4942E4;
+    --cor_cabecalho:  #637A9F;
+    --font: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--cor_1);
+    color: var(--cor_2);
+    width: 100%;
+    margin: 0%;
+}
+
+.cabecalho {
+    padding: 0% 0% 0% 2%;
+    background-color: var(--cor_cabecalho);
+    display:inline-flex;
+    font-family: 'Montserrat', sans-serif;
+    gap: 2%;
+    text-decoration: none;
+    width: auto;
+    height: 50%;
+    align-items:flex-end;
+    color: var(--cor_1);
+}
+
+.cabecalho2 {
+    display: inline-flex;
+    align-items:flex-start;
+    gap: 19%;
+    padding: 0% 0% 1.1% 0%;
+}
+
+.foto {
+width: 12%;
+}
+
+.icon {
+    width: 3%;
+    display: inline-flex;
+}
+
+/* MENU */
+
+.dropdown {
+    position: relative;
+    display: inline-flex;
+}
+
+.dropdown-select {
+    padding: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 100%;
+    border: none;
+    color: var(--cor_1);
+    background-color: var(--cor_cabecalho);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    width: auto;
+    font-size: 100%;
+}
+
+.dropdown-options {
+    position:absolute;
+    top: 90%;
+    left: 0;
+    z-index: 1;
+    list-style: none;
+    padding: auto;
+    margin: 0;
+    border: 1px solid #637A9F;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px var(--cor_hover);
+    background-color: var(--cor_cabecalho);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-options {
+    opacity: 1;
+    pointer-events: auto;
+    padding: 0%;    
+}
+
+.dropdown-option {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown-option a {
+    text-decoration: none;
+    color: var(--cor_1);
+    display: block;
+    font-size: 80%;
+}
+
+.dropdown-option a:hover, .dropdown-select.hovered {
+    color: #000000;
+}
+
+/* CARROSEL */
+
+.carousel-container {
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: -0.3%;
+}
+
+
+
+.slick-carousel img {
+    width: 100%;
+    height: 37.9rem;
+}
+
+
+.slick-prev, .slick-next {
+    background-color: transparent;
+    border: none;
+    font-size: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: transparent;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.slick-prev {
+    left: 0;
+    position: absolute;
+}
+
+.slick-next {
+    right: 0;
+    position: absolute;
+}
+
+.slick-dots {
+    bottom: 20px; 
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.slick-dots li {
+    display: inline-block;
+    margin: 0 5px; 
+}
+
+/* EVENTOS */
+
+.evento_div {
+    max-width: 100%;
+    margin: 0% 0% 0% 0%;
+}
+
+.eveto_titulo {
+    text-align: center;
+    font-family: var(--font); 
+    font-size: 1.5rem;
+    color: #2f2f2f;
+    text-decoration:underline wavy;
+}
+
+.subtitulo_evento {
+    font-family: var(--font);
+    text-align: center;
+    padding: 1%;
+    font-size: 90%;
+    color: rgb(139, 139, 139);
+}
+
+.div_cards_eventos {
+    margin: 4% 0% 0% 5%;
+    display:inline-flex;
+    gap: 2%;
+    padding-left: 12%;
+}
+
+.foto_agenda {
+    width: 40rem;
+    height: 164px;
+}
+
+.card_alinhamento {
+    text-align: center;
+    margin: 5%;
+    row-gap: 10%;
+    font-family: 'Montserrat', sans-serif ;
+    font-weight: 400;
+    color: #2f2f2f;
+}
+/* RODAPÉ */
+.footer {
+    background-color: var(--cor_cabecalho);
+    padding: 0% 0% 0% 5% ;
+    color: var(--cor_1);
+}
+
+.rodape_items {
+    align-items:center;
+    display:inline-flex;
+    gap: 1%;
+    padding: 5% 5% 5% 0%;
+    font-size: 90%;
+    
+}
+
+.cultos {
+    font-family: 'Montserrat', sans-serif;
+    width: 11rem;
+    
+}
+
+.dias_culto {
+    text-decoration:underline;
+}
+
+.logo_rodape {
+    width: 16%;
+}
+
+.igreja {
+    font-family: 'Montserrat', sans-serif;
+    width: 15.5rem;
+    text-align: center;
+}
+
+.contato{
+    font-family: 'Montserrat', sans-serif;
+    width: 15.5rem;
+}
+
+.div_icons {
+    position:absolute;
+    padding: 0% 0% 1% 65%;
+    margin: 0%;
+    display:grid;
+    gap: 3%;
+}
+
+.icone {
+    width: 6.5%;
+    padding: 0%;
+}
+
+.contribuicao {
+    font-family: 'Montserrat', sans-serif;
+    width: 15.5rem;
+    position: absolute;
+    padding: 0% 0% 0% 70%;
+}
+
