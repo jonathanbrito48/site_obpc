@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+:root {
+    --cabecalho_back_collor: rgba(235, 235, 235, 0.742);
+    --body_collor: rgba(235, 235, 235, 0.742);
+    --font: 'Mulish', sans-serif;
+    --cor_hover: #4942E4;
+    --font_collor:  #000000;
+    --footer_collor: #637A9F;
+    --titulos: 'Mulish', sans-serif;
+    
+}
+
+body {
+    background-color: var(--body_collor);
+    color: var(--body_collor);
+    width: 100%;
+    margin: 0%;
+}
+
+.cabecalho {
+    padding: 1.4%;
+    background-color: var(--cabecalho_back_collor);
+    display:inline-flex;
+    font-family: var(--font);
+    gap: 2%;
+    text-decoration: none;
+    width: 97.2%;
+    height: 50%;
+    align-items:center;
+    color: var(--font_collor);
+    justify-content: start;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Defina a animação fadeIn */
+@keyframes fadeIn {
+    from { opacity: 0; } /* Começa com opacidade 0 (invisível) */
+    to { opacity: 1; }   /* Termina com opacidade 1 (totalmente visível) */
+}
+
+.cabecalho2 {
+    display: inline-flex;
+    align-items:center;
+    gap: 19%;
+    padding: 0%;
+}
+
+.foto {
+width: 12%;
+}
+
+.icon {
+    width: 3%;
+    display: inline-flex;
+}
+
+/* MENU */
+
+.dropdown {
+    position: relative;
+    display: inline-flex;
+}
+
+.dropdown-select {
+    padding: 0%;
+    font-family: var(--font);
+    font-weight: 300;
+    font-size: 100%;
+    border: none;
+    color: var(--font_collor);
+    background-color: var(--cabecalho_back_collor);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    width: auto;
+    font-size: 100%;
+}
+
+.dropdown-options {
+    position:absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    list-style: none;
+    padding: auto;
+    margin: 0;
+    border: 1px solid var(--font_collor);
+    border-radius: 5px;
+    box-shadow: 0 2px 2px var(--font_collor);
+    background-color: var(--cabecalho_back_collor);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+    font-family: var(--font);
+    font-weight: 300;
+    white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-options {
+    opacity: 1;
+    pointer-events: auto;
+    padding: 0%  
+}
+
+.dropdown-option {
+    padding: 0%;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown-option a {
+    text-decoration: none;
+    color: var(--font_collor);
+    display: block;
+    font-size: 80%;
+    padding: 10px;
+}
+
+.dropdown-option a:hover, .dropdown-select.hovered {
+    color: var(--body_collor);
+    background-color: var(--footer_collor);
+}
+
+/* CARROSEL */
+
+.carousel-container {
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: -0.3%;
+}
+
+
+
+.slick-carousel img {
+    width: 100%;
+    height: 37.9rem;
+}
+
+
+.slick-prev, .slick-next {
+    background-color: transparent;
+    border: none;
+    font-size: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: transparent;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.slick-prev {
+    left: 0;
+    position: absolute;
+}
+
+.slick-next {
+    right: 0;
+    position: absolute;
+}
+
+.slick-dots {
+    bottom: 20px; 
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.slick-dots li {
+    display: inline-block;
+    margin: 0 5px; 
+}
+
+/* CULTOS */
+
+
+
+.div_cultos {
+    display: flex;
+    justify-content: center;
+    margin: 3%;
+    align-items: center;
+}
+
+.div_programacao {
+    width: 30rem;
+    height: 35rem;
+    font-family: var(--titulos);
+    color: var(--font_collor);
+    align-items:end;
+    background-color: #ffffff;
+}
+
+.div_programacao span {
+    display: block;
+    margin: 2% 0% 0% 3%;
+}
+
+.programacao_subtitulo {
+    padding-block: 2% ;
+}
+.div_img_cultos {
+    padding: 0%;
+}
+
+.img_cultos {
+    width: 30rem;
+    height: 35rem;
+}
+
+
+/* BANNER */
+
+.banner {
+    width: 100%;
+    height: 30rem;
+}
+
+
+/* EVENTOS */
+
+.evento_div {
+    max-width: 100%;
+    
+}
+
+.eveto_titulo {
+    text-align: center;
+    font-family: var(--font); 
+    font-size: 1.5rem;
+    color: var(--font_collor);
+    text-decoration:underline;
+    margin: 0%;
+    padding-top: 2%;
+}
+
+.subtitulo_evento {
+    margin: 0%;
+    font-family: var(--font);
+    text-align: center;
+    padding: 1%;
+    font-size: 90%;
+    color: var(--font_collor);
+}
+
+.div_cards_eventos {
+    display:flex;
+    gap: 2%;
+    width: 100%;
+    justify-content: center;
+}
+
+.foto_agenda {
+    width: 15rem;
+    height: 14rem;
+}
+
+.card_alinhamento {
+    text-align: center;
+    margin: 5%;
+    row-gap: 10%;
+    font-family: var(--font);
+    font-weight: 400;
+    color: #2f2f2f;
+}
+/* RODAPÉ */
+.footer {
+    background-color: var(--footer_collor);
+    padding: 0% ;
+    color: var(--body_collor);
+    display: flex;
+}
+
+.rodape_items {
+    align-items:center;
+    display:flex;
+    gap: 3%;
+    padding: 3%;
+    font-size: 90%;
+    justify-content: center;    
+}
+
+.cultos {
+    font-family: var(--font);
+    width: 10rem;
+    
+}
+
+.dias_culto {
+    text-decoration:underline;
+    font-family: var(--font) ;
+    width: 8.9rem;
+    margin-inline-end: 0%;
+}
+
+.logo_rodape {
+    width: 16%;
+}
+
+.igreja {
+    font-family: var(--font);
+    width: 14.2rem;
+    text-align: center;
+    margin-inline: 0%;
+}
+
+.contato{
+    font-family: var(--font);
+    width: 15.5rem;
+    margin-inline-end: 1%;
+}
+
+.div_icons {
+    display: grid;
+    gap: 3%;
+}
+
+.icone {
+    width: 1.5rem;
+    margin-inline-end: 0%;
+}
+
+.contribuicao {
+    font-family: var(--font);
+    width: 15rem;
+}
+

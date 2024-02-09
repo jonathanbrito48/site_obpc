@@ -1,0 +1,100 @@
+{% load static %}
+<header>
+    <nav class="cabecalho">
+        <img class="foto" src="{% static 'assets/logo_obpc2.png' %}" alt="logo_obpc">
+        
+        <div class="dropdown" role="listbox" aria-haspopup="listbox">
+            <div class="dropdown-select" role="button" aria-expanded="false" aria-controls="dropdown-options">
+                Igreja
+            </div>
+            <ul id="dropdown-options" class="dropdown-options" role="list" aria-labelledby="dropdown-select">
+                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao1">História</a></li>
+                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao2">Pastores</a></li>
+            </ul>
+        </div>
+
+        <div class="dropdown" role="listbox" aria-haspopup="listbox">
+            <div class="dropdown-select" role="button" aria-expanded="false" aria-controls="dropdown-options2">
+                Ministérios
+            </div>
+            <ul id="dropdown-options2" class="dropdown-options" role="list" aria-labelledby="dropdown-select">
+                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao4">Umasbrac</a></li>
+                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao5">Ufebrac</a></li>
+                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao6">Jubrac</a></li>
+                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao6">Adobrac</a></li>
+                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao6">MeidBrac</a></li>
+                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao6">Casais</a></li>
+            </ul>
+        </div>
+
+        <div class="dropdown" role="listbox" aria-haspopup="listbox">
+            <div class="dropdown-select" role="button" aria-expanded="false" aria-controls="dropdown-options2">
+                Cursos
+            </div>
+            <ul id="dropdown-options2" class="dropdown-options" role="list" aria-labelledby="dropdown-select">
+                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao4">Teologia (IBBC)</a></li>
+                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao5">Casados para sempre</a></li>
+            </ul>
+        </div>
+        
+        <div class="dropdown" role="listbox" aria-haspopup="listbox">
+            <div class="dropdown-select" role="button" aria-expanded="false" aria-controls="dropdown-options2">
+                Congregações
+            </div>
+            <ul id="dropdown-options2" class="dropdown-options" role="list" aria-labelledby="dropdown-select">
+                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao4">OBPC Jd Camargo Velho</a></li>
+                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao5">OBPC Jd Camargo Novo</a></li>
+                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao6">OBPC Jd Mirian</a></li>
+            </ul>
+        </div>
+        <div class="dropdown" role="listbox" aria-haspopup="listbox">
+            <div class="dropdown-select" role="button" aria-expanded="false" aria-controls="dropdown-options2">
+                Agenda
+            </div>
+            <ul id="dropdown-options2" class="dropdown-options" role="list" aria-labelledby="dropdown-select">
+                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao4">Cultos</a></li>
+                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao5">Eventos</a></li>
+            </ul>
+        </div>
+        <div class="cabecalho2">
+            <a href="" class="cabecalho">Contribuições</a>
+        </div>
+        <div class="cabecalho2">
+            <a href="" class="cabecalho">Contato</a>
+        </div>
+        
+    </nav>
+    
+</header>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        dropdowns.forEach(function (dropdown) {
+            const dropdownSelect = dropdown.querySelector('.dropdown-select');
+            const dropdownOptions = dropdown.querySelector('.dropdown-options');
+
+            dropdown.addEventListener('mouseenter', function () {
+                dropdownOptions.classList.add('visible');
+                const expanded = dropdownOptions.classList.contains('visible');
+                dropdownSelect.setAttribute('aria-expanded', expanded.toString());
+            });
+
+            dropdown.addEventListener('mouseleave', function () {
+                dropdownOptions.classList.remove('visible');
+                dropdownSelect.setAttribute('aria-expanded', 'false');
+            });
+
+            const dropdownOptionItems = dropdown.querySelectorAll('.dropdown-option');
+
+            dropdownOptionItems.forEach(function (option) {
+                option.addEventListener('click', function () {
+                    dropdownOptions.classList.remove('visible');
+                    dropdownSelect.setAttribute('aria-expanded', 'false');
+                });
+            });
+        });
+
+        // Adicione mais lógica aqui, se necessário
+    });
+</script>
