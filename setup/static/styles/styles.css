@@ -54,9 +54,13 @@ body {
     gap: 19%;
     padding: 0%;
 }
+.logo_a {
+    display: grid;
+    width: 12%;    
+}
 
 .foto {
-width: 12%;
+    width: 100%;
 }
 
 .icon {
@@ -338,3 +342,86 @@ width: 12%;
     width: 15rem;
 }
 
+.div_pastor {
+    padding-inline: 13rem;
+
+}
+
+.titulo_pastor {
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding-block: 4%;
+}
+
+.titulo_cargo {
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding-block: 1%;
+    border-bottom: 1px solid rgba(7,13,16,.15);
+}
+
+.alinhamento_div_pastor {
+    align-items: start;
+    justify-content: center;
+    display: flex;
+    gap: 5%;
+    padding-block: 2%;
+    border-bottom: 1px solid rgba(7,13,16,.15);
+}
+.biografia_pastor {
+    font-family: var(--font);
+    color: var(--font_collor);
+    text-align: justify;
+}
+
+.alinhamento_foto_nome {
+    text-align: center;
+}
+
+.div_foto_pastor {
+    width: 20rem;
+    height: 26.5rem;
+}
+
+.nome_pastor {
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding-block: 5%;
+}
+
+.div_ministerios {
+    padding-inline: 13rem;
+}
+
+.alinhamento_div_titulo {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding-block-end: 3%;
+}
+
+.logo_ministerio {
+    width: 15%;
+}
+
+.foto_ministerio {
+    width: 50%;
+    height: 100%;
+    padding-block-end: 3%;
+}
+
+.alinhamento_div_ministerios {
+    align-items: start;
+    justify-content: center;
+    display: flex;
+}
+
+.div_apresentacao_ministerios {
+    padding-block-end: 3%;
+}
+
+.apresentacao_ministerios {
+    font-family: var(--font);
+    color: var(--font_collor);
+    text-align: justify;
+}

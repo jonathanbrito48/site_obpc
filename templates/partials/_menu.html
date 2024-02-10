@@ -1,7 +1,8 @@
 {% load static %}
 <header>
     <nav class="cabecalho">
-        <img class="foto" src="{% static 'assets/logo_obpc2.png' %}" alt="logo_obpc">
+        
+        <a class="logo_a" href="{% url 'index' %}"><img class="foto" src="{% static 'assets/logo_obpc2.png' %}" alt="logo_obpc"></a>
         
         <div class="dropdown" role="listbox" aria-haspopup="listbox">
             <div class="dropdown-select" role="button" aria-expanded="false" aria-controls="dropdown-options">
@@ -9,7 +10,7 @@
             </div>
             <ul id="dropdown-options" class="dropdown-options" role="list" aria-labelledby="dropdown-select">
                 <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao1">História</a></li>
-                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao2">Pastores</a></li>
+                <li class="dropdown-option" role="option" tabindex="0"><a href="{% url 'pastores' %}">Pastores</a></li>
             </ul>
         </div>
 
@@ -18,8 +19,8 @@
                 Ministérios
             </div>
             <ul id="dropdown-options2" class="dropdown-options" role="list" aria-labelledby="dropdown-select">
-                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao4">Umasbrac</a></li>
-                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao5">Ufebrac</a></li>
+                <li class="dropdown-option" role="option" tabindex="0"><a href="{% url 'umasbrac' %}">Umasbrac</a></li>
+                <li class="dropdown-option" role="option" tabindex="0"><a href="{% url 'ufebrac' %}">Ufebrac</a></li>
                 <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao6">Jubrac</a></li>
                 <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao6">Adobrac</a></li>
                 <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao6">MeidBrac</a></li>
