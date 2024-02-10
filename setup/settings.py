@@ -1,6 +1,9 @@
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -15,7 +18,7 @@ SECRET_KEY = 'django-insecure-33%2aqh%jqg@=$=#m@o5n0hgv-#-e6fhmio#zwh-r#7to79ad3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.6', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','192.168.0.10']
 
 
 # Application definition
@@ -56,6 +59,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'apps.site_obpc.context_processors.MinisteriosContext'
             ],
         },
     },
@@ -121,3 +125,10 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'setup/static')]
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 USE_X_FORWARDED_HOST = True
+
+
+# media
+
+MEDIA_URL = "/media/"
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")

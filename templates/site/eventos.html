@@ -1,0 +1,25 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+<div class="div_banner_eventos">
+    <h2 class="titulo_eventos">Eventos</h2>
+    <a href="{% url 'evento_detalhe' banner.id %}">
+        <img class="eventos_banner" src="{{banner.banner_evento.url}}" alt="eventos_banner">
+    </a>
+</div>
+<div class="div_cards_eventos_eventos">
+    {% for card in evento  %}
+    <div class="card_evento_eventos">
+        <a href="{% url 'evento_detalhe' card.id %}">
+            <img src="{{card.foto_card_evento.url}}" class="foto_agenda_eventos" alt="fora-da-caixa">
+        </a>
+        <div class="card_alinhamento">
+            <p class="data_evento">{{card.data_evento}} - {{card.hora_evento}}</p>
+            <a href="{% url 'evento_detalhe' card.id %}">
+                <H3>{{card.nome_evento}}</H3>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

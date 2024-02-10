@@ -1,0 +1,23 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+<div class="div_pastor">
+    <h2 class="titulo_pastor">Pastores</h2>
+    {% if cards %}
+    {% for pastor in cards %}
+    <div>
+        <h4 class="titulo_cargo">{{pastor.cargo}}</h4>
+        <div class="alinhamento_div_pastor">
+            <div class="alinhamento_foto_nome">
+                <img class="div_foto_pastor" src="{{pastor.foto.url}}" alt="foto_pastor">
+                <h4 class="nome_pastor">{{pastor.nome_pastor}}</h4>
+            </div>
+            <p class="biografia_pastor">
+                {{pastor.biografia}}
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

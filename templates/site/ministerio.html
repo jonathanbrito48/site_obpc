@@ -1,0 +1,42 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="div_ministerios">
+        <div class="alinhamento_div_titulo">
+            <h2 class="titulo_pastor">{{ministerio.nome_ministerio}}</h2>
+            <img class="logo_ministerio" src="{{ ministerio.logo_ministerio.url }}" alt="">
+        </div>
+        <div class="disposicao_ministerios">
+            <section class="alinhamento_ministerio_esquerda">
+                <div class="alinhamento_div_ministerios">
+                    <img class="foto_ministerio" src="{{ ministerio.foto_ministerio.url }}" alt="foto_mimisterio">
+                </div>
+                {% if lideres %}
+                <div class="alinhamento_ministerio_infos">
+                    <div class="div_lideranca_info">
+                        <h3 class="titulo_lideranca">Liderança</h3>
+                        <section class="section_lideranca_ministerio">
+                            {% for lider in lideres %}
+                            {% if lider.ministerio_id == ministerio.id %}
+                            <div class="card_lideranca_ministerio">
+                                <img class="foto_lider_ministerio" src="{{ lider.foto_lider.url }}" alt="foto_lide_ministerio">
+                                <div class="div_lideranca_ministerio_info">
+                                    <h4 class="nome_lider_ministerio">{{ lider.nome_lider }}</h4>
+                                    <h4 class="cargo_lider_ministerio">Cargo: {{ lider.cargo }}</h4>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                        </section>
+                    </div>
+                </div>
+            </section>
+            <section class="div_apresentacao_ministerios">
+                <p class="apresentacao_ministerios">
+                {{ministerio.descricao_ministerio}} 
+                </p>
+            </section>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
 
 
 * {
@@ -10,8 +10,8 @@
 }
 
 :root {
-    --cabecalho_back_collor: rgba(235, 235, 235, 0.742);
-    --body_collor: rgba(235, 235, 235, 0.742);
+    --cabecalho_back_collor: #ffffff;
+    --body_collor: #ffffff;
     --font: 'Mulish', sans-serif;
     --cor_hover: #4942E4;
     --font_collor:  #000000;
@@ -21,25 +21,46 @@
 }
 
 body {
-    background-color: var(--body_collor);
+    background: radial-gradient(circle,#f3f3f3,#c3d9ef);
     color: var(--body_collor);
     width: 100%;
     margin: 0%;
 }
 
+.menu {
+    background: radial-gradient(circle,#f3f3f3,#c3d9ef);
+    color: var(--cabecalho_back_collor); /* Cor do texto no menu */
+    padding: 10px; /* Espaçamento interno no menu */
+    position: fixed; /* Define o menu como fixo */
+    top: 0; /* Fixa o menu no topo da página */
+    width: 100%; /* Ocupa toda a largura da página */
+    z-index: 1000; /* Garante que o menu esteja acima de outros elementos */
+}
+
+.conteudo_pagina {
+    margin-top:5.6rem;
+}
 .cabecalho {
-    padding: 1.4%;
-    background-color: var(--cabecalho_back_collor);
+    padding: 1%;
+    padding-block: 0%;
     display:inline-flex;
     font-family: var(--font);
-    gap: 2%;
     text-decoration: none;
-    width: 97.2%;
-    height: 50%;
+    gap: 15%;
+    width: 100%;
     align-items:center;
     color: var(--font_collor);
     justify-content: start;
     animation: fadeIn 1.5s ease-in-out;
+    font-size: 15px;
+}
+
+.menu_options_items {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    gap: 2%;
+    justify-content: start;
 }
 
 /* Defina a animação fadeIn */
@@ -54,9 +75,13 @@ body {
     gap: 19%;
     padding: 0%;
 }
+.logo_a {
+    display: grid;
+    width: 17%;    
+}
 
 .foto {
-width: 12%;
+    width: 100%;
 }
 
 .icon {
@@ -78,11 +103,9 @@ width: 12%;
     font-size: 100%;
     border: none;
     color: var(--font_collor);
-    background-color: var(--cabecalho_back_collor);
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
     width: auto;
-    font-size: 100%;
 }
 
 .dropdown-options {
@@ -103,6 +126,7 @@ width: 12%;
     font-family: var(--font);
     font-weight: 300;
     white-space: nowrap;
+    font-size: 17px;
 }
 
 .dropdown:hover .dropdown-options {
@@ -133,16 +157,23 @@ width: 12%;
 /* CARROSEL */
 
 .carousel-container {
-    max-width: 100%;
-    margin: 0 auto;
-    margin-top: -0.3%;
+    max-width: 90%;
+    align-items: center;
+    justify-self: center;
+    padding-inline: 10% ;
+    
 }
 
+.slick-carousel {
+    box-shadow: 0 0 10px 3px #00000080;
+    border-radius: 0px 0px 10px 10px;
 
+}
 
 .slick-carousel img {
     width: 100%;
     height: 37.9rem;
+    border-radius: 0px 0px 10px 10px;
 }
 
 
@@ -184,6 +215,22 @@ width: 12%;
     margin: 0 5px; 
 }
 
+.slick-dots li button:before {
+    font-family: 'slick';
+    font-size: 15px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: '•';
+    text-align: center;
+    opacity: 90%;
+    color: #637A9F;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 /* CULTOS */
 
 
@@ -202,6 +249,7 @@ width: 12%;
     color: var(--font_collor);
     align-items:end;
     background-color: #ffffff;
+    border-radius: 6px 0 0 6px;
 }
 
 .div_programacao span {
@@ -219,14 +267,85 @@ width: 12%;
 .img_cultos {
     width: 30rem;
     height: 35rem;
+    border-radius: 0 6px 6px 0;
 }
 
+.video-container {
+    padding-block-end: 3%;
+}
+
+.secao_ministerios {
+    padding-block-end: 3%;
+    display: flex;
+    padding-inline: 10%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.div_ministerios_index_titulo {
+    padding-block-end: 2%;
+}
+.div_ministerios_index {
+    width: 20rem;
+    height: 20rem;
+    padding-inline: 1px;
+    font-family: var(--font);
+    color: var(--font_collor);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding-block:1px;
+}
+
+.card_ministerio_index_titulo {
+    background-color: #00000075;
+    width: 320px;
+    height: 320px;
+    color: #ffffff;
+    font-family: "Anta", sans-serif;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+  
+.card_ministerio_index_ancora {
+    position:relative;
+    top: 50%;
+    right: 50%;
+    width: 320px;
+    height: 320px;
+    padding-inline: 0px;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    border-radius: 10px;
+
+}
+
+.card_ministerio_index_titulo:hover {
+    background-color: rgba(112, 162, 212, 0);
+    color: #ffffff00;
+    transition-duration: 1000ms;
+}
+
+.card_ministerio_index {
+    width: 20rem;
+    height: 20rem;
+    display: flex;
+}
+
+.card_ministerio_index_imagem {
+    width: 100%;
+    border-radius: 10px;
+}
 
 /* BANNER */
 
 .banner {
     width: 100%;
     height: 30rem;
+    padding-block-end: 2%;
 }
 
 
@@ -237,14 +356,14 @@ width: 12%;
     
 }
 
-.eveto_titulo {
+.index_titulos {
     text-align: center;
     font-family: var(--font); 
     font-size: 1.5rem;
     color: var(--font_collor);
     text-decoration:underline;
     margin: 0%;
-    padding-top: 2%;
+    padding: 0%;
 }
 
 .subtitulo_evento {
@@ -266,6 +385,8 @@ width: 12%;
 .foto_agenda {
     width: 15rem;
     height: 14rem;
+    border-radius: 6px;
+    box-shadow: 0 0 10px 3px #00000080
 }
 
 .card_alinhamento {
@@ -276,11 +397,34 @@ width: 12%;
     font-weight: 400;
     color: #2f2f2f;
 }
+
+.div_botao_ver_mais_eventos{
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+}
+.botao_ver_mais_eventos {
+    font-family: var(--font);
+    color: var(--body_collor);
+    background-color: var(--footer_collor);
+    padding: 8px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.botao_ver_mais_eventos:hover {
+    background-color: #9cadca;
+}
+
+.instagram {
+    padding-inline: 10%;
+}
+
 /* RODAPÉ */
 .footer {
-    background-color: var(--footer_collor);
+    background: radial-gradient(circle,#f3f3f3,#c3d9ef);
     padding: 0% ;
-    color: var(--body_collor);
+    color:var(--font_collor);
     display: flex;
 }
 
@@ -290,7 +434,8 @@ width: 12%;
     gap: 3%;
     padding: 3%;
     font-size: 90%;
-    justify-content: center;    
+    justify-content: center;  
+    flex-wrap: wrap;
 }
 
 .cultos {
@@ -338,3 +483,251 @@ width: 12%;
     width: 15rem;
 }
 
+.div_pastor {
+    padding-inline: 13rem;
+}
+
+.titulo_pastor {
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding-block: 4%;
+}
+
+.titulo_cargo {
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding-block: 1%;
+    border-bottom: 1px solid rgba(7,13,16,.15);
+}
+
+.alinhamento_div_pastor {
+    align-items: start;
+    justify-content: start;
+    display: flex;
+    gap: 5%;
+    padding-block: 2%;
+    border-bottom: 1px solid rgba(7,13,16,.15);
+}
+.biografia_pastor {
+    font-family: var(--font);
+    color: var(--font_collor);
+    text-align: justify;
+}
+
+.alinhamento_foto_nome {
+    text-align: center;
+}
+
+.div_foto_pastor {
+    width: 20rem;
+    height: 26.5rem;
+}
+
+.nome_pastor {
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding-block: 5%;
+}
+
+.div_ministerios {
+    padding-inline: 13rem;
+
+}
+
+.alinhamento_div_titulo {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding-block-end: 3%;
+}
+
+.logo_ministerio {
+    width: 15%;
+}
+@keyframes rotateCube {
+    0% {
+      transform: rotateY(-90deg);
+    }
+    100% {
+      transform: rotateY(0deg);
+    }
+  }
+.foto_ministerio {
+    width: 90%;
+    height: auto;
+    padding-block-end: 3%;
+    transform-origin: left center; /* Define o ponto de origem da transformação no lado esquerdo */
+    transform-style: preserve-3d;
+    animation: rotateCube 1s ease-in-out forwards;
+}
+.disposicao_ministerios {
+    display: flex;
+}
+.alinhamento_ministerio_esquerda {
+    width: 50%;
+    height: auto;
+}
+
+.alinhamento_div_ministerios {
+    align-items: start;
+    justify-content: center;
+    display: flex;
+}
+.alinhamento_ministerio_infos {
+    display: flex;
+}
+
+.div_lideranca_info {
+    width: 50%;
+}
+.section_lideranca_ministerio {
+    padding-block-end: 2%;
+    display: block;
+    justify-content: space-between;
+    width: 50%;
+
+}
+
+.card_lideranca_ministerio {
+    display: flex;
+    background-color: #ffffff;
+    width: 500px;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 1px #00000080;
+    margin-block-end: 2%;
+}
+
+.foto_lider_ministerio {
+    width: 11rem;
+    border-radius: 10px;
+}
+
+.nome_lider_ministerio {
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding-inline: 5%;
+}
+
+.cargo_lider_ministerio {
+    font-family: var(--font);
+    color: #555555;
+    padding-inline: 5%;
+}
+.div_lideranca_ministerio_info {
+    width: 300px;
+}
+
+.titulo_lideranca {
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding-block: 4%;
+    width: 50%;
+}
+.div_apresentacao_ministerios {
+    width: 50%;
+    height: auto;
+    padding-block-end: 3%;
+    align-items: center;
+    align-self: center;
+}
+
+.apresentacao_ministerios {
+    font-family: var(--font);
+    color: var(--font_collor);
+    text-align: justify;
+}
+
+.titulo_eventos_div {
+    padding-inline: 20%;
+}
+
+
+.titulo_eventos {
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding-block: 4%;
+    
+}
+.div_banner_eventos {
+    max-width: 100%;
+    padding-inline: 10%;
+    padding-block-end: 3%;
+    justify-content: center;
+    display: block;
+}
+
+.eventos_banner {
+    width: 100%;
+    height: 30rem;
+    border-radius: 6px;
+}
+
+.div_cards_eventos_eventos {
+    padding-inline: 10%;
+    display: flex;
+    gap: 3%;
+    width: 80%;
+    height: 100%;
+    justify-content: space-between ;
+    flex-wrap: wrap;
+}
+
+.card_evento_eventos {
+    width: 15.5rem;
+    height: 100%;
+    justify-content: center;
+    display: block;
+    padding-block-end: 1%;
+}
+
+.foto_agenda_eventos {
+    width: 15rem;
+    height: 14rem;
+    border-radius: 6px;
+    box-shadow: 0 0 10px 3px #00000080
+}
+
+.data_evento {
+    font-family: var(--font);
+    font-size: 0.8rem;
+}
+.div_contato_eventos {
+    padding-block: 2%;
+    padding-inline: 20%;
+}
+.contato_evento {
+    padding-block-end: 10px;
+    font-family: var(--font);
+    color: #494949;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.titulo_contato_eventos {
+    font-family: var(--font);
+    color: #000000;
+    font-weight: 600;
+    padding-block-end: 2%;
+}
+
+.div_detalhes_evento {
+    padding-inline: 20%;
+    width: 60%;
+}
+
+.div_cronograma_evento {
+    padding-block-end: 3%;
+    margin-inline-end: 5%;
+}
+.cronograma_evento {
+    padding-block-end: 5px;
+    font-family: var(--font);
+    color: #494949;
+    font-weight: 600;
+}
+.descricao_evento {
+    font-family: var(--font);
+    color: var(--font_collor);
+    text-align: justify;
+}

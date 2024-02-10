@@ -1,0 +1,30 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="titulo_eventos_div">
+        <h1 class="titulo_eventos">{{evento.nome_evento}}</h1>  
+    </div>
+    <div class="div_banner_eventos">
+        <img class="eventos_banner" src="{{evento.banner_evento.url}}" alt="eventos_banner">
+    </div>
+    <div class="div_detalhes_evento">
+        <div class="div_cronograma_evento">
+            <p class="cronograma_evento">{{evento.data_evento}} - <time datetime="{{ hora_evento }}">{{ hora_evento }}</time></p>
+            <p class="cronograma_evento">{{evento.Endereco_evento}}</p>
+        </div>        
+        <p class="descricao_evento">{{evento.descricao_evento}}</p>
+    </div>
+    {% if contato %}
+    <div class="div_contato_eventos">
+        <h2 class="titulo_contato_eventos">Contato</h2>
+        <p class="contato_evento">{{contato.email_contato}}</p>
+        <p class="contato_evento">{{contato.telefone_contato}}</p>    
+    </div>
+    {% else %}
+        <div class="div_contato_eventos">
+            <h2 class="titulo_contato_eventos">Contato</h2>
+            <p class="contato_evento">email@alternativo.com</p>
+            <p class="contato_evento">tel_alternativo</p>        
+        </div>
+    {% endif %}
+{% endblock %}

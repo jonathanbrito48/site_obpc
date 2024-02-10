@@ -1,68 +1,66 @@
 {% load static %}
-<header>
+<header class="menu">
     <nav class="cabecalho">
-        <img class="foto" src="{% static 'assets/logo_obpc2.png' %}" alt="logo_obpc">
-        
-        <div class="dropdown" role="listbox" aria-haspopup="listbox">
-            <div class="dropdown-select" role="button" aria-expanded="false" aria-controls="dropdown-options">
-                Igreja
+        <a class="logo_a" href="{% url 'index' %}"><img class="foto" src="{% static 'assets/logo_obpc2.png' %}" alt="logo_obpc"></a>
+        <div class="menu_options_items">    
+            <div class="cabecalho2">
+                <a href="{% url 'index' %}" class="cabecalho">INÍCIO</a>
             </div>
-            <ul id="dropdown-options" class="dropdown-options" role="list" aria-labelledby="dropdown-select">
-                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao1">História</a></li>
-                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao2">Pastores</a></li>
-            </ul>
-        </div>
+            <div class="dropdown" role="listbox" aria-haspopup="listbox">
+                <div class="dropdown-select" role="button" aria-expanded="false" aria-controls="dropdown-options">
+                    IGREJA
+                </div>
+                <ul id="dropdown-options" class="dropdown-options" role="list" aria-labelledby="dropdown-select">
+                    <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao1">História</a></li>
+                    <li class="dropdown-option" role="option" tabindex="0"><a href="{% url 'pastores' %}">Pastores</a></li>
+                    <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao4">Cultos</a></li>
+                    <li class="dropdown-option" role="option" tabindex="0"><a href="{% url 'eventos' %}">Eventos</a></li>
+                </ul>
+            </div>
 
-        <div class="dropdown" role="listbox" aria-haspopup="listbox">
-            <div class="dropdown-select" role="button" aria-expanded="false" aria-controls="dropdown-options2">
-                Ministérios
+            <div class="dropdown" role="listbox" aria-haspopup="listbox">
+                <div class="dropdown-select" role="button" aria-expanded="false" aria-controls="dropdown-options2">
+                    MINISTÉRIOS
+                </div>
+                <ul id="dropdown-options2" class="dropdown-options" role="list" aria-labelledby="dropdown-select">
+                    {% for ministerio in ministerios %}
+                    <li class="dropdown-option" role="option" tabindex="0">
+                        <a href="{% url 'ministerio' ministerio.nome_ministerio %}">
+                            {{ ministerio.nome_ministerio }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                
             </div>
-            <ul id="dropdown-options2" class="dropdown-options" role="list" aria-labelledby="dropdown-select">
-                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao4">Umasbrac</a></li>
-                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao5">Ufebrac</a></li>
-                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao6">Jubrac</a></li>
-                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao6">Adobrac</a></li>
-                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao6">MeidBrac</a></li>
-                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao6">Casais</a></li>
-            </ul>
-        </div>
 
-        <div class="dropdown" role="listbox" aria-haspopup="listbox">
-            <div class="dropdown-select" role="button" aria-expanded="false" aria-controls="dropdown-options2">
-                Cursos
+            <div class="dropdown" role="listbox" aria-haspopup="listbox">
+                <div class="dropdown-select" role="button" aria-expanded="false" aria-controls="dropdown-options2">
+                    CURSOS
+                </div>
+                <ul id="dropdown-options2" class="dropdown-options" role="list" aria-labelledby="dropdown-select">
+                    <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao4">Teologia (IBBC)</a></li>
+                    <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao5">Casados Para Sempre</a></li>
+                </ul>
             </div>
-            <ul id="dropdown-options2" class="dropdown-options" role="list" aria-labelledby="dropdown-select">
-                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao4">Teologia (IBBC)</a></li>
-                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao5">Casados para sempre</a></li>
-            </ul>
-        </div>
-        
-        <div class="dropdown" role="listbox" aria-haspopup="listbox">
-            <div class="dropdown-select" role="button" aria-expanded="false" aria-controls="dropdown-options2">
-                Congregações
+            
+            <div class="dropdown" role="listbox" aria-haspopup="listbox">
+                <div class="dropdown-select" role="button" aria-expanded="false" aria-controls="dropdown-options2">
+                    CONGREGAÇÕES
+                </div>
+                <ul id="dropdown-options2" class="dropdown-options" role="list" aria-labelledby="dropdown-select">
+                    <li class="dropdown-option" role="option" tabindex="0"><a href="{% url 'congregacoes' %}">OBPC Jd Camargo Velho</a></li>
+                    <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao5">OBPC Jd Camargo Novo</a></li>
+                    <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao6">OBPC Jd Mirian</a></li>
+                </ul>
             </div>
-            <ul id="dropdown-options2" class="dropdown-options" role="list" aria-labelledby="dropdown-select">
-                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao4">OBPC Jd Camargo Velho</a></li>
-                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao5">OBPC Jd Camargo Novo</a></li>
-                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao6">OBPC Jd Mirian</a></li>
-            </ul>
-        </div>
-        <div class="dropdown" role="listbox" aria-haspopup="listbox">
-            <div class="dropdown-select" role="button" aria-expanded="false" aria-controls="dropdown-options2">
-                Agenda
+            <div class="cabecalho2">
+                <a href="" class="cabecalho">CONTRIBUIÇÕES</a>
             </div>
-            <ul id="dropdown-options2" class="dropdown-options" role="list" aria-labelledby="dropdown-select">
-                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao4">Cultos</a></li>
-                <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao5">Eventos</a></li>
-            </ul>
-        </div>
-        <div class="cabecalho2">
-            <a href="" class="cabecalho">Contribuições</a>
-        </div>
-        <div class="cabecalho2">
-            <a href="" class="cabecalho">Contato</a>
-        </div>
-        
+            <div class="cabecalho2">
+                <a href="" class="cabecalho">CONTATO</a>
+            </div>
+        </div>    
     </nav>
     
 </header>
