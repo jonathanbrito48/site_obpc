@@ -629,12 +629,15 @@ body {
 
 @keyframes suavizacao {
     0% {
-      transform: translateX(200px);
-      opacity: 0;
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.1;
     }
     100% {
-      transform: translateX(0);
-      opacity: 1;
+        transform: translateX(0);
+        opacity: 1;
     }
   }
 .div_apresentacao_ministerios {
@@ -671,13 +674,15 @@ body {
     display: flex;
     align-self: center;
     font-family: var(--font);
-    color: var(--footer_collor);
     text-decoration-line: none;
     font-size: 20px;
     gap: 5px;
     font-weight: 700;
 }
-
+.rede_social_ministerio a {
+    text-decoration: none;
+    color: var(--footer_collor);
+}
 .rede_social_ministerio img {
     width: 30px;
 }
