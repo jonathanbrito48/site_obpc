@@ -733,6 +733,11 @@ body {
     padding-block-end: 1%;
 }
 
+.card_evento_eventos a {
+    text-decoration: none;
+    color: var(--font_collor);
+}
+
 .foto_agenda_eventos {
     width: 15rem;
     height: 14rem;
