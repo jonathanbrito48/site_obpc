@@ -20,6 +20,8 @@ class Ministerios(models.Model):
     logo_ministerio=models.ImageField(upload_to='ministerios/logo_ministerio')
     card_ministerio = models.ImageField(upload_to='ministerios/card_index')
     publicado= models.BooleanField(default=True)
+    facebook = models.CharField(max_length = 100,null=True, blank = True)
+    instagram = models.CharField(max_length = 100,null=True, blank = True)
     email_contato = models.EmailField(null=True,blank=True)
     telefone_contato = models.CharField(max_length=50,null=True,blank=True)
 

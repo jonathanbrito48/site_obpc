@@ -30,13 +30,36 @@
                         </section>
                     </div>
                 </div>
+                {% endif %}
             </section>
             <section class="div_apresentacao_ministerios">
                 <p class="apresentacao_ministerios">
                 {{ministerio.descricao_ministerio}} 
                 </p>
+                <div>
+                    {% if ministerio.facebook or ministerio.instagram %}
+                    <section class="rede_social_ministerio">
+                        {% if ministerio.facebook %}
+                        <div>
+                            <a href="https://www.facebook.com/{{ministerio.facebook}}"></a><img src="{% static 'assets/facebook2.svg'%}" alt="facebook">
+                            <a href="https://www.facebook.com/{{ministerio.facebook}}">/{{ministerio.facebook}}</a>
+                        </div>
+                        {% endif %}
+                        {% if ministerio.instagram %}
+                        <div>
+                            <a href="https://www.instagram.com/{{ministerio.instagram}}"></a><img src="{% static 'assets/instagram2.svg'%}" alt="instagram">
+                            <a href="https://www.instagram.com/{{ministerio.instagram}}">/{{ministerio.instagram}}</a>
+                        </div>
+                        {% endif %}
+                    </section>
+                    {% endif %}
+                    <div class="div_contato_ministerio">
+                        <h3 class="titulo_contato_eventos">Contato</h3>
+                        <p class="contato_evento">{{ministerio.email_contato}}</p>
+                        <p class="contato_evento">{{ministerio.telefone_contato}}</p>    
+                    </div>
+                </div>
             </section>
         </div>
-        {% endif %}
     </div>
 {% endblock %}
