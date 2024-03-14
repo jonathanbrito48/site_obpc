@@ -49,9 +49,9 @@
                     CONGREGAÇÕES
                 </div>
                 <ul id="dropdown-options2" class="dropdown-options" role="list" aria-labelledby="dropdown-select">
-                    <li class="dropdown-option" role="option" tabindex="0"><a href="{% url 'congregacoes' %}">OBPC Jd Camargo Velho</a></li>
-                    <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao5">OBPC Jd Camargo Novo</a></li>
-                    <li class="dropdown-option" role="option" tabindex="0"><a href="#opcao6">OBPC Jd Mirian</a></li>
+                    {% for cong in congregacoes %}
+                        <li class="dropdown-option" role="option" tabindex="0"><a href="{% url 'congregacoes' cong.id %}">{{cong.nome_congregacao}}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
             <div class="cabecalho2">

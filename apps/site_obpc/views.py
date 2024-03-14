@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404
-from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios
+from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios,Congregacoes
 
 def index(request):
     carrosel = carrosel_index.objects.order_by('posicao').filter(publicado=True)
@@ -33,5 +33,6 @@ def EventoDetalhe(request, eventos_id):
 
     return render(request, 'site/evento.html', {"evento": evento, "eventos": eventos, "hora_evento": hora_evento, "contato": contato})
 
-def CongregacoesViewSet(request):
-    return render(request,'site/congregacoes.html')
+def CongregacoesViewSet(request,congregacoes_id):
+    congregacao = get_object_or_404(Congregacoes,pk=congregacoes_id)
+    return render(request,'site/congregacoes.html',{"congregacao":congregacao})

@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.db import models
-from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios
-from .forms import MinisterioForms, PastoresForms, EventoForms
+from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios,Congregacoes
+from .forms import MinisterioForms, PastoresForms, EventoForms, CongregacaoForms
 
 
 
@@ -55,3 +55,11 @@ class LiredesAdmin(admin.ModelAdmin):
     list_filter = ('nome_lider','ministerio')
 
 admin.site.register(Lideres_Ministerios,LiredesAdmin)
+
+class CongregacoesAdmin(admin.ModelAdmin):
+    form = CongregacaoForms
+    list_display = ('id','nome_congregacao')
+    list_display_links = ('id','nome_congregacao',)
+    list_per_page = 10
+
+admin.site.register(Congregacoes,CongregacoesAdmin)

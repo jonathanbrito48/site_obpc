@@ -2,41 +2,38 @@
 {% load static %}
 {% block content %}
 <div class="banner_congregacao">
-    <img src="{% static 'assets/umasbrac.jpeg' %}" alt="Banner_congregacao">
-    <h1>Jd. Camargo Velho</h1>
+    <img src="{{congregacao.foto_banner.url}}" alt="Banner_congregacao">
+    <h1>{{congregacao.nome_congregacao}}</h1>
 </div>
 <script src="{% static 'script.js' %}"></script>
 <div class="congregacao_dirigentes">
     <h2>Dirigentes</h2>
     <div class="dirigentes_congregacao">
         <div>
-            <img src="{% static 'assets/pastor.jpg' %}" alt="dirigentes">
+            <img src="{{congregacao.foto_dirigentes.url}}" alt="dirigentes">
         </div>
         <div>
-            <p>Percebemos, cada vez mais, que a execução dos pontos do programa auxilia a preparação e a composição das diversas correntes de pensamento. Por outro lado, o desenvolvimento contínuo de distintas formas de atuação talvez venha a ressaltar a relatividade do fluxo de informações.
-
-                Todas estas questões, devidamente ponderadas, levantam dúvidas sobre se a contínua expansão de nossa atividade aponta para a melhoria do sistema de participação geral.
-                
-                No entanto, não podemos esquecer que o novo modelo estrutural aqui preconizado cumpre um papel essencial na formulação das posturas dos órgãos dirigentes com relação às suas atribuições. Evidentemente, a estrutura atual da organização é uma das consequências do remanejamento dos quadros funcionais.
-                
-                A prática cotidiana prova que o julgamento imparcial das eventualidades garante a contribuição de um grupo importante na determinação das direções preferenciais no sentido do progresso.
-            </p>
+            <p>{{congregacao.descricao_congregacao}}</p>
             <div class="rede_social_congregacao">
+                {% if congregacao.facebook %}
                 <div>
-                    <a href="https://www.facebook.com/obpc.camargovelho/"><img src="{% static 'assets/facebook2.svg' %}" alt=""></a>
-                    <a href="https://www.facebook.com/obpc.camargovelho/">/obpc.camargovelho</a>
+                    <a href="https://www.facebook.com/{{congregacao.facebook}}/"><img src="{% static 'assets/facebook2.svg' %}" alt=""></a>
+                    <a href="https://www.facebook.com/{{congregacao.facebook}}/">/{{congregacao.facebook}}</a>
                 </div>
+                {% endif %}
+                {% if congregacao.instagram %}
                 <div>
-                    <a href="https://www.instagram.com/obpc.camargovelho/"><img src="{% static 'assets/instagram2.svg' %}" alt=""></a>
-                    <a href="https://www.instagram.com/obpc.camargovelho/">/obpc.camargovelho</a>
+                    <a href="https://www.instagram.com/{{congregacao.instagram}}/"><img src="{% static 'assets/instagram2.svg' %}" alt=""></a>
+                    <a href="https://www.instagram.com/{{congregacao.instagram}}/">/{{congregacao.instagram}}</a>
                 </div>
+                {% endif %}
                 <div>
-                    <a href="https://www.instagram.com/obpc.camargovelho/"><img src="{% static 'assets/map.svg' %}" alt=""></a>
-                    <a href="https://www.instagram.com/obpc.camargovelho/">Rua Tiburcio de Souza, Jd. Camargo Velho, Cep: 0000-0000</a>
+                    <a href="{{congregacao.link_maps}}"><img src="{% static 'assets/map.svg' %}" alt=""></a>
+                    <a href="{{congregacao.link_maps}}">{{congregacao.endereco}}</a>
                 </div>
                 <div>
                     <img style="padding-inline-start: 10px;" src="{% static 'assets/cultos.svg' %}" alt="">
-                    <span>Quarta-feira 20:00, Sexta-feira 20:00 e Domingo 18:00</span>
+                    <span>{{congregacao.cultos}}</span>
                 </div>
             </div>
         </div>

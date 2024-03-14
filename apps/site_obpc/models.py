@@ -60,3 +60,17 @@ class Eventos(models.Model):
     
     def __str__(self):
         return self.nome_evento   
+    
+class Congregacoes(models.Model):
+    nome_congregacao = models.CharField(max_length=100, null=False, blank = False)
+    descricao_congregacao = models.CharField(max_length=2000,null=True,blank=True)
+    facebook = models.CharField(max_length = 100,null=True, blank = True)
+    instagram = models.CharField(max_length = 100,null=True, blank = True)
+    endereco = models.CharField(max_length = 300,null=True, blank = True)
+    link_maps = models.CharField(max_length = 700,null=True, blank = True)
+    cultos = models.CharField(max_length = 300,null=True, blank = True)
+    foto_banner = models.ImageField(upload_to='congregacoes/banner')
+    foto_dirigentes = models.ImageField(upload_to='congregacoes/digirentes')
+
+    def __str__(self):
+        return self.nome_congregacao
