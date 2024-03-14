@@ -69,8 +69,8 @@ class Congregacoes(models.Model):
     endereco = models.CharField(max_length = 300,null=True, blank = True)
     link_maps = models.CharField(max_length = 700,null=True, blank = True)
     cultos = models.CharField(max_length = 300,null=True, blank = True)
-    foto_banner = models.ImageField(upload_to='congregacoes/banner')
-    foto_dirigentes = models.ImageField(upload_to='congregacoes/digirentes')
+    foto_banner = models.ImageField(upload_to='congregacoes/banner',help_text="Dimensão: 1415 x 480 px")
+    foto_dirigentes = models.ImageField(upload_to='congregacoes/digirentes',help_text="Dimensão: 400 x 480 px")
 
     def __str__(self):
         return self.nome_congregacao
