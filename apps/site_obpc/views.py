@@ -36,3 +36,6 @@ def EventoDetalhe(request, eventos_id):
 def CongregacoesViewSet(request,congregacoes_id):
     congregacao = get_object_or_404(Congregacoes,pk=congregacoes_id)
     return render(request,'site/congregacoes.html',{"congregacao":congregacao})
+
+def CursoViewSet(request):
+    return render(request,'site/cursos.html')

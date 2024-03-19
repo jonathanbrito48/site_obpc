@@ -1,5 +1,5 @@
 from django.urls import path
-from apps.site_obpc.views import index,pastores,MinisterioViewSet,EventosLista,CongregacoesViewSet,EventoDetalhe
+from apps.site_obpc.views import index,pastores,MinisterioViewSet,EventosLista,CongregacoesViewSet,EventoDetalhe,CursoViewSet
 
 urlpatterns = [
     path('', index,name='index'),
@@ -7,5 +7,6 @@ urlpatterns = [
     path('eventos/',EventosLista,name='eventos'),
     path('eventos/<int:eventos_id>/',EventoDetalhe,name='evento_detalhe'),
     path('ministerios/<str:nome_ministerio>/',MinisterioViewSet,name='ministerio'),
-    path('congregacoes/<int:congregacoes_id>/',CongregacoesViewSet,name='congregacoes')
+    path('congregacoes/<int:congregacoes_id>/',CongregacoesViewSet,name='congregacoes'),
+    path('cursos',CursoViewSet,name='cursos'),
 ]
