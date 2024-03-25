@@ -4,53 +4,59 @@
 <div class="div_info_cursos">
     <div class="div_cursos">
         <h1>
-            Básico em Teologia
+            {{cursos.nome_curso_extenso}}
         </h1>
         <div class="div_cards_cursos">
             <div class="cards_cursos">
                 <img src="{% static 'assets/calendar-days-solid.svg' %}" alt="">
                 <p style="font-weight: 700;">Duração</p>
-                <p>2 Semestres</p>
+                <p>{{cursos.duracao}}</p>
             </div>
             <div class="cards_cursos">
                 <img src="{% static 'assets/clock-solid.svg' %}" alt="">
                 <p style="font-weight: 700;">Periodo</p>
-                <p>Vespertino ou Noturno</p>
+                <p>{{cursos.periodo}}</p>
             </div>
             <div class="cards_cursos">
                 <img src="{% static 'assets/location-dot-solid.svg' %}" alt="">
                 <p style="font-weight: 700;">Local</p>
-                <p>Itaim Paulista</p>
+                <p>{{cursos.local}}</p>
             </div>
             <div class="cards_cursos">
                 <img src="{% static 'assets/person-chalkboard-solid.svg' %}" alt="">
                 <p style="font-weight: 700;">Modalidade</p>
-                <p>Presencial</p>
+                <p>{{cursos.modalidade}}</p>
             </div>
             <div class="cards_cursos">
-                <img src="{% static 'assets/calendar-days-solid.svg' %}" alt="">
-                <p style="font-weight: 700;">Duração</p>
-                <p>2 Semestres</p>
+                <img src="{% static 'assets/hand-holding-dollar-solid.svg' %}" alt="">
+                <p style="font-weight: 700;">Investimento</p>
+                <p>{{cursos.investimento}}</p>
             </div>
         </div>
         <div class="curso_sobre">
-            <p>As pessoas, em sua maioria, só se veem como consumidoras da tecnologia. Sabem utilizar as redes sociais com desenvoltura, compram e vendem pela internet, e têm o smartphone como extensão de suas mãos e mente.
-
-                Mas já pensou em fazer parte da tropa de elite que está por trás de todos esses sistemas que tornam possível o ritmo frenético da vida atual? Faça a faculdade de Ciência da Computação!
-                
-                Durante a graduação, você aprenderá as ferramentas de programação, isto é, as instruções para que as máquinas executem o que for preciso para atender a um problema ou necessidade do cotidiano.
-                
-                Também terá conteúdo sobre redes de computadores, segurança nesses ambientes, inteligência artificial, aplicações multimídia, entre outros temas.
-                
-                Tem que ser muito aplicado, gostar de matemática e de se atualizar em tecnologia, pois só os fortes sobrevivem nesse mercado em que todo dia surgem novidades. Então, "bora" criar um superprograma?
-            </p>
+            <p>{{cursos.descricao}}</p>
+            <h3>Duração do Curso</h3>
+            <hr class="separador">
+            <p>{{cursos.descricao_duracao}}</p>
+            <h3>Investimento</h3>
+            <hr class="separador">
+            <p>{{cursos.descricao_investimento}}</p>
+            <h3>Informações complementares</h3>
+            <hr class="separador">
+            <p>{{cursos.informacoes_complementares}}</p>
+            <h3>Coordenação do Curso</h3>
+            <hr class="separador">
+            <div class="coordenacao_curso_div">
+                <img src="{{cursos.foto_coordenacao.url}}" alt="foto_coordenador">
+                <p>{{cursos.nome_coordenacao}}</p>
+            </div>
         </div> 
     </div>
     <div class="div_banner_cursos">
         <div>
-            <img src="{% static 'assets/culto_familia.jpg' %}" alt="">
+            <img src="{{cursos.foto_banner.url}}" alt="foto_banner_curso">
             <section>
-                <a href="">Inscreva-se</a>
+                <a href="{{cursos.link_inscricao}}">Inscreva-se</a>
             </section>
         </div>
     </div>

@@ -8,5 +8,5 @@ urlpatterns = [
     path('eventos/<int:eventos_id>/',EventoDetalhe,name='evento_detalhe'),
     path('ministerios/<str:nome_ministerio>/',MinisterioViewSet,name='ministerio'),
     path('congregacoes/<int:congregacoes_id>/',CongregacoesViewSet,name='congregacoes'),
-    path('cursos',CursoViewSet,name='cursos'),
+    path('cursos/<int:curso_id>/',CursoViewSet,name='cursos'),
 ]

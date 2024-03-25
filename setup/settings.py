@@ -60,7 +60,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'apps.site_obpc.context_processors.MinisteriosContext',
-                'apps.site_obpc.context_processors.CongregacoesContext'
+                'apps.site_obpc.context_processors.CongregacoesContext',
+                'apps.site_obpc.context_processors.CursosContext',
             ],
         },
     },

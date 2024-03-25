@@ -962,7 +962,7 @@ body {
 .div_info_cursos {
     width: 100%;
     height: auto;
-    padding-block: 5%;
+    padding-block: 2%;
     display: flex;
     gap: 2%;
 }
@@ -975,7 +975,7 @@ body {
 .div_cursos h1 {
     font-family: var(--font);
     color: var(--font_collor);
-    padding-block: 2%;
+    padding-block: 1%;
     font-size: 42px;
 }
 
@@ -987,7 +987,7 @@ body {
 }
 
 .cards_cursos {
-    width: 198px;
+    width: 225px;
     height: 101px;
     color: var(--font_collor);
     background-color: #f3f3f3;
@@ -1018,6 +1018,13 @@ body {
     white-space: pre-line;
 }
 
+.separador {
+    width: 30px;
+    height: 2px;
+    margin-top: -20px;
+    background-color: green;
+}
+
 .curso_sobre p::after {
     content: "\00a0";
     display: block;
@@ -1030,6 +1037,8 @@ body {
     display: block;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    margin-left: 900px;
 }
 
 .div_banner_cursos div {
@@ -1042,7 +1051,7 @@ body {
 .div_banner_cursos img {
     width: 100%;
     height: 260px;
-    border-radius: 5px;
+    border-radius: 5px 5px 0px 0px;
 }
 
 .div_banner_cursos section {
@@ -1051,7 +1060,7 @@ body {
     align-items: center;
     justify-content: center;
     display: flex;
-    border-radius: 5px;
+    border-radius: 0px 0px 5px 5px;
     margin-top:-3px;
 }
 
@@ -1063,4 +1072,16 @@ body {
     font-family: var(--font);
     color: #f3f3f3;
     text-decoration: none;
+}
+
+.coordenacao_curso_div {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    font-weight: 700;
+}
+
+.coordenacao_curso_div img {
+    width: 112px;
+    height: 112px;
 }

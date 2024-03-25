@@ -1,4 +1,4 @@
-from .models import Ministerios,Pastores,Eventos,Lideres_Ministerios,Congregacoes
+from .models import Ministerios,Pastores,Eventos,Lideres_Ministerios,Congregacoes,Cursos
 from django import forms
 
 
@@ -35,6 +35,15 @@ class CongregacaoForms(forms.ModelForm):
             'cultos': forms.Textarea(attrs={'rows':5,'cols':80})
         }
 
-
+class CursosForms(forms.ModelForm):
+    class Meta:
+        model = Cursos
+        fields = '__all__'
+        widgets = {
+            'descricao':forms.Textarea(attrs={'rows':20,'cols':80}),
+            'descricao_duracao':forms.Textarea(attrs={'rows':10,'cols':80}),
+            'descricao_investimento':forms.Textarea(attrs={'rows':10,'cols':80}),
+            'informacoes_complementares':forms.Textarea(attrs={'rows':10,'cols':80})
+        }
 
 

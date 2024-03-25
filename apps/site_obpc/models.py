@@ -74,3 +74,24 @@ class Congregacoes(models.Model):
 
     def __str__(self):
         return self.nome_congregacao
+
+
+class Cursos(models.Model):
+    nome_curso_extenso = models.CharField(max_length=100, null=False, blank = False)
+    nome_curso_abreviado = models.CharField(max_length=100, null=False, blank = False)
+    descricao = models.CharField(max_length=5000,null=True,blank=True)
+    duracao = models.CharField(max_length=100, null=False, blank = False)
+    descricao_duracao = models.CharField(max_length=2000,null=True,blank=True)
+    periodo = models.CharField(max_length=100, null=False, blank = False)
+    local = models.CharField(max_length=100, null=False, blank = False)
+    modalidade = models.CharField(max_length=100, null=False, blank = False)
+    investimento = models.CharField(max_length=100, null=False, blank = False)
+    descricao_investimento =  models.CharField(max_length=2000,null=True,blank=True)
+    informacoes_complementares = models.CharField(max_length=5000,null=True,blank=True)
+    nome_coordenacao = models.CharField(max_length=2000,null=True,blank=True)
+    foto_coordenacao = models.ImageField(upload_to='cursos/coordenador',help_text="Dimensão: 112 x 112 px")
+    foto_banner = models.ImageField(upload_to='cursos/banner',help_text="Dimensão: 330 x 260 px")
+    link_inscricao = models.CharField(max_length=500,null=True,blank=True)
+
+    def __str__(self):
+        return self.nome_curso_abreviado
