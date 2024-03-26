@@ -40,3 +40,6 @@ def CongregacoesViewSet(request,congregacoes_id):
 def CursoViewSet(request,curso_id):
     cursos = get_object_or_404(Cursos,pk=curso_id)
     return render(request,'site/cursos.html',{"cursos":cursos})
+
+def ContribuicaoViewSet(request):
+    return render(request,'site/contribuicoes.html')
