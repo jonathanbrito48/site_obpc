@@ -1095,15 +1095,15 @@ body {
     justify-content:space-between;
     flex-wrap: wrap;
     gap: 10px;
+    justify-content: center;
+    text-align: center;
 }
 
 .secao_contribuicao div {
     margin-block: 2%;
     padding: 5px;
-    background-color: #f3f3f3;
     width: 400px;
     border-radius: 5px;
-    box-shadow: 0 0 3px 1px #00000080;
 }
 
 .secao_contribuicao img {
