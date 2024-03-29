@@ -8,7 +8,7 @@
     </a>
 </div>
 <div class="div_cards_eventos_eventos">
-    {% for card in evento  %}
+    {% for card in eventos_pagina  %}
     <div class="card_evento_eventos">
         <a href="{% url 'evento_detalhe' card.id %}">
             <img src="{{card.foto_card_evento.url}}" class="foto_agenda_eventos" alt="fora-da-caixa">
@@ -22,4 +22,15 @@
     </div>
     {% endfor %}
 </div>
+{% if eventos_pagina.has_previous %}
+    <a href="?page=1">Primeira</a>
+    <a href="?page={{ eventos_pagina.previous_page_number }}">Anterior</a>
+{% endif %}
+
+<span>Página {{ eventos_pagina.number }} de {{ eventos_pagina.paginator.num_pages }}</span>
+
+{% if eventos_pagina.has_next %}
+    <a href="?page={{ eventos_pagina.next_page_number }}">Próxima</a>
+    <a href="?page={{ eventos_pagina.paginator.num_pages }}">Última</a>
+{% endif %}
 {% endblock %}

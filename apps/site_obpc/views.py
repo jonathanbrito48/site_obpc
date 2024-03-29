@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render,get_object_or_404
 from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios,Congregacoes,Cursos
 
@@ -19,7 +20,16 @@ def MinisterioViewSet(request, nome_ministerio):
 def EventosLista(request):
     evento = Eventos.objects.order_by('-data_evento')
     banner = Eventos.objects.order_by('-data_evento')[0]
-    return render(request,'site/eventos.html',{"evento": evento,"banner":banner})
+    paginator = Paginator(evento,10)
+
+    page = request.GET.get('page')
+    try:
+        eventos_pagina = paginator.page(page)
+    except PageNotAnInteger:
+        eventos_pagina = paginator.page(1)
+    except EmptyPage:
+        eventos_pagina = paginator.page(paginator.num_pages)
+    return render(request,'site/eventos.html',{"banner":banner,"eventos_pagina":eventos_pagina})
 
 def EventoDetalhe(request, eventos_id):
     evento = get_object_or_404(Eventos, pk=eventos_id)
