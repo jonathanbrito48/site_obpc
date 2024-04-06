@@ -719,10 +719,9 @@ body {
 .div_cards_eventos_eventos {
     padding-inline: 10%;
     display: flex;
-    gap: 3%;
+    gap: 5%;
     width: 80%;
     height: 100%;
-    justify-content: space-between ;
     flex-wrap: wrap;
 }
 
@@ -1087,26 +1086,31 @@ body {
 }
 
 .secao_contribuicao {
-    padding-inline: 20%;
+    padding-inline: 5%;
     padding-block-start: 3%;
     font-family: var(--font);
     color: var(--font_collor);
     display: flex;
-    justify-content:space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: center;
     text-align: center;
+    align-items: center;
 }
 
 .secao_contribuicao div {
     margin-block: 2%;
     padding: 5px;
-    width: 400px;
     border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 0 3px 1px #00000080;
+    width: auto;
+    height: auto;
+    align-items: start;
+    text-align: start;
 }
 
 .secao_contribuicao img {
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 450px;
 }
