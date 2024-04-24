@@ -484,51 +484,7 @@ body {
     width: 15rem;
 }
 
-.div_pastor {
-    padding-inline: 13rem;
-}
 
-.titulo_pastor {
-    font-family: var(--font);
-    color: var(--font_collor);
-    padding-block: 4%;
-}
-
-.titulo_cargo {
-    font-family: var(--font);
-    color: var(--font_collor);
-    padding-block: 1%;
-    border-bottom: 1px solid rgba(7,13,16,.15);
-}
-
-.alinhamento_div_pastor {
-    align-items: start;
-    justify-content: start;
-    display: flex;
-    gap: 5%;
-    padding-block: 2%;
-    border-bottom: 1px solid rgba(7,13,16,.15);
-}
-.biografia_pastor {
-    font-family: var(--font);
-    color: var(--font_collor);
-    text-align: justify;
-}
-
-.alinhamento_foto_nome {
-    text-align: center;
-}
-
-.div_foto_pastor {
-    width: 20rem;
-    height: 26.5rem;
-}
-
-.nome_pastor {
-    font-family: var(--font);
-    color: var(--font_collor);
-    padding-block: 5%;
-}
 
 .div_ministerios {
     padding-inline: 13rem;
@@ -1113,4 +1069,65 @@ body {
 .secao_contribuicao img {
     width: 450px;
     height: 450px;
+}
+
+.pastor_card {
+    width: 350px;
+    border-radius: 10px;
+    animation: suavizacao 3s ease-in-out forwards;
+}
+
+.div_pastor {
+    padding-inline: 13rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.titulo_pastor {
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding-block: 4%;
+    text-align: center;
+    justify-items: center;
+}
+
+.titulo_cargo {
+    font-family: var(--font);
+    color: var(--font_collor);
+    text-align: center;
+    justify-items: center;
+}
+
+.alinhamento_div_pastor {
+    align-items: start;
+    justify-content: start;
+    display: block;
+    gap: 5%;
+    padding-block: 2%;
+}
+.biografia_pastor {
+    font-family: var(--font);
+    color: var(--font_collor);
+    text-align: justify;
+    padding: 5px;
+}
+
+.alinhamento_foto_nome {
+    text-align: center;
+}
+
+.foto_pastor {
+    width: 330px;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 1px #00000080;
+}
+
+.nome_pastor {
+    font-family: var(--font);
+    color: var(--font_collor);
+    text-align: center;
+    justify-items: center;
 }
