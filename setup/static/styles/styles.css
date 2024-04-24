@@ -1081,6 +1081,7 @@ body {
     flex-wrap: wrap;
     gap: 15px;
     justify-content: center;
+    padding-block-end: 50px;
 }
 
 .titulo_pastor {
@@ -1128,4 +1129,55 @@ body {
     color: var(--font_collor);
     text-align: center;
     justify-items: center;
+}
+
+.cabecalho_qsomos img {
+    width: 100%;
+    height: 250px;
+    padding-block-end: 20px;
+}
+
+.cabecalho_qsomos h1 {
+    position: absolute;
+    margin-top: -11%;
+    margin-left: 5%;
+    font-family: var(--font);
+    text-shadow: 
+        1px 1px 0 rgb(0, 0, 0),
+        -1px -1px 0 rgba(0, 0, 0, 0.756),
+        1px -1px 0 rgba(0, 0, 0, 0.756),
+        -1px 1px 0 rgba(0, 0, 0, 0.756); /* Sombra fraca */
+}
+
+.texto_qsomos p {
+    white-space: pre-line;
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding-inline: 5%;
+    text-align: justify;
+}
+
+.botom_page {
+    padding-inline: 10%;
+    padding-block: 2%;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.botom_page a {
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.botom_page span {
+    color: #000000;
+    padding-inline:3% ;
+}
+
+.botom_page img {
+    width: 15px;
+    height: 15px;
 }

@@ -53,3 +53,6 @@ def CursoViewSet(request,curso_id):
 
 def ContribuicaoViewSet(request):
     return render(request,'site/contribuicoes.html')
+
+def quemsomosViewSet(request):
+    return render(request,'site/quemsomos.html')

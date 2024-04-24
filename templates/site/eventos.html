@@ -22,15 +22,18 @@
     </div>
     {% endfor %}
 </div>
-{% if eventos_pagina.has_previous %}
-    <a href="?page=1">Primeira</a>
-    <a href="?page={{ eventos_pagina.previous_page_number }}">Anterior</a>
-{% endif %}
+<div class="botom_page">
+    {% if eventos_pagina.has_previous %}
+    <a href="?page=1"><img src="{% static 'assets/angles-left-solid.svg' %}" alt=""></a>
+    <a href="?page={{ eventos_pagina.previous_page_number }}"><img src="{% static 'assets/angle-left-solid.svg' %}" alt=""></a>
+    {% endif %}
 
-<span>Página {{ eventos_pagina.number }} de {{ eventos_pagina.paginator.num_pages }}</span>
+    <span>{{ eventos_pagina.number }} de {{ eventos_pagina.paginator.num_pages }}</span>
 
-{% if eventos_pagina.has_next %}
-    <a href="?page={{ eventos_pagina.next_page_number }}">Próxima</a>
-    <a href="?page={{ eventos_pagina.paginator.num_pages }}">Última</a>
-{% endif %}
+    {% if eventos_pagina.has_next %}
+    <a href="?page={{ eventos_pagina.next_page_number }}"><img src="{% static 'assets/angle-right-solid.svg' %}" alt=""></a>
+    <a href="?page={{ eventos_pagina.paginator.num_pages }}"><img src="{% static 'assets/angles-right-solid.svg' %}" alt=""></a>
+    {% endif %}
+</div>
+
 {% endblock %}
