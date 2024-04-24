@@ -87,9 +87,15 @@
         </div>
         {% endfor %}
     </section>
-    <div>
-        <img class="banner" src="{% static 'assets/tema_ano.jpg' %}" alt="banner">
-    </div>
+    {% for banner_devocional in devocional %}
+        <div>
+            <img class="banner_devocional" src="{{banner_devocional.banner_home.url}}" alt="banner">
+            <div class="devocional_div">
+                <h2>{{banner_devocional.titulo_devocional}}</h2>
+                <p>{{banner_devocional.texto_devocional}}</p>
+            </div>
+        </div>
+    {% endfor %}
     <div class="evento_div">
         <div>
             <h1 class="index_titulos">Eventos</h1>

@@ -1,12 +1,13 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render,get_object_or_404
-from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios,Congregacoes,Cursos
+from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios,Congregacoes,Cursos,Devocional
 
 def index(request):
     carrosel = carrosel_index.objects.order_by('posicao').filter(publicado=True)
     evento = Eventos.objects.order_by('-data_evento')[:4]
     ministerios = Ministerios.objects.all().filter(publicado=True)
-    return render(request,'site/index.html',{"carrosel":carrosel,"evento": evento,"ministerios":ministerios})
+    devocional = Devocional.objects.order_by('-data_devocional')[:1]
+    return render(request,'site/index.html',{"carrosel":carrosel,"evento": evento,"ministerios":ministerios,"devocional":devocional})
 
 def pastores(request):
     pastores= Pastores.objects.order_by('posicao').filter(publicado=True)
@@ -56,3 +57,17 @@ def ContribuicaoViewSet(request):
 
 def quemsomosViewSet(request):
     return render(request,'site/quemsomos.html')
+
+def DevocionalViewSet(request):
+    devocionais = Devocional.objects.order_by('-data_devocional')
+
+    paginator = Paginator(devocionais,10)
+
+    page = request.GET.get('page')
+    try:
+        devocionais_pagina = paginator.page(page)
+    except PageNotAnInteger:
+        devocionais_pagina = paginator.page(1)
+    except EmptyPage:
+        devocionais_pagina = paginator.page(paginator.num_pages)
+    return render(request,'site/devocionais.html',{"devocionais":devocionais,"devocionais_pagina":devocionais_pagina})

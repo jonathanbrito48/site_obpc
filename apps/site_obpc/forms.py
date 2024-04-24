@@ -1,4 +1,4 @@
-from .models import Ministerios,Pastores,Eventos,Lideres_Ministerios,Congregacoes,Cursos
+from .models import Ministerios,Pastores,Eventos,Lideres_Ministerios,Congregacoes,Cursos,Devocional
 from django import forms
 
 
@@ -46,4 +46,11 @@ class CursosForms(forms.ModelForm):
             'informacoes_complementares':forms.Textarea(attrs={'rows':10,'cols':80})
         }
 
+class DevocionalForms(forms.ModelForm):
+    class Meta:
+        model = Devocional
+        fields = '__all__'
+        widgets = {
+            'texto_devocional':forms.Textarea(attrs={'rows':20,'cols':80})
+        }
 
