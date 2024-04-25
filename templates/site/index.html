@@ -92,7 +92,8 @@
             <img class="banner_devocional" src="{{banner_devocional.banner_home.url}}" alt="banner">
             <div class="devocional_div">
                 <h2>{{banner_devocional.titulo_devocional}}</h2>
-                <p>{{banner_devocional.texto_devocional}}</p>
+                <p>{{banner_devocional.texto_devocional | truncatewords:170}}</p>
+                <a href="">Ler tudo</a>
             </div>
         </div>
     {% endfor %}

@@ -2,17 +2,18 @@
 {% load static %}
 {% block content %}
 <h1 class="devocionais_titulo">Devocionais</h1>
-<div class="div_cards_eventos_eventos">
+<div class="div_card_devocionais">
     {% for card in devocionais_pagina  %}
-    <div class="card_evento_eventos">
+    <div class="card_devocionais">
         <a href="{% url 'evento_detalhe' card.id %}">
-            <img src="{{card.banner_pagina_devocional.url}}" class="foto_agenda_eventos" alt="fora-da-caixa">
+            <img src="{{card.banner_pagina_devocional.url}}" alt="">
         </a>
-        <div class="card_alinhamento">
-            <p class="data_evento">{{card.data_devocional}}</p>
+        <div class="card_devocionais_info">
             <a href="{% url 'evento_detalhe' card.id %}">
                 <H3>{{card.titulo_devocional}}</H3>
+                <p>{{card.texto_devocional|truncatewords:160}} <a href="">Ler Tudo</a></p>
             </a>
+            <p class="card_devocionais_data">{{card.data_devocional}}</p>
         </div>
     </div>
     {% endfor %}
