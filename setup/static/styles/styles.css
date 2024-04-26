@@ -1253,3 +1253,24 @@ body {
     color: #494949;
     font-weight: 700;
 }
+
+.titulo_devocional {
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding: 5%;
+}
+
+.banner_devocional {
+    padding-inline: 5%;
+    width: 800px;
+    height: auto;
+    font-family: var(--font);
+    color: var(--font_collor);
+    
+}
+
+.banner_devocional img {
+    width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 1px #00000080;
+}

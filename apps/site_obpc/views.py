@@ -71,3 +71,9 @@ def DevocionalViewSet(request):
     except EmptyPage:
         devocionais_pagina = paginator.page(paginator.num_pages)
     return render(request,'site/devocionais.html',{"devocionais":devocionais,"devocionais_pagina":devocionais_pagina})
+
+def DevocionalDetalheViewSet(request, devocional_id):
+    devocional = get_object_or_404(Devocional, pk=devocional_id)
+    devocionais = Devocional.objects.all()
+
+    return render(request, 'site/devocional.html', {"devocional": devocional, "devocionais": devocionais})

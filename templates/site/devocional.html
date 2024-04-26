@@ -1,0 +1,11 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="banner_devocional">
+        <div>
+            <img src="{{devocional.banner_pagina_devocional.url}}" alt="">
+            <h1 class="titulo_devocional">{{devocional.titulo_devocional}}</h1> 
+        </div>
+        <p class="">{{devocional.texto_devocional}}</p>
+    </div>
+{% endblock %}

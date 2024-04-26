@@ -5,11 +5,11 @@
 <div class="div_card_devocionais">
     {% for card in devocionais_pagina  %}
     <div class="card_devocionais">
-        <a href="{% url 'evento_detalhe' card.id %}">
+        <a href="{% url 'devocional_detalhe' card.id %}">
             <img src="{{card.banner_pagina_devocional.url}}" alt="">
         </a>
         <div class="card_devocionais_info">
-            <a href="{% url 'evento_detalhe' card.id %}">
+            <a href="{% url 'devocional_detalhe' card.id %}">
                 <H3>{{card.titulo_devocional}}</H3>
                 <p>{{card.texto_devocional|truncatewords:160}} <a href="">Ler Tudo</a></p>
             </a>
