@@ -1,11 +1,30 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-    <div class="banner_devocional">
-        <div>
-            <img src="{{devocional.banner_pagina_devocional.url}}" alt="">
-            <h1 class="titulo_devocional">{{devocional.titulo_devocional}}</h1> 
+    <div class="devocional_detalhe_disposicao">
+        <div class="banner_devocional_devocional">
+            <div>
+                <img src="{{devocional.banner_pagina_devocional.url}}" alt="">
+                <h1 class="titulo_devocional">{{devocional.titulo_devocional}}</h1> 
+            </div>
+            <p >{{devocional.texto_devocional}}</p>
+            <h5>- {{devocional.autor}}</h5>
         </div>
-        <p class="">{{devocional.texto_devocional}}</p>
-    </div>
+        <div class="div_mais_devocionais">
+            {% for devocional_g in mais_devocionais %}
+            {% if devocional_g.id != devocional.id %} 
+            <div>
+                <img src="{{devocional_g.banner_pagina_devocional.url}}" alt="">
+                <div style="display: block;">
+                        <h3>{{devocional_g.titulo_devocional}}</h3>
+                    <p>{{devocional_g.texto_devocional|truncatewords:30}}</p>
+                    <h5>{{devocional_g.data_devocional}}</h5>
+                    <a href="{% url 'devocional_detalhe' devocional_g.id%}">Ler mais</a>    
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            <a href="{% url 'devocionais'%}">Ver todos os devocionais</a> 
+        </div>
+    </div>    
 {% endblock %}

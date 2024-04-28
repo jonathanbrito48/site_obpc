@@ -75,5 +75,6 @@ def DevocionalViewSet(request):
 def DevocionalDetalheViewSet(request, devocional_id):
     devocional = get_object_or_404(Devocional, pk=devocional_id)
     devocionais = Devocional.objects.all()
+    mais_devocionais = Devocional.objects.order_by('-data_devocional')[:6]
 
-    return render(request, 'site/devocional.html', {"devocional": devocional, "devocionais": devocionais})
+    return render(request, 'site/devocional.html', {"devocional": devocional, "devocionais": devocionais,"mais_devocionais":mais_devocionais})

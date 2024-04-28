@@ -1254,14 +1254,18 @@ body {
     font-weight: 700;
 }
 
+.devocional_detalhe_disposicao {
+    display: flex;
+    gap: 10px;
+}
 .titulo_devocional {
     font-family: var(--font);
     color: var(--font_collor);
-    padding: 5%;
+    padding-block: 3%;
 }
 
-.banner_devocional {
-    padding-inline: 5%;
+.banner_devocional_devocional {
+    padding-inline-start: 5%;
     width: 800px;
     height: auto;
     font-family: var(--font);
@@ -1269,8 +1273,43 @@ body {
     
 }
 
-.banner_devocional img {
+.banner_devocional_devocional img {
     width: 800px;
     border-radius: 10px;
     box-shadow: 0 0 3px 1px #00000080;
 }
+
+.banner_devocional_devocional p {
+    text-align: justify;
+    white-space: pre-line;
+}
+
+.banner_devocional_devocional h5 {
+    padding-block: 10px;
+}
+
+.div_mais_devocionais {
+    width: 600px;
+    height: auto;
+    gap: 5px;
+}
+
+.div_mais_devocionais div {
+    display: flex;
+    gap: 5px;
+    padding-block: 5px;
+}
+
+.div_mais_devocionais img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 1px #00000080;
+}
+
+.div_mais_devocionais h3,p,h5 {
+    font-family: var(--font);
+    color: var(--font_collor);
+    text-align: justify;
+}
+

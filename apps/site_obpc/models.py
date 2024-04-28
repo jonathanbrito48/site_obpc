@@ -102,7 +102,7 @@ class Devocional(models.Model):
     texto_devocional = models.CharField(max_length=10000,null=True,blank=True)
     autor = models.CharField(max_length=100, null=False, blank = False)
     banner_home = models.ImageField(upload_to='devocional/banner',help_text="Dimensão: 1519 x 510 px")
-    banner_pagina_devocional = models.ImageField(upload_to='devocional/banner',help_text="Dimensão: 330 x 260 px")
+    banner_pagina_devocional = models.ImageField(upload_to='devocional/banner',help_text="Dimensão: 800 x 530 px")
     data_devocional = models.DateField(null=True)
 
     def __str__(self):

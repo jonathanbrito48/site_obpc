@@ -11,7 +11,7 @@
         <div class="card_devocionais_info">
             <a href="{% url 'devocional_detalhe' card.id %}">
                 <H3>{{card.titulo_devocional}}</H3>
-                <p>{{card.texto_devocional|truncatewords:160}} <a href="">Ler Tudo</a></p>
+                <p>{{card.texto_devocional|truncatewords:160}} <a href="">Ler Mais</a></p>
             </a>
             <p class="card_devocionais_data">{{card.data_devocional}}</p>
         </div>
