@@ -1,10 +1,12 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render,get_object_or_404
 from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios,Congregacoes,Cursos,Devocional
+from django.utils import timezone
+
 
 def index(request):
     carrosel = carrosel_index.objects.order_by('posicao').filter(publicado=True)
-    evento = Eventos.objects.order_by('-data_evento')[:4]
+    evento = Eventos.objects.filter(data_evento__gte=timezone.now()).order_by('data_evento')[:4]
     ministerios = Ministerios.objects.all().filter(publicado=True)
     devocional = Devocional.objects.order_by('-data_devocional')[:1]
     return render(request,'site/index.html',{"carrosel":carrosel,"evento": evento,"ministerios":ministerios,"devocional":devocional})
@@ -19,7 +21,7 @@ def MinisterioViewSet(request, nome_ministerio):
     return render(request, 'site/ministerio.html', {"ministerio": ministerio,"lideres":lideres})
 
 def EventosLista(request):
-    evento = Eventos.objects.order_by('-data_evento')
+    evento = Eventos.objects.filter(data_evento__gte=timezone.now()).order_by('data_evento')
     banner = Eventos.objects.order_by('-data_evento')[0]
     paginator = Paginator(evento,10)
 
@@ -42,7 +44,9 @@ def EventoDetalhe(request, eventos_id):
     else:
         contato = None
 
-    return render(request, 'site/evento.html', {"evento": evento, "eventos": eventos, "hora_evento": hora_evento, "contato": contato})
+    mais_eventos =  Eventos.objects.filter(data_evento__gte=timezone.now()).order_by('data_evento')[:4]
+
+    return render(request, 'site/evento.html', {"evento": evento, "eventos": eventos, "hora_evento": hora_evento, "contato": contato,"mais_eventos":mais_eventos})
 
 def CongregacoesViewSet(request,congregacoes_id):
     congregacao = get_object_or_404(Congregacoes,pk=congregacoes_id)

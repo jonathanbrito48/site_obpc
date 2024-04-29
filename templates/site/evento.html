@@ -1,30 +1,50 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-    <div class="titulo_eventos_div">
-        <h1 class="titulo_eventos">{{evento.nome_evento}}</h1>  
-    </div>
-    <div class="div_banner_eventos">
-        <img class="eventos_banner" src="{{evento.banner_evento.url}}" alt="eventos_banner">
-    </div>
-    <div class="div_detalhes_evento">
-        <div class="div_cronograma_evento">
-            <p class="cronograma_evento">{{evento.data_evento}} - <time datetime="{{ hora_evento }}">{{ hora_evento }}</time></p>
-            <p class="cronograma_evento">{{evento.Endereco_evento}}</p>
-        </div>        
-        <p class="descricao_evento">{{evento.descricao_evento}}</p>
-    </div>
-    {% if contato %}
-    <div class="div_contato_eventos">
-        <h2 class="titulo_contato_eventos">Contato</h2>
-        <p class="contato_evento">{{contato.email_contato}}</p>
-        <p class="contato_evento">{{contato.telefone_contato}}</p>    
-    </div>
-    {% else %}
-        <div class="div_contato_eventos">
-            <h2 class="titulo_contato_eventos">Contato</h2>
-            <p class="contato_evento">email@alternativo.com</p>
-            <p class="contato_evento">tel_alternativo</p>        
+    <div class="evento_detalhe_disposicao">
+        <div class="div_banner_eventos">            
+            <img class="eventos_banner" src="{{evento.banner_evento.url}}" alt="eventos_banner">
+            <h1 class="titulo_eventos">{{evento.nome_evento}}</h1>
+            <div class="div_detalhes_evento">
+                <div class="div_cronograma_evento">
+                    <p class="cronograma_evento">{{evento.data_evento}} - <time datetime="{{ hora_evento }}">{{ hora_evento }}</time></p>
+                    <p class="cronograma_evento">{{evento.Endereco_evento}}</p>
+                </div>        
+                <p class="descricao_evento">{{evento.descricao_evento}}</p>
+            </div>
+            {% if contato %}
+            <div class="div_contato_eventos">
+                <h2 class="titulo_contato_eventos">Contato</h2>
+                <p class="contato_evento">{{contato.email_contato}}</p>
+                <p class="contato_evento">{{contato.telefone_contato}}</p>    
+            </div>
+            {% else %}
+                <div class="div_contato_eventos">
+                    <h2 class="titulo_contato_eventos">Contato</h2>
+                    <p class="contato_evento">email@alternativo.com</p>
+                    <p class="contato_evento">tel_alternativo</p>        
+                </div>
+            {% endif %}
         </div>
-    {% endif %}
+        <div class="div_mais_eventos">
+            {% for evento_g in mais_eventos %}
+            {% if evento_g.id != evento.id %}
+            <h2>Mais Eventos</h2> 
+            <div>
+                <img src="{{evento_g.banner_evento.url}}" alt="">
+                <div style="display: block;">
+                    <h3>{{evento_g.nome_evento}}</h3>
+                    <p>{{evento_g.descricao_evento|truncatewords:30}}</p>
+                    <h5>{{evento_g.data_evento}}</h5>
+                    <a href="{% url 'evento_detalhe' evento_g.id %}">Ler mais</a>    
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            <a href="{% url 'eventos'%}">Ver mais eventos</a> 
+        </div>
+    </div>    
+
+    
+    
 {% endblock %}

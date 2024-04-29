@@ -1,11 +1,9 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-<div class="div_banner_eventos">
-    <h2 class="titulo_eventos">Eventos</h2>
-    <a href="{% url 'evento_detalhe' banner.id %}">
-        <img class="eventos_banner" src="{{banner.banner_evento.url}}" alt="eventos_banner">
-    </a>
+<div class="cabecalho_qsomos">
+    <img src="{% static 'assets/banner_eventos.jpg' %}" alt="banner">
+    <h1>Eventos</h1>
 </div>
 <div class="div_cards_eventos_eventos">
     {% for card in eventos_pagina  %}

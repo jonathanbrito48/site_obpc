@@ -1,7 +1,10 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-<h1 class="titulo_pastor">Equipe pastoral</h1>
+<div class="cabecalho_qsomos">
+    <img src="{% static 'assets/banner_eventos.jpg' %}" alt="banner">
+    <h1>Nossos Pastores</h1>
+</div>
 <div class="div_pastor">
     {% if cards %}
     {% for pastor in cards %}

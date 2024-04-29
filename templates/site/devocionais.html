@@ -1,7 +1,10 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-<h1 class="devocionais_titulo">Devocionais</h1>
+<div class="cabecalho_qsomos">
+    <img src="{% static 'assets/banner_eventos.jpg' %}" alt="banner">
+    <h1>Devocionais</h1>
+</div>
 <div class="div_card_devocionais">
     {% for card in devocionais_pagina  %}
     <div class="card_devocionais">

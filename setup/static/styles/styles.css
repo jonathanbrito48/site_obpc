@@ -644,7 +644,7 @@ body {
     padding-inline-start: 2%;
 }
 .titulo_eventos_div {
-    padding-inline: 20%;
+    padding-inline: 10%;
 }
 
 
@@ -655,24 +655,25 @@ body {
     
 }
 .div_banner_eventos {
-    max-width: 100%;
-    padding-inline: 10%;
-    padding-block-end: 3%;
+    padding-inline-start: 5%;
+    width: 800px;
     justify-content: center;
     display: block;
+    padding-block-start: 5px;
 }
 
 .eventos_banner {
     width: 100%;
     height: 30rem;
     border-radius: 6px;
+    box-shadow: 0 0 3px 1px #00000080;
 }
 
 .div_cards_eventos_eventos {
-    padding-inline: 10%;
+    padding-inline: 5%;
     display: flex;
-    gap: 5%;
-    width: 80%;
+    gap: 30px;
+    width: 90%;
     height: 100%;
     flex-wrap: wrap;
 }
@@ -691,19 +692,20 @@ body {
 }
 
 .foto_agenda_eventos {
-    width: 15rem;
+    width: 100%;
     height: 14rem;
     border-radius: 6px;
-    box-shadow: 0 0 10px 3px #00000080
+    box-shadow: 0 0 10px 3px #00000080;
 }
 
 .data_evento {
     font-family: var(--font);
-    font-size: 0.8rem;
+    padding-block: 5px;
+    text-align: center;
 }
+
 .div_contato_eventos {
     padding-block: 2%;
-    padding-inline: 20%;
 }
 .contato_evento {
     padding-block-end: 10px;
@@ -721,7 +723,6 @@ body {
 }
 
 .div_detalhes_evento {
-    padding-inline: 20%;
     width: 60%;
 }
 
@@ -736,9 +737,11 @@ body {
     font-weight: 600;
 }
 .descricao_evento {
+    width: 800px;
     font-family: var(--font);
     color: var(--font_collor);
     text-align: justify;
+    white-space: pre-line;
 }
 
 .banner_congregacao {
@@ -1086,6 +1089,7 @@ body {
     padding-block: 4%;
     text-align: center;
     justify-items: center;
+    animation: suavizacao 5s ease-in-out forwards;
 }
 
 .titulo_cargo {
@@ -1302,7 +1306,7 @@ body {
 
 .div_mais_devocionais img {
     width: 250px;
-    height: auto;
+    height: 170px;
     border-radius: 10px;
     box-shadow: 0 0 3px 1px #00000080;
 }
@@ -1311,5 +1315,43 @@ body {
     font-family: var(--font);
     color: var(--font_collor);
     text-align: justify;
+}
+
+
+.evento_detalhe_disposicao {
+    display: flex;
+    gap: 10px;
+}
+
+
+.div_mais_eventos {
+    width: 600px;
+    height: auto;
+    gap: 5px;
+}
+
+.div_mais_eventos div {
+    display: flex;
+    gap: 5px;
+    padding-block: 5px;
+}
+
+.div_mais_eventos img {
+    width: 250px;
+    height: 170px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 1px #00000080;
+}
+
+.div_mais_eventos h3,p,h5 {
+    font-family: var(--font);
+    color: var(--font_collor);
+    text-align: justify;
+}
+
+.div_mais_eventos h2 {
+    padding-block: 5px;
+    font-family: var(--font);
+    color: var(--font_collor);
 }
 
