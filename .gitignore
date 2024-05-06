@@ -1,0 +1,17 @@
+# Arquivos de configuração local
+*.pyc
+*.pyo
+*~
+.env
+
+# Arquivos de mídia (se você estiver usando o Django para servir mídia estática)
+#media/
+
+# Arquivos de banco de dados SQLite
+db.sqlite3
+
+# Diretório de arquivos estáticos coletados pelo collectstatic
+staticfiles/
+
+# Arquivos de log
+logs/
