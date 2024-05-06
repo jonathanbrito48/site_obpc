@@ -16,6 +16,11 @@
 </head>
 
 <body>
+    <form method="post">
+        {% csrf_token %}
+        <!-- Outros campos do formulário -->
+        <button type="submit">Enviar</button>
+    </form>    
     {% include 'partials/_menu.html' with ministerios=ministerios %}
     <div class="conteudo_pagina">
     {% block content %}{% endblock %}
