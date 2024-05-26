@@ -16,9 +16,9 @@ class Pastores(models.Model):
 class Ministerios(models.Model):
     nome_ministerio=models.CharField(max_length=50,null=False,blank=False)
     descricao_ministerio=models.CharField(max_length=2000,null=False,blank=False)
-    foto_ministerio=models.ImageField(upload_to='ministerios/foto_ministerios')
-    logo_ministerio=models.ImageField(upload_to='ministerios/logo_ministerio')
-    card_ministerio = models.ImageField(upload_to='ministerios/card_index')
+    foto_ministerio=models.ImageField(upload_to='ministerios/foto_ministerios',help_text="Dimensão: 496 x 388 px")
+    logo_ministerio=models.ImageField(upload_to='ministerios/logo_ministerio',help_text="Dimensão: 165 x 48 px")
+    card_ministerio = models.ImageField(upload_to='ministerios/card_index',help_text="Dimensão: 320 x 320 px")
     publicado= models.BooleanField(default=True)
     facebook = models.CharField(max_length = 100,null=True, blank = True)
     instagram = models.CharField(max_length = 100,null=True, blank = True)
@@ -32,7 +32,7 @@ class Lideres_Ministerios(models.Model):
     nome_lider = models.CharField(max_length = 100,null = False, blank = False)
     cargo = models.CharField(max_length = 100,null = False, blank = False)
     ministerio = models.ForeignKey(Ministerios,on_delete=models.CASCADE,default='')
-    foto_lider = models.ImageField(upload_to='ministerios/lider_ministerio')
+    foto_lider = models.ImageField(upload_to='ministerios/lider_ministerio',help_text="Dimensão: 176 x 99 px")
     posicao = models.IntegerField(null=True,default=None)
 
     def __str__(self):
@@ -40,7 +40,7 @@ class Lideres_Ministerios(models.Model):
     
 class carrosel_index(models.Model):
     nome_imagem = models.CharField(max_length = 50,null=False,blank=False)
-    imagem = models.ImageField(upload_to='carrosel')
+    imagem = models.ImageField(upload_to='carrosel',help_text="Dimensão: 1216 x 606 px")
     link_pagina = models.CharField(max_length=50,null=True,blank=True)
     publicado= models.BooleanField(default=True)
     posicao= models.IntegerField(unique=True,null=True,default=None)
@@ -54,8 +54,8 @@ class Eventos(models.Model):
     hora_evento = models.TimeField(null=True)
     Endereco_evento = models.CharField(max_length=200,null=True,blank=True)
     descricao_evento = models.CharField(max_length=2000,null=True,blank=True)
-    banner_evento = models.ImageField(upload_to='eventos/banners')
-    foto_card_evento = models.ImageField(upload_to='eventos/card_evento')
+    banner_evento = models.ImageField(upload_to='eventos/banners',help_text="Dimensão: 800 x 480 px")
+    foto_card_evento = models.ImageField(upload_to='eventos/card_evento',help_text="Dimensão: 248 x 224 px")
     ministerio = models.ForeignKey(Ministerios, on_delete=models.SET_NULL, null=True, blank=True)
     
     def __str__(self):
