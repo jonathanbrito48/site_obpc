@@ -13,6 +13,7 @@
         <div class="div_mais_devocionais">
             {% for devocional_g in mais_devocionais %}
             {% if devocional_g.id != devocional.id %} 
+            <h3>Outros Devocionais</h3>
             <div>
                 <img src="{{devocional_g.banner_pagina_devocional.url}}" alt="">
                 <div style="display: block;">
