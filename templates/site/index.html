@@ -1,19 +1,21 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-    <div class="carousel-container">
-        <div class="slick-carousel">
-            {% for banner in carrosel %}
-            <div>
-                <a href="{{banner.link_pagina}}">
-                    <img src="{{banner.imagem.url}}" class="foto_carrosel" alt="{{banner.nome_imagem}}">
-                </a>
+    <section class="section_carrosel">
+        <div class="carousel-container">
+            <div class="slick-carousel">
+                {% for banner in carrosel %}
+                <div>
+                    <a href="{{banner.link_pagina}}">
+                        <img src="{{banner.imagem.url}}" class="foto_carrosel" alt="{{banner.nome_imagem}}">
+                    </a>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
+            <button class="slick-prev" aria-label="Anterior" role="button" tabindex="0"></button>
+            <button class="slick-next" aria-label="Próximo" role="button" tabindex="0"></button>
         </div>
-        <button class="slick-prev" aria-label="Anterior" role="button" tabindex="0"></button>
-        <button class="slick-next" aria-label="Próximo" role="button" tabindex="0"></button>
-    </div>
+    </section>
     <script>
         $(document).ready(function(){
             $('.slick-carousel').slick({
@@ -63,14 +65,6 @@
         <div class="div_img_cultos">
             <img class="img_cultos" src="{% static 'assets/cultos.jpg' %}" alt="CULTOS_IMG">
         </div>
-    </div>
-    <div class="video-container">
-        <video id="my-video" class="video-js" autoplay muted loop playsinline preload="auto" width="1519.2" height="500" data-setup='{}'>
-            <source src="{% static 'assets/Culto da Família _ 04_02.mp4' %}" type="video/mp4">
-            <!-- <source src="seu_video.webm" type="video/webm"> -->
-            <!-- <source src="seu_video.ogv" type="video/ogg"> -->
-            Seu navegador não suporta o elemento de vídeo.
-        </video>
     </div>
     {% if ministerios %}
     <div class="div_ministerios_index_titulo">
