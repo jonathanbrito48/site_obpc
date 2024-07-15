@@ -606,6 +606,20 @@ body {
         opacity: 1;
     }
 }
+
+@keyframes suavizacao_pastor_card{
+    0% {
+        transform: translatey(200px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.1;
+    }
+    100% {
+        transform: translatey(0);
+        opacity: 1;
+    }
+}
 .div_apresentacao_ministerios {
     width: 50%;
     height: auto;
@@ -1085,7 +1099,7 @@ body {
 .pastor_card {
     width: 350px;
     border-radius: 10px;
-    animation: suavizacao 3s ease-in-out forwards;
+    animation: suavizacao_pastor_card 3s ease-in-out forwards;
 }
 
 .div_pastor {
@@ -1099,6 +1113,14 @@ body {
 
 .titulo_pastor {
     font-family: var(--font);
+    color: var(--font_collor);
+    padding-block: 4%;
+    text-align: center;
+    justify-items: center;
+    animation: suavizacao 5s ease-in-out forwards;
+}
+.titulo_ministerio {
+    font-family: "Anta", sans-serif;
     color: var(--font_collor);
     padding-block: 4%;
     text-align: center;
