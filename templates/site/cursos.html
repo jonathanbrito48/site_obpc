@@ -1,0 +1,64 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+<div class="div_info_cursos">
+    <div class="div_cursos">
+        <h1>
+            {{cursos.nome_curso_extenso}}
+        </h1>
+        <div class="div_cards_cursos">
+            <div class="cards_cursos">
+                <img src="{% static 'assets/calendar-days-solid.svg' %}" alt="">
+                <p style="font-weight: 700;">Duração</p>
+                <p>{{cursos.duracao}}</p>
+            </div>
+            <div class="cards_cursos">
+                <img src="{% static 'assets/clock-solid.svg' %}" alt="">
+                <p style="font-weight: 700;">Periodo</p>
+                <p>{{cursos.periodo}}</p>
+            </div>
+            <div class="cards_cursos">
+                <img src="{% static 'assets/location-dot-solid.svg' %}" alt="">
+                <p style="font-weight: 700;">Local</p>
+                <p>{{cursos.local}}</p>
+            </div>
+            <div class="cards_cursos">
+                <img src="{% static 'assets/person-chalkboard-solid.svg' %}" alt="">
+                <p style="font-weight: 700;">Modalidade</p>
+                <p>{{cursos.modalidade}}</p>
+            </div>
+            <div class="cards_cursos">
+                <img src="{% static 'assets/hand-holding-dollar-solid.svg' %}" alt="">
+                <p style="font-weight: 700;">Investimento</p>
+                <p>{{cursos.investimento}}</p>
+            </div>
+        </div>
+        <div class="curso_sobre">
+            <p>{{cursos.descricao}}</p>
+            <h3>Duração do Curso</h3>
+            <hr class="separador">
+            <p>{{cursos.descricao_duracao}}</p>
+            <h3>Investimento</h3>
+            <hr class="separador">
+            <p>{{cursos.descricao_investimento}}</p>
+            <h3>Informações complementares</h3>
+            <hr class="separador">
+            <p>{{cursos.informacoes_complementares}}</p>
+            <h3>Coordenação do Curso</h3>
+            <hr class="separador">
+            <div class="coordenacao_curso_div">
+                <img src="{{cursos.foto_coordenacao.url}}" alt="foto_coordenador">
+                <p>{{cursos.nome_coordenacao}}</p>
+            </div>
+        </div> 
+    </div>
+    <div class="div_banner_cursos">
+        <div>
+            <img src="{{cursos.foto_banner.url}}" alt="foto_banner_curso">
+            <section>
+                <a href="{{cursos.link_inscricao}}">Inscreva-se</a>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}

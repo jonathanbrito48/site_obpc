@@ -1,0 +1,47 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+<div class="banner_congregacao">
+    <img src="{{congregacao.foto_banner.url}}" alt="Banner_congregacao">
+    <h1>{{congregacao.nome_congregacao}}</h1>
+</div>
+<script src="{% static 'script.js' %}"></script>
+<div class="congregacao_dirigentes">
+    <h2>Dirigentes</h2>
+    <div class="dirigentes_congregacao">
+        <div>
+            <img src="{{congregacao.foto_dirigentes.url}}" alt="dirigentes">
+        </div>
+        <div>
+            <p>{{congregacao.descricao_congregacao}}</p>
+            <div class="rede_social_congregacao">
+                {% if congregacao.facebook %}
+                <div>
+                    <a href="https://www.facebook.com/{{congregacao.facebook}}/"><img src="{% static 'assets/facebook2.svg' %}" alt=""></a>
+                    <a href="https://www.facebook.com/{{congregacao.facebook}}/">/{{congregacao.facebook}}</a>
+                </div>
+                {% endif %}
+                {% if congregacao.instagram %}
+                <div>
+                    <a href="https://www.instagram.com/{{congregacao.instagram}}/"><img src="{% static 'assets/instagram2.svg' %}" alt=""></a>
+                    <a href="https://www.instagram.com/{{congregacao.instagram}}/">/{{congregacao.instagram}}</a>
+                </div>
+                {% endif %}
+                <div>
+                    <a href="{{congregacao.link_maps}}"><img src="{% static 'assets/map.svg' %}" alt=""></a>
+                    <a href="{{congregacao.link_maps}}">{{congregacao.endereco}}</a>
+                </div>
+                <div>
+                    <img style="padding-inline-start: 10px;" src="{% static 'assets/cultos.svg' %}" alt="">
+                    <span>{{congregacao.cultos}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div>
+             
+        </div>
+    </div>
+</div>
+{% endblock %}

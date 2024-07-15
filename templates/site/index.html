@@ -1,0 +1,124 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+    <section class="section_carrosel">
+        <div class="carousel-container">
+            <div class="slick-carousel">
+                {% for banner in carrosel %}
+                <div>
+                    <a href="{{banner.link_pagina}}">
+                        <img src="{{banner.imagem.url}}" class="foto_carrosel" alt="{{banner.nome_imagem}}">
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            <button class="slick-prev" aria-label="Anterior" role="button" tabindex="0"></button>
+            <button class="slick-next" aria-label="Próximo" role="button" tabindex="0"></button>
+        </div>
+    </section>
+    <script>
+        $(document).ready(function(){
+            $('.slick-carousel').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,         // Ativa o modo de reprodução automática
+                autoplaySpeed: 5000,    // Define o intervalo de tempo em milissegundos entre os slides
+                responsive: [
+                    {
+                        breakpoint: 768, // Define o breakpoint desejado
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: true,
+                            adaptiveHeight: true, // Isso ajustará automaticamente a altura conforme a largura
+                        }
+                    }
+                    // Adicione mais blocos responsive conforme necessário para outros breakpoints
+                ]
+            });
+        });
+    </script>
+    <div class="div_cultos">
+        <div class="div_programacao">
+            <span><h2 class="line_programacao"><strong>Programação Semanal</strong></h2></span>
+            <span class="programacao_subtitulo"><strong>Domingo</strong></span>
+            <span>08h - Consagração</span>
+            <span>09h - (1º e 3º domingo do mês) Café com Umasbrac</span>
+            <span>10h - Encontro com Jubrac/Adobrac</span>
+            <span>18h - Culto da Família</span>
+            <span class="programacao_subtitulo"><strong>Terça-Feira</strong></span>
+            <span>20h - Culto de Ensino</span>
+            <span class="programacao_subtitulo"><strong>Quinta-feira</strong></span>
+            <span>20h - Culto da Vitória</span>
+            <span class="programacao_subtitulo"><strong>Sábado</strong></span>
+            <span>09h - Encontro com Ufebrac</span>
+            <span class="programacao_subtitulo"><strong>Manhãs de benção</strong></span>
+            <span>De Segunda a Sexta, das 09h às 10h,</span>
+            <span>Quarta das 09h30 às 11h</span>
+            
+            
+        </div>
+        <div class="div_img_cultos">
+            <img class="img_cultos" src="{% static 'assets/cultos.jpg' %}" alt="CULTOS_IMG">
+        </div>
+    </div>
+    {% if ministerios %}
+    <div class="div_ministerios_index_titulo">
+        <h1 class="index_titulos">Ministérios</h1>
+    </div>
+    {% endif %}
+    <section class="secao_ministerios">
+        {% for ministerio in ministerios %}
+        <div class="div_ministerios_index">
+            <div class="card_ministerio_index">
+                <img class="card_ministerio_index_imagem" src="{{ministerio.card_ministerio.url}}" alt="card_ministerio_index">
+                <a class="card_ministerio_index_ancora" href="{% url 'ministerio' ministerio.nome_ministerio %}"><h3 class="card_ministerio_index_titulo">{{ministerio.nome_ministerio}}</h3></a>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+    {% for banner_devocional in devocional %}
+        <div>
+            <img class="banner_devocional" src="{{banner_devocional.banner_home.url}}" alt="banner">
+            <div class="devocional_div">
+                <h2>{{banner_devocional.titulo_devocional}}</h2>
+                <p>{{banner_devocional.texto_devocional | truncatewords:170}}</p>
+                <a href="{% url 'devocional_detalhe' banner_devocional.id %}"><strong>Ler Mais</strong></a>
+            </div>
+        </div>
+    {% endfor %}
+    <div class="evento_div">
+        <div>
+            <h1 class="index_titulos">Eventos</h1>
+        </div>
+        <div class="subtitulo_evento">
+            <h3>Acompanhe nossa agenda</h3>
+        </div>
+        <div class="div_cards_eventos">
+            {% for card in evento  %}
+            <div class="card_evento_eventos">
+                <a href="{% url 'evento_detalhe' card.id %}">
+                    <img src="{{card.foto_card_evento.url}}" class="foto_agenda_eventos" alt="fora-da-caixa">
+                </a>
+                <div class="card_alinhamento">
+                    <p class="data_evento">{{card.data_evento}}</p>
+                    <H3>{{card.nome_evento}}</H3>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="div_botao_ver_mais_eventos">
+            <a class="botao_ver_mais_eventos" href="{% url 'eventos' %}">
+                <strong>Ver mais</strong>
+            </a>
+        </div>
+    </div>
+    <div class="instagram">
+        <script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
+        <div class="commonninja_component pid-08209d49-62a9-4497-8f7d-cc048d7c7b62"></div>
+    </div>
+{% endblock %}

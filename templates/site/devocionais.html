@@ -1,0 +1,37 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+<div class="cabecalho_qsomos">
+    <img src="{% static 'assets/banner_eventos.jpg' %}" alt="banner">
+    <h1>Devocionais</h1>
+</div>
+<div class="div_card_devocionais">
+    {% for card in devocionais_pagina  %}
+    <div class="card_devocionais">
+        <a href="{% url 'devocional_detalhe' card.id %}">
+            <img src="{{card.banner_pagina_devocional.url}}" alt="">
+        </a>
+        <div class="card_devocionais_info">
+            <a href="{% url 'devocional_detalhe' card.id %}">
+                <H3>{{card.titulo_devocional}}</H3>
+                <p>{{card.texto_devocional|truncatewords:160}} <a href="">Ler Mais</a></p>
+            </a>
+            <p class="card_devocionais_data">{{card.data_devocional}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="botom_page">
+    {% if devocionais_pagina.has_previous %}
+    <a href="?page=1"><img src="{% static 'assets/angles-left-solid.svg' %}" alt=""></a>
+    <a href="?page={{ eventos_pagina.previous_page_number }}"><img src="{% static 'assets/angle-left-solid.svg' %}" alt=""></a>
+    {% endif %}
+
+    <span>{{ devocionais_pagina.number }} de {{ devocionais_pagina.paginator.num_pages }}</span>
+
+    {% if devocionais_pagina.has_next %}
+    <a href="?page={{ eventos_pagina.next_page_number }}"><img src="{% static 'assets/angle-right-solid.svg' %}" alt=""></a>
+    <a href="?page={{ eventos_pagina.paginator.num_pages }}"><img src="{% static 'assets/angles-right-solid.svg' %}" alt=""></a>
+    {% endif %}
+</div>
+{% endblock %}

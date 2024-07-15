@@ -1,0 +1,26 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+<div class="cabecalho_qsomos">
+    <img src="{% static 'assets/banner_eventos.jpg' %}" alt="banner">
+    <h1>Nossos Pastores</h1>
+</div>
+<div class="div_pastor">
+    {% if cards %}
+    {% for pastor in cards %}
+    <div class="pastor_card">
+        <div class="alinhamento_div_pastor">
+            <div class="alinhamento_foto_nome">
+                <img class="foto_pastor" src="{{pastor.foto.url}}" alt="foto_pastor">
+            </div>
+            <h4 class="nome_pastor">{{pastor.nome_pastor}}</h4>
+            <h4 class="titulo_cargo">{{pastor.cargo}}</h4>
+            <p class="biografia_pastor">
+                {{pastor.biografia}}
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

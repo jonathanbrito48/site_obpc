@@ -1,0 +1,65 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="div_ministerios">
+        <div class="alinhamento_div_titulo">
+            <h1 class="titulo_ministerio">{{ministerio.nome_ministerio}}</h1>
+            <img class="logo_ministerio" src="{{ ministerio.logo_ministerio.url }}" alt="">
+        </div>
+        <div class="disposicao_ministerios">
+            <section class="alinhamento_ministerio_esquerda">
+                <div class="alinhamento_div_ministerios">
+                    <img class="foto_ministerio" src="{{ ministerio.foto_ministerio.url }}" alt="foto_mimisterio">
+                </div>
+                {% if lideres %}
+                <div class="alinhamento_ministerio_infos">
+                    <div class="div_lideranca_info">
+                        <h3 class="titulo_lideranca">Liderança</h3>
+                        <section class="section_lideranca_ministerio">
+                            {% for lider in lideres %}
+                            {% if lider.ministerio_id == ministerio.id %}
+                            <div class="card_lideranca_ministerio">
+                                <img class="foto_lider_ministerio" src="{{ lider.foto_lider.url }}" alt="foto_lide_ministerio">
+                                <div class="div_lideranca_ministerio_info">
+                                    <h4 class="nome_lider_ministerio">{{ lider.nome_lider }}</h4>
+                                    <h4 class="cargo_lider_ministerio">Cargo: {{ lider.cargo }}</h4>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                        </section>
+                    </div>
+                </div>
+                {% endif %}
+            </section>
+            <section class="div_apresentacao_ministerios">
+                <p class="apresentacao_ministerios">
+                {{ministerio.descricao_ministerio}} 
+                </p>
+                <div>
+                    {% if ministerio.facebook or ministerio.instagram %}
+                    <section class="rede_social_ministerio">
+                        {% if ministerio.facebook %}
+                        <div>
+                            <a href="https://www.facebook.com/{{ministerio.facebook}}"><img src="{% static 'assets/facebook2.svg'%}" alt="facebook"></a>
+                            <a href="https://www.facebook.com/{{ministerio.facebook}}">/{{ministerio.facebook}}</a>
+                        </div>
+                        {% endif %}
+                        {% if ministerio.instagram %}
+                        <div>
+                            <a href="https://www.instagram.com/{{ministerio.instagram}}"><img src="{% static 'assets/instagram2.svg'%}" alt="instagram"></a>
+                            <a href="https://www.instagram.com/{{ministerio.instagram}}">/{{ministerio.instagram}}</a>
+                        </div>
+                        {% endif %}
+                    </section>
+                    {% endif %}
+                    <div class="div_contato_ministerio">
+                        <h3 class="titulo_contato_eventos">Contato</h3>
+                        <p class="contato_evento">{{ministerio.email_contato}}</p>
+                        <p class="contato_evento">{{ministerio.telefone_contato}}</p>    
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock %}
