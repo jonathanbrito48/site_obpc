@@ -1,5 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
 
 * {
     margin: 0;
@@ -8,43 +11,81 @@
 }
 
 :root {
-    --cor_1: #FAE7F3;
-    --cor_2: #4942E4;
-    --cor_3: #E6B9DE;
+    --cabecalho_back_collor: #ffffff;
+    --body_collor: #ffffff;
+    --font: 'Mulish', sans-serif;
     --cor_hover: #4942E4;
-    --cor_cabecalho:  #637A9F;
-    --font: 'Montserrat', sans-serif;
+    --font_collor:  #000000;
+    --footer_collor: #637A9F;
+    --titulos: 'Mulish', sans-serif;
+    
 }
 
 body {
-    background-color: var(--cor_1);
-    color: var(--cor_2);
+    background: radial-gradient(circle,#f3f3f3,#c3d9ef);
+    color: var(--body_collor);
     width: 100%;
     margin: 0%;
 }
 
+.menu {
+    background: radial-gradient(circle,#f3f3f3,#c3d9ef);
+    color: var(--cabecalho_back_collor); /* Cor do texto no menu */
+    padding: 10px; /* Espaçamento interno no menu */
+    position: fixed; /* Define o menu como fixo */
+    top: 0; /* Fixa o menu no topo da página */
+    width: 100%; /* Ocupa toda a largura da página */
+    align-items: center;
+    z-index: 1000; /* Garante que o menu esteja acima de outros elementos */
+}
+
+.conteudo_pagina {
+    margin-top:4.3rem;
+    justify-content: center;
+}
 .cabecalho {
-    padding: 0% 0% 0% 2%;
-    background-color: var(--cor_cabecalho);
+    padding: 1%;
+    padding-block: 0%;
     display:inline-flex;
-    font-family: 'Montserrat', sans-serif;
-    gap: 2%;
+    font-family: var(--font);
     text-decoration: none;
-    width: auto;
-    height: 50%;
-    align-items:flex-end;
-    color: var(--cor_1);
+    gap: 15%;
+    width: 100%;
+    align-items:center;
+    color: var(--font_collor);
+    justify-content: center;
+    animation: fadeIn 1.5s ease-in-out;
+    font-size: 15px;
+}
+
+.menu_options_items {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 1rem;
+    gap: 2%;
+    justify-content: start;
+}
+
+/* Defina a animação fadeIn */
+@keyframes fadeIn {
+    from { opacity: 0; } /* Começa com opacidade 0 (invisível) */
+    to { opacity: 1; }   /* Termina com opacidade 1 (totalmente visível) */
 }
 
 .cabecalho2 {
     display: inline-flex;
-    align-items:flex-start;
+    align-items:center;
     gap: 19%;
-    padding: 0% 0% 1.1% 0%;
+    padding: 0%;
+}
+.logo_a {
+    display: grid;
+    width: 15rem;    
 }
 
 .foto {
-width: 12%;
+    width: 100%;
 }
 
 .icon {
@@ -60,75 +101,89 @@ width: 12%;
 }
 
 .dropdown-select {
-    padding: 1rem;
-    font-family: 'Montserrat', sans-serif;
+    padding: 0%;
+    font-family: var(--font);
     font-weight: 300;
+    align-items: end;
     font-size: 100%;
     border: none;
-    color: var(--cor_1);
-    background-color: var(--cor_cabecalho);
+    color: var(--font_collor);
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
     width: auto;
-    font-size: 100%;
 }
 
 .dropdown-options {
     position:absolute;
-    top: 90%;
+    top: 100%;
     left: 0;
     z-index: 1;
     list-style: none;
     padding: auto;
     margin: 0;
-    border: 1px solid #637A9F;
+    border: 1px solid var(--font_collor);
     border-radius: 5px;
-    box-shadow: 0 2px 2px var(--cor_hover);
-    background-color: var(--cor_cabecalho);
+    box-shadow: 0 2px 2px var(--font_collor);
+    background-color: var(--cabecalho_back_collor);
     transition: opacity 0.3s ease-in-out;
     opacity: 0;
     pointer-events: none;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font);
     font-weight: 300;
     white-space: nowrap;
+    font-size: 17px;
 }
 
 .dropdown:hover .dropdown-options {
     opacity: 1;
     pointer-events: auto;
-    padding: 0%;    
+    padding: 0%  
 }
 
 .dropdown-option {
-    padding: 10px;
+    padding: 0%;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
 }
 
 .dropdown-option a {
     text-decoration: none;
-    color: var(--cor_1);
+    color: var(--font_collor);
     display: block;
     font-size: 80%;
+    padding: 10px;
 }
 
 .dropdown-option a:hover, .dropdown-select.hovered {
-    color: #000000;
+    color: var(--body_collor);
+    background-color: var(--footer_collor);
 }
 
 /* CARROSEL */
 
-.carousel-container {
-    max-width: 100%;
-    margin: 0 auto;
-    margin-top: -0.3%;
+.section_carrosel {
+    display: flex;
+    justify-content: center;
 }
 
+.carousel-container {
+    max-width: 1351px;
+    height: 670px; 
+    align-self: center;
+    justify-content: center;
+}
 
+.slick-carousel {
+    box-shadow: 0 0 10px 3px #00000080;
+    border-radius: 0px 0px 10px 10px;
+    width: 1351px;
+
+}
 
 .slick-carousel img {
-    width: 100%;
-    height: 37.9rem;
+    width: 1351px;
+    height: 670px;
+    border-radius: 0px 0px 10px 10px;
 }
 
 
@@ -170,107 +225,1179 @@ width: 12%;
     margin: 0 5px; 
 }
 
+.slick-dots li button:before {
+    font-family: 'slick';
+    font-size: 15px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: '•';
+    text-align: center;
+    opacity: 90%;
+    color: #637A9F;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* CULTOS */
+
+
+
+.div_cultos {
+    display: flex;
+    justify-content: center;
+    margin: 3%;
+    align-items: center;
+}
+
+.div_programacao {
+    width: 30rem;
+    height: 35rem;
+    font-family: var(--titulos);
+    color: var(--font_collor);
+    align-items:end;
+    background-color: #ffffff;
+    border-radius: 6px 0 0 6px;
+}
+
+.div_programacao span {
+    display: block;
+    margin: 1% 0% 0% 3%;
+}
+
+.programacao_subtitulo {
+    padding-block: 2% ;
+}
+.div_img_cultos {
+    padding: 0%;
+}
+
+.img_cultos {
+    width: 30rem;
+    height: 35rem;
+    border-radius: 0 6px 6px 0;
+}
+
+.video-container {
+    padding-block-end: 3%;
+}
+
+.secao_ministerios {
+    padding-block-end: 3%;
+    display: flex;
+    padding-inline: 10%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.div_ministerios_index_titulo {
+    padding-block-end: 2%;
+}
+.div_ministerios_index {
+    width: 20rem;
+    height: 20rem;
+    padding-inline: 1px;
+    font-family: var(--font);
+    color: var(--font_collor);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding-block:1px;
+}
+
+.card_ministerio_index_titulo {
+    background-color: #00000075;
+    width: 320px;
+    height: 320px;
+    color: #ffffff;
+    font-family: "Anta", sans-serif;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+  
+.card_ministerio_index_ancora {
+    position:relative;
+    top: 50%;
+    right: 50%;
+    width: 320px;
+    height: 320px;
+    padding-inline: 0px;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    border-radius: 10px;
+
+}
+
+.card_ministerio_index_titulo:hover {
+    background-color: rgba(112, 162, 212, 0);
+    color: #ffffff00;
+    transition-duration: 1000ms;
+}
+
+.card_ministerio_index {
+    width: 20rem;
+    height: 20rem;
+    display: flex;
+}
+
+.card_ministerio_index_imagem {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* BANNER */
+
+
+
+
 /* EVENTOS */
 
 .evento_div {
     max-width: 100%;
-    margin: 0% 0% 0% 0%;
+    
 }
 
-.eveto_titulo {
+.index_titulos {
     text-align: center;
     font-family: var(--font); 
     font-size: 1.5rem;
-    color: #2f2f2f;
-    text-decoration:underline wavy;
+    color: var(--font_collor);
+    text-decoration:underline;
+    margin: 0%;
+    padding: 0%;
 }
 
 .subtitulo_evento {
+    margin: 0%;
     font-family: var(--font);
     text-align: center;
     padding: 1%;
     font-size: 90%;
-    color: rgb(139, 139, 139);
+    color: var(--font_collor);
 }
 
 .div_cards_eventos {
-    margin: 4% 0% 0% 5%;
-    display:inline-flex;
+    display:flex;
     gap: 2%;
-    padding-left: 12%;
+    width: 100%;
+    justify-content: center;
 }
 
 .foto_agenda {
-    width: 40rem;
-    height: 164px;
+    width: 15rem;
+    height: 14rem;
+    border-radius: 6px;
+    box-shadow: 0 0 10px 3px #00000080
 }
 
 .card_alinhamento {
     text-align: center;
     margin: 5%;
     row-gap: 10%;
-    font-family: 'Montserrat', sans-serif ;
+    font-family: var(--font);
     font-weight: 400;
     color: #2f2f2f;
 }
+
+.div_botao_ver_mais_eventos{
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+}
+.botao_ver_mais_eventos {
+    font-family: var(--font);
+    color: var(--body_collor);
+    background-color: var(--footer_collor);
+    padding: 8px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.botao_ver_mais_eventos:hover {
+    background-color: #9cadca;
+}
+
+.instagram {
+    padding-inline: 10%;
+}
+
 /* RODAPÉ */
 .footer {
-    background-color: var(--cor_cabecalho);
-    padding: 0% 0% 0% 5% ;
-    color: var(--cor_1);
+    background: radial-gradient(circle,#f3f3f3,#c3d9ef);
+    padding: 0% ;
+    color:var(--font_collor);
+    display: flex;
+    justify-content: center;
 }
 
 .rodape_items {
     align-items:center;
-    display:inline-flex;
-    gap: 1%;
-    padding: 5% 5% 5% 0%;
+    display:flex;
+    gap: 3%;
+    padding: 3%;
     font-size: 90%;
-    
+    justify-content: center;  
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .cultos {
-    font-family: 'Montserrat', sans-serif;
-    width: 11rem;
+    font-family: var(--font);
+    width: 10rem;
     
 }
 
 .dias_culto {
     text-decoration:underline;
+    font-family: var(--font) ;
+    width: 8.9rem;
+    margin-inline-end: 0%;
+    white-space: pre-line;
 }
 
 .logo_rodape {
-    width: 16%;
+    width: 15rem;
 }
 
 .igreja {
-    font-family: 'Montserrat', sans-serif;
-    width: 15.5rem;
+    font-family: var(--font);
+    width: 14.2rem;
     text-align: center;
+    margin-inline: 0%;
+    white-space: pre-line;
 }
 
 .contato{
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font);
     width: 15.5rem;
+    margin-inline-end: 1%;
 }
 
 .div_icons {
-    position:absolute;
-    padding: 0% 0% 1% 65%;
-    margin: 0%;
-    display:grid;
+    display: grid;
     gap: 3%;
 }
 
 .icone {
-    width: 6.5%;
-    padding: 0%;
+    width: 1.5rem;
+    margin-inline-end: 0%;
 }
 
 .contribuicao {
-    font-family: 'Montserrat', sans-serif;
-    width: 15.5rem;
+    font-family: var(--font);
+    width: 15rem;
+}
+
+
+
+.div_ministerios {
+    padding-inline: 13rem;
+
+}
+
+.alinhamento_div_titulo {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding-block-end: 3%;
+}
+
+.logo_ministerio {
+    width: 15%;
+}
+
+.foto_ministerio {
+    width: 90%;
+    height: 90%;
+    padding-block-end: 3%;
+    object-fit: cover;
+}
+.disposicao_ministerios {
+    display: flex;
+}
+@keyframes rotateCube {
+    0% {
+      transform: rotateY(-90deg);
+    }
+    100% {
+      transform: rotateY(0deg);
+    }
+  }
+.alinhamento_ministerio_esquerda {
+    width: 50%;
+    height: auto;
+    transform-origin: left center; 
+    transform-style: preserve-3d;
+    animation: rotateCube 1.5s ease-in-out forwards;
+}
+
+.alinhamento_div_ministerios {
+    align-items: start;
+    justify-content: start;
+    display: flex;
+}
+.alinhamento_ministerio_infos {
+    display: flex;
+}
+
+.div_lideranca_info {
+    width: 100%;
+}
+.section_lideranca_ministerio {
+    padding-block-end: 2%;
+    display: block;
+    justify-content: space-between;
+    width: 50%;
+
+}
+
+.card_lideranca_ministerio {
+    display: flex;
+    background-color: #ffffff;
+    width: 500px;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 1px #00000080;
+    margin-block-end: 5%;
+}
+
+.foto_lider_ministerio {
+    width: 11rem;
+    border-radius: 10px;
+}
+
+.nome_lider_ministerio {
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding-inline: 5%;
+}
+
+.cargo_lider_ministerio {
+    font-family: var(--font);
+    color: #555555;
+    padding-inline: 5%;
+}
+.div_lideranca_ministerio_info {
+    width: 300px;
+}
+
+.titulo_lideranca {
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding-block: 4%;
+    width: 50%;
+}
+
+@keyframes suavizacao {
+    0% {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.1;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes suavizacao_pastor_card{
+    0% {
+        transform: translatey(200px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.1;
+    }
+    100% {
+        transform: translatey(0);
+        opacity: 1;
+    }
+}
+.div_apresentacao_ministerios {
+    width: 50%;
+    height: auto;
+    padding-block-end: 3%;
+    align-items:center;
+    align-self:auto;
+    transform-origin: right center; /* Define o ponto de origem da transformação no lado esquerdo */
+    transform-style: preserve-3d;
+    animation: suavizacao 1.5s ease-in-out forwards;
+}
+
+.apresentacao_ministerios {
+    font-family: var(--font);
+    color: var(--font_collor);
+    text-align: justify;
+    white-space: pre-line;
+    padding-block-end: 5%;
+}
+
+.apresentacao_ministerios p::after {
+    content: "\00a0";
+    display: block;
+}
+
+.rede_social_ministerio {
+    display: block;
+    padding-block: 5%;
+}
+
+.rede_social_ministerio div {
+    padding-block-end: 2%;
+    display: flex;
+    align-self: center;
+    font-family: var(--font);
+    text-decoration-line: none;
+    font-size: 20px;
+    gap: 5px;
+    font-weight: 700;
+}
+.rede_social_ministerio a {
+    text-decoration: none;
+    color: var(--footer_collor);
+}
+.rede_social_ministerio img {
+    width: 30px;
+}
+
+.div_contato_ministerio {
+    padding-inline-start: 2%;
+}
+.titulo_eventos_div {
+    padding-inline: 10%;
+}
+
+
+.titulo_eventos {
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding-block: 4%;
+    
+}
+.div_banner_eventos {
+    padding-inline-start: 5%;
+    width: 800px;
+    justify-content: center;
+    display: block;
+    padding-block-start: 5px;
+}
+
+.eventos_banner {
+    width: 100%;
+    height: 30rem;
+    border-radius: 6px;
+    box-shadow: 0 0 3px 1px #00000080;
+}
+
+.div_cards_eventos_eventos {
+    padding-inline: 25rem;
+    display: flex;
+    gap: 30px;
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card_evento_eventos {
+    width: 247px;
+    height: 100%;
+    justify-content: center;
+    display: block;
+    padding-block-end: 1%;
+}
+
+.card_evento_eventos a {
+    text-decoration: none;
+    color: var(--font_collor);
+}
+
+.foto_agenda_eventos {
+    width: 100%;
+    height: 14rem;
+    border-radius: 6px;
+    box-shadow: 0 0 10px 3px #00000080;
+}
+
+.data_evento {
+    font-family: var(--font);
+    padding-block: 5px;
+    text-align: center;
+}
+
+.div_contato_eventos {
+    padding-block: 2%;
+}
+.contato_evento {
+    padding-block-end: 10px;
+    font-family: var(--font);
+    color: #494949;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.titulo_contato_eventos {
+    font-family: var(--font);
+    color: #000000;
+    font-weight: 600;
+    padding-block-end: 2%;
+}
+
+.div_detalhes_evento {
+    width: 60%;
+}
+
+.div_cronograma_evento {
+    padding-block-end: 3%;
+    margin-inline-end: 5%;
+}
+.cronograma_evento {
+    padding-block-end: 5px;
+    font-family: var(--font);
+    color: #494949;
+    font-weight: 600;
+}
+.descricao_evento {
+    width: 800px;
+    font-family: var(--font);
+    color: var(--font_collor);
+    text-align: justify;
+    white-space: pre-line;
+}
+
+.banner_congregacao {
+    padding-inline: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    height: 30rem;
+    margin-top: 5rem;
+    justify-content: center;
+}
+
+.banner_congregacao img {
+    width: 1215.38px;
+    height: 30rem;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 3px #00000080;
+    animation: suavizacao 1.5s ease-in-out forwards;
+}
+
+/*
+
+@keyframes banner1 {
+    0% {
+        background-color: #00000072;
+        align-items: center;
+        justify-content: center;
+        font-size: 100px;
+        border-radius: 20px;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+    100% {
+        background-color: #00000000;
+        align-items: center;
+        justify-content: center;
+        font-size: 100px;
+        border-radius: 20px;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+}
+
+@keyframes banner2 {
+    0% {
+        align-items: center;
+        justify-content: center;
+        font-size: 100px;
+        border-radius: 20px;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+    50% {
+        transform: translate(-88%, -90%);
+        font-size: 50px;
+    }
+    100% {
+        transform: translate(-88%, -90%);
+        font-size: 50px;
+    }
+}
+*/
+
+@keyframes suavizacao2 {
+    0% {
+        transform: translateX(0px);
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    
+    50% {
+        opacity: 0.5;
+    }
+    75% {
+        opacity: 0.75; 
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.banner_congregacao h1 {
+    font-family: "Tangerine", cursive;
+    color: var(--cabecalho_back_collor);
+    font-size: 50px;
+    padding-left: 10px;
+    padding-top: 10px;
+    position:relative;
+    top: -480px;
+    right: 0px;
+    width: 1215.38px;
+    height: 30rem;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    border-radius: 20px;
+    animation: suavizacao2 6.5s ease-in-out forwards;
+}
+
+.banner_congregacao h1.animacao-iniciar {
+    top: 0px; /* Modifique essa posição conforme necessário */
+    left: 20px; /* Modifique essa posição conforme necessário */
+}
+.congregacao_dirigentes {
+    padding-inline: 10%;
+    padding-block: 5%;
+}
+
+.congregacao_dirigentes h2 {
+    font-family: var(--font);
+    color: var(--font_collor);
+    text-decoration:underline;
+}
+
+.dirigentes_congregacao {
+    display: flex;
+    padding-block: 2%;
+    animation: suavizacao 2.5s ease-in-out forwards;
+}
+
+.dirigentes_congregacao img {
+    width: 25rem;
+    height: 30rem;
+    border-radius: 20px;
+}
+
+.dirigentes_congregacao p {
+    width: 98%;
+    height: auto;
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding-inline-start: 2%;
+    padding-block-start: 1%;
+    text-align: justify;
+    white-space: pre-line;
+}
+
+.dirigentes_congregacao p::after {
+    content: "\00a0";
+    display: block;
+}
+
+.rede_social_congregacao {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+}
+
+.rede_social_congregacao img {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.rede_social_congregacao div {
+    display: flex;
+    align-items: center;
+    margin-block-end: 10px;
+}
+
+.rede_social_congregacao a,span {
+    font-family: var(--font);
+    color: var(--footer_collor);
+    font-size: 18px;
+    font-weight: 500;
+    padding-inline-start: 10px;
+    text-decoration: none;
+}
+
+.div_info_cursos {
+    width: 100%;
+    height: auto;
+    padding-block: 2%;
+    display: flex;
+    gap: 2%;
+    justify-content: center;
+}
+
+.div_cursos {
+    width: 700px; 
+    padding-inline-start: 10%;   
+}
+
+.div_cursos h1 {
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding-block: 1%;
+    font-size: 42px;
+}
+
+.div_cards_cursos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+}
+
+.cards_cursos {
+    width: 225px;
+    height: 101px;
+    color: var(--font_collor);
+    background-color: #f3f3f3;
+    gap: 5%;
+    font-family: var(--font);
+    border-radius: 5px;
+    box-shadow: 0 0 3px 1px #00000080;
+}
+
+.cards_cursos img {
+    width: 24px;
+    height: 24px;
+    padding-inline: 5%;
+    padding-block: 5%;
+}
+
+.cards_cursos p {
+    padding-inline: 5%;
+    font-size: 16px;
+}
+
+.curso_sobre {
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding-block: 5%;
+    text-align: justify;
+    font-size: 18px;
+    white-space: pre-line;
+}
+
+.separador {
+    width: 30px;
+    height: 2px;
+    margin-top: -20px;
+    background-color: green;
+}
+
+.curso_sobre p::after {
+    content: "\00a0";
+    display: block;
+}
+
+.div_banner_cursos {
+    width: 400px;
+    height: auto;
+    padding-inline: 5%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.div_banner_cursos div {
+    width: 330px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 1px #00000080;
+    position: fixed;
+
+}
+
+.div_banner_cursos img {
+    width: 100%;
+    height: 260px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.div_banner_cursos section {
+    height: 75px;
+    background-color: #f3f3f3;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 0px 0px 5px 5px;
+    margin-top:-3px;
+}
+
+.div_banner_cursos a {
+    background-color: green;
+    padding-inline: 90px;
+    padding-block: 10px;
+    border-radius: 5px;
+    font-family: var(--font);
+    color: #f3f3f3;
+    text-decoration: none;
+}
+
+.coordenacao_curso_div {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    font-weight: 700;
+}
+
+.coordenacao_curso_div img {
+    width: 112px;
+    height: 112px;
+}
+
+.secao_contribuicao {
+    padding-inline: 5%;
+    padding-block-start: 3%;
+    font-family: var(--font);
+    color: var(--font_collor);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.secao_contribuicao div {
+    margin-block: 2%;
+    padding: 5px;
+    border-radius: 5px;
+    width: auto;
+    height: auto;
+    align-items: start;
+    text-align: start;
+}
+
+.secao_contribuicao img {
+    width: 450px;
+    height: 450px;
+}
+
+.pastor_card {
+    width: 350px;
+    border-radius: 10px;
+    animation: suavizacao_pastor_card 3s ease-in-out forwards;
+}
+
+.div_pastor {
+    padding-inline: 13rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding-block-end: 50px;
+}
+
+.titulo_pastor {
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding-block: 4%;
+    text-align: center;
+    justify-items: center;
+    animation: suavizacao 5s ease-in-out forwards;
+}
+.titulo_ministerio {
+    font-family: "Anta", sans-serif;
+    color: var(--font_collor);
+    padding-block: 4%;
+    text-align: center;
+    justify-items: center;
+    animation: suavizacao 5s ease-in-out forwards;
+}
+
+.titulo_cargo {
+    font-family: var(--font);
+    color: var(--font_collor);
+    text-align: center;
+    justify-items: center;
+}
+
+.alinhamento_div_pastor {
+    align-items: start;
+    justify-content: start;
+    display: block;
+    gap: 5%;
+    padding-block: 2%;
+}
+.biografia_pastor {
+    font-family: var(--font);
+    color: var(--font_collor);
+    text-align: justify;
+    padding: 5px;
+}
+
+.alinhamento_foto_nome {
+    text-align: center;
+}
+
+.foto_pastor {
+    width: 330px;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 1px #00000080;
+}
+
+.nome_pastor {
+    font-family: var(--font);
+    color: var(--font_collor);
+    text-align: center;
+    justify-items: center;
+}
+
+.cabecalho_qsomos img {
+    width: 100%;
+    height: 250px;
+    padding-block-end: 20px;
+}
+
+.cabecalho_qsomos h1 {
     position: absolute;
-    padding: 0% 0% 0% 70%;
+    margin-top: -10rem;
+    margin-left: 5%;
+    font-family: var(--font);
+    text-shadow: 
+        1px 1px 0 rgb(0, 0, 0),
+        -1px -1px 0 rgba(0, 0, 0, 0.756),
+        1px -1px 0 rgba(0, 0, 0, 0.756),
+        -1px 1px 0 rgba(0, 0, 0, 0.756); /* Sombra fraca */
+}
+
+.texto_qsomos p {
+    white-space: pre-line;
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding-inline: 5%;
+    text-align: justify;
+}
+
+.botom_page {
+    padding-inline: 10%;
+    padding-block: 2%;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.botom_page a {
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.botom_page span {
+    color: #000000;
+    padding-inline:3% ;
+}
+
+.botom_page img {
+    width: 15px;
+    height: 15px;
+}
+
+.banner_devocional {
+    width: 100%;
+    height: 30rem;
+    padding-block-end: 2%;
+}
+
+.devocional_div {
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    display: block;
+    margin-top: -30rem;
+    padding-inline:5% ;
+    font-family: var(--font);
+    color: var(--font_collor);
+}
+
+.devocional_div p {
+    text-align: justify;
+    white-space: pre-line;
+}
+
+.devocionais_titulo {
+    padding-inline: 5%;
+    padding-block: 5%;
+    font-family: var(--font);
+    color: var(--font_collor);
+}
+
+.devocional_div a {
+    text-decoration: none;
+    color: var(--cabecalho_back_collor);
+}
+
+.devocional_div a:hover {
+    text-decoration: none;
+    color: var(--font_collor);
+    text-shadow: 
+        1px 1px 0 rgb(255, 255, 255),
+        -1px -1px 0 rgba(255, 255, 255, 0.756),
+        1px -1px 0 rgba(255, 255, 255, 0.756),
+        -1px 1px 0 rgba(255, 255, 255, 0.756); /* Sombra fraca */
+}
+
+.div_card_devocionais {
+    padding-inline-start: 5%;
+}
+
+
+.card_devocionais {
+    width: auto;
+    height: 300px;
+    display: flex;
+    gap: 10px;
+    font-family: var(--font);
+}
+
+.card_devocionais img {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 1px #00000080;
+}
+
+.card_devocionais_info a {
+    text-decoration: none;
+    color: var(--font_collor);
+    text-align: justify;
+}
+
+.card_devocionais_info p {
+    padding-inline-end: 5%;
+    white-space: pre-line;
+    text-align: justify;
+}
+
+.card_devocionais_data {
+    color: #494949;
+    font-weight: 700;
+}
+
+
+.devocional_detalhe_disposicao {
+    display: flex;
+    gap: 10px;
+}
+.titulo_devocional {
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding-block: 3%;
+}
+
+.banner_devocional_devocional {
+    padding-inline-start: 5%;
+    width: 800px;
+    height: auto;
+    font-family: var(--font);
+    color: var(--font_collor);
+    
+}
+
+.banner_devocional_devocional img {
+    width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 1px #00000080;
+}
+
+.banner_devocional_devocional p {
+    text-align: justify;
+    white-space: pre-line;
+}
+
+.banner_devocional_devocional h5 {
+    padding-block: 10px;
+}
+
+.div_mais_devocionais {
+    width: 600px;
+    height: auto;
+    gap: 5px;
+}
+
+.div_mais_devocionais div {
+    display: flex;
+    gap: 5px;
+    padding-block: 5px;
+}
+
+
+.div_mais_devocionais img {
+    width: 250px;
+    height: 170px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 1px #00000080;
+}
+
+.div_mais_devocionais h3,p,h5,a {
+    font-family: var(--font);
+    color: var(--font_collor);
+    text-align: justify;
+    text-decoration: none;
+}
+
+
+.evento_detalhe_disposicao {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.div_mais_eventos {
+    width: 600px;
+    height: auto;
+    gap: 5px;
+}
+
+.div_mais_eventos div {
+    display: flex;
+    gap: 5px;
+    padding-block: 5px;
+}
+
+.div_mais_eventos img {
+    width: 250px;
+    height: 170px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 1px #00000080;
+}
+
+.div_mais_eventos h3,p,h5 {
+    font-family: var(--font);
+    color: var(--font_collor);
+    text-align: justify;
+}
+
+.div_mais_eventos h2 {
+    padding-block: 5px;
+    font-family: var(--font);
+    color: var(--font_collor);
 }
 
