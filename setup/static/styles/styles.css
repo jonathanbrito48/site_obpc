@@ -531,7 +531,7 @@ body {
 .alinhamento_ministerio_esquerda {
     width: 50%;
     height: auto;
-    transform-origin: left center; /* Define o ponto de origem da transformação no lado esquerdo */
+    transform-origin: left center; 
     transform-style: preserve-3d;
     animation: rotateCube 1.5s ease-in-out forwards;
 }
