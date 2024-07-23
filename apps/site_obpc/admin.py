@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.db import models
-from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios,Congregacoes,Cursos,Devocional
+from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios,Congregacoes,Cursos,Devocional,Servicos,Categoria_servicos
 from .forms import MinisterioForms, PastoresForms, EventoForms, CongregacaoForms, CursosForms,DevocionalForms
 
 
@@ -80,3 +80,18 @@ class DevocionalAdmin(admin.ModelAdmin):
     list_filter = ('autor','data_devocional',)
 
 admin.site.register(Devocional,DevocionalAdmin)
+
+class ServicosAdmin(admin.ModelAdmin):
+    list_display = ('id','nome_empresa','publicado')
+    list_display_links = ('id','nome_empresa')
+    list_editable = ('publicado',)
+    list_per_page = 10
+    list_filter = ('categoria','publicado',)
+
+admin.site.register(Servicos,ServicosAdmin)
+
+class CategoriasAdmin(admin.ModelAdmin):
+    list_display = ('id','categoria')
+    list_display_links = ('id','categoria')
+
+admin.site.register(Categoria_servicos,CategoriasAdmin)

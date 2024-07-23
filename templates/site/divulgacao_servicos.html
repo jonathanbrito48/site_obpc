@@ -1,0 +1,46 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+<div class="cabecalho_qsomos">
+    <img src="{% static 'assets/banner_eventos.jpg' %}" alt="banner">
+    <h1>SERVIÇOS</h1>
+</div>
+<section class="setion_servicos">
+    <div class="card_servicos">
+        <img src="{% static 'assets/fora-caixa.jpg'%}" alt="card_servicos">
+        <h2>Criart Lima</h2>
+        <h3>Personalizados</h3>
+        <div class="rede_social_servicos_container">
+            <div class="rede_social_servicos">
+                <img src="{% static 'assets/facebook.png '%}" alt="facebook_servicos">
+                <a href="https://facebook.com/criartlima">/criartlima</a>
+            </div>
+            <div class="rede_social_servicos">
+                <img src="{% static 'assets/instagram.png '%}" alt="facebook_servicos">
+                <a href="https://instagram.com/criartlima">/criartlima</a>
+            </div>
+            <div class="rede_social_servicos">
+                <img src="{% static 'assets/whatsapp.png '%}" alt="facebook_servicos">
+                <a href="https://instagram.com/criartlima">/11945825207</a>
+            </div>
+            <div class="rede_social_servicos">
+                <img src="{% static 'assets/logo_site.png '%}" alt="facebook_servicos">
+                <a href="https://instagram.com/criartlima">criartlima.com.br</a>
+            </div>
+        </div>        
+    </div>
+</section>
+<div class="botom_page">
+    {% if eventos_pagina.has_previous %}
+    <a href="?page=1"><img src="{% static 'assets/angles-left-solid.svg' %}" alt=""></a>
+    <a href="?page={{ eventos_pagina.previous_page_number }}"><img src="{% static 'assets/angle-left-solid.svg' %}" alt=""></a>
+    {% endif %}
+
+    <span>{{ eventos_pagina.number }} de {{ eventos_pagina.paginator.num_pages }}</span>
+
+    {% if eventos_pagina.has_next %}
+    <a href="?page={{ eventos_pagina.next_page_number }}"><img src="{% static 'assets/angle-right-solid.svg' %}" alt=""></a>
+    <a href="?page={{ eventos_pagina.paginator.num_pages }}"><img src="{% static 'assets/angles-right-solid.svg' %}" alt=""></a>
+    {% endif %}
+</div>
+{% endblock %}

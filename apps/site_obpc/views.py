@@ -82,3 +82,6 @@ def DevocionalDetalheViewSet(request, devocional_id):
     mais_devocionais = Devocional.objects.order_by('-data_devocional')[:6]
 
     return render(request, 'site/devocional.html', {"devocional": devocional, "devocionais": devocionais,"mais_devocionais":mais_devocionais})
+
+def divulgacao_servicos_view(request):
+    return render(request,'site/divulgacao_servicos.html')

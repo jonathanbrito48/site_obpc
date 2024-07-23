@@ -107,5 +107,25 @@ class Devocional(models.Model):
 
     def __str__(self):
         return self.titulo_devocional
+    
+class Categoria_servicos(models.Model):
+    categoria = models.CharField(max_length=100,null=False,blank=False)
+
+    def __str__(self):
+        return self.categoria
+
+class Servicos(models.Model):
+    nome_empresa = models.CharField(max_length=100,null=False,blank=False)
+    categoria = models.ForeignKey(Categoria_servicos,on_delete=models.CASCADE,default='')
+    foto = models.ImageField(upload_to='servicos/foto_empresas',help_text="Dimensão: 380 x 200 px")
+    facebook_empresa = models.CharField(max_length=100,null=False,blank=False)
+    instagram_empresa = models.CharField(max_length=100,null=False,blank=False)
+    whatsapp_empresa = models.CharField(max_length=100,null=False,blank=False)
+    site_empresa = models.CharField(max_length=100,null=False,blank=False)
+    publicado= models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.nome_empresa
+
 
 
