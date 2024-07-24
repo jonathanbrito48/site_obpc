@@ -118,10 +118,10 @@ class Servicos(models.Model):
     nome_empresa = models.CharField(max_length=100,null=False,blank=False)
     categoria = models.ForeignKey(Categoria_servicos,on_delete=models.CASCADE,default='')
     foto = models.ImageField(upload_to='servicos/foto_empresas',help_text="Dimensão: 380 x 200 px")
-    facebook_empresa = models.CharField(max_length=100,null=False,blank=False)
-    instagram_empresa = models.CharField(max_length=100,null=False,blank=False)
-    whatsapp_empresa = models.CharField(max_length=100,null=False,blank=False)
-    site_empresa = models.CharField(max_length=100,null=False,blank=False)
+    facebook_empresa = models.CharField(max_length=100,null=True,blank=True)
+    instagram_empresa = models.CharField(max_length=100,null=True,blank=True)
+    whatsapp_empresa = models.CharField(max_length=100,null=True,blank=True)
+    site_empresa = models.CharField(max_length=100,null=True,blank=True)
     publicado= models.BooleanField(default=True)
 
     def __str__(self):

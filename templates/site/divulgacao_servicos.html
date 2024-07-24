@@ -5,42 +5,69 @@
     <img src="{% static 'assets/banner_eventos.jpg' %}" alt="banner">
     <h1>SERVIÇOS</h1>
 </div>
-<section class="setion_servicos">
-    <div class="card_servicos">
-        <img src="{% static 'assets/fora-caixa.jpg'%}" alt="card_servicos">
-        <h2>Criart Lima</h2>
-        <h3>Personalizados</h3>
-        <div class="rede_social_servicos_container">
-            <div class="rede_social_servicos">
-                <img src="{% static 'assets/facebook.png '%}" alt="facebook_servicos">
-                <a href="https://facebook.com/criartlima">/criartlima</a>
+<nav class="nav_servicos">
+    <section class="setion_servicos">
+        {% for servico in servicos %}
+        <div class="card_servicos">
+            <img src="{{servico.foto.url}}" alt="card_servicos">
+            <h2>{{servico.nome_empresa}}</h2>
+            <h3>{{servico.categoria}}</h3>
+            <div class="rede_social_servicos_container">
+                {% if servico.facebook_empresa %}
+                <div class="rede_social_servicos">
+                    <a href="https://facebook.com/{{servico.facebook_empresa}}"><img src="{% static 'assets/facebook.png '%}" alt="facebook_servicos"></a>
+                    <a href="https://facebook.com/{{servico.facebook_empresa}}">/{{servico.facebook_empresa}}</a>
+                </div>
+                {% endif %}
+                {% if servico.instagram_empresa %}
+                <div class="rede_social_servicos">
+                    <a href="https://instagram.com/{{servico.instagram_empresa}}"><img src="{% static 'assets/instagram.png '%}" alt="instagram_empresa"></a>
+                    <a href="https://instagram.com/{{servico.instagram_empresa}}">/{{servico.instagram_empresa}}</a>
+                </div>
+                {% endif %}
+                {% if servico.whatsapp_empresa %}
+                <div class="rede_social_servicos">
+                    <a href="https://wa.me/55{{servico.whatsapp_empresa}}"><img src="{% static 'assets/whatsapp.png '%}" alt="whatsapp_empresa"></a>
+                    <a href="https://wa.me/55{{servico.whatsapp_empresa}}">/{{servico.whatsapp_empresa}}</a>
+                </div>
+                {% endif %}
+                {% if servico.site_empresa %}
+                <div class="rede_social_servicos">
+                    <a href="https://{{servico.site_empresa}}"><img src="{% static 'assets/logo_site.png '%}" alt="site_empresa"></a>
+                    <a href="https://{{servico.site_empresa}}">{{servico.site_empresa}}</a>
+                </div>
+                {% endif %}
+            </div>        
+        </div>
+        {% endfor %}
+    </section>
+    <section class="section_filtro_servicos">
+        <div class="div_filtro_servicos">
+            <h2>Filtro</h2>
+            <div>
+                <div>
+                    <a href="?categoria=" class="categoria-link {% if not categoria_selecionada %}categoria-selecionada{% endif %}">Todas</a>
+                    {% for categoria in categorias %}
+                        <a href="?categoria={{ categoria.id }}" class="categoria-link {% if categoria.id|stringformat:"s" == categoria_selecionada %}categoria-selecionada{% endif %}">{{ categoria.categoria }}</a>
+                    {% endfor %}
+                </div>
             </div>
-            <div class="rede_social_servicos">
-                <img src="{% static 'assets/instagram.png '%}" alt="facebook_servicos">
-                <a href="https://instagram.com/criartlima">/criartlima</a>
-            </div>
-            <div class="rede_social_servicos">
-                <img src="{% static 'assets/whatsapp.png '%}" alt="facebook_servicos">
-                <a href="https://instagram.com/criartlima">/11945825207</a>
-            </div>
-            <div class="rede_social_servicos">
-                <img src="{% static 'assets/logo_site.png '%}" alt="facebook_servicos">
-                <a href="https://instagram.com/criartlima">criartlima.com.br</a>
-            </div>
-        </div>        
-    </div>
-</section>
+        </div>
+    </section>
+</nav>
+{% if servicos_pagina.paginator.num_pages > 1 %}
 <div class="botom_page">
-    {% if eventos_pagina.has_previous %}
+    {% if servicos_pagina.has_previous %}
     <a href="?page=1"><img src="{% static 'assets/angles-left-solid.svg' %}" alt=""></a>
-    <a href="?page={{ eventos_pagina.previous_page_number }}"><img src="{% static 'assets/angle-left-solid.svg' %}" alt=""></a>
+    <a href="?page={{ servicos_pagina.previous_page_number }}"><img src="{% static 'assets/angle-left-solid.svg' %}" alt=""></a>
     {% endif %}
 
-    <span>{{ eventos_pagina.number }} de {{ eventos_pagina.paginator.num_pages }}</span>
+    <span>{{ servicos_pagina.number }} de {{ servicos_pagina.paginator.num_pages }}</span>
 
-    {% if eventos_pagina.has_next %}
-    <a href="?page={{ eventos_pagina.next_page_number }}"><img src="{% static 'assets/angle-right-solid.svg' %}" alt=""></a>
-    <a href="?page={{ eventos_pagina.paginator.num_pages }}"><img src="{% static 'assets/angles-right-solid.svg' %}" alt=""></a>
+    {% if servicos_pagina.has_next %}
+    <a href="?page={{ servicos_pagina.next_page_number }}"><img src="{% static 'assets/angle-right-solid.svg' %}" alt=""></a>
+    <a href="?page={{ servicos_pagina.paginator.num_pages }}"><img src="{% static 'assets/angles-right-solid.svg' %}" alt=""></a>
     {% endif %}
 </div>
+{% endif %}
 {% endblock %}

@@ -1,6 +1,6 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render,get_object_or_404
-from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios,Congregacoes,Cursos,Devocional
+from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios,Congregacoes,Cursos,Devocional,Servicos,Categoria_servicos
 from django.utils import timezone
 
 
@@ -84,4 +84,28 @@ def DevocionalDetalheViewSet(request, devocional_id):
     return render(request, 'site/devocional.html', {"devocional": devocional, "devocionais": devocionais,"mais_devocionais":mais_devocionais})
 
 def divulgacao_servicos_view(request):
-    return render(request,'site/divulgacao_servicos.html')
+    categorias = Categoria_servicos.objects.all()
+    categoria_selecionada = request.GET.get('categoria')
+
+    if categoria_selecionada:
+        servicos = Servicos.objects.filter(categoria_id=categoria_selecionada)
+    else:
+        servicos = Servicos.objects.all()
+
+    paginator = Paginator(servicos,10)
+
+    page = request.GET.get('page')
+    try:
+        servicos_pagina = paginator.page(page)
+    except PageNotAnInteger:
+        servicos_pagina = paginator.page(1)
+    except EmptyPage:
+        servicos_pagina = paginator.page(paginator.num_pages)
+
+    context = {
+        'categorias': categorias,
+        'servicos': servicos,
+        'categoria_selecionada': categoria_selecionada,
+        'servicos_pagina':servicos_pagina,
+    }
+    return render(request,'site/divulgacao_servicos.html',context)

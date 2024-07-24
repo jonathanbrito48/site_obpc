@@ -1455,3 +1455,39 @@ body {
     width: 2rem;
     height: 2rem;
 }
+
+.nav_servicos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section_filtro_servicos {
+    width: 350px;
+    background-color: var(--cabecalho_back_collor);
+    box-shadow: 0 0 5px 1px #00000080;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.div_filtro_servicos {
+    color: var(--font_collor);
+    font-family: var(--font);
+    padding: 5%;
+}
+
+.categoria-link {
+    display: block;
+    padding: 10px;
+    background-color: #f0f0f0;
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: #000;
+}
+
+.categoria-link:hover {
+    background-color: #e0e0e0;
+}
+
+.categoria-selecionada {
+    font-weight: bold;
+    color: #ff0000;
+}
