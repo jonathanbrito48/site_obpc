@@ -65,7 +65,7 @@ def quemsomosViewSet(request):
 def DevocionalViewSet(request):
     devocionais = Devocional.objects.order_by('-data_devocional')
 
-    paginator = Paginator(devocionais,10)
+    paginator = Paginator(devocionais,5)
 
     page = request.GET.get('page')
     try:

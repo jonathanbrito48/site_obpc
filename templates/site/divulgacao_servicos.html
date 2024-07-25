@@ -7,7 +7,7 @@
 </div>
 <nav class="nav_servicos">
     <section class="setion_servicos">
-        {% for servico in servicos %}
+        {% for servico in servicos_pagina %}
         <div class="card_servicos">
             <img src="{{servico.foto.url}}" alt="card_servicos">
             <h2>{{servico.nome_empresa}}</h2>
@@ -43,7 +43,7 @@
     </section>
     <section class="section_filtro_servicos">
         <div class="div_filtro_servicos">
-            <h2>Filtro</h2>
+            <h2>Categorias</h2>
             <div>
                 <div>
                     <a href="?categoria=" class="categoria-link {% if not categoria_selecionada %}categoria-selecionada{% endif %}">Todas</a>

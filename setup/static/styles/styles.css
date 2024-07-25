@@ -1436,6 +1436,7 @@ body {
 
 .rede_social_servicos_container {
     width: 380px;
+    height: 112px;
     display: flex;
     flex-wrap: wrap;
     justify-content:center;

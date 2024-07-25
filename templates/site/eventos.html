@@ -20,6 +20,7 @@
     </div>
     {% endfor %}
 </div>
+{% if eventos_pagina.paginator.num_pages > 1 %}
 <div class="botom_page">
     {% if eventos_pagina.has_previous %}
     <a href="?page=1"><img src="{% static 'assets/angles-left-solid.svg' %}" alt=""></a>
@@ -33,5 +34,5 @@
     <a href="?page={{ eventos_pagina.paginator.num_pages }}"><img src="{% static 'assets/angles-right-solid.svg' %}" alt=""></a>
     {% endif %}
 </div>
-
+{% endif %}
 {% endblock %}
