@@ -1481,7 +1481,7 @@ body {
     background-color: #f0f0f0;
     margin-bottom: 5px;
     text-decoration: none;
-    color: #000;
+    color: #343434;
 }
 
 .categoria-link:hover {
@@ -1489,6 +1489,6 @@ body {
 }
 
 .categoria-selecionada {
-    font-weight: bold;
-    color: #ff0000;
+    font-weight: 900;
+    color: var(--font_collor);
 }

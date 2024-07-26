@@ -82,8 +82,8 @@ class DevocionalAdmin(admin.ModelAdmin):
 admin.site.register(Devocional,DevocionalAdmin)
 
 class ServicosAdmin(admin.ModelAdmin):
-    list_display = ('id','nome_empresa','publicado')
-    list_display_links = ('id','nome_empresa')
+    list_display = ('id','nome_empresa','categoria','publicado')
+    list_display_links = ('id','nome_empresa',)
     list_editable = ('publicado',)
     list_per_page = 10
     list_filter = ('categoria','publicado',)

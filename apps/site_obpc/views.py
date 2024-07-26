@@ -2,6 +2,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render,get_object_or_404
 from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios,Congregacoes,Cursos,Devocional,Servicos,Categoria_servicos
 from django.utils import timezone
+from django.db.models import Count
 
 
 def index(request):
@@ -84,15 +85,15 @@ def DevocionalDetalheViewSet(request, devocional_id):
     return render(request, 'site/devocional.html', {"devocional": devocional, "devocionais": devocionais,"mais_devocionais":mais_devocionais})
 
 def divulgacao_servicos_view(request):
-    categorias = Categoria_servicos.objects.all()
+    categorias = Categoria_servicos.objects.annotate(num_servicos=Count('servicos')).filter(num_servicos__gt=0)
     categoria_selecionada = request.GET.get('categoria')
 
     if categoria_selecionada:
-        servicos = Servicos.objects.filter(categoria_id=categoria_selecionada)
+        servicos = Servicos.objects.filter(categoria_id=categoria_selecionada).filter(publicado=True)
     else:
-        servicos = Servicos.objects.all()
+        servicos = Servicos.objects.all().filter(publicado=True)
 
-    paginator = Paginator(servicos,10)
+    paginator = Paginator(servicos,9)
 
     page = request.GET.get('page')
     try:
