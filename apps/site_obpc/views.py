@@ -7,7 +7,7 @@ from django.db.models import Count
 
 def index(request):
     carrosel = carrosel_index.objects.order_by('posicao').filter(publicado=True)
-    evento = Eventos.objects.filter(data_evento__gte=timezone.now()).order_by('data_evento')[:4]
+    evento = Eventos.objects.filter(data_evento__gte=timezone.now()).order_by('data_evento')[:3]
     ministerios = Ministerios.objects.all().filter(publicado=True)
     devocional = Devocional.objects.order_by('-data_devocional')[:1]
     return render(request,'site/index.html',{"carrosel":carrosel,"evento": evento,"ministerios":ministerios,"devocional":devocional})

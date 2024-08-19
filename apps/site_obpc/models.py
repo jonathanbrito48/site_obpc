@@ -32,7 +32,7 @@ class Lideres_Ministerios(models.Model):
     nome_lider = models.CharField(max_length = 100,null = False, blank = False)
     cargo = models.CharField(max_length = 100,null = False, blank = False)
     ministerio = models.ForeignKey(Ministerios,on_delete=models.CASCADE,default='')
-    foto_lider = models.ImageField(upload_to='ministerios/lider_ministerio',help_text="Dimensão: 176 x 99 px")
+    foto_lider = models.ImageField(upload_to='ministerios/lider_ministerio',help_text="Dimensão: 300 x 250 px")
     posicao = models.IntegerField(null=True,default=None)
 
     def __str__(self):
@@ -55,7 +55,7 @@ class Eventos(models.Model):
     Endereco_evento = models.CharField(max_length=200,null=True,blank=True)
     descricao_evento = models.CharField(max_length=2000,null=True,blank=True)
     banner_evento = models.ImageField(upload_to='eventos/banners',help_text="Dimensão: 800 x 480 px")
-    foto_card_evento = models.ImageField(upload_to='eventos/card_evento',help_text="Dimensão: 248 x 224 px")
+    foto_card_evento = models.ImageField(upload_to='eventos/card_evento',help_text="Dimensão: 400 x 400 px")
     ministerio = models.ForeignKey(Ministerios, on_delete=models.SET_NULL, null=True, blank=True)
     
     def __str__(self):

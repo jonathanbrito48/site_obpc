@@ -19,10 +19,10 @@
                             {% for lider in lideres %}
                             {% if lider.ministerio_id == ministerio.id %}
                             <div class="card_lideranca_ministerio">
-                                <img class="foto_lider_ministerio" src="{{ lider.foto_lider.url }}" alt="foto_lide_ministerio">
+                                <img src="{{ lider.foto_lider.url }}" alt="foto_lide_ministerio">
                                 <div class="div_lideranca_ministerio_info">
                                     <h4 class="nome_lider_ministerio">{{ lider.nome_lider }}</h4>
-                                    <h4 class="cargo_lider_ministerio">Cargo: {{ lider.cargo }}</h4>
+                                    <h4 class="cargo_lider_ministerio">{{ lider.cargo }}</h4>
                                 </div>
                             </div>
                             {% endif %}
