@@ -89,9 +89,9 @@ def divulgacao_servicos_view(request):
     categoria_selecionada = request.GET.get('categoria')
 
     if categoria_selecionada:
-        servicos = Servicos.objects.filter(categoria_id=categoria_selecionada).filter(publicado=True)
+        servicos = Servicos.objects.filter(categoria_id=categoria_selecionada).filter(publicado=True).order_by('categoria')
     else:
-        servicos = Servicos.objects.all().filter(publicado=True)
+        servicos = Servicos.objects.all().filter(publicado=True).order_by('categoria')
 
     paginator = Paginator(servicos,9)
 
