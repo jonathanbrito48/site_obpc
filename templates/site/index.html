@@ -6,9 +6,11 @@
             <div class="slick-carousel">
                 {% for banner in carrosel %}
                 <div>
-                    <a href="{{banner.link_pagina}}">
-                        <img src="{{banner.imagem.url}}" class="foto_carrosel" alt="{{banner.nome_imagem}}">
-                    </a>
+                    {% if banner.link_pagina %}
+                    <a href="{{banner.link_pagina}}"><img src="{{banner.imagem.url}}" class="foto_carrosel" alt="{{banner.nome_imagem}}"></a>
+                    {% else %}
+                    <img src="{{banner.imagem.url}}" class="foto_carrosel" alt="{{banner.nome_imagem}}">
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>
@@ -105,7 +107,11 @@
                     <img src="{{card.foto_card_evento.url}}" class="foto_agenda_eventos" alt="fora-da-caixa">
                 </a>
                 <div class="card_alinhamento">
-                    <p class="data_evento">{{card.data_evento}}</p>
+                    {% if  card.data_fim %}
+                    <p class="data_evento">{{card.data_inicio|date:'d'}} a {{card.data_fim}}</p>
+                    {% else %}
+                    <p class="data_evento">{{card.data_inicio}}</p> 
+                    {% endif %}   
                     <H3>{{card.nome_evento}}</H3>
                 </div>
             </div>

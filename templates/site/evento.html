@@ -7,10 +7,16 @@
             <h1 class="titulo_eventos">{{evento.nome_evento}}</h1>
             <div class="div_detalhes_evento">
                 <div class="div_cronograma_evento">
-                    <p class="cronograma_evento">{{evento.data_evento}} - <time datetime="{{ hora_evento }}">{{ hora_evento }}</time></p>
+                    {% if evento.data_fim %}
+                    <p class="cronograma_evento">{{evento.data_inicio|date:'d'}} a {{evento.data_fim}}</p>
+                    {% else %}
+                    <p class="cronograma_evento">{{evento.data_inicio}} - <time datetime="{{ hora_evento }}">{{ hora_evento }}</time></p>
+                    {% endif %}
                     <p class="cronograma_evento">{{evento.Endereco_evento}}</p>
-                </div>        
+                </div>
+                {% if evento.descricao_evento %}        
                 <p class="descricao_evento">{{evento.descricao_evento}}</p>
+                {% endif %}
             </div>
             {% if contato %}
             <div class="div_contato_eventos">
@@ -21,27 +27,30 @@
             {% else %}
                 <div class="div_contato_eventos">
                     <h2 class="titulo_contato_eventos">Contato</h2>
-                    <p class="contato_evento">email@alternativo.com</p>
-                    <p class="contato_evento">tel_alternativo</p>        
+                    <p class="contato_evento">secretatiaobpcitaimpta@gmail.com</p>
+                    <p class="contato_evento">(11) 2562-6775</p>        
                 </div>
             {% endif %}
         </div>
         <div class="div_mais_eventos">
+            <h2>Mais Eventos</h2> 
             {% for evento_g in mais_eventos %}
             {% if evento_g.id != evento.id %}
-            <h2>Mais Eventos</h2> 
             <div>
-                <img src="{{evento_g.banner_evento.url}}" alt="">
+                <a href="{% url 'evento_detalhe' evento_g.id %}"><img src="{{evento_g.banner_evento.url}}" alt=""></a>
                 <div style="display: block;">
-                    <h3>{{evento_g.nome_evento}}</h3>
-                    <p>{{evento_g.descricao_evento|truncatewords:30}}</p>
-                    <h5>{{evento_g.data_evento}}</h5>
+                    <a href="{% url 'evento_detalhe' evento_g.id %}"><h3>{{evento_g.nome_evento}}</h3></a>
+                    {% if evento_g.data_fim  %}
+                    <h5>{{evento_g.data_inicio|date:'d'}} a {{evento_g.data_fim}}</h5>
+                    {% else %}
+                    <h5>{{evento_g.data_inicio}}</h5>
+                    {% endif %}
                     <a href="{% url 'evento_detalhe' evento_g.id %}">Ler mais</a>    
                 </div>
             </div>
             {% endif %}
             {% endfor %}
-            <a href="{% url 'eventos'%}">Ver mais eventos</a> 
+            <a href="{% url 'eventos'%}"><strong>Ver mais eventos</strong></a> 
         </div>
     </div>    
 

@@ -558,14 +558,16 @@ body {
     background-color: #ffffff;
     width: 300px;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 10px ;
     box-shadow: 0 0 5px 1px #00000080;
 }
 
 .card_lideranca_ministerio img {
     width: 300px;
     height: 250px;
+    border-radius: 10px 10px 0px 0px;
 }
+
 .nome_lider_ministerio {
     font-family: var(--font);
     color: var(--font_collor);
@@ -586,7 +588,7 @@ body {
     font-family: var(--font);
     color: var(--font_collor);
     padding-block: 4%;
-    width: 50%;
+    text-align: start;
 }
 
 @keyframes suavizacao {
@@ -686,8 +688,8 @@ body {
 }
 
 .eventos_banner {
-    width: 100%;
-    height: 30rem;
+    width: 600px;
+    height: 600px;
     border-radius: 6px;
     box-shadow: 0 0 3px 1px #00000080;
 }
@@ -756,6 +758,7 @@ body {
     color: #000000;
     font-weight: 600;
     padding-block-end: 2%;
+    text-align: start;
 }
 
 .div_detalhes_evento {
@@ -1397,7 +1400,7 @@ body {
 
 .div_mais_eventos img {
     width: 250px;
-    height: 170px;
+    height: 250px;
     border-radius: 10px;
     box-shadow: 0 0 3px 1px #00000080;
 }
@@ -1405,7 +1408,7 @@ body {
 .div_mais_eventos h3,p,h5 {
     font-family: var(--font);
     color: var(--font_collor);
-    text-align: justify;
+    text-align: start;
 }
 
 .div_mais_eventos h2 {
@@ -1453,7 +1456,7 @@ body {
 
 .rede_social_servicos {
     width: auto;
-    padding: 15px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
     display: flex;
     align-items: center;
     font-size: 16px;

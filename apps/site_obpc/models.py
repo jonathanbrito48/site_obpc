@@ -50,11 +50,12 @@ class carrosel_index(models.Model):
 
 class Eventos(models.Model):
     nome_evento = models.CharField(max_length=100,null=False,blank=False)
-    data_evento = models.DateField(null=True)
+    data_inicio = models.DateField(null=True,blank=True)
+    data_fim = models.DateField(null=True,blank=True)
     hora_evento = models.TimeField(null=True)
     Endereco_evento = models.CharField(max_length=200,null=True,blank=True)
     descricao_evento = models.CharField(max_length=2000,null=True,blank=True)
-    banner_evento = models.ImageField(upload_to='eventos/banners',help_text="Dimensão: 800 x 480 px")
+    banner_evento = models.ImageField(upload_to='eventos/banners',help_text="Dimensão: 600 x 600 px")
     foto_card_evento = models.ImageField(upload_to='eventos/card_evento',help_text="Dimensão: 400 x 400 px")
     ministerio = models.ForeignKey(Ministerios, on_delete=models.SET_NULL, null=True, blank=True)
     
@@ -129,3 +130,10 @@ class Servicos(models.Model):
 
 
 
+class QuemSomos(models.Model):
+    nome_qsomos = models.CharField(max_length=100,null=False,blank=False)
+    texto = models.CharField(max_length=7000,null=False,blank=False)
+    data_publicacao = models.DateField(null=True)
+
+    def __str__(self):
+        return self.nome_qsomos

@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.db import models
-from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios,Congregacoes,Cursos,Devocional,Servicos,Categoria_servicos
-from .forms import MinisterioForms, PastoresForms, EventoForms, CongregacaoForms, CursosForms,DevocionalForms
+from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios,Congregacoes,Cursos,Devocional,Servicos,Categoria_servicos,QuemSomos
+from .forms import MinisterioForms, PastoresForms, EventoForms, CongregacaoForms, CursosForms,DevocionalForms,Quemsomosform
 
 
 
@@ -40,11 +40,11 @@ admin.site.register(carrosel_index,CarroselAdmin)
 
 class EventosAdmin(admin.ModelAdmin):
     form = EventoForms
-    list_display = ('id','nome_evento','data_evento')
+    list_display = ('id','nome_evento','data_inicio')
     list_display_links = ('nome_evento',)
-    search_fields = ('nome_evento','data_evento',)
+    search_fields = ('nome_evento','data_inicio',)
     list_per_page = 10
-    list_filter = ('nome_evento','data_evento',)
+    list_filter = ('nome_evento','data_inicio',)
 
 admin.site.register(Eventos,EventosAdmin)
 
@@ -95,3 +95,11 @@ class CategoriasAdmin(admin.ModelAdmin):
     list_display_links = ('id','categoria')
 
 admin.site.register(Categoria_servicos,CategoriasAdmin)
+
+class QuemsomosAdmin(admin.ModelAdmin):
+    form = Quemsomosform
+    list_display = ('id','nome_qsomos','data_publicacao')
+    list_display_links = ('id','nome_qsomos',)
+    list_per_page = 20
+
+admin.site.register(QuemSomos,QuemsomosAdmin)

@@ -12,7 +12,11 @@
             <img src="{{card.foto_card_evento.url}}"  alt="fora-da-caixa">
         </a>
         <div class="card_alinhamento">
-            <p class="data_evento">{{card.data_evento}} - {{card.hora_evento}}</p>
+            {% if card.data_fim %}
+            <p class="data_evento">{{card.data_inicio|date:'d'}} a {{card.data_fim}}</p>
+            {% else %}
+            <p class="data_evento">{{card.data_inicio}} - {{card.hora_evento}}</p>
+            {% endif %}
             <a href="{% url 'evento_detalhe' card.id %}">
                 <H3>{{card.nome_evento}}</H3>
             </a>

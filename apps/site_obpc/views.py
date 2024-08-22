@@ -1,13 +1,14 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render,get_object_or_404
-from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios,Congregacoes,Cursos,Devocional,Servicos,Categoria_servicos
+from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios\
+    ,Congregacoes,Cursos,Devocional,Servicos,Categoria_servicos,QuemSomos
 from django.utils import timezone
 from django.db.models import Count
 
 
 def index(request):
     carrosel = carrosel_index.objects.order_by('posicao').filter(publicado=True)
-    evento = Eventos.objects.filter(data_evento__gte=timezone.now()).order_by('data_evento')[:3]
+    evento = Eventos.objects.filter(data_inicio__gte=timezone.now()).order_by('data_inicio')[:3]
     ministerios = Ministerios.objects.all().filter(publicado=True)
     devocional = Devocional.objects.order_by('-data_devocional')[:1]
     return render(request,'site/index.html',{"carrosel":carrosel,"evento": evento,"ministerios":ministerios,"devocional":devocional})
@@ -22,8 +23,8 @@ def MinisterioViewSet(request, nome_ministerio):
     return render(request, 'site/ministerio.html', {"ministerio": ministerio,"lideres":lideres})
 
 def EventosLista(request):
-    evento = Eventos.objects.filter(data_evento__gte=timezone.now()).order_by('data_evento')
-    banner = Eventos.objects.order_by('-data_evento')[0]
+    evento = Eventos.objects.filter(data_inicio__gte=timezone.now()).order_by('data_inicio')
+    banner = Eventos.objects.order_by('-data_inicio')[0]
     paginator = Paginator(evento,10)
 
     page = request.GET.get('page')
@@ -45,7 +46,7 @@ def EventoDetalhe(request, eventos_id):
     else:
         contato = None
 
-    mais_eventos =  Eventos.objects.filter(data_evento__gte=timezone.now()).order_by('data_evento')[:4]
+    mais_eventos =  Eventos.objects.filter(data_inicio__gte=timezone.now()).order_by('data_inicio')[:4]
 
     return render(request, 'site/evento.html', {"evento": evento, "eventos": eventos, "hora_evento": hora_evento, "contato": contato,"mais_eventos":mais_eventos})
 
@@ -61,7 +62,8 @@ def ContribuicaoViewSet(request):
     return render(request,'site/contribuicoes.html')
 
 def quemsomosViewSet(request):
-    return render(request,'site/quemsomos.html')
+    quemsomos = QuemSomos.objects.order_by('data_publicacao')[0]
+    return render(request,'site/quemsomos.html',{'quemsomos':quemsomos})
 
 def DevocionalViewSet(request):
     devocionais = Devocional.objects.order_by('-data_devocional')

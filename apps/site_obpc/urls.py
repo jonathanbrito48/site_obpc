@@ -15,5 +15,6 @@ urlpatterns = [
     path('quemsomos',quemsomosViewSet,name='quemsomos'),
     path('devocionais/',DevocionalViewSet,name='devocionais'),
     path('devocionais/<int:devocional_id>/',DevocionalDetalheViewSet,name='devocional_detalhe'),
-    path('servicos',divulgacao_servicos_view,name='servicos')
+    path('servicos',divulgacao_servicos_view,name='servicos'),
+    path('quemsomos',quemsomosViewSet,name='quemsomos')
 ]

@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <div class="cabecalho_qsomos">
-    <img src="{% static 'assets/banner_eventos.jpg' %}" alt="banner">
+    <img src="{% static 'assets/servicoscapa.jpg' %}" alt="banner">
     <h1>SERVIÇOS</h1>
 </div>
 <nav class="nav_servicos">
@@ -29,12 +29,6 @@
                 <div class="rede_social_servicos">
                     <a href="https://wa.me/55{{servico.whatsapp_empresa}}"><img src="{% static 'assets/whatsapp.png '%}" alt="whatsapp_empresa"></a>
                     <a href="https://wa.me/55{{servico.whatsapp_empresa}}">/{{servico.whatsapp_empresa}}</a>
-                </div>
-                {% endif %}
-                {% if servico.site_empresa %}
-                <div class="rede_social_servicos">
-                    <a href="https://{{servico.site_empresa}}"><img src="{% static 'assets/logo_site.png '%}" alt="site_empresa"></a>
-                    <a href="https://{{servico.site_empresa}}">{{servico.site_empresa}}</a>
                 </div>
                 {% endif %}
             </div>        
