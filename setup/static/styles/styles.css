@@ -1516,6 +1516,11 @@ html,body {
         max-width: 100%;
     } */
     
+    .conteudo_pagina {
+        margin-top:5rem;
+        justify-content: center;
+    }
+    
     .menu {
         background: radial-gradient(circle,#f3f3f3,#c3d9ef);
         color: var(--cabecalho_back_collor); /* Cor do texto no menu */
@@ -1722,5 +1727,89 @@ html,body {
         height: 12rem;
         display: flex;
     }
+
+    .disposicao_ministerios {
+        display: block;
+    }
+
+    .alinhamento_div_titulo {
+        display: flex;
+        text-align: center;
+        padding-block-end: 3%;
+    }
+
+    .titulo_ministerio {
+        width: 100%;
+        animation:none
+    }
+
+    .alinhamento_div_titulo img {
+        display: none;
+    }
+
+    .alinhamento_ministerio_esquerda {
+        width: 100%;
+        height: auto;
+        transform-origin: left center; 
+        transform-style: preserve-3d;
+        animation: rotateCube 1.5s ease-in-out forwards;
+    }
+
+
+    .foto_ministerio {
+        width: 100%;
+        height: 100%;
+        padding-block-end: 3%;
+        object-fit: cover;
+    }
+
+    .section_lideranca_ministerio {
+        justify-content: center;
+    }
+
+    .card_lideranca_ministerio {
+        display: block;
+        background-color: #ffffff;
+        width: 200px;
+        align-items: center;
+        border-radius: 10px ;
+        box-shadow: 0 0 5px 1px #00000080;
+    }
+    
+    .card_lideranca_ministerio img {
+        width: 200px;
+        height: 150px;
+        border-radius: 10px 10px 0px 0px;
+    }
+    
+    .div_lideranca_ministerio_info {
+        width: 200px;
+        text-align: center;
+    }
+
+    .div_lideranca_info h3 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .div_apresentacao_ministerios {
+        width: 100%;
+        height: auto;
+        padding-block-end: 3%;
+        align-items:center;
+        align-self:auto;
+        transform-origin: right center; /* Define o ponto de origem da transformação no lado esquerdo */
+        transform-style: preserve-3d;
+        animation: suavizacao 1.5s ease-in-out forwards;
+    }
+    
+    .titulo_contato_eventos {
+        text-align: start;
+    }
+
+    .contato_evento {
+        text-align: start;
+    }
+
 
 }
