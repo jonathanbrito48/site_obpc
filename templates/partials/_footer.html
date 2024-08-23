@@ -1,7 +1,9 @@
 {% load static %}
 <footer class="footer">
     <nav class="rodape_items">
-        <img class="logo_rodape" src="{% static 'assets/logo_obpc2.png' %}" alt="logo_obpc">
+        <div class="logo_rodape">
+            <img  src="{% static 'assets/logo_obpc2.png' %}" alt="logo_obpc">
+        </div>
         <div class="igreja">
             <p >
                 Igreja Evangélica Pentecostal 
@@ -25,24 +27,15 @@
         </div>
         <div class="div_icons">
             <div>
-                <img src="{% static '/assets/instagram.png' %}" class="icone" alt="logo_insta">
+                <a href="https://www.instagram.com/obpcitaimpta/"><img src="{% static '/assets/instagram.png' %}" class="icone" alt="logo_insta"></a>
+                <a href="https://www.facebook.com/obpcitaimpta/"><img src="{% static '/assets/facebook.png' %}" class="icone" alt="logo_face"></a>
+                <a href="https://www.youtube.com/@obpcitaimpta"><img src="{% static '/assets/youtube.png' %}" class="icone" alt="logo_face"></a>
+                <a href=""><img src="{% static '/assets/whatsapp.png' %}" class="icone" alt="logo_face"></a>
+                <a href=""><img src="{% static '/assets/mapas-do-google.png' %}" class="icone" alt="logo_face"></a>
             </div>
-            <div>
-                <img src="{% static '/assets/facebook.png' %}" class="icone" alt="logo_face">
-            </div>
-            <div>
-                <img src="{% static '/assets/youtube.png' %}" class="icone" alt="logo_face">
-            </div>
-            <div>
-                <img src="{% static '/assets/whatsapp.png' %}" class="icone" alt="logo_face">
-            </div>
-            <div>
-                <img src="{% static '/assets/mapas-do-google.png' %}" class="icone" alt="logo_face">
-            </div>
-
         </div>
-        <div>
-            <div class="contribuicao">
+        <div class="contribuicao">
+            <div>
                 <h4>Contribuições</h4>
                 <p>Chave Pix: 00.00.0000/0000-00</p>
                 <p>Banco: Bradesco</p>    

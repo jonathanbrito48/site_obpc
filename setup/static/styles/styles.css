@@ -7,7 +7,6 @@
 * {
     margin: 0;
     padding: 0;
-
 }
 
 :root {
@@ -21,7 +20,7 @@
     
 }
 
-body {
+html,body {
     background: radial-gradient(circle,#f3f3f3,#c3d9ef);
     color: var(--body_collor);
     width: 100%;
@@ -252,7 +251,7 @@ body {
     align-items: center;
 }
 
-.div_programacao {
+.div_cultos div {
     width: 30rem;
     height: 35rem;
     font-family: var(--titulos);
@@ -262,7 +261,7 @@ body {
     border-radius: 6px 0 0 6px;
 }
 
-.div_programacao span {
+.div_cultos span {
     display: block;
     margin: 1% 0% 0% 3%;
 }
@@ -459,7 +458,7 @@ body {
     white-space: pre-line;
 }
 
-.logo_rodape {
+.logo_rodape img {
     width: 15rem;
 }
 
@@ -477,7 +476,7 @@ body {
     margin-inline-end: 1%;
 }
 
-.div_icons {
+.div_icons div {
     display: grid;
     gap: 3%;
 }
@@ -487,7 +486,7 @@ body {
     margin-inline-end: 0%;
 }
 
-.contribuicao {
+.contribuicao div {
     font-family: var(--font);
     width: 15rem;
 }
@@ -1503,4 +1502,215 @@ body {
 .categoria-selecionada {
     font-weight: 900;
     color: var(--font_collor);
+}
+
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    /* * {
+        max-width: 100%;
+    } */
+    
+    .menu {
+        background: radial-gradient(circle,#f3f3f3,#c3d9ef);
+        color: var(--cabecalho_back_collor); /* Cor do texto no menu */
+        position: fixed; /* Define o menu como fixo */
+        top: 0; /* Fixa o menu no topo da página */
+        width: 100%; /* Ocupa toda a largura da página */
+        align-items: center;
+        z-index: 1000; /* Garante que o menu esteja acima de outros elementos */
+    }
+    .menu_options_items {
+        display: none;
+        flex-direction: column;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu_options_items.show {
+        display: flex;
+    }
+
+    .carousel-container {
+        width: 100%;
+        height: auto;
+        align-self: center;
+        justify-content: center;
+    }
+
+    .slick-carousel {
+        width: 100%;
+        height: auto;
+        align-items: center;
+    }
+    .slick-carousel img {
+        width: 100%;
+        height: auto;
+    }
+
+    .div_cultos {
+        width: 95%;
+    }
+
+    .div_cultos div {
+        width: 100%;
+        border-radius: 6px;
+    }
+    .div_img_cultos {
+        display: none;
+    }
+
+    .secao_ministerios {
+        padding-block-end: 3%;
+        display: flex;
+        padding-inline: 0%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .div_cards_eventos {
+        display:block;
+        align-items: center;
+        gap: 2%;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .rodape_items {
+        display:block;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    .div_icons div {
+        padding-block: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    
+    .igreja {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .igreja p {
+        text-align: center;
+    }
+
+    .dias_culto {
+        width: 100%;
+        align-items: center;
+    }
+
+    .dias_culto p {
+        text-align: center;
+    }
+
+    .contato {
+        width: 100%;
+        align-items: center;
+    }
+
+    .contato h4,p {
+        text-align: center;
+    }
+
+    .banner_devocional {
+        display: none;
+    }
+
+    .devocional_div {
+        display: none;
+    }
+
+    .logo_rodape {
+        text-align: center;
+    }
+
+    .contribuicao div  {
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .div_cards_eventos {
+        display: flex; /* Usa Flexbox para alinhar os elementos */
+        flex-wrap: wrap; /* Permite que os cards quebrem linha se necessário */
+        justify-content: center; /* Centraliza os cards horizontalmente */
+    }
+
+    .card_evento_eventos {
+        width: 300px;
+        height: 380px;
+        justify-content: center;
+        display: block;
+        margin-block-end: 5%;
+        background-color: var(--body_collor);
+        border-radius: 10px;
+        box-shadow: 0 0 10px 3px #00000080;
+    }
+    
+    .card_evento_eventos img {
+        width: 300px;
+        height: 300px;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    .div_ministerios_index {
+        width: 12rem;
+        height: 12rem;
+        padding-inline: 1px;
+        font-family: var(--font);
+        color: var(--font_collor);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        padding-block:1px;
+    }
+    
+    .card_ministerio_index_titulo {
+        background-color: #00000075;
+        width: 12rem;
+        height: 12rem;
+        color: #ffffff;
+        font-family: "Anta", sans-serif;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+      
+    .card_ministerio_index_ancora {
+        position:relative;
+        top: 50%;
+        right: 50%;
+        width: 12rem;
+        height: 12rem;
+        padding-inline: 0px;
+        transform: translate(-50%, -50%);
+        text-decoration: none;
+        border-radius: 10px;
+    
+    }
+    
+    .card_ministerio_index_titulo:hover {
+        background-color: rgba(112, 162, 212, 0);
+        color: #ffffff00;
+        transition-duration: 1000ms;
+    }
+    
+    .card_ministerio_index {
+        width: 12rem;
+        height: 12rem;
+        display: flex;
+    }
+
 }
