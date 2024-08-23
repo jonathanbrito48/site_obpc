@@ -1816,4 +1816,30 @@ html,body {
     
     }
 
+    .div_mais_eventos {
+        display: none;
+    }
+
+    .div_banner_eventos {
+        width: 100%;
+        padding-inline-start: 5%;
+        justify-content: center;
+        display: block;
+        padding-block-start: 5px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .eventos_banner {
+        width: 500px;
+        height: 500px;
+        border-radius: 6px;
+        box-shadow: 0 0 3px 1px #00000080;
+    }
+
+    .div_detalhes_evento {
+        width: 100%;
+    }
+
+
 }
