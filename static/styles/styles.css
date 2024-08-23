@@ -1770,20 +1770,20 @@ html,body {
     .card_lideranca_ministerio {
         display: block;
         background-color: #ffffff;
-        width: 200px;
+        width: 180px;
         align-items: center;
         border-radius: 10px ;
         box-shadow: 0 0 5px 1px #00000080;
     }
     
     .card_lideranca_ministerio img {
-        width: 200px;
-        height: 150px;
+        width: 180px;
+        height: 140px;
         border-radius: 10px 10px 0px 0px;
     }
     
     .div_lideranca_ministerio_info {
-        width: 200px;
+        width: 180px;
         text-align: center;
     }
 
@@ -1812,7 +1812,7 @@ html,body {
     }
 
     .div_ministerios {
-        padding-inline: 0%;
+        padding-inline: 3%;
     
     }
 
