@@ -1811,5 +1811,9 @@ html,body {
         text-align: start;
     }
 
+    .div_ministerios {
+        padding-inline: 0%;
+    
+    }
 
 }
