@@ -491,7 +491,9 @@ html,body {
     width: 15rem;
 }
 
-
+.contribuicao h4,p {
+   font-family: var(--font) ;     
+}
 
 .div_ministerios {
     padding-inline: 5%;
@@ -1634,11 +1636,19 @@ html,body {
         text-align: center;
     }
 
+    .logo_rodape img {
+        width: 240px;
+        height: 76.45px;
+    }
+
     .contribuicao div  {
         text-align: center;
         justify-content: center;
         width: 100%;
     }
+
+ 
+    
 
     .div_cards_eventos {
         display: flex; /* Usa Flexbox para alinhar os elementos */
