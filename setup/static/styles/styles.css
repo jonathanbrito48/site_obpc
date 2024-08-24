@@ -1831,8 +1831,8 @@ html,body {
     }
     
     .eventos_banner {
-        width: 15.62rem;
-        height: 15.62rem;
+        width: 23rem;
+        height: 23rem;
         border-radius: 6px;
         box-shadow: 0 0 3px 1px #00000080;
     }
@@ -1841,5 +1841,21 @@ html,body {
         width: 100%;
     }
 
+    .cabecalho_qsomos img {
+        width: 100%;
+        height: 150px;
+        padding-block-end: 20px;
+    }
 
+    .cabecalho_qsomos h1 {
+        position: absolute;
+        margin-top: -7.5rem;
+        margin-left: 5%;
+        font-family: var(--font);
+        text-shadow: 
+            1px 1px 0 rgb(0, 0, 0),
+            -1px -1px 0 rgba(0, 0, 0, 0.756),
+            1px -1px 0 rgba(0, 0, 0, 0.756),
+            -1px 1px 0 rgba(0, 0, 0, 0.756); /* Sombra fraca */
+    }
 }
