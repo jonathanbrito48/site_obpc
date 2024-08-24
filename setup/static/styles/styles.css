@@ -1822,7 +1822,7 @@ html,body {
 
     .div_banner_eventos {
         width: 100%;
-        padding-inline-start: 2%;
+        padding-inline-start: 0%;
         justify-content: center;
         display: block;
         padding-block-start: 5px;
@@ -1831,8 +1831,8 @@ html,body {
     }
     
     .eventos_banner {
-        width: 250px;
-        height: 250px;
+        width: 15.62rem;
+        height: 15.62rem;
         border-radius: 6px;
         box-shadow: 0 0 3px 1px #00000080;
     }
