@@ -3,12 +3,14 @@ from django.shortcuts import render,get_object_or_404
 from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios\
     ,Congregacoes,Cursos,Devocional,Servicos,Categoria_servicos,QuemSomos
 from django.utils import timezone
-from django.db.models import Count
+from django.db.models import Count,Q
 
 
 def index(request):
     carrosel = carrosel_index.objects.order_by('posicao').filter(publicado=True)
-    evento = Eventos.objects.filter(data_inicio__gte=timezone.now()).order_by('data_inicio')[:3]
+    evento = Eventos.objects.filter(
+        Q(data_inicio__gte=timezone.now()) | Q(data_fim__gte=timezone.now())
+        ).order_by('data_inicio')[:3]
     ministerios = Ministerios.objects.all().filter(publicado=True)
     devocional = Devocional.objects.order_by('-data_devocional')[:1]
     return render(request,'site/index.html',{"carrosel":carrosel,"evento": evento,"ministerios":ministerios,"devocional":devocional})
