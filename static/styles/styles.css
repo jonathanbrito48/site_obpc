@@ -23,8 +23,9 @@
 html,body {
     background: radial-gradient(circle,#f3f3f3,#c3d9ef);
     color: var(--body_collor);
-    width: 100%;
+    max-width: 100%;
     margin: 0%;
+    padding: 0;
 }
 
 .menu {
@@ -1510,7 +1511,7 @@ html,body {
     display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
     /* * {
         max-width: 100%;
