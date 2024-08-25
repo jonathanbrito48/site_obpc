@@ -1831,8 +1831,8 @@ html,body {
     }
     
     .eventos_banner {
-        width: 23rem;
-        height: 23rem;
+        width: 20rem;
+        height: 20rem;
         border-radius: 6px;
         box-shadow: 0 0 3px 1px #00000080;
     }
@@ -1857,5 +1857,13 @@ html,body {
             -1px -1px 0 rgba(0, 0, 0, 0.756),
             1px -1px 0 rgba(0, 0, 0, 0.756),
             -1px 1px 0 rgba(0, 0, 0, 0.756); /* Sombra fraca */
+    }
+
+    .descricao_evento {
+        width: 100%;
+        font-family: var(--font);
+        color: var(--font_collor);
+        text-align: justify;
+        white-space: pre-line;
     }
 }
