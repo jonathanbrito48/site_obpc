@@ -1,7 +1,12 @@
 {% load static %}
 <header class="menu">
     <nav class="cabecalho">
-        <a class="logo_a" href="{% url 'index' %}"><img class="foto" src="{% static 'assets/logo_obpc2.png' %}" alt="logo_obpc"></a>
+        <a class="logo_a" href="{% url 'index' %}">
+            <img class="foto" src="{% static 'assets/logo_obpc2.png' %}" alt="logo_obpc">
+        </a>
+        <div class="hamburger-menu" aria-label="Menu" aria-expanded="false" role="button">
+            &#9776;
+        </div>    
         <div class="menu_options_items">    
             <div class="cabecalho2">
                 <a href="{% url 'index' %}" class="cabecalho">INÍCIO</a>
@@ -31,7 +36,6 @@
                     </li>
                     {% endfor %}
                 </ul>
-                
             </div>
 
             <div class="dropdown" role="listbox" aria-haspopup="listbox">
@@ -40,7 +44,9 @@
                 </div>
                 <ul id="dropdown-options2" class="dropdown-options" role="list" aria-labelledby="dropdown-select">
                     {% for curso in cursos_menu %}
-                        <li class="dropdown-option" role="option" tabindex="0"><a href="{% url 'cursos' curso.id %}">{{curso.nome_curso_abreviado}}</a></li>
+                        <li class="dropdown-option" role="option" tabindex="0">
+                            <a href="{% url 'cursos' curso.id %}">{{curso.nome_curso_abreviado}}</a>
+                        </li>
                     {% endfor %}
                 </ul>
             </div>
@@ -51,52 +57,62 @@
                 </div>
                 <ul id="dropdown-options2" class="dropdown-options" role="list" aria-labelledby="dropdown-select">
                     {% for cong in congregacoes %}
-                        <li class="dropdown-option" role="option" tabindex="0"><a href="{% url 'congregacoes' cong.id %}">{{cong.nome_congregacao}}</a></li>
+                        <li class="dropdown-option" role="option" tabindex="0">
+                            <a href="{% url 'congregacoes' cong.id %}">{{cong.nome_congregacao}}</a>
+                        </li>
                     {% endfor %}
                 </ul>
             </div>
+
             <div class="cabecalho2">
                 <a href="{% url 'contribuicoes' %}" class="cabecalho">CONTRIBUIÇÕES</a>
             </div>
             <div class="cabecalho2">
                 <a href="{% url 'servicos' %}" class="cabecalho">SERVIÇOS</a>
             </div>
-            <!-- <div class="cabecalho2">
-                <a href="" class="cabecalho">CONTATO</a>
-            </div> -->
         </div>    
     </nav>
-    
 </header>
+
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const dropdowns = document.querySelectorAll('.dropdown');
+   document.addEventListener('DOMContentLoaded', function () {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const menuItems = document.querySelector('.menu_options_items');
 
-        dropdowns.forEach(function (dropdown) {
-            const dropdownSelect = dropdown.querySelector('.dropdown-select');
-            const dropdownOptions = dropdown.querySelector('.dropdown-options');
-
-            dropdown.addEventListener('mouseenter', function () {
-                dropdownOptions.classList.add('visible');
-                const expanded = dropdownOptions.classList.contains('visible');
-                dropdownSelect.setAttribute('aria-expanded', expanded.toString());
+    // Toggle para submenus em dispositivos móveis
+    dropdowns.forEach(function (dropdown) {
+        const dropdownSelect = dropdown.querySelector('.dropdown-select');
+        
+        dropdownSelect.addEventListener('click', function (event) {
+            event.preventDefault();
+            const isOpen = dropdown.classList.contains('show');
+            dropdowns.forEach(d => {
+                d.classList.remove('show');
+                d.querySelector('.dropdown-options').style.maxHeight = null; // Fechar todos os submenus
             });
 
-            dropdown.addEventListener('mouseleave', function () {
-                dropdownOptions.classList.remove('visible');
-                dropdownSelect.setAttribute('aria-expanded', 'false');
-            });
-
-            const dropdownOptionItems = dropdown.querySelectorAll('.dropdown-option');
-
-            dropdownOptionItems.forEach(function (option) {
-                option.addEventListener('click', function () {
-                    dropdownOptions.classList.remove('visible');
-                    dropdownSelect.setAttribute('aria-expanded', 'false');
-                });
-            });
+            if (!isOpen) {
+                dropdown.classList.add('show');
+                dropdown.querySelector('.dropdown-options').style.maxHeight = dropdown.querySelector('.dropdown-options').scrollHeight + 'px'; // Abrir o submenu clicado
+            }
         });
-
-        // Adicione mais lógica aqui, se necessário
     });
+
+    // Controle do menu hambúrguer
+    hamburgerMenu.addEventListener('click', function () {
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        menuItems.classList.toggle('show');
+    });
+
+    // Fechar o menu ao clicar fora
+    document.addEventListener('click', function (event) {
+        if (!menuItems.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+            menuItems.classList.remove('show');
+            hamburgerMenu.setAttribute('aria-expanded', 'false');
+        }
+    });
+    });
+
 </script>

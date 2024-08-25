@@ -39,6 +39,10 @@ html,body {
     z-index: 1000; /* Garante que o menu esteja acima de outros elementos */
 }
 
+.hamburger-menu {
+    display: none;
+}
+
 .conteudo_pagina {
     margin-top:4.3rem;
     justify-content: center;
@@ -101,7 +105,7 @@ html,body {
 }
 
 .dropdown-select {
-    padding: 0%;
+    padding-block: 5%;
     font-family: var(--font);
     font-weight: 300;
     align-items: end;
@@ -110,7 +114,7 @@ html,body {
     color: var(--font_collor);
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
-    width: auto;
+    width: 100%;
 }
 
 .dropdown-options {
@@ -1522,27 +1526,53 @@ html,body {
         justify-content: center;
     }
     
-    .menu {
-        background: radial-gradient(circle,#f3f3f3,#c3d9ef);
-        color: var(--cabecalho_back_collor); /* Cor do texto no menu */
-        position: fixed; /* Define o menu como fixo */
-        top: 0; /* Fixa o menu no topo da página */
-        width: 100%; /* Ocupa toda a largura da página */
-        align-items: center;
-        z-index: 1000; /* Garante que o menu esteja acima de outros elementos */
-    }
     .menu_options_items {
         display: none;
         flex-direction: column;
-    }
-
-    .menu-toggle {
-        display: block;
+        background: radial-gradient(circle,#f3f3f3,#c3d9ef);
+        position: absolute;
+        top: 6.3rem; /* Ajuste conforme necessário */
+        left: 0px;
+        width: 50%;
+        height: auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000; /* Garantir que o menu apareça sobre outros elementos */
+        border-radius: 0px 0px 10px 0px;
     }
 
     .menu_options_items.show {
         display: flex;
     }
+
+    .dropdown {
+        position: relative; /* Garantir que o submenu seja posicionado corretamente */
+    }
+
+    .dropdown-options {
+        display: none;
+        flex-direction: column;
+        background-color: #f9f9f9;
+        padding-left: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: max-height 0.3s ease-out; /* Transição suave para expansão */
+        overflow: hidden;
+        max-height: 0; /* Começa oculto */
+    }
+
+    .dropdown.show .dropdown-options {
+        display: flex;
+        max-height: 500px; /* Ajuste conforme necessário para permitir a rolagem se houver muitos itens */
+    }
+
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        color: #000;
+        position: absolute;
+        left: 60px;
+    }
+
 
     .carousel-container {
         width: 100%;
@@ -1652,9 +1682,6 @@ html,body {
         justify-content: center;
         width: 100%;
     }
-
- 
-    
 
     .div_cards_eventos {
         display: flex; /* Usa Flexbox para alinhar os elementos */
