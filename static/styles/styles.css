@@ -263,7 +263,7 @@ html,body {
 
 .div_cultos span {
     display: block;
-    margin: 1% 0% 0% 3%;
+    margin: 5px 0px 0px 5px;
 }
 
 .programacao_subtitulo {
@@ -1565,7 +1565,7 @@ html,body {
     }
 
     .div_cultos div {
-        width: 100%;
+        width: 500px;
         border-radius: 6px;
     }
     .div_img_cultos {
