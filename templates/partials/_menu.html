@@ -1,12 +1,70 @@
 {% load static %}
 <header class="menu">
+    <nav class="navbar">
+        <div class="menu-hamburger">
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+                <span class="hamburger">&#9776;</span> 
+                <a class="logo_a" href="{% url 'index' %}">
+                    <img class="foto" src="{% static 'assets/logo_obpc2.png' %}" alt="logo_obpc">
+                </a>
+            </label>
+
+            <ul class="menu-list">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li>
+                    <a href="#">Igreja</a>
+                    <ul class="submenu">
+                        <li  role="option" tabindex="0"><a href="{% url 'quemsomos' %}">Quem Somos</a></li>
+                        <li  role="option" tabindex="0"><a href="{% url 'pastores' %}">Pastores</a></li>
+                        <li  role="option" tabindex="0"><a href="{% url 'eventos' %}">Eventos</a></li>
+                        <li  role="option" tabindex="0"><a href="{% url 'devocionais' %}">Devocionais</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Ministérios</a>
+                    <ul class="submenu">
+                        {% for ministerio in ministerios %}
+                        <li  role="option" tabindex="0">
+                            <a href="{% url 'ministerio' ministerio.nome_ministerio %}">
+                                {{ ministerio.nome_ministerio }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Cursos</a>
+                    <ul class="submenu">
+                        {% for curso in cursos_menu %}
+                        <li role="option" tabindex="0">
+                            <a href="{% url 'cursos' curso.id %}">{{curso.nome_curso_abreviado}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Congregações</a>
+                    <ul class="submenu">
+                        {% for cong in congregacoes %}
+                        <li role="option" tabindex="0">
+                            <a href="{% url 'congregacoes' cong.id %}">{{cong.nome_congregacao}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li><a href="{% url 'contribuicoes' %}">Contribuições</a></li>
+                <li><a href="{% url 'servicos' %}">Serviços</a></li>
+            </ul>
+        </div>
+    </nav>
     <nav class="cabecalho">
         <a class="logo_a" href="{% url 'index' %}">
             <img class="foto" src="{% static 'assets/logo_obpc2.png' %}" alt="logo_obpc">
         </a>
-        <div class="hamburger-menu" aria-label="Menu" aria-expanded="false" role="button">
+        <!-- <div class="hamburger-menu" aria-label="Menu" aria-expanded="false" role="button">
             &#9776;
-        </div>    
+        </div>     -->
         <div class="menu_options_items">    
             <div class="cabecalho2">
                 <a href="{% url 'index' %}" class="cabecalho">INÍCIO</a>
