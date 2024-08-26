@@ -1593,7 +1593,8 @@ html,body {
         background-color: #444;
     }
     
-    .menu-list li:hover .submenu {
+    /* Mostra o submenu quando a classe 'active' é adicionada */
+    .menu-list li.active .submenu {
         display: block;
     }
     

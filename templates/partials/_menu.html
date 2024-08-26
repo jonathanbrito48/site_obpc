@@ -4,52 +4,44 @@
         <div class="menu-hamburger">
             <input type="checkbox" id="menu-toggle">
             <label for="menu-toggle" class="menu-icon">
-                <span class="hamburger">&#9776;</span> 
+                <span class="hamburger">&#9776;</span>
                 <a class="logo_a" href="{% url 'index' %}">
                     <img class="foto" src="{% static 'assets/logo_obpc2.png' %}" alt="logo_obpc">
                 </a>
             </label>
-
+    
             <ul class="menu-list">
                 <li><a href="{% url 'index' %}">Home</a></li>
                 <li>
-                    <a href="#">Igreja</a>
+                    <a href="#" data-toggle="submenu">Igreja</a>
                     <ul class="submenu">
-                        <li  role="option" tabindex="0"><a href="{% url 'quemsomos' %}">Quem Somos</a></li>
-                        <li  role="option" tabindex="0"><a href="{% url 'pastores' %}">Pastores</a></li>
-                        <li  role="option" tabindex="0"><a href="{% url 'eventos' %}">Eventos</a></li>
-                        <li  role="option" tabindex="0"><a href="{% url 'devocionais' %}">Devocionais</a></li>
+                        <li><a href="{% url 'quemsomos' %}">Quem Somos</a></li>
+                        <li><a href="{% url 'pastores' %}">Pastores</a></li>
+                        <li><a href="{% url 'eventos' %}">Eventos</a></li>
+                        <li><a href="{% url 'devocionais' %}">Devocionais</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Ministérios</a>
+                    <a href="#" data-toggle="submenu">Ministérios</a>
                     <ul class="submenu">
                         {% for ministerio in ministerios %}
-                        <li  role="option" tabindex="0">
-                            <a href="{% url 'ministerio' ministerio.nome_ministerio %}">
-                                {{ ministerio.nome_ministerio }}
-                            </a>
-                        </li>
+                        <li><a href="{% url 'ministerio' ministerio.nome_ministerio %}">{{ ministerio.nome_ministerio }}</a></li>
                         {% endfor %}
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Cursos</a>
+                    <a href="#" data-toggle="submenu">Cursos</a>
                     <ul class="submenu">
                         {% for curso in cursos_menu %}
-                        <li role="option" tabindex="0">
-                            <a href="{% url 'cursos' curso.id %}">{{curso.nome_curso_abreviado}}</a>
-                        </li>
+                        <li><a href="{% url 'cursos' curso.id %}">{{curso.nome_curso_abreviado}}</a></li>
                         {% endfor %}
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Congregações</a>
+                    <a href="#" data-toggle="submenu">Congregações</a>
                     <ul class="submenu">
                         {% for cong in congregacoes %}
-                        <li role="option" tabindex="0">
-                            <a href="{% url 'congregacoes' cong.id %}">{{cong.nome_congregacao}}</a>
-                        </li>
+                        <li><a href="{% url 'congregacoes' cong.id %}">{{cong.nome_congregacao}}</a></li>
                         {% endfor %}
                     </ul>
                 </li>
@@ -58,6 +50,32 @@
             </ul>
         </div>
     </nav>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggles = document.querySelectorAll('[data-toggle="submenu"]');
+
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault(); // Impede o comportamento padrão do link
+
+                    const parentLi = this.parentElement;
+
+                    // Verifica se o submenu já está ativo
+                    if (parentLi.classList.contains('active')) {
+                        parentLi.classList.remove('active');
+                    } else {
+                        // Fecha todos os submenus abertos
+                        document.querySelectorAll('.menu-list li.active').forEach(activeLi => {
+                            activeLi.classList.remove('active');
+                        });
+
+                        // Abre o submenu clicado
+                        parentLi.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
     <nav class="cabecalho">
         <a class="logo_a" href="{% url 'index' %}">
             <img class="foto" src="{% static 'assets/logo_obpc2.png' %}" alt="logo_obpc">
@@ -155,22 +173,6 @@
                 dropdown.querySelector('.dropdown-options').style.maxHeight = dropdown.querySelector('.dropdown-options').scrollHeight + 'px'; // Abrir o submenu clicado
             }
         });
-    });
-
-    // Controle do menu hambúrguer
-    hamburgerMenu.addEventListener('click', function () {
-        const expanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', !expanded);
-        menuItems.classList.toggle('show');
-    });
-
-    // Fechar o menu ao clicar fora
-    document.addEventListener('click', function (event) {
-        if (!menuItems.contains(event.target) && !hamburgerMenu.contains(event.target)) {
-            menuItems.classList.remove('show');
-            hamburgerMenu.setAttribute('aria-expanded', 'false');
-        }
-    });
     });
 
 </script>
