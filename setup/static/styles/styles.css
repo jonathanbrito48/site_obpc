@@ -1539,7 +1539,16 @@ html,body {
         padding: 10px;
         display: contents;
     }
-    
+    .menu {
+        background: radial-gradient(circle,#f3f3f3,#c3d9ef);
+        color: var(--cabecalho_back_collor); /* Cor do texto no menu */
+        padding: 10px; /* Espaçamento interno no menu */
+        position: absolute; /* Define o menu como fixo */
+        top: 0; /* Fixa o menu no topo da página */
+        width: 100%; /* Ocupa toda a largura da página */
+        align-items: center;
+        z-index: 1000; /* Garante que o menu esteja acima de outros elementos */
+    }
     .menu-hamburger {
         position: relative;
     }
@@ -1582,7 +1591,8 @@ html,body {
     }
     
     .menu-list a:hover {
-        background-color: #555;
+        background-color: radial-gradient(circle,#f3f3f3,#c3d9ef);
+        font-weight: 700;
     }
     
     /* Submenu */
@@ -1590,7 +1600,8 @@ html,body {
         display: none;
         list-style-type: none;
         padding-left: 20px;
-        background-color: #444;
+        background-color: radial-gradient(circle,#f3f3f3,#c3d9ef);
+        font-weight: 700;
     }
     
     /* Mostra o submenu quando a classe 'active' é adicionada */
