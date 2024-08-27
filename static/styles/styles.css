@@ -806,49 +806,6 @@ html,body {
     animation: suavizacao 1.5s ease-in-out forwards;
 }
 
-/*
-
-@keyframes banner1 {
-    0% {
-        background-color: #00000072;
-        align-items: center;
-        justify-content: center;
-        font-size: 100px;
-        border-radius: 20px;
-        margin-left: 0px;
-        margin-top: 0px;
-    }
-    100% {
-        background-color: #00000000;
-        align-items: center;
-        justify-content: center;
-        font-size: 100px;
-        border-radius: 20px;
-        margin-left: 0px;
-        margin-top: 0px;
-    }
-}
-
-@keyframes banner2 {
-    0% {
-        align-items: center;
-        justify-content: center;
-        font-size: 100px;
-        border-radius: 20px;
-        margin-left: 0px;
-        margin-top: 0px;
-    }
-    50% {
-        transform: translate(-88%, -90%);
-        font-size: 50px;
-    }
-    100% {
-        transform: translate(-88%, -90%);
-        font-size: 50px;
-    }
-}
-*/
-
 @keyframes suavizacao2 {
     0% {
         transform: translateX(0px);
@@ -1506,6 +1463,7 @@ html,body {
     background-color: #e0e0e0;
 }
 
+
 .categoria-selecionada {
     font-weight: 900;
     color: var(--font_collor);
@@ -1513,6 +1471,10 @@ html,body {
 
 .menu-toggle {
     display: none;
+}
+
+.div_banner_cursos_mobile {
+    display:none;
 }
 
 @media (max-width: 1024px) {
@@ -1997,10 +1959,27 @@ html,body {
         display: none;
     }
 
-    .div_banner_cursos section {
+    .div_banner_cursos_mobile {
+        display: contents;
         text-align: center;
-        background-color: #00000000;
-        width: 100%;
+        background-color: #000000;
+        width: auto;
+        height: auto;
+        margin-block-end: 10%;
+    }
+
+    .div_banner_cursos_mobile section {
+        padding-block-end: 30px;
+    }
+
+    .div_banner_cursos_mobile a {
+        background-color: green;
+        padding-inline: 90px;
+        padding-block: 10px;
+        border-radius: 5px;
+        font-family: var(--font);
+        color: #f3f3f3;
+        text-decoration: none;
     }
 
     .div_info_cursos {
@@ -2040,4 +2019,107 @@ html,body {
         border-radius: 5px;
         box-shadow: 0 0 3px 1px #00000080;
     }
+
+    .banner_congregacao {
+        width: 100%;
+        height: 40%;
+        padding: 0;
+    }
+
+    .banner_congregacao img {
+        width: 90%;
+        height: auto;
+    }
+
+    .banner_congregacao h1 {
+        font-family: "Tangerine", cursive;
+        color: var(--cabecalho_back_collor);
+        font-size: 200%;
+        padding-left: 5%;
+        padding-top: 20px;
+        position:absolute;
+        top: 80px;
+        left: 5px;
+        width: 80%;
+        height: auto;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        border-radius: 20px;
+    }
+
+    .banner_congregacao h1.animacao-iniciar {
+        top: 30px; /* Modifique essa posição conforme necessário */
+        left: 20px; /* Modifique essa posição conforme necessário */
+    }
+
+    .congregacao_dirigentes {
+        padding-inline: 5%;
+        padding-block: 5%;
+        text-align: center;
+    }
+    
+    .congregacao_dirigentes h2 {
+        font-family: var(--font);
+        color: var(--font_collor);
+        text-decoration:underline;
+    }
+    
+    .dirigentes_congregacao {
+        display: block;
+        padding-block: 2%;
+        animation: suavizacao 2.5s ease-in-out forwards;
+        text-align: center;
+    }
+    
+    .dirigentes_congregacao img {
+        width: 25rem;
+        height: 30rem;
+        border-radius: 20px;
+    }
+    
+    .dirigentes_congregacao p {
+        width: 98%;
+        height: auto;
+        font-family: var(--font);
+        color: var(--font_collor);
+        padding-inline-start: 2%;
+        padding-block-start: 1%;
+        text-align: justify;
+        white-space: pre-line;
+    }
+    
+    .dirigentes_congregacao p::after {
+        content: "\00a0";
+        display: block;
+    }
+
+    .rede_social_congregacao {
+        width: 100%;
+        height: auto;
+        padding: 0;
+    }
+    
+    .rede_social_congregacao img {
+        width: 30px;
+        height: 30px;
+        display: block;
+    }
+    
+    .rede_social_congregacao div {
+        display: flex;
+        align-items: center;
+        margin-block-end: 10px;
+    }
+    
+    .rede_social_congregacao a,span {
+        font-family: var(--font);
+        color: var(--footer_collor);
+        font-size: 14px;
+        font-weight: 500;
+        padding-inline-start: 10px;
+        text-decoration: none;
+    }
+
 }
