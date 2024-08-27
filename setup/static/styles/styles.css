@@ -1164,8 +1164,9 @@ html,body {
     white-space: pre-line;
     font-family: var(--font);
     color: var(--font_collor);
-    padding-inline: 5%;
+    padding-inline: 2%;
     text-align: justify;
+    width: 95%;
 }
 
 .botom_page {
