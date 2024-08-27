@@ -2055,7 +2055,7 @@ html,body {
     }
 
     .congregacao_dirigentes {
-        padding-inline: 5%;
+        padding-inline: 0;
         padding-block: 5%;
         text-align: center;
     }
