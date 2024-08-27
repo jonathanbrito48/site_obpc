@@ -491,12 +491,12 @@ html,body {
     margin-inline-end: 0%;
 }
 
-.contribuicao div {
+.contribuicao_footer div {
     font-family: var(--font);
     width: 15rem;
 }
 
-.contribuicao h4,p {
+.contribuicao_footer h4,p {
    font-family: var(--font) ;     
 }
 
@@ -1052,8 +1052,8 @@ html,body {
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 10px;
-    text-align: center;
-    align-items: center;
+    text-align: start;
+    align-items: start;
 }
 
 .secao_contribuicao div {
@@ -1144,7 +1144,7 @@ html,body {
 
 .cabecalho_qsomos img {
     width: 100%;
-    height: 250px;
+    height: 13.55%;
     padding-block-end: 20px;
 }
 
@@ -1384,7 +1384,7 @@ html,body {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    width: 1200px;
+    width: 100%;
 }
 .card_servicos {
     width: 380px;
@@ -1475,6 +1475,13 @@ html,body {
 
 .div_banner_cursos_mobile {
     display:none;
+}
+
+.categorias_mobile label{
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding-inline-start: 5% ;
+    font-weight: 700;
 }
 
 @media (max-width: 1024px) {
@@ -1605,7 +1612,9 @@ html,body {
 
     .div_cultos div {
         width: 500px;
+        height: auto;
         border-radius: 6px;
+        padding-block-end: 2%;
     }
     .div_img_cultos {
         display: none;
@@ -1877,15 +1886,10 @@ html,body {
         width: 100%;
     }
 
-    .cabecalho_qsomos img {
-        width: 100%;
-        height: 150px;
-        padding-block-end: 20px;
-    }
 
     .cabecalho_qsomos h1 {
         position: absolute;
-        margin-top: -7.5rem;
+        margin-top: -16.5%;
         margin-left: 5%;
         font-family: var(--font);
         text-shadow: 
@@ -1893,6 +1897,7 @@ html,body {
             -1px -1px 0 rgba(0, 0, 0, 0.756),
             1px -1px 0 rgba(0, 0, 0, 0.756),
             -1px 1px 0 rgba(0, 0, 0, 0.756); /* Sombra fraca */
+        font-size: 150%;
     }
 
     .descricao_evento {
@@ -2064,6 +2069,7 @@ html,body {
         font-family: var(--font);
         color: var(--font_collor);
         text-decoration:underline;
+        animation: suavizacao 3.5s ease-in-out forwards;
     }
     
     .dirigentes_congregacao {
@@ -2080,11 +2086,11 @@ html,body {
     }
     
     .dirigentes_congregacao p {
-        width: 98%;
+        width: 95%;
         height: auto;
         font-family: var(--font);
         color: var(--font_collor);
-        padding-inline-start: 2%;
+        padding-inline: 2%;
         padding-block-start: 1%;
         text-align: justify;
         white-space: pre-line;
@@ -2120,6 +2126,39 @@ html,body {
         font-weight: 500;
         padding-inline-start: 10px;
         text-decoration: none;
+    }
+
+    
+
+    .section_filtro_servicos {
+        display: none;
+    }
+
+    .setion_servicos {
+        width: 100%;
+        padding-inline: 0;
+        text-align: center;
+        justify-content: center;
+        padding-block: 5%;
+    }
+    .secao_contribuicao {
+        padding-inline: 2%;
+    }
+    
+
+    .secao_contribuicao div,p {
+        text-align: start;
+    }
+
+    .contribuicao_footer div {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contribuicao_footer h4,p {
+        width: 100%;
+        text-align: center;
     }
 
 }

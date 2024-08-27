@@ -5,6 +5,17 @@
     <img src="{% static 'assets/servicoscapa.jpg' %}" alt="banner">
     <h1>SERVIÇOS</h1>
 </div>
+
+<div class="categorias_mobile">
+    <label  for="categorias">Categorias:</label>
+    <select id="menu" name="menu" onchange="location = this.value;">
+        <option value="#">Selecione</option>
+        <option value="?categoria=">Todas</option>
+        {% for categoria in categorias %}
+        <option value="?categoria={{ categoria.id }}">{{ categoria.categoria }}</option>
+        {% endfor %}
+    </select>
+</div>
 <nav class="nav_servicos">
     <section class="setion_servicos">
         {% for servico in servicos_pagina %}
@@ -35,7 +46,7 @@
         </div>
         {% endfor %}
     </section>
-    <section class="section_filtro_servicos">
+    <!-- <section class="section_filtro_servicos">
         <div class="div_filtro_servicos">
             <h2>Categorias</h2>
             <div>
@@ -47,7 +58,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 </nav>
 {% if servicos_pagina.paginator.num_pages > 1 %}
 <div class="botom_page">
