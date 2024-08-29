@@ -48,10 +48,11 @@
         <div>
             <span><h2 class="line_programacao"><strong>Programação Semanal</strong></h2></span>
             <span class="programacao_subtitulo"><strong>Domingo</strong></span>
-            <span>08h - Consagração</span>
-            <span>09h - (1º e 3º domingo do mês) Café com Umasbrac</span>
-            <span>10h - Encontro com Jubrac/Adobrac</span>
-            <span>18h - Culto da Família</span>
+            <span>08h - Consagração
+                09h - (1º e 3º domingo do mês) Café com Umasbrac
+                10h - Encontro com Jubrac/Adobrac
+                18h - Culto da Família
+            </span>
             <span class="programacao_subtitulo"><strong>Terça-Feira</strong></span>
             <span>20h - Culto de Ensino</span>
             <span class="programacao_subtitulo"><strong>Quinta-feira</strong></span>
@@ -59,8 +60,9 @@
             <span class="programacao_subtitulo"><strong>Sábado</strong></span>
             <span>09h - Encontro com Ufebrac</span>
             <span class="programacao_subtitulo"><strong>Manhãs de benção</strong></span>
-            <span>De Segunda a Sexta, das 09h às 10h,</span>
-            <span>Quarta das 09h30 às 11h</span>
+            <span>De Segunda a Sexta, das 09h às 10h,
+                Quarta das 09h30 às 11h
+            </span>
             
             
         </div>
@@ -78,8 +80,9 @@
         <div class="div_ministerios_index">
             <div class="card_ministerio_index">
                 <img class="card_ministerio_index_imagem" src="{{ministerio.card_ministerio.url}}" alt="card_ministerio_index">
-                <a class="card_ministerio_index_ancora" href="{% url 'ministerio' ministerio.nome_ministerio %}"><h3 class="card_ministerio_index_titulo">{{ministerio.nome_ministerio}}</h3></a>
             </div>
+            <a class="card_ministerio_index_ancora" href="{% url 'ministerio' ministerio.nome_ministerio %}"><h3 class="card_ministerio_index_titulo">{{ministerio.nome_ministerio}}</h3></a>
+
         </div>
         {% endfor %}
     </section>

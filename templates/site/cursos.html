@@ -34,16 +34,24 @@
             </div>
         </div>
         <div class="curso_sobre">
+            {% if cursos.descricao %}
             <p>{{cursos.descricao}}</p>
+            {% endif %}
+            {% if cursos.descricao_duracao %}
             <h3>Duração do Curso</h3>
             <hr class="separador">
             <p>{{cursos.descricao_duracao}}</p>
+            {% endif %}
+            {% if cursos.descricao_investimento %}
             <h3>Investimento</h3>
             <hr class="separador">
             <p>{{cursos.descricao_investimento}}</p>
+            {% endif %}
+            {% if cursos.informacoes_complementares %}
             <h3>Informações complementares</h3>
             <hr class="separador">
             <p>{{cursos.informacoes_complementares}}</p>
+            {% endif %}
             <h3>Coordenação do Curso</h3>
             <hr class="separador">
             <div class="coordenacao_curso_div">

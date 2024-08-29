@@ -326,12 +326,12 @@ html,body {
   
 .card_ministerio_index_ancora {
     position:relative;
-    top: 50%;
-    right: 50%;
+    /* top: 50%;
+    right: 50%; */
     width: 320px;
     height: 320px;
     padding-inline: 0px;
-    transform: translate(-50%, -50%);
+    transform: translate(0%, -101.5%);
     text-decoration: none;
     border-radius: 10px;
 
@@ -381,7 +381,7 @@ html,body {
     font-family: var(--font);
     text-align: center;
     padding: 1%;
-    font-size: 90%;
+    font-size: 2vw;
     color: var(--font_collor);
 }
 
@@ -1485,6 +1485,7 @@ html,body {
     font-weight: 700;
 }
 
+
 @media (max-width: 1024px) {
 
     /* * {
@@ -1612,22 +1613,31 @@ html,body {
     }
 
     .div_cultos div {
-        width: 500px;
+        width: 95%;
         height: auto;
         border-radius: 6px;
         padding-block-end: 2%;
+        
+    }
+
+    .div_cultos span {
+        display: block;
+        font-size: 3vw;
+        width: 100%;
+        height: auto;
+        margin: 5px 0px 0px 5px;
+        white-space:pre-line;
+        tex
+    }
+    
+    .programacao_subtitulo {
+        padding-block: 2% ;
     }
     .div_img_cultos {
         display: none;
     }
 
-    .secao_ministerios {
-        padding-block-end: 3%;
-        display: flex;
-        padding-inline: 0%;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
+    
 
     .div_cards_eventos {
         display:block;
@@ -1723,26 +1733,40 @@ html,body {
         height: 300px;
         border-radius: 10px 10px 0px 0px;
     }
+      .index_titulos {
+        font-size: 4vw;
+    }
+
+    .secao_ministerios {
+        padding-block-end: 3%;
+        display: flex;
+        padding-inline: 0%;
+        justify-content: center;
+        text-align: center;
+        flex-wrap: wrap;
+    }
 
     .div_ministerios_index {
-        width: 12rem;
-        height: 12rem;
+        width: 39vw;
+        height: 39vw;
         padding-inline: 1px;
         font-family: var(--font);
         color: var(--font_collor);
         display: flex;
         flex-wrap: wrap;
-        gap: 5px;
+        gap: 0px;
         padding-block:1px;
     }
-    
+    .index_titulos {
+        font-size: 4vw;
+    }
     .card_ministerio_index_titulo {
         background-color: #00000075;
-        width: 12rem;
-        height: 12rem;
+        width: 39vw;
+        height: 39vw;
         color: #ffffff;
         font-family: "Anta", sans-serif;
-        font-size: 20px;
+        font-size: 4vw;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1751,12 +1775,12 @@ html,body {
       
     .card_ministerio_index_ancora {
         position:relative;
-        top: 50%;
-        right: 50%;
-        width: 12rem;
-        height: 12rem;
+        /* top: -50%;
+        right: 0%; */
+        width: 5vw;
+        height: 5vw;
         padding-inline: 0px;
-        transform: translate(-50%, -50%);
+        transform: translate(0%, -780%);
         text-decoration: none;
         border-radius: 10px;
     
@@ -1767,11 +1791,19 @@ html,body {
         color: #ffffff00;
         transition-duration: 1000ms;
     }
+
+    .card_ministerio_index_imagem {
+        width: 39vw;
+        height: 39vw;
+        border-radius: 10px;
+    }
     
     .card_ministerio_index {
-        width: 12rem;
-        height: 12rem;
+        width: 39vw;
+        height: 39vw;
         display: flex;
+        text-align: center;
+        justify-content: center;
     }
 
     .disposicao_ministerios {
@@ -1786,6 +1818,7 @@ html,body {
 
     .titulo_ministerio {
         width: 100%;
+        font-size: 4vw;
         animation:none
     }
 
@@ -1816,20 +1849,20 @@ html,body {
     .card_lideranca_ministerio {
         display: block;
         background-color: #ffffff;
-        width: 180px;
+        width: 250px;
         align-items: center;
         border-radius: 10px ;
         box-shadow: 0 0 5px 1px #00000080;
     }
     
     .card_lideranca_ministerio img {
-        width: 180px;
-        height: 140px;
+        width: 250px;
+        height: 210px;
         border-radius: 10px 10px 0px 0px;
     }
     
     .div_lideranca_ministerio_info {
-        width: 180px;
+        width: 250px;
         text-align: center;
     }
 
@@ -2016,8 +2049,8 @@ html,body {
     }
 
     .cards_cursos {
-        width: 200px;
-        height: 90px;
+        width: 40%;
+        height: auto;
         color: var(--font_collor);
         background-color: #f3f3f3;
         gap: 5%;
@@ -2025,7 +2058,19 @@ html,body {
         border-radius: 5px;
         box-shadow: 0 0 3px 1px #00000080;
     }
-
+    
+    .cards_cursos img {
+        width: 3vw;
+        height: auto;
+        padding-inline: 3%;
+        padding-block: 5%;
+    }
+    
+    .cards_cursos p {
+        width: 100%;
+        padding-inline: 0%;
+        font-size: 3vw;
+    }
     .banner_congregacao {
         width: 100%;
         height: 40%;
@@ -2162,4 +2207,20 @@ html,body {
         text-align: center;
     }
 
+    .div_pastor {
+        padding-inline: 0%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        padding-block-end: 50px;
+    }
+
+    .titulo_lideranca {
+        font-family: var(--font);
+        color: var(--font_collor);
+        font-size: 3vw;
+        padding-block: 4%;
+        text-align: start;
+    }
 }
