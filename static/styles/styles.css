@@ -481,13 +481,13 @@ html,body {
     margin-inline-end: 1%;
 }
 
-.div_icons div {
+.div_icons  {
     display: grid;
     gap: 3%;
 }
 
 .icone {
-    width: 1.5rem;
+    width: 2rem;
     margin-inline-end: 0%;
 }
 
@@ -1525,7 +1525,7 @@ html,body {
         position: relative;
     }
     .hamburger {
-        font-size: 30px;
+        font-size: 7vw;
         cursor: pointer;
         color: var(--font_collor);
     }
@@ -1552,6 +1552,7 @@ html,body {
     
     .menu-list li {
         position: relative;
+        font-size: 4vw;
     }
     
     .menu-list a {
@@ -1653,17 +1654,29 @@ html,body {
         justify-items: center;
     }
 
-    .div_icons div {
+    .div_icons  {
         padding-block: 20px;
-        display: flex;
+        display: block;
         justify-content: center;
-        gap: 10px;
+        gap: 10%;
+        text-align: center;
     }
 
+    .div_icons a {
+        width: auto;
+        gap: 0%;
+        margin-inline: 2%;
+    }
+
+    .icone {
+        width: 10%;
+        margin-inline-end: 0%;
+    }
     
     .igreja {
         width: 100%;
         justify-content: center;
+        font-size: 3.5vw;
     }
 
     .igreja p {
@@ -1673,6 +1686,7 @@ html,body {
     .dias_culto {
         width: 100%;
         align-items: center;
+        font-size: 3.5vw;
     }
 
     .dias_culto p {
@@ -1682,6 +1696,7 @@ html,body {
     .contato {
         width: 100%;
         align-items: center;
+        font-size: 3.5vw;
     }
 
     .contato h4,p {
@@ -1709,6 +1724,7 @@ html,body {
         text-align: center;
         justify-content: center;
         width: 100%;
+        
     }
 
     .div_cards_eventos {
@@ -1718,8 +1734,8 @@ html,body {
     }
 
     .card_evento_eventos {
-        width: 300px;
-        height: 380px;
+        width: 62%;
+        height: auto;
         justify-content: center;
         display: block;
         margin-block-end: 5%;
@@ -1729,12 +1745,36 @@ html,body {
     }
     
     .card_evento_eventos img {
-        width: 300px;
-        height: 300px;
+        width: 100%;
+        height: auto;
         border-radius: 10px 10px 0px 0px;
     }
-      .index_titulos h3 {
-        font-size: 10px;
+
+    .card_alinhamento {
+        text-align: center;
+        row-gap: 10%;
+        font-family: var(--font);
+        font-weight: 400;
+        color: #2f2f2f;
+    }
+
+    .index_titulos h1 {
+        font-size: 5vw;
+    }
+
+    .subtitulo_evento {
+        font-size: 3.5vw;
+    }
+
+    .card_alinhamento h3 {
+        font-size: 3.5vw;
+    }
+
+    .data_evento {
+        font-family: var(--font);
+        padding-block: 5px;
+        text-align: center;
+        font-size: 3vw;
     }
 
     .secao_ministerios {
@@ -1757,9 +1797,7 @@ html,body {
         gap: 0px;
         padding-block:1px;
     }
-    .index_titulos {
-        font-size: 5vw;
-    }
+
     .card_ministerio_index_titulo {
         background-color: #00000075;
         width: 45vw;
@@ -2205,6 +2243,7 @@ html,body {
     .contribuicao_footer h4,p {
         width: 100%;
         text-align: center;
+        font-size: 3.5vw;
     }
 
     .div_pastor {
@@ -2223,4 +2262,25 @@ html,body {
         padding-block: 4%;
         text-align: start;
     }
+
+    .div_botao_ver_mais_eventos{
+        padding: 2%;
+        display: flex;
+        justify-content: center;
+    }
+    .botao_ver_mais_eventos {
+        font-family: var(--font);
+        color: var(--body_collor);
+        background-color: var(--footer_collor);
+        padding: 2%;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 3.5vw;
+    }
+    
+    .botao_ver_mais_eventos:hover {
+        background-color: #9cadca;
+    }
+
+
 }
