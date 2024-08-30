@@ -366,7 +366,7 @@ html,body {
     
 }
 
-.index_titulos {
+.index_titulos h1 {
     text-align: center;
     font-family: var(--font); 
     font-size: 1.5rem;
@@ -381,7 +381,7 @@ html,body {
     font-family: var(--font);
     text-align: center;
     padding: 1%;
-    font-size: 2vw;
+    font-size: 15px;
     color: var(--font_collor);
 }
 
@@ -1622,7 +1622,7 @@ html,body {
 
     .div_cultos span {
         display: block;
-        font-size: 3vw;
+        font-size: 4vw;
         width: 100%;
         height: auto;
         margin: 5px 0px 0px 5px;
@@ -1733,8 +1733,8 @@ html,body {
         height: 300px;
         border-radius: 10px 10px 0px 0px;
     }
-      .index_titulos {
-        font-size: 4vw;
+      .index_titulos h3 {
+        font-size: 10px;
     }
 
     .secao_ministerios {
@@ -1747,8 +1747,8 @@ html,body {
     }
 
     .div_ministerios_index {
-        width: 39vw;
-        height: 39vw;
+        width: 45vw;
+        height: 45vw;
         padding-inline: 1px;
         font-family: var(--font);
         color: var(--font_collor);
@@ -1758,15 +1758,15 @@ html,body {
         padding-block:1px;
     }
     .index_titulos {
-        font-size: 4vw;
+        font-size: 5vw;
     }
     .card_ministerio_index_titulo {
         background-color: #00000075;
-        width: 39vw;
-        height: 39vw;
+        width: 45vw;
+        height: 45vw;
         color: #ffffff;
         font-family: "Anta", sans-serif;
-        font-size: 4vw;
+        font-size: 5vw;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1780,7 +1780,7 @@ html,body {
         width: 5vw;
         height: 5vw;
         padding-inline: 0px;
-        transform: translate(0%, -780%);
+        transform: translate(0%, -900%);
         text-decoration: none;
         border-radius: 10px;
     
@@ -1793,14 +1793,14 @@ html,body {
     }
 
     .card_ministerio_index_imagem {
-        width: 39vw;
-        height: 39vw;
+        width: 45vw;
+        height: 45vw;
         border-radius: 10px;
     }
     
     .card_ministerio_index {
-        width: 39vw;
-        height: 39vw;
+        width: 45vw;
+        height: 45vw;
         display: flex;
         text-align: center;
         justify-content: center;
