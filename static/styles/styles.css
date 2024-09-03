@@ -1862,7 +1862,7 @@ html,body {
 
     .titulo_ministerio {
         width: 100%;
-        font-size: 4vw;
+        font-size: 6vw;
         animation:none
     }
 
@@ -2281,7 +2281,7 @@ html,body {
     .titulo_lideranca {
         font-family: var(--font);
         color: var(--font_collor);
-        font-size: 3vw;
+        font-size: 5vw;
         padding-block: 4%;
         text-align: start;
     }
