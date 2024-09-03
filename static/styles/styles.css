@@ -1481,6 +1481,16 @@ html,body {
     font-size: 20px;
 }
 
+.versiculo_contrib h4 {
+    font-family: var(--font);
+    color: var(--font_collor);
+    padding-inline: 20%;
+    text-align: center;
+    padding-block: 3%;
+    white-space: pre-line;
+    font-weight: 200;
+}
+
 
 @media (max-width: 1024px) {
 
@@ -2386,5 +2396,14 @@ html,body {
 
     .categorias_mobile label {
         font-size: 4vw;
+    }
+
+    .versiculo_contrib h4 {
+        font-family: var(--font);
+        color: var(--font_collor);
+        padding-inline: 0%;
+        text-align: center;
+        padding-block: 3%;
+        white-space: pre-line;
     }
 }
