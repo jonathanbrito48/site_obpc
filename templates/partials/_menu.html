@@ -37,14 +37,6 @@
                         {% endfor %}
                     </ul>
                 </li>
-                <li>
-                    <a href="#" data-toggle="submenu">Congregações</a>
-                    <ul class="submenu">
-                        {% for cong in congregacoes %}
-                        <li><a href="{% url 'congregacoes' cong.id %}">{{cong.nome_congregacao}}</a></li>
-                        {% endfor %}
-                    </ul>
-                </li>
                 <li><a href="{% url 'contribuicoes' %}">Contribuições</a></li>
                 <li><a href="{% url 'servicos' %}">Serviços</a></li>
             </ul>
@@ -122,19 +114,6 @@
                     {% for curso in cursos_menu %}
                         <li class="dropdown-option" role="option" tabindex="0">
                             <a href="{% url 'cursos' curso.id %}">{{curso.nome_curso_abreviado}}</a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
-            
-            <div class="dropdown" role="listbox" aria-haspopup="listbox">
-                <div class="dropdown-select" role="button" aria-expanded="false" aria-controls="dropdown-options2">
-                    CONGREGAÇÕES
-                </div>
-                <ul id="dropdown-options2" class="dropdown-options" role="list" aria-labelledby="dropdown-select">
-                    {% for cong in congregacoes %}
-                        <li class="dropdown-option" role="option" tabindex="0">
-                            <a href="{% url 'congregacoes' cong.id %}">{{cong.nome_congregacao}}</a>
                         </li>
                     {% endfor %}
                 </ul>

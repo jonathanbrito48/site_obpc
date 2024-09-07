@@ -64,14 +64,14 @@ class Eventos(models.Model):
     
 class Congregacoes(models.Model):
     nome_congregacao = models.CharField(max_length=100, null=False, blank = False)
-    descricao_congregacao = models.CharField(max_length=2000,null=True,blank=True)
+    dirigente = models.CharField(max_length=100,null=True,blank=True)
     facebook = models.CharField(max_length = 100,null=True, blank = True)
     instagram = models.CharField(max_length = 100,null=True, blank = True)
     endereco = models.CharField(max_length = 300,null=True, blank = True)
     link_maps = models.CharField(max_length = 700,null=True, blank = True)
     cultos = models.CharField(max_length = 300,null=True, blank = True)
-    foto_banner = models.ImageField(upload_to='congregacoes/banner',help_text="Dimensão: 1415 x 480 px")
-    foto_dirigentes = models.ImageField(upload_to='congregacoes/digirentes',help_text="Dimensão: 400 x 480 px")
+    foto_banner = models.ImageField(upload_to='congregacoes/banner',null=True, blank = True,help_text="Dimensão: 1415 x 480 px")
+    foto_dirigentes = models.ImageField(upload_to='congregacoes/digirentes',null=True, blank = True,help_text="Dimensão: 400 x 480 px")
 
     def __str__(self):
         return self.nome_congregacao

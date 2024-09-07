@@ -17,6 +17,8 @@
     --font_collor:  #000000;
     --footer_collor: #637A9F;
     --titulos: 'Mulish', sans-serif;
+    --color1: #637A9F;
+    --color2: #f3f3f3;
     
 }
 
@@ -383,6 +385,10 @@ html,body {
     padding: 1%;
     font-size: 15px;
     color: var(--font_collor);
+}
+
+.subtitulo_evento h3 {
+    text-align: center;
 }
 
 .div_cards_eventos {
@@ -1492,6 +1498,119 @@ html,body {
     font-weight: 200;
 }
 
+.congregacao {
+    background-color: var(--color1);
+    padding-block: 2%;
+    font-family: var(--font);
+    color: var(--color2);
+    text-align: center;
+}
+
+.congregacao h1 {
+    text-decoration:underline 2px ;    
+}
+
+.section_congregacoes_index {
+    display: flex;
+    padding-inline: 5%;
+    gap: 3%;
+    justify-content: center;
+    position: relative;
+}
+
+.section_congregacoes_index div {
+    text-align: start;
+    padding-block-start: 3%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    white-space: nowrap; /* Impede a quebra de linha dos itens */
+    gap: 20px; /* Espaço entre os slides */
+    width: 80%; /* Largura ajustável do contêiner */
+    padding: 10px 0;
+}
+
+.slide {
+    display: inline-block; /* Garante que os itens fiquem na mesma linha */
+    flex: 0 0 40%;
+    width: 40%; /* Largura de cada slide */
+    padding: 15px;
+    border-radius: 10px;
+    text-align: start;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--color2);
+    color: var(--color1);
+}
+
+button {
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+button.prev {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    font-size: 3vw;
+    background-color: none;
+    background: none;
+}
+
+button.next {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    font-size: 3vw;
+    background-color: none;
+    background: none;
+}
+
+.carousel.dragging {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+}
+
+.section_congregacoes_index p,h3 {
+    text-align: start;
+    white-space: pre-line;
+    font-size: 1vw;
+    color: var(--color1);
+}
+
+.section_congregacoes_index h2 {
+    text-align: start;
+    color: var(--color1);
+    font-family: var(--font);
+    font-size: 1.5vw;
+    padding-block-end: 4%;
+}
+
+.div_icons_congregacao  {
+    padding-block: 10px;
+    display: flex;
+    justify-content: start;
+    gap: 5%;
+    text-align: start;
+    width: 100%;
+}
+
+.icone_cong {
+    width: 1.7vw;
+}
+
 
 @media (max-width: 1024px) {
 
@@ -1635,7 +1754,6 @@ html,body {
         height: auto;
         margin: 5px 0px 0px 5px;
         white-space:pre-line;
-        tex
     }
     
     .programacao_subtitulo {
@@ -2407,4 +2525,120 @@ html,body {
         padding-block: 3%;
         white-space: pre-line;
     }
+
+    .congregacao {
+        background-color: var(--color1);
+        padding-block: 2%;
+        font-family: var(--font);
+        color: var(--color2);
+        text-align: center;
+    }
+    
+    .congregacao h1 {
+        text-decoration:underline 2px ;
+        font-size: 4vw;    
+    }
+    
+    .section_congregacoes_index {
+        display: flex;
+        padding-inline: 2%;
+        gap: 3%;
+        justify-content: center;
+        position: relative;
+    }
+    
+    .section_congregacoes_index div {
+        text-align: start;
+        padding-block-start: 3%;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .carousel {
+        display: flex;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        white-space: nowrap; /* Impede a quebra de linha dos itens */
+        gap: 20px; /* Espaço entre os slides */
+        width: 90%; /* Largura ajustável do contêiner */
+        padding: 10px 0;
+    }
+    
+    .slide {
+        display: inline-block; /* Garante que os itens fiquem na mesma linha */
+        flex: 0 0 80%;
+        height: ;
+        width: 100%; /* Largura de cada slide */
+        padding: 15px;
+        border-radius: 10px;
+        text-align: start;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: var(--color2);
+        color: var(--color1);
+    }
+    
+    button {
+        background-color: rgba(0,0,0,0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 1000;
+    }
+    
+    button.prev {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1000;
+        font-size: 6vw;
+        background-color: none;
+        background: none;
+    }
+    
+    button.next {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1000;
+        font-size: 5vw;
+        background-color: none;
+        background: none;
+    }
+    
+    .carousel.dragging {
+        cursor: grabbing;
+        cursor: -webkit-grabbing;
+    }
+    
+    .section_congregacoes_index p,h3 {
+        text-align: start;
+        white-space: pre-line;
+        font-size: 4vw;
+        color: var(--color1);
+    }
+    
+    .section_congregacoes_index h2 {
+        text-align: start;
+        color: var(--color1);
+        font-family: var(--font);
+        font-size: 4vw;
+        padding-block-end: 4%;
+    }
+    
+    .div_icons_congregacao  {
+        padding-block: 10px;
+        display: flex;
+        justify-content: start;
+        gap: 5%;
+        text-align: start;
+        width: 100%;
+    }
+    
+    .icone_cong {
+        width: 7vw;
+    }
+    
 }

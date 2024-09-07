@@ -100,9 +100,6 @@
         <div class="index_titulos">
             <h1>Eventos</h1>
         </div>
-        <div class="subtitulo_evento">
-            <h3>Acompanhe nossa agenda</h3>
-        </div>
         <div class="div_cards_eventos">
             {% for card in evento  %}
             <div class="card_evento_eventos">
@@ -126,6 +123,118 @@
             </a>
         </div>
     </div>
+    <section class="congregacao">
+        <h1>Congregações</h1>
+        <section class="section_congregacoes_index">
+            <button class="prev" id="prevButton">&#10094;</button>
+            <div class="carousel">
+                {% for congregacao in congregacoes %}
+                <div class="slide">
+                    <h2>{{congregacao.nome_congregacao}}</h2>
+                    <h3>{{congregacao.dirigente}}</h3>
+                    <strong><p>{{congregacao.cultos}}</p></strong>
+                    <p>{{congregacao.endereco}}</p>
+                    <section class="div_icons_congregacao">
+                        {% if congregacao.instagram %}
+                        <a href="https://www.instagram.com/{{congregacao.instagram}}/"><img src="{% static '/assets/instagram.png' %}" class="icone_cong" alt="logo_insta"></a>
+                        {% endif %}
+                        {% if congregacao.facebook %}
+                        <a href="https://www.facebook.com/{{congregacao.facebook}}/"><img src="{% static '/assets/facebook.png' %}" class="icone_cong" alt="logo_face"></a>
+                        {% endif %}
+                        {% if congregacao.link_maps %}
+                        <a href="{{congregacao.link_maps}}"><img src="{% static '/assets/mapas-do-google.png' %}" class="icone_cong" alt="logo_face"></a>
+                        {% endif %}
+                    </section>
+                </div>
+                {% endfor %}
+            </div>
+            <button class="next" id="nextButton">&#10095;</button>
+        </section>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.querySelector('.carousel');
+            const prevButton = document.getElementById('prevButton');
+            const nextButton = document.getElementById('nextButton');
+            let isDragging = false;
+            let startX;
+            let scrollLeft;
+            let movementFactor = 2; // Ajuste para aumentar a sensibilidade do arrasto
+    
+            // Função para rolar para a esquerda (com botão)
+            function scrollLeftButton() {
+                carousel.scrollBy({
+                    left: -300, // Valor fixo para os botões
+                    behavior: 'smooth'
+                });
+            }
+    
+            // Função para rolar para a direita (com botão)
+            function scrollRightButton() {
+                carousel.scrollBy({
+                    left: 300, // Valor fixo para os botões
+                    behavior: 'smooth'
+                });
+            }
+    
+            // Event listeners para os botões
+            prevButton.addEventListener('click', scrollLeftButton);
+            nextButton.addEventListener('click', scrollRightButton);
+    
+            // Iniciar o arrasto com o mouse
+            carousel.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                startX = e.pageX - carousel.offsetLeft; // Posição inicial do clique
+                scrollLeft = carousel.scrollLeft; // Posição atual do scroll
+                carousel.classList.add('dragging');
+            });
+    
+            // Detectar o movimento do mouse em tempo real
+            carousel.addEventListener('mousemove', (e) => {
+                if (!isDragging) return; // Só mover se estiver arrastando
+                e.preventDefault(); // Prevenir seleção de texto
+                const x = e.pageX - carousel.offsetLeft; // Posição atual do mouse
+                const walk = (x - startX) * movementFactor; // Multiplicar pelo fator de movimento
+                carousel.scrollLeft = scrollLeft - walk; // Atualiza a posição do scroll
+            });
+    
+            // Finalizar o arrasto com o mouse
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+                carousel.classList.remove('dragging');
+            });
+    
+            // Finalizar o arrasto ao sair da área
+            carousel.addEventListener('mouseleave', () => {
+                isDragging = false;
+                carousel.classList.remove('dragging');
+            });
+    
+            // Iniciar o arrasto em dispositivos móveis (toque)
+            carousel.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                startX = e.touches[0].pageX - carousel.offsetLeft; // Posição inicial do toque
+                scrollLeft = carousel.scrollLeft; // Posição atual do scroll
+                carousel.classList.add('dragging');
+            });
+    
+            // Detectar o movimento do toque em tempo real
+            carousel.addEventListener('touchmove', (e) => {
+                if (!isDragging) return; // Só mover se estiver arrastando
+                const x = e.touches[0].pageX - carousel.offsetLeft; // Posição atual do toque
+                const walk = (x - startX) * movementFactor; // Multiplicar pelo fator de movimento
+                carousel.scrollLeft = scrollLeft - walk; // Atualiza a posição do scroll
+            });
+    
+            // Finalizar o arrasto no toque
+            carousel.addEventListener('touchend', () => {
+                isDragging = false;
+                carousel.classList.remove('dragging');
+            });
+        });
+    </script>    
+    
     <div class="instagram">
         <script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
         <div class="commonninja_component pid-08209d49-62a9-4497-8f7d-cc048d7c7b62"></div>

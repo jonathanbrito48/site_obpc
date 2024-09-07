@@ -13,7 +13,8 @@ def index(request):
         ).order_by('data_inicio')[:3]
     ministerios = Ministerios.objects.all().filter(publicado=True)
     devocional = Devocional.objects.order_by('-data_devocional')[:1]
-    return render(request,'site/index.html',{"carrosel":carrosel,"evento": evento,"ministerios":ministerios,"devocional":devocional})
+    congregacoes = Congregacoes.objects.all()
+    return render(request,'site/index.html',{"congregacoes":congregacoes,"carrosel":carrosel,"evento": evento,"ministerios":ministerios,"devocional":devocional})
 
 def pastores(request):
     pastores= Pastores.objects.order_by('posicao').filter(publicado=True)

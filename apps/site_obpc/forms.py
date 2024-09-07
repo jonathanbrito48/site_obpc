@@ -31,8 +31,8 @@ class CongregacaoForms(forms.ModelForm):
         model = Congregacoes
         fields = '__all__'
         widgets = {
-            'descricao_congregacao': forms.Textarea(attrs={'rows':20,'cols':80}),
-            'cultos': forms.Textarea(attrs={'rows':5,'cols':80})
+            'cultos': forms.Textarea(attrs={'rows':10,'cols':80}),
+            'endereco': forms.Textarea(attrs={'rows':10,'cols':80})
         }
 
 class CursosForms(forms.ModelForm):
