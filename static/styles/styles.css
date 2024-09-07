@@ -1061,7 +1061,7 @@ html,body {
     display: block;
 }
 
-.secao_contribuicao p {
+.secao_contribuicao p,h2 {
     text-align: center;
 }
 
@@ -1264,7 +1264,7 @@ html,body {
     text-align: justify;
 }
 
-.card_devocionais_info h3 {
+.card_devocionais_info h2 {
     text-align: start;
 }
 
@@ -1891,7 +1891,7 @@ button.next {
         font-size: 3.5vw;
     }
 
-    .card_alinhamento h3 {
+    .card_alinhamento h2 {
         font-size: 3.5vw;
     }
 
@@ -2121,7 +2121,7 @@ button.next {
         margin-block-end: 20px;
     }
 
-    .card_devocionais_info h3 {
+    .card_devocionais_info h2 {
         font-size: 4vw;
         text-align: center;
     }
