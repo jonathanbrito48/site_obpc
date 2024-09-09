@@ -19,10 +19,9 @@
     --titulos: 'Mulish', sans-serif;
     --color1: #637A9F;
     --color2: #f3f3f3;
-    
 }
 
-html,body {
+body {
     background: radial-gradient(circle,#f3f3f3,#c3d9ef);
     color: var(--body_collor);
     max-width: 100%;
@@ -46,7 +45,7 @@ html,body {
 }
 
 .conteudo_pagina {
-    margin-top:4.3rem;
+    margin-top: 3.2%;
     justify-content: center;
 }
 .cabecalho {
@@ -262,10 +261,16 @@ html,body {
     width: 30rem;
     height: 35rem;
     font-family: var(--titulos);
-    color: var(--font_collor);
+    color: var(--color1);
     align-items:end;
     background-color: #ffffff;
     border-radius: 6px 0 0 6px;
+}
+
+.div_cultos h2 {
+    color: var(--color1);
+    text-align: start;
+    margin-inline-start: 3%;
 }
 
 .div_cultos span {
@@ -601,6 +606,7 @@ html,body {
     color: var(--font_collor);
     padding-block: 4%;
     text-align: start;
+    font-size: 20px;
 }
 
 @keyframes suavizacao {
@@ -982,6 +988,10 @@ html,body {
     white-space: pre-line;
 }
 
+.curso_sobre h3 {
+    color: var(--font_collor);
+}
+
 .separador {
     width: 30px;
     height: 2px;
@@ -1210,6 +1220,10 @@ html,body {
     color: var(--font_collor);
 }
 
+.devocional_div h2 {
+    text-align: start;
+}
+
 .devocional_div p {
     text-align: justify;
     white-space: pre-line;
@@ -1394,7 +1408,6 @@ html,body {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 0 3px 1px #00000080;
-    /* justify-content: center; */
     display: block;
     background-color: var(--body_collor);
 }
@@ -1405,7 +1418,7 @@ html,body {
     border-radius: 10px 10px 0 0  ;
 }
 
-.card_servicos h2,h3{
+.card_servicos h3, h2  {
     color: var(--font_collor);
     font-family: var(--font);
     justify-content: center;
@@ -1580,7 +1593,6 @@ button.next {
 
 .carousel.dragging {
     cursor: grabbing;
-    cursor: -webkit-grabbing;
 }
 
 .section_congregacoes_index p,h3 {
@@ -1619,7 +1631,7 @@ button.next {
     } */
     
     .conteudo_pagina {
-        margin-top:5rem;
+        margin-top:60px;
         justify-content: center;
     }
 
@@ -2472,7 +2484,6 @@ button.next {
         height: auto;
         border-radius: 10px;
         box-shadow: 0 0 3px 1px #00000080;
-        /* justify-content: center; */
         display: block;
         background-color: var(--body_collor);
     }
@@ -2483,7 +2494,7 @@ button.next {
         border-radius: 10px 10px 0 0  ;
     }
     
-    .card_servicos h2,h3{
+    .card_servicos h2, h3{
         color: var(--font_collor);
         font-family: var(--font);
         justify-content: center;
