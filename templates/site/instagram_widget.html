@@ -1,0 +1,23 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+<div class="instagram-widget">
+    {% for post in posts %}
+        <div class="instagram-post">
+            {% if post.media_type == 'IMAGE' %}
+                <img src="{{ post.media_url }}" alt="{{ post.caption }}" class="post-image">
+            {% elif post.media_type == 'VIDEO' %}
+                <video controls class="post-video">
+                    <source src="{{ post.media_url }}" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+            {% elif post.media_type == 'CAROUSEL_ALBUM' %}
+                <img src="{{ post.media_url }}" alt="{{ post.caption }}" class="post-image">
+            {% endif %}
+            {% if post.caption %}
+                <a href="{{ post.permalink }}"><p>{{ post.caption }}</p></a>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

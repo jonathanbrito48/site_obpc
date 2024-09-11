@@ -1623,6 +1623,46 @@ button.next {
     width: 1.7vw;
 }
 
+.instagram-widget {
+    padding-inline: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.instagram-post {
+    width: 350px;
+}
+
+.instagram-post img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.instagram-post video {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.instagram-post a {
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    background-color: #00000065;
+    transform: translate(0%, -100%);
+    align-content: center;
+}
+
+.instagram-post p {
+    color: var(--color2);
+    text-align: center;
+    padding-inline: 5%;
+}
 
 @media (max-width: 1024px) {
 

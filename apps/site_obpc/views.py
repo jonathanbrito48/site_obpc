@@ -4,7 +4,8 @@ from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Minister
     ,Congregacoes,Cursos,Devocional,Servicos,Categoria_servicos,QuemSomos
 from django.utils import timezone
 from django.db.models import Count,Q
-
+import requests
+from django.conf import settings
 
 def index(request):
     carrosel = carrosel_index.objects.order_by('posicao').filter(publicado=True)
@@ -115,3 +116,38 @@ def divulgacao_servicos_view(request):
         'servicos_pagina':servicos_pagina,
     }
     return render(request,'site/divulgacao_servicos.html',context)
+
+def instagram_widget(request):
+    access_token = settings.INSTAGRAM_ACCESS_TOKEN
+    url = f"https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,permalink,thumbnail_url,timestamp,children&access_token={access_token}"
+    response = requests.get(url)
+    data = response.json()
+
+    posts = []
+    for media in data.get('data', []):
+        if media['media_type'] == 'CAROUSEL_ALBUM':
+            carousel_id = media['id']
+            carousel_url = f"https://graph.instagram.com/{carousel_id}?fields=children{{media_type,media_url,thumbnail_url}}&access_token={access_token}"
+            carousel_response = requests.get(carousel_url)
+            carousel_data = carousel_response.json()
+            children = carousel_data.get('children', {}).get('data', [])
+            if children:
+                first_child = children[0]
+                posts.append({
+                    'media_type': first_child['media_type'],
+                    'media_url': first_child['media_url'],
+                    'permalink': media.get('permalink'),
+                    'caption': media.get('caption')
+                })
+        else:
+            posts.append({
+                'media_type': media.get('media_type'),
+                'media_url': media.get('media_url'),
+                'permalink': media.get('permalink'),
+                'caption': media.get('caption')
+            })
+
+    context = {
+        'posts': posts
+    }
+    return render(request, 'site/instagram_widget.html', context)
