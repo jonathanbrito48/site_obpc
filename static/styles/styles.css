@@ -1629,6 +1629,7 @@ button.next {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
+    padding-block: 5%;
 }
 
 .instagram-post {
@@ -1653,15 +1654,40 @@ button.next {
     width: 350px;
     height: 350px;
     position: absolute;
-    background-color: #00000065;
+    background-color: #00000000;
     transform: translate(0%, -100%);
     align-content: center;
 }
 
+.instagram-post a:hover {
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    background-color: #0d0d0e54;
+    transform: translate(0%, -100%);
+    align-content: center;
+    transition-duration: 1000ms;
+}
+
 .instagram-post p {
+    color: #00000000;
+    text-align: center;
+    padding-inline: 5%;
+    align-content: center;
+    height: 100%;
+    font-size: 20px;
+}
+
+.instagram-post p:hover {
     color: var(--color2);
     text-align: center;
     padding-inline: 5%;
+    transition-duration: 1000ms;
+}
+
+.post-video {
+    max-width: 100%;
+    height: auto;
 }
 
 @media (max-width: 1024px) {
