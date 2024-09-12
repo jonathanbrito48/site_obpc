@@ -19,6 +19,7 @@
     --titulos: 'Mulish', sans-serif;
     --color1: #637A9F;
     --color2: #f3f3f3;
+    --instagram-mobile: 30vw;
 }
 
 body {
@@ -2716,6 +2717,76 @@ button.next {
     
     .icone_cong {
         width: 7vw;
+    }
+
+    .instagram-widget {
+        padding-inline: 1vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding-block: 5%;
+    }
+    
+    .instagram-post {
+        width: var(--instagram-mobile);
+        height: var(--instagram-mobile);
+    }
+    
+    .instagram-post img {
+        width: 100%;
+        height: var(--instagram-mobile);
+        object-fit: cover;
+        display: block;
+    }
+    
+    .instagram-post video {
+        width: 100%;
+        height: var(--instagram-mobile);
+        object-fit: cover;
+        display: block;
+    }
+    
+    .instagram-post a {
+        width: var(--instagram-mobile);
+        height: var(--instagram-mobile);
+        position: absolute;
+        background-color: #00000000;
+        transform: translate(0%, -100%);
+        align-content: center;
+    }
+    
+    .instagram-post a:hover {
+        width: var(--instagram-mobile);
+        height: var(--instagram-mobile);
+        position: absolute;
+        background-color: #0d0d0e54;
+        align-content: center;
+        transition-duration: 1000ms;
+    }
+    
+    .instagram-post p {
+        color: #00000000;
+        text-align: center;
+        padding-inline: 3%;
+        box-sizing: border-box;
+        align-content: center;
+        text-align: center;
+        height: 100%;
+        font-size: 1.5vw;
+    }
+    
+    .instagram-post p:hover {
+        color: var(--color2);
+        padding-inline: 3%;
+        box-sizing: border-box;
+        text-align: center;
+        transition-duration: 1000ms;
+    }
+    
+    .post-video {
+        max-width: 100%;
+        height: var(--instagram-mobile);
     }
     
 }

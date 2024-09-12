@@ -137,3 +137,9 @@ class QuemSomos(models.Model):
 
     def __str__(self):
         return self.nome_qsomos
+    
+class InstagramToken(models.Model):
+    token = models.CharField(max_length=1000,null=False,blank=False)
+
+    def __str__(self):
+        return self.token

@@ -250,10 +250,32 @@
                 {% endif %}
                 <a href="{{ post.permalink }}" target="_blank" class="instagram-link">
                     {% if post.caption %}
-                    <p>{{ post.caption }}</p>
+                    <p>{{ post.caption | truncatewords:50 }}</p>
                     {% endif %}
                 </a>
             </div>
         {% endfor %}
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoLinks = document.querySelectorAll('.instagram-link');
+    
+            videoLinks.forEach(link => {
+                const video = link.parentElement.querySelector('.post-video');
+                
+                if (video) {
+                    // Reproduzir o vídeo ao passar o mouse sobre a âncora
+                    link.addEventListener('mouseover', function() {
+                        video.play();
+                    });
+    
+                    // Pausar o vídeo quando o mouse sair da âncora
+                    link.addEventListener('mouseout', function() {
+                        video.pause();
+                        video.currentTime = 0; // Reiniciar o vídeo quando o mouse sair
+                    });
+                }
+            });
+        });
+    </script>
 {% endblock %}

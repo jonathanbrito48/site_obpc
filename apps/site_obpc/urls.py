@@ -1,7 +1,7 @@
 from django.urls import path
 from apps.site_obpc.views import index,pastores,MinisterioViewSet,EventosLista,\
     CongregacoesViewSet,EventoDetalhe,CursoViewSet,ContribuicaoViewSet,quemsomosViewSet,\
-    DevocionalViewSet,DevocionalDetalheViewSet,divulgacao_servicos_view,instagram_widget
+    DevocionalViewSet,DevocionalDetalheViewSet,divulgacao_servicos_view
 
 urlpatterns = [
     path('', index,name='index'),
@@ -15,6 +15,5 @@ urlpatterns = [
     path('devocionais/',DevocionalViewSet,name='devocionais'),
     path('devocionais/<int:devocional_id>/',DevocionalDetalheViewSet,name='devocional_detalhe'),
     path('servicos',divulgacao_servicos_view,name='servicos'),
-    path('quemsomos',quemsomosViewSet,name='quemsomos'),
-    path('instagram',instagram_widget,name='instagram')
+    path('quemsomos',quemsomosViewSet,name='quemsomos')
 ]

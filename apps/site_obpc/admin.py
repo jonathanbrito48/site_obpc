@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.db import models
-from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios,Congregacoes,Cursos,Devocional,Servicos,Categoria_servicos,QuemSomos
+from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios,Congregacoes,Cursos,Devocional,Servicos,Categoria_servicos,QuemSomos,InstagramToken
 from .forms import MinisterioForms, PastoresForms, EventoForms, CongregacaoForms, CursosForms,DevocionalForms,Quemsomosform
 
 
@@ -103,3 +103,9 @@ class QuemsomosAdmin(admin.ModelAdmin):
     list_per_page = 20
 
 admin.site.register(QuemSomos,QuemsomosAdmin)
+
+class InstagramTokenAdmin(admin.ModelAdmin):
+    list_display = ('id','token')
+    list_display_links = ('id','token',)
+
+admin.site.register(InstagramToken,InstagramTokenAdmin)

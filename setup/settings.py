@@ -18,9 +18,7 @@ SECRET_KEY =  str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','177.8.165.11','127.0.0.1']
-
-INSTAGRAM_ACCESS_TOKEN = str(os.getenv('INSTAGRAM_ACCESS_TOKEN'))
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
