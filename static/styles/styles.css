@@ -355,11 +355,13 @@ body {
     width: 20rem;
     height: 20rem;
     display: flex;
+    object-fit: cover;
 }
 
 .card_ministerio_index_imagem {
     width: 100%;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 /* BANNER */
@@ -1415,8 +1417,9 @@ body {
 
 .card_servicos img{
     width: 380px;
-    height: auto;
-    border-radius: 10px 10px 0 0  ;
+    height: 250px;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
 }
 
 .card_servicos h3, h2  {
@@ -2035,7 +2038,6 @@ button.next {
         transform: translate(0%, -900%);
         text-decoration: none;
         border-radius: 10px;
-    
     }
     
     .card_ministerio_index_titulo:hover {
@@ -2048,6 +2050,7 @@ button.next {
         width: 45vw;
         height: 45vw;
         border-radius: 10px;
+        object-fit: cover;
     }
     
     .card_ministerio_index {
