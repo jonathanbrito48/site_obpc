@@ -1211,8 +1211,8 @@ body {
 }
 
 .devocional_div {
-    width: 50%;
-    height: 40%;
+    width: 55%;
+    height: 60%;
     position: absolute;
     display: block;
     margin-top: -30%;
@@ -1228,7 +1228,7 @@ body {
 .devocional_div p {
     text-align: justify;
     white-space: pre-line;
-    font-size: 1vw;
+    font-size: 1.2vw;
 }
 
 .devocionais_titulo {
