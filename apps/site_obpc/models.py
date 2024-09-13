@@ -143,3 +143,16 @@ class InstagramToken(models.Model):
 
     def __str__(self):
         return self.token
+    
+class Instagramapi(models.Model):
+    id_instagram= models.CharField(max_length=50,null=True,blank=True)
+    media_type= models.CharField(max_length=500,null=True,blank=True)
+    caption= models.CharField(max_length=5000,null=True,blank=True)
+    media_url= models.CharField(max_length=1000,null=True,blank=True)
+    timestamp= models.CharField(max_length=100,null=True,blank=True)
+    children= models.CharField(max_length=1000,null=True,blank=True)
+    thumbnail_url= models.CharField(max_length=1000,null=True,blank=True)
+    permalink=models.CharField(max_length=500,null=True,blank=True)
+
+    def __str__(self):
+        return f"Instagramapi(id_instagram={self.id_instagram}, caption={self.caption})"
