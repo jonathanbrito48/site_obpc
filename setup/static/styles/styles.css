@@ -1691,6 +1691,16 @@ button.next {
     height: auto;
 }
 
+.instagram_post_svg {
+    width: 30px;
+    position: absolute;
+    transform: translate(1040%,20%);
+}
+
+.instagram-post div {
+    display: none;
+}
+
 @media (max-width: 1024px) {
 
     /* * {
@@ -2788,5 +2798,17 @@ button.next {
         max-width: 100%;
         height: var(--instagram-mobile);
     }
-    
+
+    .instagram_post_svg {
+        width: 3.5vw;
+        position: absolute;
+        transform: translate(26vw,0.5vw);
+    }
+
+    .instagram-post video {
+        display: none;
+    }
+    .instagram-post div {
+        display: block;
+    }
 }
