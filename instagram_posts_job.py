@@ -4,8 +4,25 @@ import requests
 from asgiref.sync import sync_to_async
 from django.db.models import ObjectDoesNotExist
 import asyncio
+from datetime import datetime
+import sys
 
+log_file = open(f'/home/jonathanbrito48/log_instagram_script.log', 'w')
 
+# Redirecionar stdout e stderr para o arquivo de log com timestamps
+class LoggerWriter:
+    def __init__(self, level):
+        self.level = level
+    def write(self, message):
+        if message != '\n':  # Ignorar novas linhas
+            timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            self.level(f"{timestamp} - {message}\n")
+            log_file.flush()
+    def flush(self):
+        pass
+
+sys.stdout = LoggerWriter(log_file.write)
+sys.stderr = LoggerWriter(log_file.write)
 
 # Defina as configurações do projeto Django
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'setup.settings')
