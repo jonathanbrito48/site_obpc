@@ -80,8 +80,8 @@
         <div class="div_ministerios_index">
             <div class="card_ministerio_index">
                 <img class="card_ministerio_index_imagem" src="{{ministerio.card_ministerio.url}}" alt="card_ministerio_index">
+                <a class="card_ministerio_index_ancora" href="{% url 'ministerio' ministerio.nome_ministerio %}"><h3 class="card_ministerio_index_titulo">{{ministerio.nome_ministerio}}</h3></a>
             </div>
-            <a class="card_ministerio_index_ancora" href="{% url 'ministerio' ministerio.nome_ministerio %}"><h3 class="card_ministerio_index_titulo">{{ministerio.nome_ministerio}}</h3></a>
 
         </div>
         {% endfor %}
