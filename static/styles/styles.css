@@ -334,12 +334,10 @@ body {
   
 .card_ministerio_index_ancora {
     position:relative;
-    /* top: 50%;
-    right: 50%; */
     width: 320px;
     height: 320px;
     padding-inline: 0px;
-    transform: translate(0%, -101.5%);
+    transform: translate(-320px, -0%);
     text-decoration: none;
     border-radius: 10px;
 
@@ -1210,6 +1208,7 @@ body {
     width: 100%;
     height: auto;
     padding-block-end: 2%;
+    object-fit: cover;
 }
 
 .devocional_div {
@@ -1225,6 +1224,7 @@ body {
 
 .devocional_div h2 {
     text-align: start;
+    font-size: 2vw;
 }
 
 .devocional_div p {
@@ -2029,13 +2029,11 @@ button.next {
     }
       
     .card_ministerio_index_ancora {
-        position:relative;
-        /* top: -50%;
-        right: 0%; */
+        position:absolute;
         width: 5vw;
         height: 5vw;
         padding-inline: 0px;
-        transform: translate(0%, -900%);
+        transform: translate(-45vw, 0);
         text-decoration: none;
         border-radius: 10px;
     }
@@ -2056,7 +2054,7 @@ button.next {
     .card_ministerio_index {
         width: 45vw;
         height: 45vw;
-        display: flex;
+        display: block;
         text-align: center;
         justify-content: center;
     }
