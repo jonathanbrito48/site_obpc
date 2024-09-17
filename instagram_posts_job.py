@@ -118,3 +118,5 @@ async def inserir_dados():
 if __name__ == '__main__':
     # Execute a função assíncrona
     asyncio.run(inserir_dados())
+
+log_file.close()
