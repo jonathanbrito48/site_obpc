@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.db import models
-from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios,Congregacoes,Cursos,Devocional,Servicos,Categoria_servicos,QuemSomos,InstagramToken
+from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios,Congregacoes,Cursos,Devocional,Servicos,Categoria_servicos,QuemSomos,InstagramToken,Instagramapi
 from .forms import MinisterioForms, PastoresForms, EventoForms, CongregacaoForms, CursosForms,DevocionalForms,Quemsomosform
 
 
@@ -109,3 +109,9 @@ class InstagramTokenAdmin(admin.ModelAdmin):
     list_display_links = ('id','token',)
 
 admin.site.register(InstagramToken,InstagramTokenAdmin)
+
+class InstagramIndexAdmin(admin.ModelAdmin):
+    list_display= ('id_instagram','timestamp','media_type','created_time')
+    list_display_links = ('id_instagram','media_type','timestamp',)
+
+admin.site.register(Instagramapi,InstagramIndexAdmin)
