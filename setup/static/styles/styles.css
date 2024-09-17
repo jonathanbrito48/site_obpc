@@ -1154,13 +1154,15 @@ body {
 
 .cabecalho_qsomos img {
     width: 100%;
-    height: 13.55%;
+    height: 10vw;
     padding-block-end: 20px;
+    object-fit: cover;
 }
 
 .cabecalho_qsomos h1 {
-    position: absolute;
-    margin-top: -10rem;
+    position: relative;
+    display: block;
+    transform: translate(0%,-7vw);
     margin-left: 5%;
     font-family: var(--font);
     text-shadow: 
@@ -2175,17 +2177,22 @@ button.next {
         width: 100%;
     }
 
+    .cabecalho_qsomos img {
+        width: 100%;
+        height: 20vw;
+        padding-block-end: 20px;
+        object-fit: cover;
+    }
 
     .cabecalho_qsomos h1 {
-        position: absolute;
-        margin-top: -16.5%;
-        margin-left: 5%;
+        position: relative;
+        transform: translate(0,-17vw);
         font-family: var(--font);
         text-shadow: 
             1px 1px 0 rgb(0, 0, 0),
             -1px -1px 0 rgba(0, 0, 0, 0.756),
             1px -1px 0 rgba(0, 0, 0, 0.756),
-            -1px 1px 0 rgba(0, 0, 0, 0.756); /* Sombra fraca */
+            -1px 1px 0 rgba(0, 0, 0, 0.756); 
         font-size: 5vw;
     }
 
