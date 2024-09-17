@@ -113,6 +113,6 @@ admin.site.register(InstagramToken,InstagramTokenAdmin)
 class InstagramIndexAdmin(admin.ModelAdmin):
     list_display= ('id_instagram','timestamp','media_type','created_time')
     list_display_links = ('id_instagram','media_type','timestamp',)
-    ordering=('timestamp',)
+    ordering=('-timestamp',)
 
 admin.site.register(Instagramapi,InstagramIndexAdmin)
