@@ -17,7 +17,7 @@ class Ministerios(models.Model):
     nome_ministerio=models.CharField(max_length=50,null=False,blank=False)
     descricao_ministerio=models.CharField(max_length=2000,null=False,blank=False)
     foto_ministerio=models.ImageField(upload_to='ministerios/foto_ministerios',help_text="Dimensão: 496 x 388 px")
-    logo_ministerio=models.ImageField(upload_to='ministerios/logo_ministerio',help_text="Dimensão: 165 x 48 px")
+    logo_ministerio=models.ImageField(upload_to='ministerios/logo_ministerio',help_text="Dimensão: 165 x 48 px",null=True, blank = True)
     card_ministerio = models.ImageField(upload_to='ministerios/card_index',help_text="Dimensão: 320 x 320 px")
     publicado= models.BooleanField(default=True)
     facebook = models.CharField(max_length = 100,null=True, blank = True)

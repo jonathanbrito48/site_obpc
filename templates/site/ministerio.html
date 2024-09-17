@@ -3,7 +3,7 @@
 {% block content %}
     <div class="div_ministerios">
         <div class="alinhamento_div_titulo">
-            {% if ministerio.logo_ministerio.url %}
+            {% if ministerio.logo_ministerio %}
             <img class="logo_ministerio" src="{{ ministerio.logo_ministerio.url }}" alt="">
             {% else %}
             <h1 class="titulo_ministerio">{{ministerio.nome_ministerio}}</h1>
