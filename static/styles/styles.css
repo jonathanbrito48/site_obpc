@@ -1302,6 +1302,7 @@ body {
 .devocional_detalhe_disposicao {
     display: flex;
     gap: 10px;
+    justify-content: center;
 }
 .titulo_devocional {
     font-family: var(--font);
