@@ -153,7 +153,7 @@ class Instagramapi(models.Model):
     children= models.CharField(max_length=1000,null=True,blank=True)
     thumbnail_url= models.CharField(max_length=1000,null=True,blank=True)
     permalink=models.CharField(max_length=500,null=True,blank=True)
-    created_time=models.DateTimeField(auto_now=True)
+    created_time=models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"Instagramapi(id_instagram={self.id_instagram}, caption={self.caption})"
