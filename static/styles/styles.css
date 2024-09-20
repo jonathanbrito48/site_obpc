@@ -396,8 +396,9 @@ body {
     font-size: 1.5rem;
     color: var(--font_collor);
     text-decoration:underline;
+    padding-block: 2%;
     margin: 0%;
-    padding: 0%;
+    padding-inline: 0%;
 }
 
 .subtitulo_evento {
