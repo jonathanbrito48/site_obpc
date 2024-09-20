@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.db import models
-from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios,Congregacoes,Cursos,Devocional,Servicos,Categoria_servicos,QuemSomos,InstagramToken,Instagramapi
+from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios,Congregacoes,Cursos,Devocional,Servicos,Categoria_servicos,QuemSomos,InstagramToken,Instagramapi,YoutubeAPI
 from .forms import MinisterioForms, PastoresForms, EventoForms, CongregacaoForms, CursosForms,DevocionalForms,Quemsomosform
 
 
@@ -116,3 +116,11 @@ class InstagramIndexAdmin(admin.ModelAdmin):
     ordering=('-timestamp',)
 
 admin.site.register(Instagramapi,InstagramIndexAdmin)
+
+
+class YoutubeAPIAdmin(admin.ModelAdmin):
+    list_display= ('id','title','publishedAt','liveBroadcastContent','created_time')
+    list_display_links=('id','title',)
+    ordering=('-publishedAt',)
+
+admin.site.register(YoutubeAPI,YoutubeAPIAdmin)

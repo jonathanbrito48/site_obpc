@@ -157,3 +157,15 @@ class Instagramapi(models.Model):
 
     def __str__(self):
         return f"Instagramapi(id_instagram={self.id_instagram}, caption={self.caption})"
+
+
+class YoutubeAPI(models.Model):
+    videoId= models.CharField(max_length=500,null=True,blank=True)
+    publishedAt= models.CharField(max_length=100,null=True,blank=True)
+    title=models.CharField(max_length=100,null=True,blank=True)
+    thumbnails=models.CharField(max_length=100,null=True,blank=True)
+    liveBroadcastContent=models.CharField(max_length=100,null=True,blank=True)
+    created_time=models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.title} - {self.publishedAt}"

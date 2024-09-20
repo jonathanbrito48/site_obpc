@@ -1,7 +1,7 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render,get_object_or_404
 from .models import Pastores,Ministerios,carrosel_index,Eventos,Lideres_Ministerios\
-    ,Congregacoes,Cursos,Devocional,Servicos,Categoria_servicos,QuemSomos,Instagramapi
+    ,Congregacoes,Cursos,Devocional,Servicos,Categoria_servicos,QuemSomos,Instagramapi,YoutubeAPI
 from django.utils import timezone
 from django.db.models import Count,Q
 import requests
@@ -18,8 +18,11 @@ def index(request):
     posts = Instagramapi.objects.all()
     
     posts = posts[:24]
+
+    youtube=YoutubeAPI.objects.all()[:15]
+
     context = {
-        "posts": posts,"congregacoes":congregacoes,"carrosel":carrosel,"evento": evento,"ministerios":ministerios,"devocional":devocional
+        "youtube":youtube,"posts": posts,"congregacoes":congregacoes,"carrosel":carrosel,"evento": evento,"ministerios":ministerios,"devocional":devocional
     }
 
     return render(request,'site/index.html',context)

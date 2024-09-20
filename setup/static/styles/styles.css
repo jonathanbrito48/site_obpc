@@ -192,32 +192,48 @@ body {
     border-radius: 0px 0px 10px 10px;
 }
 
-
-.slick-prev, .slick-next {
-    background-color: transparent;
-    border: none;
-    font-size: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    color: transparent;
-}
-
-.slick-prev:before,
-.slick-next:before {
-    content: '';
-    display: inline-block;
-    vertical-align: middle;
-}
-
 .slick-prev {
-    left: 0;
-    position: absolute;
+    border: none; /* Remove a borda padrão */
+    border-radius: 50%; /* Botões circulares */
+    width: 40px; /* Largura do botão */
+    height: 40px; /* Altura do botão */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; /* Mantém os botões visíveis sobre outros elementos */
 }
 
 .slick-next {
-    right: 0;
-    position: absolute;
+    border: none; /* Remove a borda padrão */
+    border-radius: 50%; /* Botões circulares */
+    width: 40px; /* Largura do botão */
+    height: 40px; /* Altura do botão */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; /* Mantém os botões visíveis sobre outros elementos */
 }
+
+.slick-prev, .slick-next {
+    font-size: 0px; /* Remove o tamanho do texto */
+    display: none;
+}
+
+.slick-prev::before {
+    font-size: 50px; /* Ajuste o tamanho do símbolo */
+    color: var(--color2);
+    position:relative;
+    right: 60%;
+}
+
+
+.slick-next::before {
+    font-size: 50px; /* Ajuste o tamanho do símbolo */
+    color: var(--color2);
+    position: relative;
+    left: 35%;
+}
+
 
 .slick-dots {
     bottom: 20px; 
@@ -1707,6 +1723,84 @@ button.next {
     display: none;
 }
 
+.carousel-container_youtube {
+    width: 100%;
+    align-self: center;
+    justify-content: center;
+    background-color: var(--footer_collor);
+    display: flex;
+}
+
+.carousel-container_youtube_h1 {
+    font-family: var(--font);
+    text-align: center;
+    background-color: var(--footer_collor);
+}
+
+.youtube_videos {
+    display: flex;
+    padding-block: 2%;
+    width: 90vw;
+}
+
+.youtube_videos p {
+    width: 100%;
+    text-align: center;
+    color: var(--color2);
+}
+
+.youtube_videos img {
+    width: 100%;
+    height: 12vw;
+    object-fit: cover;
+}
+
+@keyframes pulse {
+    0% {
+        
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+
+.youtube_svg_live {
+    width: 30px;
+    padding-left: 10px;
+    padding-block-start: 10px;
+    position: absolute;
+    animation: pulse 1.2s infinite;
+}
+
+#carousel1 .slick-prev,
+#carousel1 .slick-next {
+    display: none !important;
+}
+
+.div_youtube_svg_play {
+    width: 22.5vw;
+    height: 12vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    opacity: 0.3;
+}
+
+.div_youtube_svg_play:hover {
+    opacity: 0.8;
+    transition-duration: 1000ms;
+}
+
+.youtube_svg_play {
+    width: 5vw;
+}
+
+
 @media (max-width: 1024px) {
 
     /* * {
@@ -2820,4 +2914,50 @@ button.next {
     .instagram-post div {
         display: block;
     }
+
+    .youtube_videos {
+        display: flex;
+        padding-block: 2%;
+        width: 70vw;
+    }
+
+    .youtube_videos img {
+        width: 100%;
+        height: 40vw;
+        object-fit: cover;
+    }
+
+    .carousel-container_youtube_h1 {
+        font-size: 5vw;
+    }
+
+    .youtube_videos p {
+        font-size: 4vw;
+    }
+
+    #carousel2 .slick-prev::before,
+    #carousel2 .slick-next::before {
+        font-size: 5vw;
+    }
+
+    .div_youtube_svg_play {
+        width: 70vw;
+        height: 40vw;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        position: absolute;
+        opacity: 0.3;
+    }
+    
+    .div_youtube_svg_play:hover {
+        opacity: 0.8;
+        transition-duration: 1000ms;
+    }
+    
+    .youtube_svg_play {
+        width: 15vw;
+    }
+
+
 }
