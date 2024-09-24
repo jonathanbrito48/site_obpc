@@ -1,331 +1,331 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-    <section class="section_carrosel">
-        <div class="carousel-container">
-            <div id="carousel1" class="slick-carousel">
-                {% for banner in carrosel %}
-                <div>
-                    {% if banner.link_pagina %}
-                    <a href="{{banner.link_pagina}}"><img src="{{banner.imagem.url}}" class="foto_carrosel" alt="{{banner.nome_imagem}}"></a>
-                    {% else %}
-                    <img src="{{banner.imagem.url}}" class="foto_carrosel" alt="{{banner.nome_imagem}}">
-                    {% endif %}
-                </div>
-                {% endfor %}
-            </div>
-            <button class="slick-prev" aria-label="Anterior" role="button" tabindex="0"></button>
-            <button class="slick-next" aria-label="Próximo" role="button" tabindex="0"></button>
-        </div>
-    </section>
-    <script>
-        $(document).ready(function(){
-            $('.slick-carousel').slick({
-                dots: true,
-                infinite: true,
-                speed: 500,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,         // Ativa o modo de reprodução automática
-                autoplaySpeed: 5000,    // Define o intervalo de tempo em milissegundos entre os slides
-                responsive: [
-                    {
-                        breakpoint: 768, // Define o breakpoint desejado
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            infinite: true,
-                            dots: true,
-                            adaptiveHeight: true, // Isso ajustará automaticamente a altura conforme a largura
-                        }
-                    }
-                    // Adicione mais blocos responsive conforme necessário para outros breakpoints
-                ]
-            });
-        });
-    </script>
-    <div class="div_cultos">
-        <div>
-            <h2><strong>Programação Semanal</strong></h2>
-            <span class="programacao_subtitulo"><strong>Domingo</strong></span>
-            <span>08h - Consagração
-                09h - (1º e 3º domingo do mês) Café com Umasbrac
-                10h - Encontro com Jubrac/Adobrac
-                18h - Culto da Família
-            </span>
-            <span class="programacao_subtitulo"><strong>Terça-Feira</strong></span>
-            <span>20h - Culto de Ensino</span>
-            <span class="programacao_subtitulo"><strong>Quinta-feira</strong></span>
-            <span>20h - Culto da Vitória</span>
-            <span class="programacao_subtitulo"><strong>Sábado</strong></span>
-            <span>09h - Encontro com Ufebrac</span>
-            <span class="programacao_subtitulo"><strong>Manhãs de benção</strong></span>
-            <span>De Segunda a Sexta, das 09h às 10h,
-                Quarta das 09h30 às 11h
-            </span>
-            
-            
-        </div>
-        <div class="div_img_cultos">
-            <img class="img_cultos" src="{% static 'assets/cultos.jpg' %}" alt="CULTOS_IMG">
-        </div>
-    </div>
-    <h1 class="carousel-container_youtube_h1">Nossas Transmissões</h1>
-    <section class="section_carrosel">
-        <div id="carousel2" class="carousel-container_youtube">
-            <div class="youtube_videos">
-                {% for video in youtube %}
-                <a href="https://www.youtube.com/watch?v={{video.videoId}}">
-                    <div class="div_youtube_svg_play">
-                        <svg class="youtube_svg_play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#c3c6d1" d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9l0 176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"/></svg>
-                    </div>
-                    {% if video.liveBroadcastContent == 'live' %}
-                    <svg class="youtube_svg_live" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools <title>ic_fluent_live_24_filled</title> <desc>Created with Sketch.</desc> <g id="🔍-Product-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="ic_fluent_live_24_filled" fill="#cd1313" fill-rule="nonzero"> <path d="M6.34277267,4.93867691 C6.73329697,5.3292012 6.73329697,5.96236618 6.34277267,6.35289047 C3.21757171,9.47809143 3.21757171,14.5450433 6.34277267,17.6702443 C6.73329697,18.0607686 6.73329697,18.6939336 6.34277267,19.0844579 C5.95224838,19.4749821 5.3190834,19.4749821 4.92855911,19.0844579 C1.02230957,15.1782083 1.02230957,8.84492646 4.92855911,4.93867691 C5.3190834,4.54815262 5.95224838,4.54815262 6.34277267,4.93867691 Z M19.0743401,4.93867691 C22.9805896,8.84492646 22.9805896,15.1782083 19.0743401,19.0844579 C18.6838158,19.4749821 18.0506508,19.4749821 17.6601265,19.0844579 C17.2696022,18.6939336 17.2696022,18.0607686 17.6601265,17.6702443 C20.7853275,14.5450433 20.7853275,9.47809143 17.6601265,6.35289047 C17.2696022,5.96236618 17.2696022,5.3292012 17.6601265,4.93867691 C18.0506508,4.54815262 18.6838158,4.54815262 19.0743401,4.93867691 Z M9.3094225,7.81205295 C9.69994679,8.20257725 9.69994679,8.83574222 9.3094225,9.22626652 C7.77845993,10.7572291 7.77845993,13.2394099 9.3094225,14.7703724 C9.69994679,15.1608967 9.69994679,15.7940617 9.3094225,16.184586 C8.91889821,16.5751103 8.28573323,16.5751103 7.89520894,16.184586 C5.58319778,13.8725748 5.58319778,10.1240641 7.89520894,7.81205295 C8.28573323,7.42152866 8.91889821,7.42152866 9.3094225,7.81205295 Z M16.267742,7.81205295 C18.5797531,10.1240641 18.5797531,13.8725748 16.267742,16.184586 C15.8772177,16.5751103 15.2440527,16.5751103 14.8535284,16.184586 C14.4630041,15.7940617 14.4630041,15.1608967 14.8535284,14.7703724 C16.384491,13.2394099 16.384491,10.7572291 14.8535284,9.22626652 C14.4630041,8.83574222 14.4630041,8.20257725 14.8535284,7.81205295 C15.2440527,7.42152866 15.8772177,7.42152866 16.267742,7.81205295 Z M12.0814755,10.5814755 C12.9099026,10.5814755 13.5814755,11.2530483 13.5814755,12.0814755 C13.5814755,12.9099026 12.9099026,13.5814755 12.0814755,13.5814755 C11.2530483,13.5814755 10.5814755,12.9099026 10.5814755,12.0814755 C10.5814755,11.2530483 11.2530483,10.5814755 12.0814755,10.5814755 Z" id="🎨-Color"> </path> </g> </g> </g></svg>
-                    {% endif %}
-                    <img src="{{video.thumbnails}}" alt="thumbnails">
-                    <p>{{video.title}}</p>
-                </a>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-    <script>
-        $(document).ready(function(){
-            $('.youtube_videos').slick({
-                dots: false,
-                infinite: true,
-                speed: 500,
-                slidesToShow: 4,
-                slidesToScroll: 3,
-                autoplay: true,         // Ativa o modo de reprodução automática
-                autoplaySpeed: 5000,    // Define o intervalo de tempo em milissegundos entre os slides
-                responsive: [
-                    {
-                        breakpoint: 1024, // Define o breakpoint desejado
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            infinite: true,
-                            dots: false,
-                            adaptiveHeight: true, // Isso ajustará automaticamente a altura conforme a largura
-                        }
-                    }
-                    // Adicione mais blocos responsive conforme necessário para outros breakpoints
-                ]
-            });
-        });
-    </script>
-    {% if ministerios %}
-    <div class="index_titulos">
-        <h1 >Ministérios</h1>
-    </div>
-    {% endif %}
-    <section class="secao_ministerios">
-        {% for ministerio in ministerios %}
-        <div class="div_ministerios_index">
-            <div class="card_ministerio_index">
-                <img class="card_ministerio_index_imagem" src="{{ministerio.card_ministerio.url}}" alt="card_ministerio_index">
-                <a class="card_ministerio_index_ancora" href="{% url 'ministerio' ministerio.nome_ministerio %}"><h3 class="card_ministerio_index_titulo">{{ministerio.nome_ministerio}}</h3></a>
-            </div>
-
-        </div>
-        {% endfor %}
-    </section>
-    {% for banner_devocional in devocional %}
-        <div>
-            <img class="banner_devocional" src="{{banner_devocional.banner_home.url}}" alt="banner">
-            <div class="devocional_div">
-                <h2>{{banner_devocional.titulo_devocional}}</h2>
-                <p>{{banner_devocional.texto_devocional | truncatewords:170}}</p>
-                <a href="{% url 'devocional_detalhe' banner_devocional.id %}"><strong>Ler Mais</strong></a>
-            </div>
-        </div>
-    {% endfor %}
-    <div class="evento_div">
-        <div class="index_titulos">
-            <h1>Eventos</h1>
-        </div>
-        <div class="div_cards_eventos">
-            {% for card in evento  %}
-            <div class="card_evento_eventos">
-                <a href="{% url 'evento_detalhe' card.id %}">
-                    <img src="{{card.foto_card_evento.url}}" class="foto_agenda_eventos" alt="fora-da-caixa">
-                </a>
-                <div class="card_alinhamento">
-                    {% if  card.data_fim %}
-                    <p class="data_evento">{{card.data_inicio|date:'d'}} a {{card.data_fim}}</p>
-                    {% else %}
-                    <p class="data_evento">{{card.data_inicio}}</p> 
-                    {% endif %}   
-                    <H2>{{card.nome_evento}}</H2>
-                </div>
+<section class="section_carrosel">
+    <div class="carousel-container">
+        <div id="carousel1" class="slick-carousel">
+            {% for banner in carrosel %}
+            <div>
+                {% if banner.link_pagina %}
+                <a href="{{banner.link_pagina}}"><img src="{{banner.imagem.url}}" class="foto_carrosel" alt="{{banner.nome_imagem}}"></a>
+                {% else %}
+                <img src="{{banner.imagem.url}}" class="foto_carrosel" alt="{{banner.nome_imagem}}">
+                {% endif %}
             </div>
             {% endfor %}
         </div>
-        <div class="div_botao_ver_mais_eventos">
-            <a class="botao_ver_mais_eventos" href="{% url 'eventos' %}">
-                <strong>Ver mais</strong>
+        <button class="slick-prev" aria-label="Anterior" role="button" tabindex="0"></button>
+        <button class="slick-next" aria-label="Próximo" role="button" tabindex="0"></button>
+    </div>
+</section>
+<script>
+    $(document).ready(function(){
+        $('.slick-carousel').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,         // Ativa o modo de reprodução automática
+            autoplaySpeed: 5000,    // Define o intervalo de tempo em milissegundos entre os slides
+            responsive: [
+                {
+                    breakpoint: 768, // Define o breakpoint desejado
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: true,
+                        adaptiveHeight: true, // Isso ajustará automaticamente a altura conforme a largura
+                    }
+                }
+                // Adicione mais blocos responsive conforme necessário para outros breakpoints
+            ]
+        });
+    });
+</script>
+<div class="div_cultos">
+    <div>
+        <h2><strong>Programação Semanal</strong></h2>
+        <span class="programacao_subtitulo"><strong>Domingo</strong></span>
+        <span>08h - Consagração
+            09h - (1º e 3º domingo do mês) Café com Umasbrac
+            10h - Encontro com Jubrac/Adobrac
+            18h - Culto da Família
+        </span>
+        <span class="programacao_subtitulo"><strong>Terça-Feira</strong></span>
+        <span>20h - Culto de Ensino</span>
+        <span class="programacao_subtitulo"><strong>Quinta-feira</strong></span>
+        <span>20h - Culto da Vitória</span>
+        <span class="programacao_subtitulo"><strong>Sábado</strong></span>
+        <span>09h - Encontro com Ufebrac</span>
+        <span class="programacao_subtitulo"><strong>Manhãs de benção</strong></span>
+        <span>De Segunda a Sexta, das 09h às 10h,
+            Quarta das 09h30 às 11h
+        </span>
+        
+        
+    </div>
+    <div class="div_img_cultos">
+        <img class="img_cultos" src="{% static 'assets/cultos.jpg' %}" alt="CULTOS_IMG">
+    </div>
+</div>
+<h1 class="carousel-container_youtube_h1">Nossas Transmissões</h1>
+<section class="section_carrosel">
+    <div id="carousel2" class="carousel-container_youtube">
+        <div class="youtube_videos">
+            {% for video in youtube %}
+            <a href="https://www.youtube.com/watch?v={{video.videoId}}">
+                <div class="div_youtube_svg_play">
+                    <svg class="youtube_svg_play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#c3c6d1" d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9l0 176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"/></svg>
+                </div>
+                {% if video.liveBroadcastContent == 'live' %}
+                <svg class="youtube_svg_live" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools <title>ic_fluent_live_24_filled</title> <desc>Created with Sketch.</desc> <g id="🔍-Product-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="ic_fluent_live_24_filled" fill="#cd1313" fill-rule="nonzero"> <path d="M6.34277267,4.93867691 C6.73329697,5.3292012 6.73329697,5.96236618 6.34277267,6.35289047 C3.21757171,9.47809143 3.21757171,14.5450433 6.34277267,17.6702443 C6.73329697,18.0607686 6.73329697,18.6939336 6.34277267,19.0844579 C5.95224838,19.4749821 5.3190834,19.4749821 4.92855911,19.0844579 C1.02230957,15.1782083 1.02230957,8.84492646 4.92855911,4.93867691 C5.3190834,4.54815262 5.95224838,4.54815262 6.34277267,4.93867691 Z M19.0743401,4.93867691 C22.9805896,8.84492646 22.9805896,15.1782083 19.0743401,19.0844579 C18.6838158,19.4749821 18.0506508,19.4749821 17.6601265,19.0844579 C17.2696022,18.6939336 17.2696022,18.0607686 17.6601265,17.6702443 C20.7853275,14.5450433 20.7853275,9.47809143 17.6601265,6.35289047 C17.2696022,5.96236618 17.2696022,5.3292012 17.6601265,4.93867691 C18.0506508,4.54815262 18.6838158,4.54815262 19.0743401,4.93867691 Z M9.3094225,7.81205295 C9.69994679,8.20257725 9.69994679,8.83574222 9.3094225,9.22626652 C7.77845993,10.7572291 7.77845993,13.2394099 9.3094225,14.7703724 C9.69994679,15.1608967 9.69994679,15.7940617 9.3094225,16.184586 C8.91889821,16.5751103 8.28573323,16.5751103 7.89520894,16.184586 C5.58319778,13.8725748 5.58319778,10.1240641 7.89520894,7.81205295 C8.28573323,7.42152866 8.91889821,7.42152866 9.3094225,7.81205295 Z M16.267742,7.81205295 C18.5797531,10.1240641 18.5797531,13.8725748 16.267742,16.184586 C15.8772177,16.5751103 15.2440527,16.5751103 14.8535284,16.184586 C14.4630041,15.7940617 14.4630041,15.1608967 14.8535284,14.7703724 C16.384491,13.2394099 16.384491,10.7572291 14.8535284,9.22626652 C14.4630041,8.83574222 14.4630041,8.20257725 14.8535284,7.81205295 C15.2440527,7.42152866 15.8772177,7.42152866 16.267742,7.81205295 Z M12.0814755,10.5814755 C12.9099026,10.5814755 13.5814755,11.2530483 13.5814755,12.0814755 C13.5814755,12.9099026 12.9099026,13.5814755 12.0814755,13.5814755 C11.2530483,13.5814755 10.5814755,12.9099026 10.5814755,12.0814755 C10.5814755,11.2530483 11.2530483,10.5814755 12.0814755,10.5814755 Z" id="🎨-Color"> </path> </g> </g> </g></svg>
+                {% endif %}
+                <img src="{{video.thumbnails}}" alt="thumbnails">
+                <p>{{video.title}}</p>
             </a>
+            {% endfor %}
         </div>
     </div>
-    <section class="congregacao">
-        <h1>Congregações</h1>
-        <section class="section_congregacoes_index">
-            <button class="prev" id="prevButton">&#10094;</button>
-            <div class="carousel">
-                {% for congregacao in congregacoes %}
-                <div class="slide">
-                    <h2>{{congregacao.nome_congregacao}}</h2>
-                    <h3>{{congregacao.dirigente}}</h3>
-                    <strong><p>{{congregacao.cultos}}</p></strong>
-                    <p>{{congregacao.endereco}}</p>
-                    <section class="div_icons_congregacao">
-                        {% if congregacao.instagram %}
-                        <a href="https://www.instagram.com/{{congregacao.instagram}}/"><img src="{% static '/assets/instagram.png' %}" class="icone_cong" alt="logo_insta"></a>
-                        {% endif %}
-                        {% if congregacao.facebook %}
-                        <a href="https://www.facebook.com/{{congregacao.facebook}}/"><img src="{% static '/assets/facebook.png' %}" class="icone_cong" alt="logo_face"></a>
-                        {% endif %}
-                        {% if congregacao.link_maps %}
-                        <a href="{{congregacao.link_maps}}"><img src="{% static '/assets/mapas-do-google.png' %}" class="icone_cong" alt="logo_face"></a>
-                        {% endif %}
-                    </section>
-                </div>
-                {% endfor %}
-            </div>
-            <button class="next" id="nextButton">&#10095;</button>
-        </section>
-    </section>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const carousel = document.querySelector('.carousel');
-            const prevButton = document.getElementById('prevButton');
-            const nextButton = document.getElementById('nextButton');
-            let isDragging = false;
-            let startX;
-            let scrollLeft;
-            let movementFactor = 1.5; // Ajuste para aumentar a sensibilidade do arrasto
-    
-            // Função para rolar para a esquerda (com botão)
-            function scrollLeftButton() {
-                carousel.scrollBy({
-                    left: -300, // Valor fixo para os botões
-                    behavior: 'smooth'
-                });
-            }
-    
-            // Função para rolar para a direita (com botão)
-            function scrollRightButton() {
-                carousel.scrollBy({
-                    left: 300, // Valor fixo para os botões
-                    behavior: 'smooth'
-                });
-            }
-    
-            // Event listeners para os botões
-            prevButton.addEventListener('click', scrollLeftButton);
-            nextButton.addEventListener('click', scrollRightButton);
-    
-            // Iniciar o arrasto com o mouse
-            carousel.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                startX = e.pageX - carousel.offsetLeft; // Posição inicial do clique
-                scrollLeft = carousel.scrollLeft; // Posição atual do scroll
-                carousel.classList.add('dragging');
-            });
-    
-            // Detectar o movimento do mouse em tempo real
-            carousel.addEventListener('mousemove', (e) => {
-                if (!isDragging) return; // Só mover se estiver arrastando
-                e.preventDefault(); // Prevenir seleção de texto
-                const x = e.pageX - carousel.offsetLeft; // Posição atual do mouse
-                const walk = (x - startX) * movementFactor; // Multiplicar pelo fator de movimento
-                carousel.scrollLeft = scrollLeft - walk; // Atualiza a posição do scroll
-            });
-    
-            // Finalizar o arrasto com o mouse
-            document.addEventListener('mouseup', () => {
-                isDragging = false;
-                carousel.classList.remove('dragging');
-            });
-    
-            // Finalizar o arrasto ao sair da área
-            carousel.addEventListener('mouseleave', () => {
-                isDragging = false;
-                carousel.classList.remove('dragging');
-            });
-    
-            // Iniciar o arrasto em dispositivos móveis (toque)
-            carousel.addEventListener('touchstart', (e) => {
-                isDragging = true;
-                startX = e.touches[0].pageX - carousel.offsetLeft; // Posição inicial do toque
-                scrollLeft = carousel.scrollLeft; // Posição atual do scroll
-                carousel.classList.add('dragging');
-            });
-    
-            // Detectar o movimento do toque em tempo real
-            carousel.addEventListener('touchmove', (e) => {
-                if (!isDragging) return; // Só mover se estiver arrastando
-                const x = e.touches[0].pageX - carousel.offsetLeft; // Posição atual do toque
-                const walk = (x - startX) * movementFactor; // Multiplicar pelo fator de movimento
-                carousel.scrollLeft = scrollLeft - walk; // Atualiza a posição do scroll
-            });
-    
-            // Finalizar o arrasto no toque
-            carousel.addEventListener('touchend', () => {
-                isDragging = false;
-                carousel.classList.remove('dragging');
-            });
+</section>
+<script>
+    $(document).ready(function(){
+        $('.youtube_videos').slick({
+            dots: false,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 4,
+            slidesToScroll: 3,
+            autoplay: true,         // Ativa o modo de reprodução automática
+            autoplaySpeed: 5000,    // Define o intervalo de tempo em milissegundos entre os slides
+            responsive: [
+                {
+                    breakpoint: 1024, // Define o breakpoint desejado
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: false,
+                        adaptiveHeight: true, // Isso ajustará automaticamente a altura conforme a largura
+                    }
+                }
+                // Adicione mais blocos responsive conforme necessário para outros breakpoints
+            ]
         });
-    </script>    
-    
-    <div class="instagram-widget">
-        {% for post in posts %}
-            <div class="instagram-post">
-                {% if post.media_type == 'IMAGE' %}
-                <img src="{{ post.media_url }}" alt="{{ post.caption }}" >
-                {% elif post.media_type == 'VIDEO' %}
-                <svg class="instagram_post_svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 2C13.8452 2 15.3293 2 16.5401 2.08783L13.0986 7.25002H8.40139L11.9014 2H12Z" fill="#f7f7f8"></path> <path d="M3.46447 3.46447C4.71683 2.2121 6.62194 2.03072 10.0957 2.00445L6.59861 7.25002H2.10418C2.25143 5.48593 2.6068 4.32213 3.46447 3.46447Z" fill="#f7f7f8"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 10.7633 2 9.68875 2.02644 8.75002H21.9736C22 9.68875 22 10.7633 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12ZM13.014 12.5852C14.338 13.4395 15 13.8666 15 14.5C15 15.1334 14.338 15.5605 13.014 16.4148C11.6719 17.2807 11.0008 17.7137 10.5004 17.3958C10 17.0779 10 16.2186 10 14.5C10 12.7814 10 11.9221 10.5004 11.6042C11.0008 11.2863 11.6719 11.7193 13.014 12.5852Z" fill="#f7f7f8"></path> <path d="M21.8958 7.25002C21.7486 5.48593 21.3932 4.32213 20.5355 3.46447C19.9382 2.86714 19.1924 2.51345 18.1987 2.30403L14.9014 7.25002H21.8958Z" fill="#f7f7f8"></path> </g></svg>
-                <video class="post-video" muted>
-                    <source src="{{ post.media_url }}" type="video/mp4">
-                    Seu navegador não suporta o elemento de vídeo.
-                </video>
-                <div>
-                    <img src="{{post.thumbnail_url}}" alt="thumbnail_url">
-                </div>
-                {% elif post.media_type == 'CAROUSEL_ALBUM' %}
-                <svg class="instagram_post_svg" fill="#fafafa" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 45.964 45.964" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M7.071,30.834V11.062H4.042C1.803,11.062,0,12.893,0,15.13v26.732c0,2.24,1.803,4.051,4.042,4.051h26.733 c2.238,0,4.076-1.811,4.076-4.051v-2.92H15.179C10.733,38.943,7.071,35.281,7.071,30.834z"></path> <path d="M41.913,0.05H15.179c-2.238,0-4.066,1.813-4.066,4.051v26.733c0,2.241,1.829,4.067,4.066,4.067h26.734 c2.237,0,4.051-1.826,4.051-4.067V4.102C45.964,1.862,44.15,0.05,41.913,0.05z M41.363,28.589 c-0.223,0.412-0.652,0.656-1.12,0.656H17.336c-0.403,0-0.782-0.18-1.022-0.502c-0.24-0.324-0.313-0.736-0.197-1.123l3.277-10.839 c0.216-0.713,0.818-1.24,1.554-1.361c0.736-0.12,1.476,0.19,1.908,0.797l4.582,6.437c0.617,0.867,1.812,1.082,2.689,0.484 l4.219-2.865c0.434-0.295,0.967-0.402,1.48-0.299c0.515,0.102,0.966,0.408,1.253,0.848l4.229,6.472 C41.564,27.687,41.585,28.179,41.363,28.589z"></path> </g> </g> </g></svg>
-                <img class="instagram-post_img" src="{{ post.media_url }}" alt="{{ post.caption }}" >
-                {% endif %}
-                <a href="{{ post.permalink }}" target="_blank" class="instagram-link">
-                    {% if post.caption %}
-                    <p>{{ post.caption | truncatewords:50 }}</p>
-                    {% endif %}
-                </a>
+    });
+</script>
+{% if ministerios %}
+<div class="index_titulos">
+    <h1 >Ministérios</h1>
+</div>
+{% endif %}
+<section class="secao_ministerios">
+    {% for ministerio in ministerios %}
+    <div class="div_ministerios_index">
+        <div class="card_ministerio_index">
+            <img class="card_ministerio_index_imagem" src="{{ministerio.card_ministerio.url}}" alt="card_ministerio_index">
+            <a class="card_ministerio_index_ancora" href="{% url 'ministerio' ministerio.nome_ministerio %}"><h3 class="card_ministerio_index_titulo">{{ministerio.nome_ministerio}}</h3></a>
+        </div>
+
+    </div>
+    {% endfor %}
+</section>
+{% for banner_devocional in devocional %}
+    <div>
+        <img class="banner_devocional" src="{{banner_devocional.banner_home.url}}" alt="banner">
+        <div class="devocional_div">
+            <h2>{{banner_devocional.titulo_devocional}}</h2>
+            <p>{{banner_devocional.texto_devocional | truncatewords:170}}</p>
+            <a href="{% url 'devocional_detalhe' banner_devocional.id %}"><strong>Ler Mais</strong></a>
+        </div>
+    </div>
+{% endfor %}
+<div class="evento_div">
+    <div class="index_titulos">
+        <h1>Eventos</h1>
+    </div>
+    <div class="div_cards_eventos">
+        {% for card in evento  %}
+        <div class="card_evento_eventos">
+            <a href="{% url 'evento_detalhe' card.id %}">
+                <img src="{{card.foto_card_evento.url}}" class="foto_agenda_eventos" alt="fora-da-caixa">
+            </a>
+            <div class="card_alinhamento">
+                {% if  card.data_fim %}
+                <p class="data_evento">{{card.data_inicio|date:'d'}} a {{card.data_fim}}</p>
+                {% else %}
+                <p class="data_evento">{{card.data_inicio}}</p> 
+                {% endif %}   
+                <H2>{{card.nome_evento}}</H2>
             </div>
+        </div>
         {% endfor %}
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const videoLinks = document.querySelectorAll('.instagram-link');
-    
-            videoLinks.forEach(link => {
-                const video = link.parentElement.querySelector('.post-video');
-                
-                if (video) {
-                    // Reproduzir o vídeo ao passar o mouse sobre a âncora
-                    link.addEventListener('mouseover', function() {
-                        video.play();
-                    });
-    
-                    // Pausar o vídeo quando o mouse sair da âncora
-                    link.addEventListener('mouseout', function() {
-                        video.pause();
-                        video.currentTime = 0; // Reiniciar o vídeo quando o mouse sair
-                    });
-                }
+    <div class="div_botao_ver_mais_eventos">
+        <a class="botao_ver_mais_eventos" href="{% url 'eventos' %}">
+            <strong>Ver mais</strong>
+        </a>
+    </div>
+</div>
+<section class="congregacao">
+    <h1>Congregações</h1>
+    <section class="section_congregacoes_index">
+        <button class="prev" id="prevButton">&#10094;</button>
+        <div class="carousel">
+            {% for congregacao in congregacoes %}
+            <div class="slide">
+                <h2>{{congregacao.nome_congregacao}}</h2>
+                <h3>{{congregacao.dirigente}}</h3>
+                <strong><p>{{congregacao.cultos}}</p></strong>
+                <p>{{congregacao.endereco}}</p>
+                <section class="div_icons_congregacao">
+                    {% if congregacao.instagram %}
+                    <a href="https://www.instagram.com/{{congregacao.instagram}}/"><img src="{% static '/assets/instagram.png' %}" class="icone_cong" alt="logo_insta"></a>
+                    {% endif %}
+                    {% if congregacao.facebook %}
+                    <a href="https://www.facebook.com/{{congregacao.facebook}}/"><img src="{% static '/assets/facebook.png' %}" class="icone_cong" alt="logo_face"></a>
+                    {% endif %}
+                    {% if congregacao.link_maps %}
+                    <a href="{{congregacao.link_maps}}"><img src="{% static '/assets/mapas-do-google.png' %}" class="icone_cong" alt="logo_face"></a>
+                    {% endif %}
+                </section>
+            </div>
+            {% endfor %}
+        </div>
+        <button class="next" id="nextButton">&#10095;</button>
+    </section>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const carousel = document.querySelector('.carousel');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        let isDragging = false;
+        let startX;
+        let scrollLeft;
+        let movementFactor = 1.5; // Ajuste para aumentar a sensibilidade do arrasto
+
+        // Função para rolar para a esquerda (com botão)
+        function scrollLeftButton() {
+            carousel.scrollBy({
+                left: -300, // Valor fixo para os botões
+                behavior: 'smooth'
             });
+        }
+
+        // Função para rolar para a direita (com botão)
+        function scrollRightButton() {
+            carousel.scrollBy({
+                left: 300, // Valor fixo para os botões
+                behavior: 'smooth'
+            });
+        }
+
+        // Event listeners para os botões
+        prevButton.addEventListener('click', scrollLeftButton);
+        nextButton.addEventListener('click', scrollRightButton);
+
+        // Iniciar o arrasto com o mouse
+        carousel.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX - carousel.offsetLeft; // Posição inicial do clique
+            scrollLeft = carousel.scrollLeft; // Posição atual do scroll
+            carousel.classList.add('dragging');
         });
-    </script>
+
+        // Detectar o movimento do mouse em tempo real
+        carousel.addEventListener('mousemove', (e) => {
+            if (!isDragging) return; // Só mover se estiver arrastando
+            e.preventDefault(); // Prevenir seleção de texto
+            const x = e.pageX - carousel.offsetLeft; // Posição atual do mouse
+            const walk = (x - startX) * movementFactor; // Multiplicar pelo fator de movimento
+            carousel.scrollLeft = scrollLeft - walk; // Atualiza a posição do scroll
+        });
+
+        // Finalizar o arrasto com o mouse
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            carousel.classList.remove('dragging');
+        });
+
+        // Finalizar o arrasto ao sair da área
+        carousel.addEventListener('mouseleave', () => {
+            isDragging = false;
+            carousel.classList.remove('dragging');
+        });
+
+        // Iniciar o arrasto em dispositivos móveis (toque)
+        carousel.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            startX = e.touches[0].pageX - carousel.offsetLeft; // Posição inicial do toque
+            scrollLeft = carousel.scrollLeft; // Posição atual do scroll
+            carousel.classList.add('dragging');
+        });
+
+        // Detectar o movimento do toque em tempo real
+        carousel.addEventListener('touchmove', (e) => {
+            if (!isDragging) return; // Só mover se estiver arrastando
+            const x = e.touches[0].pageX - carousel.offsetLeft; // Posição atual do toque
+            const walk = (x - startX) * movementFactor; // Multiplicar pelo fator de movimento
+            carousel.scrollLeft = scrollLeft - walk; // Atualiza a posição do scroll
+        });
+
+        // Finalizar o arrasto no toque
+        carousel.addEventListener('touchend', () => {
+            isDragging = false;
+            carousel.classList.remove('dragging');
+        });
+    });
+</script>    
+
+<div class="instagram-widget">
+    {% for post in posts %}
+        <div class="instagram-post">
+            {% if post.media_type == 'IMAGE' %}
+            <img src="{{ post.media_url }}" alt="{{ post.caption }}" >
+            {% elif post.media_type == 'VIDEO' %}
+            <svg class="instagram_post_svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 2C13.8452 2 15.3293 2 16.5401 2.08783L13.0986 7.25002H8.40139L11.9014 2H12Z" fill="#f7f7f8"></path> <path d="M3.46447 3.46447C4.71683 2.2121 6.62194 2.03072 10.0957 2.00445L6.59861 7.25002H2.10418C2.25143 5.48593 2.6068 4.32213 3.46447 3.46447Z" fill="#f7f7f8"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 10.7633 2 9.68875 2.02644 8.75002H21.9736C22 9.68875 22 10.7633 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12ZM13.014 12.5852C14.338 13.4395 15 13.8666 15 14.5C15 15.1334 14.338 15.5605 13.014 16.4148C11.6719 17.2807 11.0008 17.7137 10.5004 17.3958C10 17.0779 10 16.2186 10 14.5C10 12.7814 10 11.9221 10.5004 11.6042C11.0008 11.2863 11.6719 11.7193 13.014 12.5852Z" fill="#f7f7f8"></path> <path d="M21.8958 7.25002C21.7486 5.48593 21.3932 4.32213 20.5355 3.46447C19.9382 2.86714 19.1924 2.51345 18.1987 2.30403L14.9014 7.25002H21.8958Z" fill="#f7f7f8"></path> </g></svg>
+            <video class="post-video" muted>
+                <source src="{{ post.media_url }}" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <div>
+                <img src="{{post.thumbnail_url}}" alt="thumbnail_url">
+            </div>
+            {% elif post.media_type == 'CAROUSEL_ALBUM' %}
+            <svg class="instagram_post_svg" fill="#fafafa" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 45.964 45.964" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M7.071,30.834V11.062H4.042C1.803,11.062,0,12.893,0,15.13v26.732c0,2.24,1.803,4.051,4.042,4.051h26.733 c2.238,0,4.076-1.811,4.076-4.051v-2.92H15.179C10.733,38.943,7.071,35.281,7.071,30.834z"></path> <path d="M41.913,0.05H15.179c-2.238,0-4.066,1.813-4.066,4.051v26.733c0,2.241,1.829,4.067,4.066,4.067h26.734 c2.237,0,4.051-1.826,4.051-4.067V4.102C45.964,1.862,44.15,0.05,41.913,0.05z M41.363,28.589 c-0.223,0.412-0.652,0.656-1.12,0.656H17.336c-0.403,0-0.782-0.18-1.022-0.502c-0.24-0.324-0.313-0.736-0.197-1.123l3.277-10.839 c0.216-0.713,0.818-1.24,1.554-1.361c0.736-0.12,1.476,0.19,1.908,0.797l4.582,6.437c0.617,0.867,1.812,1.082,2.689,0.484 l4.219-2.865c0.434-0.295,0.967-0.402,1.48-0.299c0.515,0.102,0.966,0.408,1.253,0.848l4.229,6.472 C41.564,27.687,41.585,28.179,41.363,28.589z"></path> </g> </g> </g></svg>
+            <img class="instagram-post_img" src="{{ post.media_url }}" alt="{{ post.caption }}" >
+            {% endif %}
+            <a href="{{ post.permalink }}" target="_blank" class="instagram-link">
+                {% if post.caption %}
+                <p>{{ post.caption | truncatewords:50 }}</p>
+                {% endif %}
+            </a>
+        </div>
+    {% endfor %}
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const videoLinks = document.querySelectorAll('.instagram-link');
+
+        videoLinks.forEach(link => {
+            const video = link.parentElement.querySelector('.post-video');
+            
+            if (video) {
+                // Reproduzir o vídeo ao passar o mouse sobre a âncora
+                link.addEventListener('mouseover', function() {
+                    video.play();
+                });
+
+                // Pausar o vídeo quando o mouse sair da âncora
+                link.addEventListener('mouseout', function() {
+                    video.pause();
+                    video.currentTime = 0; // Reiniciar o vídeo quando o mouse sair
+                });
+            }
+        });
+    });
+</script>
 {% endblock %}

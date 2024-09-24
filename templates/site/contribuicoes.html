@@ -1,24 +1,35 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-<div class="cabecalho_qsomos">
-    <img src="{% static 'assets/contribuicoescapa.jpg' %}" alt="banner">
-    <h1>Contribuições</h1>
-</div>
-
-<div class="secao_contribuicao">
-    <div class="versiculo_contrib">
-        <h4>'Há quem dê generosamente e vê aumentar as suas riquezas; outros retêm o que deveriam dar e caem na pobreza. O generoso prosperará; quem dá alívio aos outros alívio também receberá.'
-            Provérbios 11:24-25
-        </h4>
+<section class="contribuicao_section">
+    <svg class="dizimo" viewBox="0 0 200 50">
+        <text x="0" y="40" fill="transparent" stroke="#05de9d" stroke-width="0.19">
+            DÍZIMOS
+        </text>
+    </svg>
+    <div class="contribuicao_section_info">
+        <h1>DÍZIMOS<span>&</span></h1>
+        <h1 style="font-family: Tan Merigue,sans-serif;">ofertas</h1>
+        <div ">
+            <div class="contribuicao_section_cards" style="justify-content: space-between;">
+                <H2>BANCO BRADESCO</H2><h3>AG 2874 C/C 8174/4</h3>
+            </div>
+            <div class="contribuicao_section_cards" style="justify-content: space-between;">
+                <H2>PIX</H2><h3>58.105.826/0001-03</h3>
+            </div>
+        </div>
+        <div class="dados_igreja_contribuicoes" style="display: block;">
+            <h3>IGREJA O BRASIL PARA CRISTO</h3>
+            <h3>CNPJ: 58.105.826/0001-03</h3>
+            <p>"Há quem dê generosamente e vê aumentar as suas riquezas; outros retêm o que deveriam dar e caem na pobreza. O generoso prosperará; quem dá alívio aos outros alívio também receberá."
+                Provérbios 11:24-25</p>
+        </div>
     </div>
-    <h2>Conta Bancária</h2>
-    <h4>Banco Bradesco</h4>
-    <p>AG:2874</p>
-    <p>Conta: 8174-4</p>
-    <p>CNPJ: 58.105.826/0001-03</p>
-    <p>Favorecido: Igreja O Brasil para Cristo</p>
-    <p><Strong>Chave Pix:</Strong> 58.105.826/0001-03</p>    
-    <!-- <img src="{% static 'assets/fora-caixa.jpg' %}" alt="QRCODE"> -->
-</div>
+    
+    <svg class="ofertas" viewBox="0 0 200 50">
+        <text x="0" y="40" fill="#05de9d">
+            OFERTAS
+        </text>
+    </svg>
+</section>
 {% endblock %}

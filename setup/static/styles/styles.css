@@ -3,6 +3,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
 
+@font-face {
+    font-family: 'Tan Merigue';
+    src: url('../fonts/TanMerigue-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+};
+
+@font-face {
+    font-family: 'Heading Now';
+    src: url('../fonts/setup/static/fonts/HeadingNowTrial-66Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+};
+
 
 * {
     margin: 0;
@@ -10,8 +24,8 @@
 }
 
 :root {
-    --cabecalho_back_collor: #ffffff;
-    --body_collor: #ffffff;
+    --cabecalho_back_collor: #fff;
+    --body_collor: #fff;
     --font: 'Mulish', sans-serif;
     --cor_hover: #4942E4;
     --font_collor:  #000000;
@@ -20,6 +34,8 @@
     --color1: #637A9F;
     --color2: #f3f3f3;
     --instagram-mobile: 30vw;
+    --dizimo_1: "Heading Now", sans-serif;
+    --ofertas_1:'Tan Merigue',sans-serif ;
 }
 
 body {
@@ -284,6 +300,11 @@ body {
     border-radius: 6px 0 0 6px;
 }
 
+.contato h4,p {
+    text-align: start;
+    margin: 0;
+}
+
 .div_cultos h2 {
     color: var(--color1);
     text-align: start;
@@ -323,6 +344,7 @@ body {
 .div_ministerios_index_titulo {
     padding-block-end: 2%;
 }
+
 .div_ministerios_index {
     width: 20rem;
     height: 20rem;
@@ -339,13 +361,14 @@ body {
     background-color: #00000075;
     width: 320px;
     height: 320px;
-    color: #ffffff;
+    color: #fff;
     font-family: "Anta", sans-serif;
     font-size: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    margin: 0;
 }
   
 .card_ministerio_index_ancora {
@@ -526,7 +549,8 @@ body {
 }
 
 .contribuicao_footer h4,p {
-   font-family: var(--font) ;     
+   font-family: var(--font) ;
+   margin: 0;     
 }
 
 .div_ministerios {
@@ -607,13 +631,16 @@ body {
     font-family: var(--font);
     color: var(--font_collor);
     padding-inline: 5%;
+    margin: 0;
 }
 
 .cargo_lider_ministerio {
     font-family: var(--font);
     color: #555555;
     padding-inline: 5%;
+    margin: 0;
 }
+
 .div_lideranca_ministerio_info {
     width: 300px;
     text-align: center;
@@ -1135,6 +1162,7 @@ body {
     color: var(--font_collor);
     text-align: center;
     justify-items: center;
+    margin: 0;
 }
 
 .alinhamento_div_pastor {
@@ -1167,6 +1195,7 @@ body {
     color: var(--font_collor);
     text-align: center;
     justify-items: center;
+    margin: 0;
 }
 
 .cabecalho_qsomos img {
@@ -1187,6 +1216,7 @@ body {
         -1px -1px 0 rgba(0, 0, 0, 0.756),
         1px -1px 0 rgba(0, 0, 0, 0.756),
         -1px 1px 0 rgba(0, 0, 0, 0.756); /* Sombra fraca */
+    margin-block: 0;
 }
 
 .texto_qsomos p {
@@ -1321,10 +1351,12 @@ body {
     gap: 10px;
     justify-content: center;
 }
+
 .titulo_devocional {
     font-family: var(--font);
     color: var(--font_collor);
     padding-block: 3%;
+    margin: 0;
 }
 
 .banner_devocional_devocional {
@@ -1376,6 +1408,7 @@ body {
     color: var(--font_collor);
     text-align: justify;
     text-decoration: none;
+    margin: 0;
 }
 
 
@@ -1417,6 +1450,7 @@ body {
     font-family: var(--font);
     color: var(--font_collor);
 }
+
 .setion_servicos {
     padding: 5rem;
     display: flex;
@@ -1426,6 +1460,7 @@ body {
     text-align: center;
     justify-content: center;
 }
+
 .card_servicos {
     width: 380px;
     height: auto;
@@ -1434,6 +1469,7 @@ body {
     display: block;
     background-color: var(--body_collor);
 }
+
 
 .card_servicos img{
     width: 380px;
@@ -1447,6 +1483,7 @@ body {
     font-family: var(--font);
     justify-content: center;
     text-align: center;
+    margin: 0;
 }
 
 .rede_social_servicos_container {
@@ -1544,7 +1581,8 @@ body {
 }
 
 .congregacao h1 {
-    text-decoration:underline 2px ;    
+    text-decoration:underline 2px ;
+    margin: 0;    
 }
 
 .section_congregacoes_index {
@@ -1573,15 +1611,19 @@ body {
 }
 
 .slide {
-    display: inline-block; /* Garante que os itens fiquem na mesma linha */
+    display: inline-block; 
     flex: 0 0 40%;
-    width: 40%; /* Largura de cada slide */
+    width: 40%; 
     padding: 15px;
     border-radius: 10px;
     text-align: start;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: var(--color2);
     color: var(--color1);
+}
+
+.slide h2,h3 {
+    margin: 0;
 }
 
 button {
@@ -1736,6 +1778,7 @@ button.next {
     font-family: var(--font);
     text-align: center;
     background-color: var(--footer_collor);
+    margin: 0;
 }
 
 .youtube_videos {
@@ -1799,6 +1842,109 @@ button.next {
 
 .youtube_svg_play {
     width: 5vw;
+}
+
+.contribuicao_section {
+    display: flex;
+    justify-content: space-between;
+    position: relative; /* Para posicionar os SVGs em relação ao contêiner */
+}
+
+.contribuicao_section {
+    justify-content: center;
+    display: flex;
+}
+
+.contribuicao_section svg {
+    position: absolute;
+    transform: rotate(-90deg); /* Rotaciona o SVG inteiro */
+
+}
+
+.dizimo {
+    font-family: var(--dizimo_1);
+    /* font-size: 0.55vw; */
+    left: -50vw; /* Ajuste a posição horizontal */
+    bottom: 43vw; /* Ajuste a posição vertical */
+    height: 27vw;
+}
+
+.ofertas {
+    font-family: var(--ofertas_1);
+    right: -28vw; /* Ajuste a posição horizontal */
+    bottom: 34vw; /* Ajuste a posição vertical */
+    height: 21vw;
+}
+
+.contribuicao_section_info {
+    display: block; 
+    padding-block: 5%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contribuicao_section_info h1 {
+    font-family: var(--dizimo_1);
+    color: black; 
+    margin: 0; 
+    font-size: 3vw;
+}
+
+.dados_igreja_contribuicoes {
+    font-family: var(--dizimo_1);
+    display: block;
+    text-align: center;
+    justify-content: center;
+}
+
+.dados_igreja_contribuicoes h3 {
+    text-align: center;
+    color: var(--font_collor);
+    font-size: 1.5vw;
+}
+
+.dados_igreja_contribuicoes p {
+    width: 30vw;
+    font-family: var(--dizimo_1);
+    font-weight: 100;
+    text-align: justify;
+    font-size: 1vw;
+}
+
+.contribuicao_section_info span {
+    color: #05de9d;
+    font-size: 3vw;
+    font-weight: 900;
+    padding: 0;
+
+}
+
+.contribuicao_section_cards {
+    background-color: #05de9d;
+    display: flex;
+    align-items: center;
+    margin-block: 1vw;
+    justify-content: space-between;
+    box-shadow: 0 0 10px 3px #05de9d;
+}
+
+.contribuicao_section_cards h2 {
+    color: var(--body_collor);
+    font-weight: 900;
+    margin: 0.5vw;
+    font-size: 1.2vw;
+}
+
+.contribuicao_section_cards h3 {
+    font-family: var(--dizimo_1);
+    font-weight: 900;
+    color: var(--font_collor);
+    background-color: var(--body_collor);
+    margin: 0.5vw;
+    padding: 0.2vw;
+    box-shadow: 0 0 2px 2px var(--body_collor);
+    font-size: 1.2vw;
 }
 
 
@@ -2016,6 +2162,7 @@ button.next {
 
     .contato h4,p {
         text-align: center;
+        margin: 0;
     }
 
     .banner_devocional {
@@ -2759,7 +2906,7 @@ button.next {
     .slide {
         display: inline-block; /* Garante que os itens fiquem na mesma linha */
         flex: 0 0 80%;
-        height: ;
+
         width: 100%; /* Largura de cada slide */
         padding: 15px;
         border-radius: 10px;
@@ -2960,5 +3107,95 @@ button.next {
         width: 15vw;
     }
 
+    .dizimo {
+        display: none;
+    }
+    
+    .ofertas {
+        display: none;
+    }
+
+    .contribuicao_section_info {
+        display: flex; 
+        padding-block: 5%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-wrap: wrap;
+    }
+
+    .contribuicao_section_info div {
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .contribuicao_section_info h1 {
+        font-family: var(--dizimo_1);
+        color: black; 
+        margin: 0; 
+        font-size: 7vw;
+        width: 90%;
+    }
+    
+    .dados_igreja_contribuicoes {
+        font-family: var(--dizimo_1);
+        display: block;
+        text-align: center;
+        justify-content: center;
+        width: 90%;
+    }
+    
+    .dados_igreja_contribuicoes h3 {
+        text-align: center;
+        color: var(--font_collor);
+        font-size: 2.5vw;
+    }
+    
+    .dados_igreja_contribuicoes p {
+        font-family: var(--dizimo_1);
+        font-weight: 100;
+        text-align: justify;
+        font-size: 2vw;
+        width: auto;
+    }
+    
+    .contribuicao_section_info span {
+        color: #05de9d;
+        font-size: 7vw;
+        font-weight: 900;
+        padding: 0;
+    
+    }
+    
+    .contribuicao_section_cards {
+        background-color: #05de9d;
+        display: flex;
+        align-items: center;
+        margin-block: 1vw;
+        justify-content: space-between;
+        box-shadow: 0 0 10px 3px #05de9d;
+        width: auto;
+    }
+    
+    .contribuicao_section_cards h2 {
+        color: var(--body_collor);
+        font-weight: 900;
+        margin: 1.5vw;
+        font-size: 3.2vw;
+    }
+    
+    .contribuicao_section_cards h3 {
+        font-family: var(--dizimo_1);
+        font-weight: 900;
+        color: var(--font_collor);
+        background-color: var(--body_collor);
+        margin: 1.5vw;
+        padding: 0.2vw;
+        box-shadow: 0 0 2px 2px var(--body_collor);
+        font-size: 3.2vw;
+    }
 
 }
