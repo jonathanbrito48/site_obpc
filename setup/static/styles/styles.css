@@ -316,11 +316,14 @@ body {
 .div_cultos span {
     display: block;
     margin: 5px 0px 0px 5px;
+    white-space: pre-line;
 }
 
 .programacao_subtitulo {
     padding-block: 2% ;
+    white-space: pre-line;
 }
+
 .div_img_cultos {
     padding: 0%;
 }
