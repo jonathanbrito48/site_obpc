@@ -34,22 +34,13 @@
         </div>
         <div class="div_mais_eventos">
             <h2>Mais Eventos</h2> 
+            <div>
             {% for evento_g in mais_eventos %}
             {% if evento_g.id != evento.id %}
-            <div>
                 <a href="{% url 'evento_detalhe' evento_g.id %}"><img src="{{evento_g.banner_evento.url}}" alt=""></a>
-                <div style="display: block;">
-                    <a href="{% url 'evento_detalhe' evento_g.id %}"><h3>{{evento_g.nome_evento}}</h3></a>
-                    {% if evento_g.data_fim  %}
-                    <h5>{{evento_g.data_inicio|date:'d'}} a {{evento_g.data_fim}}</h5>
-                    {% else %}
-                    <h5>{{evento_g.data_inicio}}</h5>
-                    {% endif %}
-                    <a href="{% url 'evento_detalhe' evento_g.id %}">Ler mais</a>    
-                </div>
-            </div>
             {% endif %}
             {% endfor %}
+            </div>
             <a href="{% url 'eventos'%}"><strong>Ver mais eventos</strong></a> 
         </div>
     </div>    

@@ -447,6 +447,7 @@ body {
     display:flex;
     gap: 2%;
     width: 100%;
+    height: auto;
     justify-content: center;
 }
 
@@ -775,8 +776,7 @@ body {
 }
 
 .card_evento_eventos {
-    width: 400px;
-    height: 450px;
+    width: 350px;
     justify-content: center;
     display: block;
     padding-block-end: 1%;
@@ -786,9 +786,10 @@ body {
 }
 
 .card_evento_eventos img {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     border-radius: 10px 10px 0px 0px;
+    object-fit: cover;
 }
 
 .card_evento_eventos a {
@@ -796,7 +797,7 @@ body {
     color: var(--font_collor);
 }
 
-.card_evento_eventos h3 {
+.card_evento_eventos h2 {
     text-align: center;
 }
 
@@ -1437,6 +1438,7 @@ body {
 
 .div_mais_eventos div {
     display: flex;
+    flex-wrap: wrap;
     gap: 5px;
     padding-block: 5px;
 }
@@ -1458,6 +1460,7 @@ body {
     padding-block: 5px;
     font-family: var(--font);
     color: var(--font_collor);
+    text-align: start;
 }
 
 .setion_servicos {
@@ -2114,11 +2117,12 @@ button.next {
     
 
     .div_cards_eventos {
-        display:block;
         align-items: center;
         gap: 2%;
         width: 100%;
         justify-content: center;
+        display: flex; /* Usa Flexbox para alinhar os elementos */
+        flex-wrap: wrap; /* Permite que os cards quebrem linha se necessário */
     }
 
     .rodape_items {
@@ -2199,12 +2203,6 @@ button.next {
         justify-content: center;
         width: 100%;
         
-    }
-
-    .div_cards_eventos {
-        display: flex; /* Usa Flexbox para alinhar os elementos */
-        flex-wrap: wrap; /* Permite que os cards quebrem linha se necessário */
-        justify-content: center; /* Centraliza os cards horizontalmente */
     }
 
     .card_evento_eventos {
