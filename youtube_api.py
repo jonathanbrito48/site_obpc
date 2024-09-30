@@ -8,8 +8,8 @@ import pandas as pd
 import sys
 from datetime import datetime
 
-# log_file = open(f'/home/jonathanbrito48/log_youtubeAPI.log', 'w')
-log_file = open(f'log_youtubeAPI.log', 'w')
+log_file = open(f'/home/jonathanbrito48/log_youtubeAPI.log', 'w')
+# log_file = open(f'log_youtubeAPI.log', 'w')
 
 
 # Redirecionar stdout e stderr para o arquivo de log com timestamps
