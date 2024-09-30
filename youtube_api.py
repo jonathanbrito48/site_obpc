@@ -8,8 +8,8 @@ import pandas as pd
 import sys
 from datetime import datetime
 
-log_file = open(f'/home/jonathanbrito48/log_youtubeAPI.log', 'w')
-# log_file = open(f'log_youtubeAPI.log', 'w')
+# log_file = open(f'/home/jonathanbrito48/log_youtubeAPI.log', 'w')
+log_file = open(f'log_youtubeAPI.log', 'w')
 
 
 # Redirecionar stdout e stderr para o arquivo de log com timestamps
@@ -56,7 +56,7 @@ if uploads_playlist_id:
     params_videos = {
         'part': 'snippet',
         'playlistId': uploads_playlist_id,
-        'maxResults': 20,
+        'maxResults': 25,
         'key': 'AIzaSyBFhvKUTi7sNpKpZFzyjaI0FFMi1AfJ7Io'
     }
 
@@ -78,7 +78,7 @@ if ids:
     url_videos = 'https://www.googleapis.com/youtube/v3/videos'
     params_videos_snippet = {
         'part': 'snippet',
-        'maxResults': 20,
+        'maxResults': 25,
         'id': id_list,
         'key': 'AIzaSyBFhvKUTi7sNpKpZFzyjaI0FFMi1AfJ7Io'
     }
@@ -105,7 +105,7 @@ if ids:
             i['snippet']['liveBroadcastContent']   # Se é ao vivo, encerrado, etc.
         ])
 
-    df = pd.DataFrame(df, columns=['videoId', 'publishedAt', 'title', 'thumbnails', 'liveBroadcastContent'])
+    df = pd.DataFrame(df, columns=['videoId', 'publishedAt', 'title', 'thumbnails', 'liveBroadcastContent']).drop_duplicates(subset='title')
 
 # Função para deletar os dados antigos da tabela YoutubeAPI
 @sync_to_async
