@@ -1652,7 +1652,7 @@ button.prev {
     left: 5%;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1000;
+    z-index: 100;
     font-size: 3vw;
     background-color: none;
     background: none;
@@ -1663,7 +1663,7 @@ button.next {
     right: 5%;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1000;
+    z-index: 100;
     font-size: 3vw;
     background-color: none;
     background: none;
