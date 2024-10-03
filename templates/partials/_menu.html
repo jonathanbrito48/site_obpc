@@ -42,32 +42,6 @@
             </ul>
         </div>
     </nav>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const toggles = document.querySelectorAll('[data-toggle="submenu"]');
-
-            toggles.forEach(toggle => {
-                toggle.addEventListener('click', function(e) {
-                    e.preventDefault(); // Impede o comportamento padrão do link
-
-                    const parentLi = this.parentElement;
-
-                    // Verifica se o submenu já está ativo
-                    if (parentLi.classList.contains('active')) {
-                        parentLi.classList.remove('active');
-                    } else {
-                        // Fecha todos os submenus abertos
-                        document.querySelectorAll('.menu-list li.active').forEach(activeLi => {
-                            activeLi.classList.remove('active');
-                        });
-
-                        // Abre o submenu clicado
-                        parentLi.classList.add('active');
-                    }
-                });
-            });
-        });
-    </script>
     <nav class="cabecalho">
         <a class="logo_a" href="{% url 'index' %}">
             <img class="foto" src="{% static 'assets/logo_obpc2.png' %}" alt="logo_obpc">
@@ -128,30 +102,3 @@
         </div>    
     </nav>
 </header>
-
-<script>
-   document.addEventListener('DOMContentLoaded', function () {
-    const dropdowns = document.querySelectorAll('.dropdown');
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const menuItems = document.querySelector('.menu_options_items');
-
-    // Toggle para submenus em dispositivos móveis
-    dropdowns.forEach(function (dropdown) {
-        const dropdownSelect = dropdown.querySelector('.dropdown-select');
-        
-        dropdownSelect.addEventListener('click', function (event) {
-            event.preventDefault();
-            const isOpen = dropdown.classList.contains('show');
-            dropdowns.forEach(d => {
-                d.classList.remove('show');
-                d.querySelector('.dropdown-options').style.maxHeight = null; // Fechar todos os submenus
-            });
-
-            if (!isOpen) {
-                dropdown.classList.add('show');
-                dropdown.querySelector('.dropdown-options').style.maxHeight = dropdown.querySelector('.dropdown-options').scrollHeight + 'px'; // Abrir o submenu clicado
-            }
-        });
-    });
-    });
-</script>
