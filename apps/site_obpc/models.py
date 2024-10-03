@@ -52,7 +52,7 @@ class Eventos(models.Model):
     nome_evento = models.CharField(max_length=100,null=False,blank=False)
     data_inicio = models.DateField(null=True,blank=True)
     data_fim = models.DateField(null=True,blank=True)
-    hora_evento = models.TimeField(null=True)
+    hora_evento = models.TimeField(null=True,blank=True)
     Endereco_evento = models.CharField(max_length=200,null=True,blank=True)
     descricao_evento = models.CharField(max_length=2000,null=True,blank=True)
     banner_evento = models.ImageField(upload_to='eventos/banners',help_text="Dimensão: 600 x 600 px")
