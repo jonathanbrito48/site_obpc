@@ -1962,6 +1962,28 @@ button.next {
     font-size: 1.2vw;
 }
 
+.live-icon {
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    position: absolute;
+    margin: 10px;
+    background-color: red;
+    padding: 3px;
+    animation: pulse 1.7s infinite;
+    border-radius: 3px;
+}
+
+.live-icon svg {
+    width: 15px;
+}
+
+.live-text {
+    color: #fff;
+    font-weight: bold;
+    font-size: 10px;
+    padding: 0;
+}
 
 @media (max-width: 1024px) {
 
