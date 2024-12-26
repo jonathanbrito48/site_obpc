@@ -136,3 +136,24 @@ USE_X_FORWARDED_HOST = True
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            # 'filename': os.path.join(BASE_DIR, 'django_errors.log'),
+            'filename': '/home/jonathanbrito48/site_obpc/django_errors.log',  # Defina o caminho para o arquivo de log
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}
