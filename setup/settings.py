@@ -135,9 +135,7 @@ USE_X_FORWARDED_HOST = True
 
 # Configuração do Google Cloud Storage
 GS_BUCKET_NAME = 'midia-obpc'
-GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
-    os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
-)
+GS_CREDENTIALS = service_account.Credentials.from_service_account_file('/etc/secrets/sincere-essence-445714-k6-c7cd52dee6d3.json')
 
 DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/'
