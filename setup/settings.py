@@ -1,6 +1,7 @@
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+from google.oauth2 import service_account
 
 
 load_dotenv()
@@ -30,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.site_obpc.apps.SiteObpcConfig',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -131,11 +133,20 @@ STATIC_ROOT = os.path.join(BASE_DIR,'static')
 USE_X_FORWARDED_HOST = True
 
 
+# Configuração do Google Cloud Storage
+GS_BUCKET_NAME = 'midia-obpc'
+GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
+    os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
+)
+
+DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/'
+
 # media
 
-MEDIA_URL = '/media/'
+# MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = None
 
 
 LOGGING = {
@@ -145,8 +156,8 @@ LOGGING = {
         'file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            # 'filename': os.path.join(BASE_DIR, 'django_errors.log'),
-            'filename': '/home/jonathanbrito48/site_obpc/django_errors.log',  # Defina o caminho para o arquivo de log
+            'filename': os.path.join(BASE_DIR, 'django_errors.log'),
+            # 'filename': '/home/jonathanbrito48/site_obpc/django_errors.log',  # Defina o caminho para o arquivo de log
         },
     },
     'loggers': {
