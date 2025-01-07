@@ -4,7 +4,7 @@ from datetime import datetime,timedelta
 class Pastores(models.Model):
     nome_pastor= models.CharField(max_length=100,null=False,blank=False)
     cargo= models.CharField(max_length=100,null=False,blank=False)
-    biografia= models.CharField(max_length=2000,null=False,blank=False)
+    biografia= models.CharField(max_length=2000,null=True,blank=True)
     foto= models.ImageField(upload_to='pastores/foto_pastor',blank=False,help_text="Dimensão: 1051 x 1247 px")
     publicado= models.BooleanField(default=True)
     posicao= models.IntegerField(unique=True,null=True,default=None)

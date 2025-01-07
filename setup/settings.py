@@ -3,6 +3,10 @@ import os
 from dotenv import load_dotenv
 from google.oauth2 import service_account
 
+# from decouple import Config
+
+# config = Config()
+
 
 load_dotenv()
 
@@ -17,9 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY =  str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['34.56.188.157']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -74,15 +78,29 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        'OPTIONS': {
-            'timeout': 20,
-        },
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': str(os.getenv('NAME')),  # Nome do banco de dados
+        'USER': str(os.getenv('USER')),  # Usuário do PostgreSQL
+        'PASSWORD': str(os.getenv('PASSWORD')),  # Senha do usuário
+        'HOST': str(os.getenv('HOST')),  # Ou o IP do servidor do banco de dados
+        'PORT': '5432',  # Porta padrão do PostgreSQL
     }
 }
+
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#         'OPTIONS': {
+#             'timeout': 20,
+#         },
+#     }
+# }
 
 
 # Password validation
@@ -133,18 +151,20 @@ STATIC_ROOT = os.path.join(BASE_DIR,'static')
 USE_X_FORWARDED_HOST = True
 
 
-# Configuração do Google Cloud Storage
-GS_BUCKET_NAME = 'midia-obpc'
-GS_CREDENTIALS = service_account.Credentials.from_service_account_file('/etc/secrets/sincere-essence-445714-k6-c7cd52dee6d3.json')
+# # Configuração do Google Cloud Storage
+# GS_BUCKET_NAME = 'midia-site'
+# # GS_CREDENTIALS = service_account.Credentials.from_service_account_file('/etc/secrets/sincere-essence-445714-k6-c7cd52dee6d3.json')
+# GS_CREDENTIALS = service_account.Credentials.from_service_account_file('sincere-essence-445714-k6-c7cd52dee6d3.json')
 
-DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
-MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/'
+
+# DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+# MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/'
 
 # media
 
-# MEDIA_URL = '/media/'
+MEDIA_URL = '/media/'
 
-MEDIA_ROOT = None
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 LOGGING = {
