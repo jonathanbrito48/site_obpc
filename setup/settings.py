@@ -21,9 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY =  str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['34.27.236.72']
 
 # Application definition
 
@@ -174,8 +174,8 @@ LOGGING = {
         'file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, 'django_errors.log'),
-            # 'filename': '/home/jonathanbrito48/site_obpc/django_errors.log',  # Defina o caminho para o arquivo de log
+            # 'filename': os.path.join(BASE_DIR, 'django_errors.log'),
+            'filename': '/home/jonathanbrito48/site_obpc/django_errors.log',  # Defina o caminho para o arquivo de log
         },
     },
     'loggers': {
