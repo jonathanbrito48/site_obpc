@@ -3,9 +3,7 @@ import os
 from dotenv import load_dotenv
 from google.oauth2 import service_account
 
-# from decouple import Config
-
-# config = Config()
+from decouple import config
 
 
 load_dotenv()
@@ -82,11 +80,11 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': str(os.getenv('NAME')),  # Nome do banco de dados
-        'USER': str(os.getenv('USER')),  # Usuário do PostgreSQL
-        'PASSWORD': str(os.getenv('PASSWORD')),  # Senha do usuário
-        'HOST': str(os.getenv('HOST')),  # Ou o IP do servidor do banco de dados
-        'PORT': '5432',  # Porta padrão do PostgreSQL
+        'NAME': config('NAME'),
+        'USER': config('USER'),
+        'PASSWORD': config('PASSWORD'),
+        'HOST': config('HOST', default='localhost'),
+        'PORT': '5432',
     }
 }
 
@@ -174,8 +172,8 @@ LOGGING = {
         'file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            # 'filename': os.path.join(BASE_DIR, 'django_errors.log'),
-            'filename': '/home/jonathanbrito48/site_obpc/django_errors.log',  # Defina o caminho para o arquivo de log
+            'filename': os.path.join(BASE_DIR, 'django_errors.log'),
+            # 'filename': '/home/jonathanbrito48/site_obpc/django_errors.log',  # Defina o caminho para o arquivo de log
         },
     },
     'loggers': {
