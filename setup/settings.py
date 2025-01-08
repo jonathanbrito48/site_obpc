@@ -1,8 +1,7 @@
 from pathlib import Path
 import os
 from dotenv import load_dotenv
-from google.oauth2 import service_account
-
+from logging.handlers import TimedRotatingFileHandler
 from decouple import config
 
 
@@ -164,16 +163,24 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+    },
     'handlers': {
         'file': {
             'level': 'ERROR',
-            'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, 'django_errors.log'),
-            # 'filename': '/home/jonathanbrito48/site_obpc/django_errors.log',  # Defina o caminho para o arquivo de log
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': os.path.join(BASE_DIR, 'django_error.log'),  # Caminho do arquivo de log
+            'when': 'D',  # Rotacionar por dia
+            'interval': 7,  # A cada 7 dias
+            'backupCount': 4,  # Manter apenas os últimos 4 arquivos de log
+            'formatter': 'verbose',
         },
     },
     'loggers': {
