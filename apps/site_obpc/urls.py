@@ -3,6 +3,9 @@ from apps.site_obpc.views import index,pastores,MinisterioViewSet,EventosLista,\
     CongregacoesViewSet,EventoDetalhe,CursoViewSet,ContribuicaoViewSet,quemsomosViewSet,\
     DevocionalViewSet,DevocionalDetalheViewSet,divulgacao_servicos_view
 
+
+
+
 urlpatterns = [
     path('', index,name='index'),
     path('pastores',pastores,name='pastores'),
@@ -17,3 +20,4 @@ urlpatterns = [
     path('servicos',divulgacao_servicos_view,name='servicos'),
     path('quemsomos',quemsomosViewSet,name='quemsomos')
 ]
+

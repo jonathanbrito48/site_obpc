@@ -1,0 +1,32 @@
+services:
+  web:
+    build: 
+      context: .
+    container_name: site
+    command: gunicorn setup.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - static_volume:/app/static
+      - media_volume:/app/media
+    env_file:
+      - .env
+    expose:
+      - "8000"
+    environment:
+      - DEBUG=False
+      - ALLOWED_HOSTS=127.0.0.1
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx_proxy
+    volumes:
+      - static_volume:/app/static
+      - media_volume:/app/media
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "80:80"
+    depends_on:
+      - web
+
+volumes:
+  static_volume:
+  media_volume:
