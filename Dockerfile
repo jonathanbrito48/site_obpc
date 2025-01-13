@@ -10,10 +10,17 @@ RUN apk add --no-cache \
     libffi-dev \
     postgresql-dev \
     build-base \
+    dcron \
     python3-dev && \
     pip install -r requirements.txt
 
+COPY crontab /etc/cron.d/django-cron
+RUN chmod 0644 /etc/cron.d/django-cron
+RUN crontab /etc/cron.d/django-cron
+
 COPY . /app/
 
-CMD ["gunicorn","setup.wsgi:application","--bind","0.0.0.0:8000"]
+RUN chmod +x start.sh
+
+CMD ["./start.sh"]
 

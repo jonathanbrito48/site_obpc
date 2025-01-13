@@ -7,16 +7,6 @@ cffi==1.17.1
 charset-normalizer==3.3.2
 cryptography==44.0.0
 Django==5.1.4
-django-mysql==4.15.0
-django-storages==1.14.4
-google-api-core==2.24.0
-google-auth==2.37.0
-google-cloud-core==2.4.1
-google-cloud-storage==2.19.0
-google-crc32c==1.6.0
-google-oauth==1.0.1
-google-resumable-media==2.7.2
-googleapis-common-protos==1.66.0
 gunicorn==23.0.0
 idna==3.9
 jmespath==1.0.1

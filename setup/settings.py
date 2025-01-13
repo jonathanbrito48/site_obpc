@@ -32,7 +32,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.site_obpc.apps.SiteObpcConfig',
-    'storages',
 ]
 
 MIDDLEWARE = [
