@@ -19,7 +19,7 @@ def index(request):
     
     posts = posts[:24]
 
-    youtube=YoutubeAPI.objects.all()[:15]
+    youtube=YoutubeAPI.objects.order_by('-publishedAt')[:15]
 
     context = {
         "youtube":youtube,"posts": posts,"congregacoes":congregacoes,"carrosel":carrosel,"evento": evento,"ministerios":ministerios,"devocional":devocional
