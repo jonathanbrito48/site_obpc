@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 15.10 (Debian 15.10-0+deb12u1)
--- Dumped by pg_dump version 15.10 (Debian 15.10-0+deb12u1)
+-- Dumped from database version 15.12 (Debian 15.12-0+deb12u2)
+-- Dumped by pg_dump version 15.12 (Debian 15.12-0+deb12u2)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -844,7 +844,7 @@ COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
 
 COPY public.auth_user (id, password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined) FROM stdin;
 2	pbkdf2_sha256$870000$r2FqLF5A05bmI8xLmNZXRM$kjpjPIBsizL4sHCw3qjor417UP4XWzeHjkXA9ApOJfA=	2025-01-15 21:10:09.995923+00	f	camisllima				t	t	2025-01-13 17:41:09+00
-1	pbkdf2_sha256$870000$F4CaDCYHBLdrvqhzjPwe4g$lHBNz6zQG/2uakp0/2aImPsCvG9SGYr6pjYXBWwNZqE=	2025-01-22 21:01:51.550271+00	t	jonathan.brito48			jonathan.brito48@gmail.com	t	t	2025-01-06 17:30:47.472326+00
+1	pbkdf2_sha256$870000$F4CaDCYHBLdrvqhzjPwe4g$lHBNz6zQG/2uakp0/2aImPsCvG9SGYr6pjYXBWwNZqE=	2025-03-12 18:41:31.656093+00	t	jonathan.brito48			jonathan.brito48@gmail.com	t	t	2025-01-06 17:30:47.472326+00
 \.
 
 
@@ -1000,6 +1000,9 @@ COPY public.django_admin_log (id, action_time, object_id, object_repr, action_fl
 49	2025-01-16 17:39:49.808919+00	1	12 dias de Clamor para 12 meses de Bênçãos	1	[{"added": {}}]	10	2
 50	2025-01-16 17:47:12.332008+00	3	Clamando a Deus Pela Cura do Corpo e da Mente	2	[{"changed": {"fields": ["Banner home"]}}]	14	2
 51	2025-01-16 17:49:22.982067+00	3	Clamando a Deus Pela Cura do Corpo e da Mente	2	[{"changed": {"fields": ["Banner home"]}}]	14	2
+52	2025-01-30 22:57:55.512012+00	4	Teologia	2	[{"changed": {"fields": ["Publicado"]}}]	9	1
+53	2025-01-30 22:58:37.296932+00	4	Teologia	2	[{"changed": {"fields": ["Publicado"]}}]	9	1
+54	2025-02-14 21:30:46.954967+00	2	Teologia	2	[{"changed": {"fields": ["Local"]}}]	13	1
 \.
 
 
@@ -1118,6 +1121,8 @@ fmdi48hhbrscnq4k57aqe03qj3c6ri7d	.eJxVjMsOwiAQRf-FtSEMDAVcuvcbyMBMbdXQpI-V8d-1SR
 n219p30rredose9fsq979wol6pfb9veu	.eJxVjEEOwiAQRe_C2pCBQgGX7j0DGZhBqoYmpV0Z765NutDtf-_9l4i4rTVunZc4kTgLLU6_W8L84LYDumO7zTLPbV2mJHdFHrTL60z8vBzu30HFXr81EAIo9JazMhwGGi2HDAWNI0cZMCkEO1pjS0hOM7vgyRQcstEqeRDvD_DIOCQ:1tYAeP:E76Wf9RUHTHiZaUoNwa4b3X1IBmVaQgW61y0uUMY0hw	2025-01-29 21:10:09.056116+00
 ytq1urqp8pxce3w9qk3o9w5l8a0g4dg5	.eJxVjEEOwiAQRe_C2pCBQgGX7j0DGZhBqoYmpV0Z765NutDtf-_9l4i4rTVunZc4kTgLLU6_W8L84LYDumO7zTLPbV2mJHdFHrTL60z8vBzu30HFXr81EAIo9JazMhwGGi2HDAWNI0cZMCkEO1pjS0hOM7vgyRQcstEqeRDvD_DIOCQ:1tYAeP:E76Wf9RUHTHiZaUoNwa4b3X1IBmVaQgW61y0uUMY0hw	2025-01-29 21:10:09.999397+00
 1lltot8crvkybqpcrq07pu8fieq84npm	.eJxVjMsOwiAQRf-FtSEMDAVcuvcbyMBMbdXQpI-V8d-1SRe6veec-1KZtnXI2yJzHlmdFajT71aoPqTtgO_UbpOuU1vnsehd0Qdd9HVieV4O9-9goGX41sjBFegEbAFvLRlr0HfGcudAXAgRxQeJaIoFXzlhT1Ew9gmSYUxOvT-rpTZ9:1tahrD:VlmPmGkSwhYoyXN4OiyASOqBgZFzYeNplc0xAqR22Ig	2025-02-05 21:01:51.595935+00
+sip5m3b2f5qo4k67li1vlj9rw30sbzfl	.eJxVjMsOwiAQRf-FtSEMDAVcuvcbyMBMbdXQpI-V8d-1SRe6veec-1KZtnXI2yJzHlmdFajT71aoPqTtgO_UbpOuU1vnsehd0Qdd9HVieV4O9-9goGX41sjBFegEbAFvLRlr0HfGcudAXAgRxQeJaIoFXzlhT1Ew9gmSYUxOvT-rpTZ9:1tiiwO:wUje_fN-nA3zURjkYQwToSWeGpuDE8AAkoLlV1LeIyM	2025-02-27 23:48:20.1137+00
+j76cvelg88xnlgc5xb6wovt32uo55f1m	.eJxVjMsOwiAQRf-FtSEMDAVcuvcbyMBMbdXQpI-V8d-1SRe6veec-1KZtnXI2yJzHlmdFajT71aoPqTtgO_UbpOuU1vnsehd0Qdd9HVieV4O9-9goGX41sjBFegEbAFvLRlr0HfGcudAXAgRxQeJaIoFXzlhT1Ew9gmSYUxOvT-rpTZ9:1tsR1H:u2-p9a-KSGs7M3BgWEsAr_HoT6IhDqJfDhAOT9LzVm4	2025-03-26 18:41:31.662821+00
 \.
 
 
@@ -1128,8 +1133,8 @@ ytq1urqp8pxce3w9qk3o9w5l8a0g4dg5	.eJxVjEEOwiAQRe_C2pCBQgGX7j0DGZhBqoYmpV0Z765Nut
 COPY public.site_obpc_carrosel_index (id, nome_imagem, imagem, link_pagina, posicao, publicado) FROM stdin;
 5	2025	carrosel/Banners_2025_1216_x_606_px.png	\N	1	t
 2	Culto de Ensino	carrosel/Reino_de_ctFfdEw.jpg	\N	2	t
-4	Teologia	carrosel/CURSO_TEOLOGIA_Apresentação_svXenve.jpg	\N	5	f
 6	Culto Quinta-feira	carrosel/QUINTA_DA_ADORAÇÃO__1920_x_1080_px_1216_x_606_px_20250115_181929_0000.png	\N	3	t
+4	Teologia	carrosel/CURSO_TEOLOGIA_Apresentação_svXenve.jpg	\N	5	f
 \.
 
 
@@ -1157,7 +1162,7 @@ COPY public.site_obpc_congregacoes (id, nome_congregacao, facebook, instagram, e
 
 COPY public.site_obpc_cursos (id, nome_curso_extenso, nome_curso_abreviado, descricao, duracao, descricao_duracao, periodo, local, modalidade, investimento, descricao_investimento, informacoes_complementares, nome_coordenacao, foto_coordenacao, foto_banner, link_inscricao) FROM stdin;
 1	Casados para Sempre	Casais	O Marriage Ministries Intemational trabalha junto com a igreja local para curar e fortalecer os casamentos. Nossa firme convicção é que todos os casais têm uma tarefa do Senhor, e é nosso desejo ajudar a edificá‑los e equipá‑los para tal ministério como uma equipe de uma só carne.\r\n\r\nCremos que, quando os lares são fortes, as igrejas são fortes. Os princípios bíblicos compartilhados no curso “Casados Para Sempre” ensinam aos casais como andar na plenitude do relacionamento de uma só carne, capacitando‑os a se tornar um lar cristão que seja luz, ministrando salvação, cura e libertação em nome do Senhor Jesus.\r\n\r\nPara os casais cujos casamentos estão atribulados. O MMI oferece esperança de reconciliação e cura permanentes. Os estudos do curso “Casados Para Sempre” providenciam as ferramentas necessárias para aqueles que estão procurando andar em paz e harmonia.	14 semanas	O curso “Casados Para Sempre” contém 13 lições, ministradas em 14 semanas.	Noturno	Itaim Paulista	Presencial	R$ 60,00	\N	\N	Diaconos Alexsandre e Rosilene Lima	cursos/coordenador/alexerose_JKHQDSu.jpg	cursos/banner/logo_casados_j55PJGR.jpg	\N
-2	Teologia	Teologia	O Instituto Bíblico O Brasil Para Cristo, tem como objetivo capacitar pastores e demais obreiros com a finalidade de prepará-los para a seara do Senhor Jesus, que em certa ocasião olhando para o sofrimento dos homens, disse: “… A seara é grande, mais os ceifeiros são poucos. Rogai, pois, ao Senhor da seara que envie ceifeiros para sua seara.” (Mt 9.37,38). É e verdade também que o trabalhador precisa conhecer sua atividade específica, inclusive as ferramentas que ele vai utilizar no dia-a-dia para execução de suas tarefas. Com esta visão o IBBC se propõe a dar formação teológica aos obreiros e pastores, com um material de qualidade, e uma grade curricular que abrange todas as matérias de um excelente curso de teologia. O curso está divido em três fases, básico, médio e pleno.	6 semestres	O núcleo IBBC Itaim Paulista oferece atualmente três fases do curso: básico, médio e pleno, cada fase com duração de 2 semestres (2 módulos)\r\nA turma Teologia - Básico é ministrada aos Sábados das 15h às 18h\r\nA turma Teologia - Médio é ministrada às segundas-feiras das 19h45 às 22h45\r\nA turma Teologia - Pleno é ministrada às segundas-feiras das 19h45 às 22h45	Vespertino ou Noturno	Itaim Paulista e Jd. Camargo Velho	Presencial	R$ 120/mês	\N	\N	Pastor Julião	cursos/coordenador/coordenador-template_fnyfyVr.png	cursos/banner/270220754_455806166158142_1008127401520474489_n_ZN8DTq0.png	\N
+2	Teologia	Teologia	O Instituto Bíblico O Brasil Para Cristo, tem como objetivo capacitar pastores e demais obreiros com a finalidade de prepará-los para a seara do Senhor Jesus, que em certa ocasião olhando para o sofrimento dos homens, disse: “… A seara é grande, mais os ceifeiros são poucos. Rogai, pois, ao Senhor da seara que envie ceifeiros para sua seara.” (Mt 9.37,38). É e verdade também que o trabalhador precisa conhecer sua atividade específica, inclusive as ferramentas que ele vai utilizar no dia-a-dia para execução de suas tarefas. Com esta visão o IBBC se propõe a dar formação teológica aos obreiros e pastores, com um material de qualidade, e uma grade curricular que abrange todas as matérias de um excelente curso de teologia. O curso está divido em três fases, básico, médio e pleno.	6 semestres	O núcleo IBBC Itaim Paulista oferece atualmente três fases do curso: básico, médio e pleno, cada fase com duração de 2 semestres (2 módulos)\r\nA turma Teologia - Básico é ministrada aos Sábados das 15h às 18h\r\nA turma Teologia - Médio é ministrada às segundas-feiras das 19h45 às 22h45\r\nA turma Teologia - Pleno é ministrada às segundas-feiras das 19h45 às 22h45	Vespertino ou Noturno	Itaim Paulista	Presencial	R$ 120/mês	\N	\N	Pastor Julião	cursos/coordenador/coordenador-template_fnyfyVr.png	cursos/banner/270220754_455806166158142_1008127401520474489_n_ZN8DTq0.png	\N
 \.
 
 
@@ -1250,27 +1255,44 @@ COPY public.site_obpc_servicos (id, nome_empresa, foto, facebook_empresa, instag
 --
 
 COPY public.site_obpc_youtubeapi (id, "videoId", "publishedAt", title, thumbnails, "liveBroadcastContent", created_time) FROM stdin;
-2112	QzfKZitnp5M	2025-01-14T13:17:19Z	Campanha 12 dias de Clamor | 13/01	https://i.ytimg.com/vi/QzfKZitnp5M/hqdefault.jpg	none	2025-01-28 23:15:04.118889+00
-2113	1nvsLSJLeCM	2025-01-12T23:53:02Z	Santa Ceia do Senhor + Campanha 12 dias de Clamor | 12/01	https://i.ytimg.com/vi/1nvsLSJLeCM/hqdefault.jpg	none	2025-01-28 23:15:04.121836+00
-2114	RDgimj7hhTU	2025-01-12T13:10:16Z	Campanha 12 dias de Clamor | 11/01	https://i.ytimg.com/vi/RDgimj7hhTU/hqdefault.jpg	none	2025-01-28 23:15:04.124974+00
-2115	HkVkLgDKMmI	2025-01-11T13:23:09Z	Campanha 12 dias de Clamor | 10/01	https://i.ytimg.com/vi/HkVkLgDKMmI/hqdefault.jpg	none	2025-01-28 23:15:04.128104+00
-2116	uMNKJkIt40o	2025-01-10T13:05:49Z	Campanha 12 dias de Clamor | 09/01	https://i.ytimg.com/vi/uMNKJkIt40o/hqdefault.jpg	none	2025-01-28 23:15:04.131226+00
-2105	h_gF-xBkpgU	2025-01-26T23:11:46Z	"Culto de Ensino" | 28/01	https://i.ytimg.com/vi/h_gF-xBkpgU/hqdefault_live.jpg	live	2025-01-28 23:15:04.094944+00
-2106	TDw3ycM_GXk	2025-01-26T23:18:18Z	"Culto da Família" | 26/01	https://i.ytimg.com/vi/TDw3ycM_GXk/hqdefault.jpg	none	2025-01-28 23:15:04.098864+00
-2107	_QN3xlM6yjY	2025-01-24T12:42:21Z	"Quinta da Adoração" | 23/01	https://i.ytimg.com/vi/_QN3xlM6yjY/hqdefault.jpg	none	2025-01-28 23:15:04.102783+00
-2108	JhAFsq5lyYo	2025-01-22T12:24:37Z	"Culto de Ensino" | 21/01	https://i.ytimg.com/vi/JhAFsq5lyYo/hqdefault.jpg	none	2025-01-28 23:15:04.106181+00
-2109	H5A7tA1EWWQ	2025-01-20T11:09:51Z	"Culto da Família" | 19/01	https://i.ytimg.com/vi/H5A7tA1EWWQ/hqdefault.jpg	none	2025-01-28 23:15:04.109321+00
-2110	OkmCpvSDbsQ	2025-01-20T10:01:47Z	"Quinta da Família" | 19/01	https://i.ytimg.com/vi/OkmCpvSDbsQ/hqdefault.jpg	none	2025-01-28 23:15:04.112559+00
-2111	dhQditQ9jdY	2025-01-17T12:47:07Z	"Quinta da Adoração" | 16/01	https://i.ytimg.com/vi/dhQditQ9jdY/hqdefault.jpg	none	2025-01-28 23:15:04.115873+00
-2117	OMIplJI55TU	2025-01-09T13:28:43Z	Campanha 12 dias de Clamor | 08/01	https://i.ytimg.com/vi/OMIplJI55TU/hqdefault.jpg	none	2025-01-28 23:15:04.134269+00
-2118	RtSDIcHasbY	2025-01-08T12:40:46Z	Campanha 12 dias de Clamor | 07/01	https://i.ytimg.com/vi/RtSDIcHasbY/hqdefault.jpg	none	2025-01-28 23:15:04.138837+00
-2119	pa9JrLuYwJA	2025-01-07T13:19:49Z	Campanha 12 dias de Clamor | 06/01	https://i.ytimg.com/vi/pa9JrLuYwJA/hqdefault.jpg	none	2025-01-28 23:15:04.142042+00
-2120	QxEKj_VLvNY	2025-01-05T23:33:47Z	Campanha 12 dias de Clamor | 05/01	https://i.ytimg.com/vi/QxEKj_VLvNY/hqdefault.jpg	none	2025-01-28 23:15:04.150605+00
-2121	P8ybQBHIbaA	2025-01-05T13:03:01Z	Campanha 12 dias de Clamor | 04/01	https://i.ytimg.com/vi/P8ybQBHIbaA/hqdefault.jpg	none	2025-01-28 23:15:04.154513+00
-2122	FNc5xA2RUf4	2025-01-04T12:49:46Z	Campanha 12 dias de Clamor | 03/01	https://i.ytimg.com/vi/FNc5xA2RUf4/hqdefault.jpg	none	2025-01-28 23:15:04.157965+00
-2123	PZXANjbcx1U	2025-01-03T12:49:54Z	Campanha 12 dias de Clamor | 02/01	https://i.ytimg.com/vi/PZXANjbcx1U/hqdefault.jpg	none	2025-01-28 23:15:04.161614+00
-2124	x1pPAtSUTwI	2025-01-01T15:28:24Z	Culto da Virada | 31/12	https://i.ytimg.com/vi/x1pPAtSUTwI/hqdefault.jpg	none	2025-01-28 23:15:04.165211+00
-2125	lrTRHpTdMww	2024-12-30T09:50:33Z	Culto da Família | 29/12	https://i.ytimg.com/vi/lrTRHpTdMww/hqdefault.jpg	none	2025-01-28 23:15:04.168679+00
+8245	ik1An9m6gSk	2025-03-08T20:41:41Z	CHÁ DE MULHERES: UMA MULHER NOTÁVEL 08/03	https://i.ytimg.com/vi/ik1An9m6gSk/hqdefault.jpg	none	2025-03-16 01:30:04.126499+00
+8246	vDK-alM8EWo	2025-03-07T12:56:35Z	QUINTA DA PERSEVERANÇA | 06/03	https://i.ytimg.com/vi/vDK-alM8EWo/hqdefault.jpg	none	2025-03-16 01:30:04.129027+00
+8248	HjwW082X76w	2025-03-05T12:52:48Z	TERÇA FORA DA CARNE | 04/03	https://i.ytimg.com/vi/HjwW082X76w/hqdefault.jpg	none	2025-03-16 01:30:04.131818+00
+8250	gJ2agA6DGd0	2025-03-02T23:24:15Z	Culto da Família | 02/03	https://i.ytimg.com/vi/gJ2agA6DGd0/hqdefault.jpg	none	2025-03-16 01:30:04.134303+00
+8252	IPL8t4dFk7c	2025-03-02T13:16:37Z	Culto "Fora da Caixa" | 01/03	https://i.ytimg.com/vi/IPL8t4dFk7c/hqdefault.jpg	none	2025-03-16 01:30:04.137256+00
+8254	4wq1dIm_cxk	2025-02-28T12:31:43Z	Quinta da Adoração | 27/02	https://i.ytimg.com/vi/4wq1dIm_cxk/hqdefault.jpg	none	2025-03-16 01:30:04.139845+00
+8256	2-g2RWjNJaY	2025-02-26T12:41:13Z	O Reino de Deus X O Reino dos Homens | 25/02	https://i.ytimg.com/vi/2-g2RWjNJaY/hqdefault.jpg	none	2025-03-16 01:30:04.142179+00
+8258	wAf5VI5ZmDk	2025-02-23T23:33:38Z	"Culto da Família" | 23/02	https://i.ytimg.com/vi/wAf5VI5ZmDk/hqdefault.jpg	none	2025-03-16 01:30:04.144924+00
+8260	LaqHjwGfVio	2025-02-21T12:48:52Z	ANO DA DEVOÇÃO  - 20/02/25	https://i.ytimg.com/vi/LaqHjwGfVio/hqdefault.jpg	none	2025-03-16 01:30:04.148063+00
+8262	h9B7tk8UEd4	2025-02-19T12:13:00Z	O Reino de Deus X O Reino dos Homens | 18/08	https://i.ytimg.com/vi/h9B7tk8UEd4/hqdefault.jpg	none	2025-03-16 01:30:04.150629+00
+8264	QqAc6u1VgqA	2025-02-16T23:47:04Z	Culto da Família | 16/02	https://i.ytimg.com/vi/QqAc6u1VgqA/hqdefault.jpg	none	2025-03-16 01:30:04.15364+00
+8266	JuJBg80qrM0	2025-02-14T12:49:31Z	Quinta da Adoração | 13/02	https://i.ytimg.com/vi/JuJBg80qrM0/hqdefault.jpg	none	2025-03-16 01:30:04.156409+00
+8268	nX2rKcIqRD0	2025-02-12T12:30:46Z	O Reino de Deus X O Reino dos Homens | 11/02	https://i.ytimg.com/vi/nX2rKcIqRD0/hqdefault.jpg	none	2025-03-16 01:30:04.159626+00
+8270	QEVQxhbPlJ0	2025-02-10T00:09:03Z	"Santa Ceia do Senhor" | 09/01	https://i.ytimg.com/vi/QEVQxhbPlJ0/hqdefault.jpg	none	2025-03-16 01:30:04.162054+00
+8272	KtzYbXJ709M	2025-02-07T12:21:35Z	"Culto da Adoração" | 06/01	https://i.ytimg.com/vi/KtzYbXJ709M/hqdefault.jpg	none	2025-03-16 01:30:04.164455+00
+8274	YhGF6qt8ezE	2025-02-06T22:54:07Z	"Culto de Ensino" | 04/02	https://i.ytimg.com/vi/YhGF6qt8ezE/hqdefault.jpg	none	2025-03-16 01:30:04.167268+00
+8276	m0qqj1P1urI	2025-02-02T23:27:47Z	"Culto da Família" | 02/02	https://i.ytimg.com/vi/m0qqj1P1urI/hqdefault.jpg	none	2025-03-16 01:30:04.170128+00
+8247	-_kngsYSN50	2025-03-14T12:48:17Z	"Quinta da Perseverança" | 13/03	https://i.ytimg.com/vi/-_kngsYSN50/hqdefault.jpg	none	2025-03-16 01:30:04.129016+00
+8249	5qdecZupV5g	2025-03-12T12:51:23Z	O Reino de Deus X O Reino dos Homens | 11/03	https://i.ytimg.com/vi/5qdecZupV5g/hqdefault.jpg	none	2025-03-16 01:30:04.132676+00
+8251	LhT0ZVxx74w	2025-03-10T10:56:42Z	Culto da Família | 09/03	https://i.ytimg.com/vi/LhT0ZVxx74w/hqdefault.jpg	none	2025-03-16 01:30:04.135596+00
+8253	d1HzIgEI3BU	2025-03-09T15:03:18Z	Santa Ceia do Senhor | 09/03	https://i.ytimg.com/vi/d1HzIgEI3BU/hqdefault.jpg	none	2025-03-16 01:30:04.1382+00
+8255	ik1An9m6gSk	2025-03-08T20:41:41Z	CHÁ DE MULHERES: UMA MULHER NOTÁVEL 08/03	https://i.ytimg.com/vi/ik1An9m6gSk/hqdefault.jpg	none	2025-03-16 01:30:04.14086+00
+8257	vDK-alM8EWo	2025-03-07T12:56:35Z	QUINTA DA PERSEVERANÇA | 06/03	https://i.ytimg.com/vi/vDK-alM8EWo/hqdefault.jpg	none	2025-03-16 01:30:04.143841+00
+8259	HjwW082X76w	2025-03-05T12:52:48Z	TERÇA FORA DA CARNE | 04/03	https://i.ytimg.com/vi/HjwW082X76w/hqdefault.jpg	none	2025-03-16 01:30:04.147134+00
+8261	gJ2agA6DGd0	2025-03-02T23:24:15Z	Culto da Família | 02/03	https://i.ytimg.com/vi/gJ2agA6DGd0/hqdefault.jpg	none	2025-03-16 01:30:04.150314+00
+8263	IPL8t4dFk7c	2025-03-02T13:16:37Z	Culto "Fora da Caixa" | 01/03	https://i.ytimg.com/vi/IPL8t4dFk7c/hqdefault.jpg	none	2025-03-16 01:30:04.153153+00
+8265	4wq1dIm_cxk	2025-02-28T12:31:43Z	Quinta da Adoração | 27/02	https://i.ytimg.com/vi/4wq1dIm_cxk/hqdefault.jpg	none	2025-03-16 01:30:04.155971+00
+8267	2-g2RWjNJaY	2025-02-26T12:41:13Z	O Reino de Deus X O Reino dos Homens | 25/02	https://i.ytimg.com/vi/2-g2RWjNJaY/hqdefault.jpg	none	2025-03-16 01:30:04.158591+00
+8269	wAf5VI5ZmDk	2025-02-23T23:33:38Z	"Culto da Família" | 23/02	https://i.ytimg.com/vi/wAf5VI5ZmDk/hqdefault.jpg	none	2025-03-16 01:30:04.161318+00
+8271	LaqHjwGfVio	2025-02-21T12:48:52Z	ANO DA DEVOÇÃO  - 20/02/25	https://i.ytimg.com/vi/LaqHjwGfVio/hqdefault.jpg	none	2025-03-16 01:30:04.164113+00
+8273	h9B7tk8UEd4	2025-02-19T12:13:00Z	O Reino de Deus X O Reino dos Homens | 18/08	https://i.ytimg.com/vi/h9B7tk8UEd4/hqdefault.jpg	none	2025-03-16 01:30:04.166897+00
+8275	QqAc6u1VgqA	2025-02-16T23:47:04Z	Culto da Família | 16/02	https://i.ytimg.com/vi/QqAc6u1VgqA/hqdefault.jpg	none	2025-03-16 01:30:04.169611+00
+8277	JuJBg80qrM0	2025-02-14T12:49:31Z	Quinta da Adoração | 13/02	https://i.ytimg.com/vi/JuJBg80qrM0/hqdefault.jpg	none	2025-03-16 01:30:04.172444+00
+8278	nX2rKcIqRD0	2025-02-12T12:30:46Z	O Reino de Deus X O Reino dos Homens | 11/02	https://i.ytimg.com/vi/nX2rKcIqRD0/hqdefault.jpg	none	2025-03-16 01:30:04.174784+00
+8279	QEVQxhbPlJ0	2025-02-10T00:09:03Z	"Santa Ceia do Senhor" | 09/01	https://i.ytimg.com/vi/QEVQxhbPlJ0/hqdefault.jpg	none	2025-03-16 01:30:04.177395+00
+8280	KtzYbXJ709M	2025-02-07T12:21:35Z	"Culto da Adoração" | 06/01	https://i.ytimg.com/vi/KtzYbXJ709M/hqdefault.jpg	none	2025-03-16 01:30:04.179832+00
+8281	YhGF6qt8ezE	2025-02-06T22:54:07Z	"Culto de Ensino" | 04/02	https://i.ytimg.com/vi/YhGF6qt8ezE/hqdefault.jpg	none	2025-03-16 01:30:04.182259+00
+8282	m0qqj1P1urI	2025-02-02T23:27:47Z	"Culto da Família" | 02/02	https://i.ytimg.com/vi/m0qqj1P1urI/hqdefault.jpg	none	2025-03-16 01:30:04.184699+00
 \.
 
 
@@ -1320,7 +1342,7 @@ SELECT pg_catalog.setval('public.auth_user_user_permissions_id_seq', 80, true);
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: jonathanbrito
 --
 
-SELECT pg_catalog.setval('public.django_admin_log_id_seq', 51, true);
+SELECT pg_catalog.setval('public.django_admin_log_id_seq', 54, true);
 
 
 --
@@ -1432,7 +1454,7 @@ SELECT pg_catalog.setval('public.site_obpc_servicos_id_seq', 1, false);
 -- Name: site_obpc_youtubeapi_id_seq; Type: SEQUENCE SET; Schema: public; Owner: jonathanbrito
 --
 
-SELECT pg_catalog.setval('public.site_obpc_youtubeapi_id_seq', 2125, true);
+SELECT pg_catalog.setval('public.site_obpc_youtubeapi_id_seq', 8282, true);
 
 
 --
