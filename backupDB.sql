@@ -1255,44 +1255,38 @@ COPY public.site_obpc_servicos (id, nome_empresa, foto, facebook_empresa, instag
 --
 
 COPY public.site_obpc_youtubeapi (id, "videoId", "publishedAt", title, thumbnails, "liveBroadcastContent", created_time) FROM stdin;
-8245	ik1An9m6gSk	2025-03-08T20:41:41Z	CHÁ DE MULHERES: UMA MULHER NOTÁVEL 08/03	https://i.ytimg.com/vi/ik1An9m6gSk/hqdefault.jpg	none	2025-03-16 01:30:04.126499+00
-8246	vDK-alM8EWo	2025-03-07T12:56:35Z	QUINTA DA PERSEVERANÇA | 06/03	https://i.ytimg.com/vi/vDK-alM8EWo/hqdefault.jpg	none	2025-03-16 01:30:04.129027+00
-8248	HjwW082X76w	2025-03-05T12:52:48Z	TERÇA FORA DA CARNE | 04/03	https://i.ytimg.com/vi/HjwW082X76w/hqdefault.jpg	none	2025-03-16 01:30:04.131818+00
-8250	gJ2agA6DGd0	2025-03-02T23:24:15Z	Culto da Família | 02/03	https://i.ytimg.com/vi/gJ2agA6DGd0/hqdefault.jpg	none	2025-03-16 01:30:04.134303+00
-8252	IPL8t4dFk7c	2025-03-02T13:16:37Z	Culto "Fora da Caixa" | 01/03	https://i.ytimg.com/vi/IPL8t4dFk7c/hqdefault.jpg	none	2025-03-16 01:30:04.137256+00
-8254	4wq1dIm_cxk	2025-02-28T12:31:43Z	Quinta da Adoração | 27/02	https://i.ytimg.com/vi/4wq1dIm_cxk/hqdefault.jpg	none	2025-03-16 01:30:04.139845+00
-8256	2-g2RWjNJaY	2025-02-26T12:41:13Z	O Reino de Deus X O Reino dos Homens | 25/02	https://i.ytimg.com/vi/2-g2RWjNJaY/hqdefault.jpg	none	2025-03-16 01:30:04.142179+00
-8258	wAf5VI5ZmDk	2025-02-23T23:33:38Z	"Culto da Família" | 23/02	https://i.ytimg.com/vi/wAf5VI5ZmDk/hqdefault.jpg	none	2025-03-16 01:30:04.144924+00
-8260	LaqHjwGfVio	2025-02-21T12:48:52Z	ANO DA DEVOÇÃO  - 20/02/25	https://i.ytimg.com/vi/LaqHjwGfVio/hqdefault.jpg	none	2025-03-16 01:30:04.148063+00
-8262	h9B7tk8UEd4	2025-02-19T12:13:00Z	O Reino de Deus X O Reino dos Homens | 18/08	https://i.ytimg.com/vi/h9B7tk8UEd4/hqdefault.jpg	none	2025-03-16 01:30:04.150629+00
-8264	QqAc6u1VgqA	2025-02-16T23:47:04Z	Culto da Família | 16/02	https://i.ytimg.com/vi/QqAc6u1VgqA/hqdefault.jpg	none	2025-03-16 01:30:04.15364+00
-8266	JuJBg80qrM0	2025-02-14T12:49:31Z	Quinta da Adoração | 13/02	https://i.ytimg.com/vi/JuJBg80qrM0/hqdefault.jpg	none	2025-03-16 01:30:04.156409+00
-8268	nX2rKcIqRD0	2025-02-12T12:30:46Z	O Reino de Deus X O Reino dos Homens | 11/02	https://i.ytimg.com/vi/nX2rKcIqRD0/hqdefault.jpg	none	2025-03-16 01:30:04.159626+00
-8270	QEVQxhbPlJ0	2025-02-10T00:09:03Z	"Santa Ceia do Senhor" | 09/01	https://i.ytimg.com/vi/QEVQxhbPlJ0/hqdefault.jpg	none	2025-03-16 01:30:04.162054+00
-8272	KtzYbXJ709M	2025-02-07T12:21:35Z	"Culto da Adoração" | 06/01	https://i.ytimg.com/vi/KtzYbXJ709M/hqdefault.jpg	none	2025-03-16 01:30:04.164455+00
-8274	YhGF6qt8ezE	2025-02-06T22:54:07Z	"Culto de Ensino" | 04/02	https://i.ytimg.com/vi/YhGF6qt8ezE/hqdefault.jpg	none	2025-03-16 01:30:04.167268+00
-8276	m0qqj1P1urI	2025-02-02T23:27:47Z	"Culto da Família" | 02/02	https://i.ytimg.com/vi/m0qqj1P1urI/hqdefault.jpg	none	2025-03-16 01:30:04.170128+00
-8247	-_kngsYSN50	2025-03-14T12:48:17Z	"Quinta da Perseverança" | 13/03	https://i.ytimg.com/vi/-_kngsYSN50/hqdefault.jpg	none	2025-03-16 01:30:04.129016+00
-8249	5qdecZupV5g	2025-03-12T12:51:23Z	O Reino de Deus X O Reino dos Homens | 11/03	https://i.ytimg.com/vi/5qdecZupV5g/hqdefault.jpg	none	2025-03-16 01:30:04.132676+00
-8251	LhT0ZVxx74w	2025-03-10T10:56:42Z	Culto da Família | 09/03	https://i.ytimg.com/vi/LhT0ZVxx74w/hqdefault.jpg	none	2025-03-16 01:30:04.135596+00
-8253	d1HzIgEI3BU	2025-03-09T15:03:18Z	Santa Ceia do Senhor | 09/03	https://i.ytimg.com/vi/d1HzIgEI3BU/hqdefault.jpg	none	2025-03-16 01:30:04.1382+00
-8255	ik1An9m6gSk	2025-03-08T20:41:41Z	CHÁ DE MULHERES: UMA MULHER NOTÁVEL 08/03	https://i.ytimg.com/vi/ik1An9m6gSk/hqdefault.jpg	none	2025-03-16 01:30:04.14086+00
-8257	vDK-alM8EWo	2025-03-07T12:56:35Z	QUINTA DA PERSEVERANÇA | 06/03	https://i.ytimg.com/vi/vDK-alM8EWo/hqdefault.jpg	none	2025-03-16 01:30:04.143841+00
-8259	HjwW082X76w	2025-03-05T12:52:48Z	TERÇA FORA DA CARNE | 04/03	https://i.ytimg.com/vi/HjwW082X76w/hqdefault.jpg	none	2025-03-16 01:30:04.147134+00
-8261	gJ2agA6DGd0	2025-03-02T23:24:15Z	Culto da Família | 02/03	https://i.ytimg.com/vi/gJ2agA6DGd0/hqdefault.jpg	none	2025-03-16 01:30:04.150314+00
-8263	IPL8t4dFk7c	2025-03-02T13:16:37Z	Culto "Fora da Caixa" | 01/03	https://i.ytimg.com/vi/IPL8t4dFk7c/hqdefault.jpg	none	2025-03-16 01:30:04.153153+00
-8265	4wq1dIm_cxk	2025-02-28T12:31:43Z	Quinta da Adoração | 27/02	https://i.ytimg.com/vi/4wq1dIm_cxk/hqdefault.jpg	none	2025-03-16 01:30:04.155971+00
-8267	2-g2RWjNJaY	2025-02-26T12:41:13Z	O Reino de Deus X O Reino dos Homens | 25/02	https://i.ytimg.com/vi/2-g2RWjNJaY/hqdefault.jpg	none	2025-03-16 01:30:04.158591+00
-8269	wAf5VI5ZmDk	2025-02-23T23:33:38Z	"Culto da Família" | 23/02	https://i.ytimg.com/vi/wAf5VI5ZmDk/hqdefault.jpg	none	2025-03-16 01:30:04.161318+00
-8271	LaqHjwGfVio	2025-02-21T12:48:52Z	ANO DA DEVOÇÃO  - 20/02/25	https://i.ytimg.com/vi/LaqHjwGfVio/hqdefault.jpg	none	2025-03-16 01:30:04.164113+00
-8273	h9B7tk8UEd4	2025-02-19T12:13:00Z	O Reino de Deus X O Reino dos Homens | 18/08	https://i.ytimg.com/vi/h9B7tk8UEd4/hqdefault.jpg	none	2025-03-16 01:30:04.166897+00
-8275	QqAc6u1VgqA	2025-02-16T23:47:04Z	Culto da Família | 16/02	https://i.ytimg.com/vi/QqAc6u1VgqA/hqdefault.jpg	none	2025-03-16 01:30:04.169611+00
-8277	JuJBg80qrM0	2025-02-14T12:49:31Z	Quinta da Adoração | 13/02	https://i.ytimg.com/vi/JuJBg80qrM0/hqdefault.jpg	none	2025-03-16 01:30:04.172444+00
-8278	nX2rKcIqRD0	2025-02-12T12:30:46Z	O Reino de Deus X O Reino dos Homens | 11/02	https://i.ytimg.com/vi/nX2rKcIqRD0/hqdefault.jpg	none	2025-03-16 01:30:04.174784+00
-8279	QEVQxhbPlJ0	2025-02-10T00:09:03Z	"Santa Ceia do Senhor" | 09/01	https://i.ytimg.com/vi/QEVQxhbPlJ0/hqdefault.jpg	none	2025-03-16 01:30:04.177395+00
-8280	KtzYbXJ709M	2025-02-07T12:21:35Z	"Culto da Adoração" | 06/01	https://i.ytimg.com/vi/KtzYbXJ709M/hqdefault.jpg	none	2025-03-16 01:30:04.179832+00
-8281	YhGF6qt8ezE	2025-02-06T22:54:07Z	"Culto de Ensino" | 04/02	https://i.ytimg.com/vi/YhGF6qt8ezE/hqdefault.jpg	none	2025-03-16 01:30:04.182259+00
-8282	m0qqj1P1urI	2025-02-02T23:27:47Z	"Culto da Família" | 02/02	https://i.ytimg.com/vi/m0qqj1P1urI/hqdefault.jpg	none	2025-03-16 01:30:04.184699+00
+8779	wAf5VI5ZmDk	2025-02-23T23:33:38Z	"Culto da Família" | 23/02	https://i.ytimg.com/vi/wAf5VI5ZmDk/hqdefault.jpg	none	2025-03-21 01:30:04.619893+00
+8780	LaqHjwGfVio	2025-02-21T12:48:52Z	ANO DA DEVOÇÃO  - 20/02/25	https://i.ytimg.com/vi/LaqHjwGfVio/hqdefault.jpg	none	2025-03-21 01:30:04.624647+00
+8782	h9B7tk8UEd4	2025-02-19T12:13:00Z	O Reino de Deus X O Reino dos Homens | 18/08	https://i.ytimg.com/vi/h9B7tk8UEd4/hqdefault.jpg	none	2025-03-21 01:30:04.628315+00
+8784	QqAc6u1VgqA	2025-02-16T23:47:04Z	Culto da Família | 16/02	https://i.ytimg.com/vi/QqAc6u1VgqA/hqdefault.jpg	none	2025-03-21 01:30:04.632106+00
+8786	JuJBg80qrM0	2025-02-14T12:49:31Z	Quinta da Adoração | 13/02	https://i.ytimg.com/vi/JuJBg80qrM0/hqdefault.jpg	none	2025-03-21 01:30:04.636868+00
+8788	nX2rKcIqRD0	2025-02-12T12:30:46Z	O Reino de Deus X O Reino dos Homens | 11/02	https://i.ytimg.com/vi/nX2rKcIqRD0/hqdefault.jpg	none	2025-03-21 01:30:04.640272+00
+8790	QEVQxhbPlJ0	2025-02-10T00:09:03Z	"Santa Ceia do Senhor" | 09/01	https://i.ytimg.com/vi/QEVQxhbPlJ0/hqdefault.jpg	none	2025-03-21 01:30:04.644543+00
+8792	KtzYbXJ709M	2025-02-07T12:21:35Z	"Culto da Adoração" | 06/01	https://i.ytimg.com/vi/KtzYbXJ709M/hqdefault.jpg	none	2025-03-21 01:30:04.647869+00
+8794	YhGF6qt8ezE	2025-02-06T22:54:07Z	"Culto de Ensino" | 04/02	https://i.ytimg.com/vi/YhGF6qt8ezE/hqdefault.jpg	none	2025-03-21 01:30:04.651188+00
+8781	jRS1GYwRvqc	2025-03-20T22:58:47Z	Quinta Feira da Perseverança 20/03	https://i.ytimg.com/vi/jRS1GYwRvqc/hqdefault_live.jpg	none	2025-03-21 01:30:04.626073+00
+8783	cHi-4bIKW8E	2025-03-19T12:39:11Z	O Reino de Deus X O Reino dos Homens | 18/03	https://i.ytimg.com/vi/cHi-4bIKW8E/hqdefault.jpg	none	2025-03-21 01:30:04.631827+00
+8785	vSeD0upu9eY	2025-03-16T23:55:35Z	"Culto da Família" | 16/03	https://i.ytimg.com/vi/vSeD0upu9eY/hqdefault.jpg	none	2025-03-21 01:30:04.636109+00
+8787	-_kngsYSN50	2025-03-14T12:48:17Z	"Quinta da Perseverança" | 13/03	https://i.ytimg.com/vi/-_kngsYSN50/hqdefault.jpg	none	2025-03-21 01:30:04.639927+00
+8789	5qdecZupV5g	2025-03-12T12:51:23Z	O Reino de Deus X O Reino dos Homens | 11/03	https://i.ytimg.com/vi/5qdecZupV5g/hqdefault.jpg	none	2025-03-21 01:30:04.643537+00
+8791	LhT0ZVxx74w	2025-03-10T10:56:42Z	Culto da Família | 09/03	https://i.ytimg.com/vi/LhT0ZVxx74w/hqdefault.jpg	none	2025-03-21 01:30:04.64706+00
+8793	d1HzIgEI3BU	2025-03-09T15:03:18Z	Santa Ceia do Senhor | 09/03	https://i.ytimg.com/vi/d1HzIgEI3BU/hqdefault.jpg	none	2025-03-21 01:30:04.651006+00
+8795	ik1An9m6gSk	2025-03-08T20:41:41Z	CHÁ DE MULHERES: UMA MULHER NOTÁVEL 08/03	https://i.ytimg.com/vi/ik1An9m6gSk/hqdefault.jpg	none	2025-03-21 01:30:04.654678+00
+8796	vDK-alM8EWo	2025-03-07T12:56:35Z	QUINTA DA PERSEVERANÇA | 06/03	https://i.ytimg.com/vi/vDK-alM8EWo/hqdefault.jpg	none	2025-03-21 01:30:04.658071+00
+8797	HjwW082X76w	2025-03-05T12:52:48Z	TERÇA FORA DA CARNE | 04/03	https://i.ytimg.com/vi/HjwW082X76w/hqdefault.jpg	none	2025-03-21 01:30:04.661583+00
+8798	gJ2agA6DGd0	2025-03-02T23:24:15Z	Culto da Família | 02/03	https://i.ytimg.com/vi/gJ2agA6DGd0/hqdefault.jpg	none	2025-03-21 01:30:04.664871+00
+8799	IPL8t4dFk7c	2025-03-02T13:16:37Z	Culto "Fora da Caixa" | 01/03	https://i.ytimg.com/vi/IPL8t4dFk7c/hqdefault.jpg	none	2025-03-21 01:30:04.668438+00
+8800	4wq1dIm_cxk	2025-02-28T12:31:43Z	Quinta da Adoração | 27/02	https://i.ytimg.com/vi/4wq1dIm_cxk/hqdefault.jpg	none	2025-03-21 01:30:04.671748+00
+8801	2-g2RWjNJaY	2025-02-26T12:41:13Z	O Reino de Deus X O Reino dos Homens | 25/02	https://i.ytimg.com/vi/2-g2RWjNJaY/hqdefault.jpg	none	2025-03-21 01:30:04.675242+00
+8802	wAf5VI5ZmDk	2025-02-23T23:33:38Z	"Culto da Família" | 23/02	https://i.ytimg.com/vi/wAf5VI5ZmDk/hqdefault.jpg	none	2025-03-21 01:30:04.679048+00
+8803	LaqHjwGfVio	2025-02-21T12:48:52Z	ANO DA DEVOÇÃO  - 20/02/25	https://i.ytimg.com/vi/LaqHjwGfVio/hqdefault.jpg	none	2025-03-21 01:30:04.682693+00
+8804	h9B7tk8UEd4	2025-02-19T12:13:00Z	O Reino de Deus X O Reino dos Homens | 18/08	https://i.ytimg.com/vi/h9B7tk8UEd4/hqdefault.jpg	none	2025-03-21 01:30:04.686022+00
+8805	QqAc6u1VgqA	2025-02-16T23:47:04Z	Culto da Família | 16/02	https://i.ytimg.com/vi/QqAc6u1VgqA/hqdefault.jpg	none	2025-03-21 01:30:04.689299+00
+8806	JuJBg80qrM0	2025-02-14T12:49:31Z	Quinta da Adoração | 13/02	https://i.ytimg.com/vi/JuJBg80qrM0/hqdefault.jpg	none	2025-03-21 01:30:04.69246+00
+8807	nX2rKcIqRD0	2025-02-12T12:30:46Z	O Reino de Deus X O Reino dos Homens | 11/02	https://i.ytimg.com/vi/nX2rKcIqRD0/hqdefault.jpg	none	2025-03-21 01:30:04.69566+00
+8808	QEVQxhbPlJ0	2025-02-10T00:09:03Z	"Santa Ceia do Senhor" | 09/01	https://i.ytimg.com/vi/QEVQxhbPlJ0/hqdefault.jpg	none	2025-03-21 01:30:04.698928+00
+8809	KtzYbXJ709M	2025-02-07T12:21:35Z	"Culto da Adoração" | 06/01	https://i.ytimg.com/vi/KtzYbXJ709M/hqdefault.jpg	none	2025-03-21 01:30:04.702715+00
+8810	YhGF6qt8ezE	2025-02-06T22:54:07Z	"Culto de Ensino" | 04/02	https://i.ytimg.com/vi/YhGF6qt8ezE/hqdefault.jpg	none	2025-03-21 01:30:04.706142+00
 \.
 
 
@@ -1454,7 +1448,7 @@ SELECT pg_catalog.setval('public.site_obpc_servicos_id_seq', 1, false);
 -- Name: site_obpc_youtubeapi_id_seq; Type: SEQUENCE SET; Schema: public; Owner: jonathanbrito
 --
 
-SELECT pg_catalog.setval('public.site_obpc_youtubeapi_id_seq', 8282, true);
+SELECT pg_catalog.setval('public.site_obpc_youtubeapi_id_seq', 8810, true);
 
 
 --
