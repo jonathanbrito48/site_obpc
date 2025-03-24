@@ -83,6 +83,10 @@ DATABASES = {
         'PASSWORD': config('PASSWORD'),
         'HOST': config('HOST', default='localhost'),
         'PORT': '5432',
+        'OPTIONS': {
+            'connect_timeout': 5,
+        },
+        'CONN_MAX_AGE': 300,
     }
 }
 
