@@ -22,6 +22,10 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost','34.121.153.167','site']
 
+# Configurações para proxy
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'http')
+USE_X_FORWARDED_HOST = True
+
 # Application definition
 
 INSTALLED_APPS = [
