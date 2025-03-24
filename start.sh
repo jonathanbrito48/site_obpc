@@ -11,9 +11,6 @@ exec gunicorn setup.wsgi:application \
   --worker-class gthread \
   --threads 3 \
   --graceful-timeout 30 \
-  --keepalive 5 \
   --max-requests 1000 \
   --max-requests-jitter 50 \
-  --log-level debug \
-  --access-logfile - \
-  --error-logfile -
+  --log-level debug
