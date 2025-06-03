@@ -105,8 +105,8 @@ if ids:
             i['snippet']['liveBroadcastContent']   # Se é ao vivo, encerrado, etc.
         ])
 
-    df = pd.DataFrame(df, columns=['videoId', 'publishedAt', 'title', 'thumbnails', 'liveBroadcastContent']).drop_duplicates(subset='title')
-
+    df = pd.DataFrame(df, columns=['videoId', 'publishedAt', 'title', 'thumbnails', 'liveBroadcastContent'])
+    df = df.drop_duplicates(subset='title')
 # Função para deletar os dados antigos da tabela YoutubeAPI
 @sync_to_async
 def deletar_dados():
