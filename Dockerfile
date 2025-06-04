@@ -11,8 +11,9 @@ RUN apk add --no-cache \
     postgresql-dev \
     build-base \
     dcron \
-    python3-dev && \
-    pip install -r requirements.txt
+    python3-dev \
+    postgresql-client \
+    && pip install -r requirements.txt
 
 COPY crontab /etc/cron.d/django-cron
 RUN chmod 0644 /etc/cron.d/django-cron

@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'apps.site_obpc.apps.SiteObpcConfig',
 ]
 
+# # Configurações do backup
+# DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
+# DBBACKUP_STORAGE_OPTIONS = {'location': '/app/db_backup/'}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -72,6 +76,15 @@ TEMPLATES = [
     },
 ]
 
+# Configurações de CSRF e Session
+CSRF_COOKIE_SECURE = False  # Mude para True em produção com HTTPS
+CSRF_COOKIE_HTTPONLY = True
+CSRF_TRUSTED_ORIGINS = ['http://localhost', 'http://127.0.0.1']
+
+SESSION_COOKIE_SECURE = False  # Mude para True em produção com HTTPS
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SAMESITE = 'Lax'
+
 WSGI_APPLICATION = 'setup.wsgi.application'
 
 
@@ -81,16 +94,12 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('NAME'),
-        'USER': config('USER_DB'),
-        'PASSWORD': config('PASSWORD'),
-        'HOST': config('HOST', default='localhost'),
-        'PORT': '5432',
-        'OPTIONS': {
-            'connect_timeout': 5,
-        },
-        'CONN_MAX_AGE': 300,
+        'ENGINE': os.getenv('DB_ENGINE'),
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
     }
 }
 
