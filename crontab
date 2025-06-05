@@ -12,4 +12,4 @@
 
 0 1 * * 1 python3 /app/youtube_api.py
 
-0 2 * * * pg_dump -h db -U ${DB_USER} -d ${DB_NAME} -F c -f /app/db_backup/01_backupDB.sql
+0 2 * * * pg_dump -h db -U ${DB_USER} -d ${DB_NAME} -F p > /app/db_backup/01_backupDB.sql
