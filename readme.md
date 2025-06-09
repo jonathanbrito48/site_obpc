@@ -10,69 +10,71 @@ Este é um projeto Django para o site da Igreja O Brasil para Cristo, com integr
 - `templates/`: Templates HTML do Django.
 - `youtube_api.py`: Script para importar vídeos do canal do YouTube para o banco de dados.
 - `instagram_posts_job.py`: Script para importar posts do Instagram.
-- `db_backup/`: Backups do banco de dados.
+- `db_backup/`: Backups do banco de dados utilizados para restauração automática pelo Docker.
 - `setup/`: Configurações do projeto Django.
-- `docker-compose.yml` e `Dockerfile`: Suporte a Docker.
+- `docker-compose.yml` e `Dockerfile`: Suporte obrigatório a Docker.
 
 ## Requisitos
 
-- Python 3.10+
-- Django 4.x
-- Docker (opcional)
+- Docker e Docker Compose (obrigatório)
 - Variáveis de ambiente em `.env` e `.env.db`
 
-## Instalação
+> **Atenção:** O projeto depende do Docker Compose para funcionar corretamente, pois o banco de dados é restaurado automaticamente a partir do backup presente em `db_backup/`. Sem esse backup, o container do Postgres não terá dados para iniciar a aplicação.
+
+## Instalação e Execução
 
 1. Clone o repositório.
-2. Crie e ative um ambiente virtual:
+2. Copie os arquivos de exemplo de variáveis de ambiente:
    ```sh
-   python -m venv .venv
-   source .venv/bin/activate
+   cp .env.example .env
+   cp .env.db.example .env.db
    ```
-3. Instale as dependências:
+3. Edite os arquivos `.env` e `.env.db` conforme necessário (veja explicação abaixo).
+4. Suba a aplicação com Docker Compose:
    ```sh
-   pip install -r requirements.txt
-   ```
-4. Configure o banco de dados e variáveis de ambiente conforme `.env` e `.env.db`.
-5. Execute as migrações:
-   ```sh
-   python manage.py migrate
-   ```
-6. (Opcional) Carregue dados de exemplo ou backup:
-   ```sh
-   python manage.py loaddata db_backup/01_backupDB.sql
+   docker-compose up -d --build
    ```
 
-## Execução
+## Sobre os arquivos `.env` e `.env.db`
 
-Para rodar o servidor de desenvolvimento:
-```sh
-python manage.py runserver
+- `.env`: Contém variáveis de ambiente do Django e da conexão do banco para o Django, além de configurações gerais da aplicação, como `SECRET_KEY`, chaves de APIs externas, etc.
+- `.env.db`: Contém as configurações para criação de usuário e banco de dados Postgres, como usuário, senha, nome do banco e host.
+
+**Exemplo de `.env.example`:**
+```
+DB_ENGINE=django.db.backends.postgresql
+SECRET_KEY=sua_secret_key
+YOUTUBE_API_KEY=sua_api_key
+YOUTUBE_CHANNEL_ID=id_canal_yt
+DB_NAME=siteobpc
+DB_USER=seu_usuário
+DB_PASSWORD=sua_senha
+DB_HOST=db
+DB_PORT=5432
 ```
 
-Para importar vídeos do YouTube:
-```sh
-python youtube_api.py
+**Exemplo de `.env.db.example`:**
+```
+POSTGRES_DB=siteobpc
+POSTGRES_USER=seu_usuário
+POSTGRES_PASSWORD=sua_senha
+POSTGRES_HOST=db
+POSTGRES_PORT=5432
 ```
 
-Para importar posts do Instagram:
-```sh
-python instagram_posts_job.py
-```
+> **Importante:** Sempre mantenha suas chaves e senhas protegidas e nunca faça commit dos arquivos `.env` reais.
+
+## Scripts Principais
+
+- [`youtube_api.py`](youtube_api.py): Importa vídeos do canal do YouTube para o banco de dados.
+- [`instagram_posts_job.py`](instagram_posts_job.py): Importa posts do Instagram para o banco de dados.
 
 ## Agendamento (Crontab)
 
-Para agendar a execução automática dos scripts, adicione no crontab:
+Para agendar a execução automática dos scripts, adicione no crontab do container ou utilize ferramentas de agendamento conforme sua necessidade:
 ```
 0 * * * * /caminho/para/.venv/bin/python /caminho/para/youtube_api.py
 0 6 * * * /caminho/para/.venv/bin/python /caminho/para/instagram_posts_job.py
-```
-
-## Docker
-
-Para rodar com Docker:
-```sh
-docker-compose up --build
 ```
 
 ## Estrutura de Pastas
@@ -81,11 +83,6 @@ docker-compose up --build
 - `static/`: Arquivos estáticos coletados
 - `setup/static/`: Fontes, CSS, JS do projeto
 - `templates/`: Templates HTML
-
-## Scripts Principais
-
-- [`youtube_api.py`](youtube_api.py): Importa vídeos do canal do YouTube para o banco de dados.
-- [`instagram_posts_job.py`](instagram_posts_job.py): Importa posts do Instagram para o banco de dados.
 
 ## Licença
 

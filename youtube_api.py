@@ -7,6 +7,12 @@ import asyncio
 import pandas as pd
 import sys
 from datetime import datetime
+from dotenv import load_dotenv
+
+
+# Carregar variáveis de ambiente do arquivo .env
+load_dotenv()
+
 
 # log_file = open(f'/home/jonathanbrito48/log_youtubeAPI.log', 'w')
 log_file = open(f'/log_youtubeAPI.log', 'w')
@@ -36,8 +42,8 @@ from apps.site_obpc.models import YoutubeAPI
 url_channels = 'https://www.googleapis.com/youtube/v3/channels'
 params_channels = {
     'part': 'contentDetails',
-    'id': 'UCUYRn3XmuWXPmLZS4dITotA',  # Substitua pelo ID correto do canal
-    'key': 'AIzaSyBFhvKUTi7sNpKpZFzyjaI0FFMi1AfJ7Io'
+    'id': os.getenv('YOUTUBE_CHANNEL_ID'),  # Use a variável de ambiente para o ID do canal
+    'key': os.getenv('YOUTUBE_API_KEY')  # Use a variável de ambiente para a chave da API
 }
 
 try:
@@ -57,7 +63,7 @@ if uploads_playlist_id:
         'part': 'snippet',
         'playlistId': uploads_playlist_id,
         'maxResults': 25,
-        'key': 'AIzaSyBFhvKUTi7sNpKpZFzyjaI0FFMi1AfJ7Io'
+        'key': os.getenv('YOUTUBE_API_KEY')  # Use a variável de ambiente para a chave da API
     }
 
     try:
