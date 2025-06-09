@@ -13,6 +13,7 @@ Este é um projeto Django para o site da Igreja O Brasil para Cristo, com integr
 - `db_backup/`: Backups do banco de dados utilizados para restauração automática pelo Docker.
 - `setup/`: Configurações do projeto Django.
 - `docker-compose.yml` e `Dockerfile`: Suporte obrigatório a Docker.
+- `crontab`: Arquivo com agendamentos automáticos de tarefas.
 
 ## Requisitos
 
@@ -69,13 +70,15 @@ POSTGRES_PORT=5432
 - [`youtube_api.py`](youtube_api.py): Importa vídeos do canal do YouTube para o banco de dados.
 - [`instagram_posts_job.py`](instagram_posts_job.py): Importa posts do Instagram para o banco de dados.
 
-## Agendamento (Crontab)
+## Agendamento Automático (Crontab)
 
-Para agendar a execução automática dos scripts, adicione no crontab do container ou utilize ferramentas de agendamento conforme sua necessidade:
-```
-0 * * * * /caminho/para/.venv/bin/python /caminho/para/youtube_api.py
-0 6 * * * /caminho/para/.venv/bin/python /caminho/para/instagram_posts_job.py
-```
+O arquivo `crontab` presente na raiz do projeto já contém os agendamentos necessários para:
+
+- Atualização periódica das lives do YouTube.
+- Atualização dos posts do Instagram.
+- Backup diário do banco de dados, sobrescrevendo o arquivo de backup em `db_backup/` para manter uma versão mais atualizada do banco.
+
+Esses jobs são configurados automaticamente ao utilizar o Docker Compose, garantindo que o banco esteja sempre atualizado e que as informações do YouTube e Instagram sejam sincronizadas conforme a periodicidade definida.
 
 ## Estrutura de Pastas
 
