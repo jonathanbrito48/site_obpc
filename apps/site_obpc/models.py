@@ -160,7 +160,7 @@ class Instagramapi(models.Model):
 
 
 class YoutubeAPI(models.Model):
-    videoId= models.CharField(max_length=500,null=True,blank=True)
+    videoId= models.CharField(max_length=500,null=True,blank=True,unique=True)
     publishedAt= models.CharField(max_length=100,null=True,blank=True)
     title=models.CharField(max_length=100,null=True,blank=True)
     thumbnails=models.CharField(max_length=100,null=True,blank=True)

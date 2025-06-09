@@ -844,7 +844,7 @@ COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
 
 COPY public.auth_user (id, password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined) FROM stdin;
 2	pbkdf2_sha256$870000$r2FqLF5A05bmI8xLmNZXRM$kjpjPIBsizL4sHCw3qjor417UP4XWzeHjkXA9ApOJfA=	2025-01-15 21:10:09.995923+00	f	camisllima				t	t	2025-01-13 17:41:09+00
-1	pbkdf2_sha256$870000$F4CaDCYHBLdrvqhzjPwe4g$lHBNz6zQG/2uakp0/2aImPsCvG9SGYr6pjYXBWwNZqE=	2025-06-05 17:06:09.112035+00	t	jonathan.brito48			jonathan.brito48@gmail.com	t	t	2025-01-06 17:30:47.472326+00
+1	pbkdf2_sha256$870000$F4CaDCYHBLdrvqhzjPwe4g$lHBNz6zQG/2uakp0/2aImPsCvG9SGYr6pjYXBWwNZqE=	2025-06-09 18:13:33.560788+00	t	jonathan.brito48			jonathan.brito48@gmail.com	t	t	2025-01-06 17:30:47.472326+00
 \.
 
 
@@ -1104,6 +1104,7 @@ COPY public.django_migrations (id, app, name, applied) FROM stdin;
 63	site_obpc	0045_alter_cursos_descricao	2025-01-06 17:26:56.96107+00
 64	site_obpc	0046_alter_carrosel_index_link_pagina_and_more	2025-01-06 17:27:07.525808+00
 65	site_obpc	0047_alter_pastores_biografia	2025-01-07 14:35:02.788284+00
+66	site_obpc	0048_alter_youtubeapi_videoid	2025-06-09 18:10:25.01072+00
 \.
 
 
@@ -1124,6 +1125,7 @@ ytq1urqp8pxce3w9qk3o9w5l8a0g4dg5	.eJxVjEEOwiAQRe_C2pCBQgGX7j0DGZhBqoYmpV0Z765Nut
 sip5m3b2f5qo4k67li1vlj9rw30sbzfl	.eJxVjMsOwiAQRf-FtSEMDAVcuvcbyMBMbdXQpI-V8d-1SRe6veec-1KZtnXI2yJzHlmdFajT71aoPqTtgO_UbpOuU1vnsehd0Qdd9HVieV4O9-9goGX41sjBFegEbAFvLRlr0HfGcudAXAgRxQeJaIoFXzlhT1Ew9gmSYUxOvT-rpTZ9:1tiiwO:wUje_fN-nA3zURjkYQwToSWeGpuDE8AAkoLlV1LeIyM	2025-02-27 23:48:20.1137+00
 j76cvelg88xnlgc5xb6wovt32uo55f1m	.eJxVjMsOwiAQRf-FtSEMDAVcuvcbyMBMbdXQpI-V8d-1SRe6veec-1KZtnXI2yJzHlmdFajT71aoPqTtgO_UbpOuU1vnsehd0Qdd9HVieV4O9-9goGX41sjBFegEbAFvLRlr0HfGcudAXAgRxQeJaIoFXzlhT1Ew9gmSYUxOvT-rpTZ9:1tsR1H:u2-p9a-KSGs7M3BgWEsAr_HoT6IhDqJfDhAOT9LzVm4	2025-03-26 18:41:31.662821+00
 4ryoe8invkw12gmq0ewpfuu0r8mkhtp8	.eJxVjMsOwiAQRf-FtSEMDAVcuvcbyMBMbdXQpI-V8d-1SRe6veec-1KZtnXI2yJzHlmdFajT71aoPqTtgO_UbpOuU1vnsehd0Qdd9HVieV4O9-9goGX41sjBFegEbAFvLRlr0HfGcudAXAgRxQeJaIoFXzlhT1Ew9gmSYUxOvT-rpTZ9:1uNE2b:FDO2k1Z253Nwiem-RwfiZruo0lANzgh14lsDE3ut3yM	2025-06-19 17:06:09.119035+00
+dvwdwvagv2a6ojq8zx5xhwl4c6bpyogg	.eJxVjMsOwiAQRf-FtSEMDAVcuvcbyMBMbdXQpI-V8d-1SRe6veec-1KZtnXI2yJzHlmdFajT71aoPqTtgO_UbpOuU1vnsehd0Qdd9HVieV4O9-9goGX41sjBFegEbAFvLRlr0HfGcudAXAgRxQeJaIoFXzlhT1Ew9gmSYUxOvT-rpTZ9:1uOh01:psUUSH48fTDCc1e80ZYOjlUiZr0V4VhUJoG-uhApAuw	2025-06-23 18:13:33.564571+00
 \.
 
 
@@ -1256,46 +1258,26 @@ COPY public.site_obpc_servicos (id, nome_empresa, foto, facebook_empresa, instag
 --
 
 COPY public.site_obpc_youtubeapi (id, "videoId", "publishedAt", title, thumbnails, "liveBroadcastContent", created_time) FROM stdin;
-8960	QEsHrL8Grfs	2025-06-06T00:12:15Z	Culto Quinta da Libertação | 05/06	https://i.ytimg.com/vi/QEsHrL8Grfs/hqdefault_live.jpg	upcoming	2025-06-06 01:30:06.303823+00
-8962	yWNST_872m4	2025-06-04T12:23:28Z	O Reino de Deus X O Reino dos Homens | 03/06	https://i.ytimg.com/vi/yWNST_872m4/hqdefault.jpg	none	2025-06-06 01:30:06.308075+00
-8964	9KAFqmfAgqk	2025-06-02T11:28:10Z	Culto da Família | 01/06	https://i.ytimg.com/vi/9KAFqmfAgqk/hqdefault.jpg	none	2025-06-06 01:30:06.310947+00
-8966	yj8xmdwbA54	2025-06-01T12:23:38Z	Palavra com Dança, RAQAD | 31/05	https://i.ytimg.com/vi/yj8xmdwbA54/hqdefault.jpg	none	2025-06-06 01:30:06.314195+00
-8968	IRJX9fttMVk	2025-05-30T13:30:11Z	Curadas Para Curar 29/05	https://i.ytimg.com/vi/IRJX9fttMVk/hqdefault.jpg	none	2025-06-06 01:30:06.317045+00
-8970	uUbSixihZkU	2025-05-28T12:47:20Z	O Reino de Deus X O Reino dos Homens | 27/05	https://i.ytimg.com/vi/uUbSixihZkU/hqdefault.jpg	none	2025-06-06 01:30:06.319651+00
-8972	6j_bK-5qnOc	2025-05-25T12:59:35Z	CELEBRAÇÃO UMASBRAC | 24/05	https://i.ytimg.com/vi/6j_bK-5qnOc/hqdefault.jpg	none	2025-06-06 01:30:06.322837+00
-8974	tv8MRyHPmmw	2025-05-23T13:20:44Z	QUINTA DA LIBERTAÇÃO | 22/05	https://i.ytimg.com/vi/tv8MRyHPmmw/hqdefault.jpg	none	2025-06-06 01:30:06.325372+00
-8976	P5EQeWO54mw	2025-05-21T12:36:49Z	O Reino de Deus X O Reino dos Homens | 20/05	https://i.ytimg.com/vi/P5EQeWO54mw/hqdefault.jpg	none	2025-06-06 01:30:06.327661+00
-8978	1Yq-iz1LOU8	2025-05-18T23:45:41Z	Culto da Família | 18/05	https://i.ytimg.com/vi/1Yq-iz1LOU8/hqdefault.jpg	none	2025-06-06 01:30:06.330136+00
-8980	uVhzBn7XA7E	2025-05-18T13:01:43Z	FORMATURA DE TEOLOGIA 17/25	https://i.ytimg.com/vi/uVhzBn7XA7E/hqdefault.jpg	none	2025-06-06 01:30:06.332849+00
-8982	U5HR_q8JldU	2025-05-16T12:44:42Z	"Quinta da Libertação" | 15/06	https://i.ytimg.com/vi/U5HR_q8JldU/hqdefault.jpg	none	2025-06-06 01:30:06.335689+00
-8984	NBlCJSgpUVo	2025-05-14T12:35:26Z	O Reino de Deus X O Reino dos Homens | 13/06	https://i.ytimg.com/vi/NBlCJSgpUVo/hqdefault.jpg	none	2025-06-06 01:30:06.338084+00
-8986	0XEiEKkKjYk	2025-05-11T23:53:10Z	CULTO DIA DAS MÃES 11/05	https://i.ytimg.com/vi/0XEiEKkKjYk/hqdefault.jpg	none	2025-06-06 01:30:06.340589+00
-8988	tlklXxsd4oc	2025-05-11T01:09:32Z	Santa Ceia do Senhor | 10/06	https://i.ytimg.com/vi/tlklXxsd4oc/hqdefault.jpg	none	2025-06-06 01:30:06.343173+00
-8990	mHHVIzr0YLU	2025-05-09T13:11:31Z	Quinta da Libertação | 08/06	https://i.ytimg.com/vi/mHHVIzr0YLU/hqdefault.jpg	none	2025-06-06 01:30:06.345503+00
-8992	xCWXu4dmfYg	2025-05-07T12:31:14Z	O Reino de Deus X O Reino dos Homens | 06/05	https://i.ytimg.com/vi/xCWXu4dmfYg/hqdefault.jpg	none	2025-06-06 01:30:06.348045+00
-8994	vMg1zjWZWjk	2025-05-04T23:38:54Z	Culto da Família  05/04	https://i.ytimg.com/vi/vMg1zjWZWjk/hqdefault.jpg	none	2025-06-06 01:30:06.350588+00
-8996	IThMOsDP-_E	2025-04-28T11:49:28Z	"CULTO ESPECIAL DE PÁSCOA" part 2 | 27/04	https://i.ytimg.com/vi/IThMOsDP-_E/hqdefault.jpg	none	2025-06-06 01:30:06.353235+00
-8997	wj4ianj8yjc	2025-04-28T10:39:11Z	"CULTO ESPECIAL DE PÁSCOA"  | 27/04	https://i.ytimg.com/vi/wj4ianj8yjc/hqdefault.jpg	none	2025-06-06 01:30:06.355663+00
-8958	QEsHrL8Grfs	2025-06-06T00:12:15Z	Culto Quinta da Libertação | 05/06	https://i.ytimg.com/vi/QEsHrL8Grfs/hqdefault_live.jpg	upcoming	2025-06-06 01:30:06.297994+00
-8959	yWNST_872m4	2025-06-04T12:23:28Z	O Reino de Deus X O Reino dos Homens | 03/06	https://i.ytimg.com/vi/yWNST_872m4/hqdefault.jpg	none	2025-06-06 01:30:06.304059+00
-8961	9KAFqmfAgqk	2025-06-02T11:28:10Z	Culto da Família | 01/06	https://i.ytimg.com/vi/9KAFqmfAgqk/hqdefault.jpg	none	2025-06-06 01:30:06.307074+00
-8963	yj8xmdwbA54	2025-06-01T12:23:38Z	Palavra com Dança, RAQAD | 31/05	https://i.ytimg.com/vi/yj8xmdwbA54/hqdefault.jpg	none	2025-06-06 01:30:06.310645+00
-8965	IRJX9fttMVk	2025-05-30T13:30:11Z	Curadas Para Curar 29/05	https://i.ytimg.com/vi/IRJX9fttMVk/hqdefault.jpg	none	2025-06-06 01:30:06.313413+00
-8967	uUbSixihZkU	2025-05-28T12:47:20Z	O Reino de Deus X O Reino dos Homens | 27/05	https://i.ytimg.com/vi/uUbSixihZkU/hqdefault.jpg	none	2025-06-06 01:30:06.316145+00
-8969	6j_bK-5qnOc	2025-05-25T12:59:35Z	CELEBRAÇÃO UMASBRAC | 24/05	https://i.ytimg.com/vi/6j_bK-5qnOc/hqdefault.jpg	none	2025-06-06 01:30:06.319294+00
-8971	tv8MRyHPmmw	2025-05-23T13:20:44Z	QUINTA DA LIBERTAÇÃO | 22/05	https://i.ytimg.com/vi/tv8MRyHPmmw/hqdefault.jpg	none	2025-06-06 01:30:06.321929+00
-8973	P5EQeWO54mw	2025-05-21T12:36:49Z	O Reino de Deus X O Reino dos Homens | 20/05	https://i.ytimg.com/vi/P5EQeWO54mw/hqdefault.jpg	none	2025-06-06 01:30:06.324529+00
-8975	1Yq-iz1LOU8	2025-05-18T23:45:41Z	Culto da Família | 18/05	https://i.ytimg.com/vi/1Yq-iz1LOU8/hqdefault.jpg	none	2025-06-06 01:30:06.326917+00
-8977	uVhzBn7XA7E	2025-05-18T13:01:43Z	FORMATURA DE TEOLOGIA 17/25	https://i.ytimg.com/vi/uVhzBn7XA7E/hqdefault.jpg	none	2025-06-06 01:30:06.329439+00
-8979	U5HR_q8JldU	2025-05-16T12:44:42Z	"Quinta da Libertação" | 15/06	https://i.ytimg.com/vi/U5HR_q8JldU/hqdefault.jpg	none	2025-06-06 01:30:06.331974+00
-8981	NBlCJSgpUVo	2025-05-14T12:35:26Z	O Reino de Deus X O Reino dos Homens | 13/06	https://i.ytimg.com/vi/NBlCJSgpUVo/hqdefault.jpg	none	2025-06-06 01:30:06.33482+00
-8983	0XEiEKkKjYk	2025-05-11T23:53:10Z	CULTO DIA DAS MÃES 11/05	https://i.ytimg.com/vi/0XEiEKkKjYk/hqdefault.jpg	none	2025-06-06 01:30:06.337379+00
-8985	tlklXxsd4oc	2025-05-11T01:09:32Z	Santa Ceia do Senhor | 10/06	https://i.ytimg.com/vi/tlklXxsd4oc/hqdefault.jpg	none	2025-06-06 01:30:06.339957+00
-8987	mHHVIzr0YLU	2025-05-09T13:11:31Z	Quinta da Libertação | 08/06	https://i.ytimg.com/vi/mHHVIzr0YLU/hqdefault.jpg	none	2025-06-06 01:30:06.342434+00
-8989	xCWXu4dmfYg	2025-05-07T12:31:14Z	O Reino de Deus X O Reino dos Homens | 06/05	https://i.ytimg.com/vi/xCWXu4dmfYg/hqdefault.jpg	none	2025-06-06 01:30:06.344795+00
-8991	vMg1zjWZWjk	2025-05-04T23:38:54Z	Culto da Família  05/04	https://i.ytimg.com/vi/vMg1zjWZWjk/hqdefault.jpg	none	2025-06-06 01:30:06.347314+00
-8993	IThMOsDP-_E	2025-04-28T11:49:28Z	"CULTO ESPECIAL DE PÁSCOA" part 2 | 27/04	https://i.ytimg.com/vi/IThMOsDP-_E/hqdefault.jpg	none	2025-06-06 01:30:06.34994+00
-8995	wj4ianj8yjc	2025-04-28T10:39:11Z	"CULTO ESPECIAL DE PÁSCOA"  | 27/04	https://i.ytimg.com/vi/wj4ianj8yjc/hqdefault.jpg	none	2025-06-06 01:30:06.352482+00
+9059	siKSipjJvTo	2025-06-08T23:59:27Z	Santa Ceia do Senhor | 08/06	https://i.ytimg.com/vi/siKSipjJvTo/hqdefault.jpg	none	2025-06-09 18:15:21.916048+00
+9060	kThNFTT-cuo	2025-06-06T12:20:27Z	Culto Quinta da Libertação | 05/06	https://i.ytimg.com/vi/kThNFTT-cuo/hqdefault.jpg	none	2025-06-09 18:15:21.918856+00
+9061	yWNST_872m4	2025-06-04T12:23:28Z	O Reino de Deus X O Reino dos Homens | 03/06	https://i.ytimg.com/vi/yWNST_872m4/hqdefault.jpg	none	2025-06-09 18:15:21.921385+00
+9062	9KAFqmfAgqk	2025-06-02T11:28:10Z	Culto da Família | 01/06	https://i.ytimg.com/vi/9KAFqmfAgqk/hqdefault.jpg	none	2025-06-09 18:15:21.923961+00
+9063	yj8xmdwbA54	2025-06-01T12:23:38Z	Palavra com Dança, RAQAD | 31/05	https://i.ytimg.com/vi/yj8xmdwbA54/hqdefault.jpg	none	2025-06-09 18:15:21.926273+00
+9064	IRJX9fttMVk	2025-05-30T13:30:11Z	Curadas Para Curar 29/05	https://i.ytimg.com/vi/IRJX9fttMVk/hqdefault.jpg	none	2025-06-09 18:15:21.928703+00
+9065	uUbSixihZkU	2025-05-28T12:47:20Z	O Reino de Deus X O Reino dos Homens | 27/05	https://i.ytimg.com/vi/uUbSixihZkU/hqdefault.jpg	none	2025-06-09 18:15:21.931581+00
+9066	6j_bK-5qnOc	2025-05-25T12:59:35Z	CELEBRAÇÃO UMASBRAC | 24/05	https://i.ytimg.com/vi/6j_bK-5qnOc/hqdefault.jpg	none	2025-06-09 18:15:21.934376+00
+9067	tv8MRyHPmmw	2025-05-23T13:20:44Z	QUINTA DA LIBERTAÇÃO | 22/05	https://i.ytimg.com/vi/tv8MRyHPmmw/hqdefault.jpg	none	2025-06-09 18:15:21.936851+00
+9068	P5EQeWO54mw	2025-05-21T12:36:49Z	O Reino de Deus X O Reino dos Homens | 20/05	https://i.ytimg.com/vi/P5EQeWO54mw/hqdefault.jpg	none	2025-06-09 18:15:21.939278+00
+9069	1Yq-iz1LOU8	2025-05-18T23:45:41Z	Culto da Família | 18/05	https://i.ytimg.com/vi/1Yq-iz1LOU8/hqdefault.jpg	none	2025-06-09 18:15:21.941574+00
+9070	uVhzBn7XA7E	2025-05-18T13:01:43Z	FORMATURA DE TEOLOGIA 17/25	https://i.ytimg.com/vi/uVhzBn7XA7E/hqdefault.jpg	none	2025-06-09 18:15:21.943944+00
+9071	U5HR_q8JldU	2025-05-16T12:44:42Z	"Quinta da Libertação" | 15/06	https://i.ytimg.com/vi/U5HR_q8JldU/hqdefault.jpg	none	2025-06-09 18:15:21.947578+00
+9072	NBlCJSgpUVo	2025-05-14T12:35:26Z	O Reino de Deus X O Reino dos Homens | 13/06	https://i.ytimg.com/vi/NBlCJSgpUVo/hqdefault.jpg	none	2025-06-09 18:15:21.951317+00
+9073	0XEiEKkKjYk	2025-05-11T23:53:10Z	CULTO DIA DAS MÃES 11/05	https://i.ytimg.com/vi/0XEiEKkKjYk/hqdefault.jpg	none	2025-06-09 18:15:21.955261+00
+9074	tlklXxsd4oc	2025-05-11T01:09:32Z	Santa Ceia do Senhor | 10/06	https://i.ytimg.com/vi/tlklXxsd4oc/hqdefault.jpg	none	2025-06-09 18:15:21.958931+00
+9075	mHHVIzr0YLU	2025-05-09T13:11:31Z	Quinta da Libertação | 08/06	https://i.ytimg.com/vi/mHHVIzr0YLU/hqdefault.jpg	none	2025-06-09 18:15:21.962383+00
+9076	xCWXu4dmfYg	2025-05-07T12:31:14Z	O Reino de Deus X O Reino dos Homens | 06/05	https://i.ytimg.com/vi/xCWXu4dmfYg/hqdefault.jpg	none	2025-06-09 18:15:21.966155+00
+9077	vMg1zjWZWjk	2025-05-04T23:38:54Z	Culto da Família  05/04	https://i.ytimg.com/vi/vMg1zjWZWjk/hqdefault.jpg	none	2025-06-09 18:15:21.969849+00
+9078	IThMOsDP-_E	2025-04-28T11:49:28Z	"CULTO ESPECIAL DE PÁSCOA" part 2 | 27/04	https://i.ytimg.com/vi/IThMOsDP-_E/hqdefault.jpg	none	2025-06-09 18:15:21.973281+00
 \.
 
 
@@ -1359,7 +1341,7 @@ SELECT pg_catalog.setval('public.django_content_type_id_seq', 20, true);
 -- Name: django_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: jonathanbrito
 --
 
-SELECT pg_catalog.setval('public.django_migrations_id_seq', 65, true);
+SELECT pg_catalog.setval('public.django_migrations_id_seq', 66, true);
 
 
 --
@@ -1457,7 +1439,7 @@ SELECT pg_catalog.setval('public.site_obpc_servicos_id_seq', 1, false);
 -- Name: site_obpc_youtubeapi_id_seq; Type: SEQUENCE SET; Schema: public; Owner: jonathanbrito
 --
 
-SELECT pg_catalog.setval('public.site_obpc_youtubeapi_id_seq', 8997, true);
+SELECT pg_catalog.setval('public.site_obpc_youtubeapi_id_seq', 9078, true);
 
 
 --
@@ -1725,6 +1707,14 @@ ALTER TABLE ONLY public.site_obpc_youtubeapi
 
 
 --
+-- Name: site_obpc_youtubeapi site_obpc_youtubeapi_videoId_c7218c7d_uniq; Type: CONSTRAINT; Schema: public; Owner: jonathanbrito
+--
+
+ALTER TABLE ONLY public.site_obpc_youtubeapi
+    ADD CONSTRAINT "site_obpc_youtubeapi_videoId_c7218c7d_uniq" UNIQUE ("videoId");
+
+
+--
 -- Name: auth_group_name_a6ea08ec_like; Type: INDEX; Schema: public; Owner: jonathanbrito
 --
 
@@ -1834,6 +1824,13 @@ CREATE INDEX site_obpc_lideres_ministerios_ministerio_id_cb702022 ON public.site
 --
 
 CREATE INDEX site_obpc_servicos_categoria_id_ff68e50b ON public.site_obpc_servicos USING btree (categoria_id);
+
+
+--
+-- Name: site_obpc_youtubeapi_videoId_c7218c7d_like; Type: INDEX; Schema: public; Owner: jonathanbrito
+--
+
+CREATE INDEX "site_obpc_youtubeapi_videoId_c7218c7d_like" ON public.site_obpc_youtubeapi USING btree ("videoId" varchar_pattern_ops);
 
 
 --

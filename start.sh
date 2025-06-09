@@ -1,5 +1,7 @@
 #!/bin/sh
 
+chmod 755 /app/youtube_run.sh
+
 echo "Waiting for PostgreSQL..."
 while ! nc -z db 5432; do
   sleep 0.1
@@ -11,4 +13,6 @@ crond
 
 # Inicia o servidor Gunicorn para o Django
 exec gunicorn setup.wsgi:application --bind 0.0.0.0:8000
+
+
 
