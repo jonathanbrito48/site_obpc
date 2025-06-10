@@ -87,10 +87,6 @@ Esses jobs são configurados automaticamente ao utilizar o Docker Compose, garan
 - `setup/static/`: Fontes, CSS, JS do projeto
 - `templates/`: Templates HTML
 
-## Licença
-
-MIT
-
 ---
 
 Para dúvidas, consulte os arquivos de configuração ou entre em contato com o mantenedor.
