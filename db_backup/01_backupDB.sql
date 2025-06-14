@@ -1258,26 +1258,27 @@ COPY public.site_obpc_servicos (id, nome_empresa, foto, facebook_empresa, instag
 --
 
 COPY public.site_obpc_youtubeapi (id, "videoId", "publishedAt", title, thumbnails, "liveBroadcastContent", created_time) FROM stdin;
-9059	siKSipjJvTo	2025-06-08T23:59:27Z	Santa Ceia do Senhor | 08/06	https://i.ytimg.com/vi/siKSipjJvTo/hqdefault.jpg	none	2025-06-09 18:15:21.916048+00
-9060	kThNFTT-cuo	2025-06-06T12:20:27Z	Culto Quinta da Libertação | 05/06	https://i.ytimg.com/vi/kThNFTT-cuo/hqdefault.jpg	none	2025-06-09 18:15:21.918856+00
-9061	yWNST_872m4	2025-06-04T12:23:28Z	O Reino de Deus X O Reino dos Homens | 03/06	https://i.ytimg.com/vi/yWNST_872m4/hqdefault.jpg	none	2025-06-09 18:15:21.921385+00
-9062	9KAFqmfAgqk	2025-06-02T11:28:10Z	Culto da Família | 01/06	https://i.ytimg.com/vi/9KAFqmfAgqk/hqdefault.jpg	none	2025-06-09 18:15:21.923961+00
-9063	yj8xmdwbA54	2025-06-01T12:23:38Z	Palavra com Dança, RAQAD | 31/05	https://i.ytimg.com/vi/yj8xmdwbA54/hqdefault.jpg	none	2025-06-09 18:15:21.926273+00
-9064	IRJX9fttMVk	2025-05-30T13:30:11Z	Curadas Para Curar 29/05	https://i.ytimg.com/vi/IRJX9fttMVk/hqdefault.jpg	none	2025-06-09 18:15:21.928703+00
-9065	uUbSixihZkU	2025-05-28T12:47:20Z	O Reino de Deus X O Reino dos Homens | 27/05	https://i.ytimg.com/vi/uUbSixihZkU/hqdefault.jpg	none	2025-06-09 18:15:21.931581+00
-9066	6j_bK-5qnOc	2025-05-25T12:59:35Z	CELEBRAÇÃO UMASBRAC | 24/05	https://i.ytimg.com/vi/6j_bK-5qnOc/hqdefault.jpg	none	2025-06-09 18:15:21.934376+00
-9067	tv8MRyHPmmw	2025-05-23T13:20:44Z	QUINTA DA LIBERTAÇÃO | 22/05	https://i.ytimg.com/vi/tv8MRyHPmmw/hqdefault.jpg	none	2025-06-09 18:15:21.936851+00
-9068	P5EQeWO54mw	2025-05-21T12:36:49Z	O Reino de Deus X O Reino dos Homens | 20/05	https://i.ytimg.com/vi/P5EQeWO54mw/hqdefault.jpg	none	2025-06-09 18:15:21.939278+00
-9069	1Yq-iz1LOU8	2025-05-18T23:45:41Z	Culto da Família | 18/05	https://i.ytimg.com/vi/1Yq-iz1LOU8/hqdefault.jpg	none	2025-06-09 18:15:21.941574+00
-9070	uVhzBn7XA7E	2025-05-18T13:01:43Z	FORMATURA DE TEOLOGIA 17/25	https://i.ytimg.com/vi/uVhzBn7XA7E/hqdefault.jpg	none	2025-06-09 18:15:21.943944+00
-9071	U5HR_q8JldU	2025-05-16T12:44:42Z	"Quinta da Libertação" | 15/06	https://i.ytimg.com/vi/U5HR_q8JldU/hqdefault.jpg	none	2025-06-09 18:15:21.947578+00
-9072	NBlCJSgpUVo	2025-05-14T12:35:26Z	O Reino de Deus X O Reino dos Homens | 13/06	https://i.ytimg.com/vi/NBlCJSgpUVo/hqdefault.jpg	none	2025-06-09 18:15:21.951317+00
-9073	0XEiEKkKjYk	2025-05-11T23:53:10Z	CULTO DIA DAS MÃES 11/05	https://i.ytimg.com/vi/0XEiEKkKjYk/hqdefault.jpg	none	2025-06-09 18:15:21.955261+00
-9074	tlklXxsd4oc	2025-05-11T01:09:32Z	Santa Ceia do Senhor | 10/06	https://i.ytimg.com/vi/tlklXxsd4oc/hqdefault.jpg	none	2025-06-09 18:15:21.958931+00
-9075	mHHVIzr0YLU	2025-05-09T13:11:31Z	Quinta da Libertação | 08/06	https://i.ytimg.com/vi/mHHVIzr0YLU/hqdefault.jpg	none	2025-06-09 18:15:21.962383+00
-9076	xCWXu4dmfYg	2025-05-07T12:31:14Z	O Reino de Deus X O Reino dos Homens | 06/05	https://i.ytimg.com/vi/xCWXu4dmfYg/hqdefault.jpg	none	2025-06-09 18:15:21.966155+00
-9077	vMg1zjWZWjk	2025-05-04T23:38:54Z	Culto da Família  05/04	https://i.ytimg.com/vi/vMg1zjWZWjk/hqdefault.jpg	none	2025-06-09 18:15:21.969849+00
-9078	IThMOsDP-_E	2025-04-28T11:49:28Z	"CULTO ESPECIAL DE PÁSCOA" part 2 | 27/04	https://i.ytimg.com/vi/IThMOsDP-_E/hqdefault.jpg	none	2025-06-09 18:15:21.973281+00
+9323	siKSipjJvTo	2025-06-08T23:59:27Z	Santa Ceia do Senhor | 08/06	https://i.ytimg.com/vi/siKSipjJvTo/hqdefault.jpg	none	2025-06-13 01:30:04.026809+00
+9324	kThNFTT-cuo	2025-06-06T12:20:27Z	Culto Quinta da Libertação | 05/06	https://i.ytimg.com/vi/kThNFTT-cuo/hqdefault.jpg	none	2025-06-13 01:30:04.030648+00
+9325	CjhADtCywVQ	2025-06-11T12:28:52Z	O Reino de Deus X O Reino dos Homens | 10/06	https://i.ytimg.com/vi/CjhADtCywVQ/hqdefault.jpg	none	2025-06-13 01:30:04.031564+00
+9326	yWNST_872m4	2025-06-04T12:23:28Z	O Reino de Deus X O Reino dos Homens | 03/06	https://i.ytimg.com/vi/yWNST_872m4/hqdefault.jpg	none	2025-06-13 01:30:04.03413+00
+9328	9KAFqmfAgqk	2025-06-02T11:28:10Z	Culto da Família | 01/06	https://i.ytimg.com/vi/9KAFqmfAgqk/hqdefault.jpg	none	2025-06-13 01:30:04.037185+00
+9329	yj8xmdwbA54	2025-06-01T12:23:38Z	Palavra com Dança, RAQAD | 31/05	https://i.ytimg.com/vi/yj8xmdwbA54/hqdefault.jpg	none	2025-06-13 01:30:04.040651+00
+9330	IRJX9fttMVk	2025-05-30T13:30:11Z	Curadas Para Curar 29/05	https://i.ytimg.com/vi/IRJX9fttMVk/hqdefault.jpg	none	2025-06-13 01:30:04.043634+00
+9331	uUbSixihZkU	2025-05-28T12:47:20Z	O Reino de Deus X O Reino dos Homens | 27/05	https://i.ytimg.com/vi/uUbSixihZkU/hqdefault.jpg	none	2025-06-13 01:30:04.046988+00
+9332	6j_bK-5qnOc	2025-05-25T12:59:35Z	CELEBRAÇÃO UMASBRAC | 24/05	https://i.ytimg.com/vi/6j_bK-5qnOc/hqdefault.jpg	none	2025-06-13 01:30:04.050834+00
+9333	tv8MRyHPmmw	2025-05-23T13:20:44Z	QUINTA DA LIBERTAÇÃO | 22/05	https://i.ytimg.com/vi/tv8MRyHPmmw/hqdefault.jpg	none	2025-06-13 01:30:04.054396+00
+9334	P5EQeWO54mw	2025-05-21T12:36:49Z	O Reino de Deus X O Reino dos Homens | 20/05	https://i.ytimg.com/vi/P5EQeWO54mw/hqdefault.jpg	none	2025-06-13 01:30:04.057518+00
+9335	1Yq-iz1LOU8	2025-05-18T23:45:41Z	Culto da Família | 18/05	https://i.ytimg.com/vi/1Yq-iz1LOU8/hqdefault.jpg	none	2025-06-13 01:30:04.060495+00
+9336	uVhzBn7XA7E	2025-05-18T13:01:43Z	FORMATURA DE TEOLOGIA 17/25	https://i.ytimg.com/vi/uVhzBn7XA7E/hqdefault.jpg	none	2025-06-13 01:30:04.063267+00
+9337	U5HR_q8JldU	2025-05-16T12:44:42Z	"Quinta da Libertação" | 15/06	https://i.ytimg.com/vi/U5HR_q8JldU/hqdefault.jpg	none	2025-06-13 01:30:04.066223+00
+9338	NBlCJSgpUVo	2025-05-14T12:35:26Z	O Reino de Deus X O Reino dos Homens | 13/06	https://i.ytimg.com/vi/NBlCJSgpUVo/hqdefault.jpg	none	2025-06-13 01:30:04.069164+00
+9339	0XEiEKkKjYk	2025-05-11T23:53:10Z	CULTO DIA DAS MÃES 11/05	https://i.ytimg.com/vi/0XEiEKkKjYk/hqdefault.jpg	none	2025-06-13 01:30:04.071892+00
+9340	tlklXxsd4oc	2025-05-11T01:09:32Z	Santa Ceia do Senhor | 10/06	https://i.ytimg.com/vi/tlklXxsd4oc/hqdefault.jpg	none	2025-06-13 01:30:04.07483+00
+9341	mHHVIzr0YLU	2025-05-09T13:11:31Z	Quinta da Libertação | 08/06	https://i.ytimg.com/vi/mHHVIzr0YLU/hqdefault.jpg	none	2025-06-13 01:30:04.077317+00
+9342	xCWXu4dmfYg	2025-05-07T12:31:14Z	O Reino de Deus X O Reino dos Homens | 06/05	https://i.ytimg.com/vi/xCWXu4dmfYg/hqdefault.jpg	none	2025-06-13 01:30:04.079676+00
+9343	vMg1zjWZWjk	2025-05-04T23:38:54Z	Culto da Família  05/04	https://i.ytimg.com/vi/vMg1zjWZWjk/hqdefault.jpg	none	2025-06-13 01:30:04.081883+00
+9344	IThMOsDP-_E	2025-04-28T11:49:28Z	"CULTO ESPECIAL DE PÁSCOA" part 2 | 27/04	https://i.ytimg.com/vi/IThMOsDP-_E/hqdefault.jpg	none	2025-06-13 01:30:04.084123+00
 \.
 
 
@@ -1439,7 +1440,7 @@ SELECT pg_catalog.setval('public.site_obpc_servicos_id_seq', 1, false);
 -- Name: site_obpc_youtubeapi_id_seq; Type: SEQUENCE SET; Schema: public; Owner: jonathanbrito
 --
 
-SELECT pg_catalog.setval('public.site_obpc_youtubeapi_id_seq', 9078, true);
+SELECT pg_catalog.setval('public.site_obpc_youtubeapi_id_seq', 9344, true);
 
 
 --
