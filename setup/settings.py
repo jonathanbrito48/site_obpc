@@ -18,11 +18,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY =  str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG')
+DEBUG = False if os.getenv('DEBUG') == 'False' else True
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 ALLOWED_HOSTS = [h.strip() for h in ALLOWED_HOSTS if h.strip()]
-print(ALLOWED_HOSTS)
 # ALLOWED_HOSTS = ['127.0.0.1', 'localhost','34.121.153.167','site']
 
 # Configurações para proxy
